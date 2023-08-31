@@ -1,7 +1,4 @@
-models/*
 
-#algorithms/gp_trajs.pkl
-#algorithms/*.pkl
-*.pkl
+algorithms/gp_trajs.pkl
 
 __pycache__/
