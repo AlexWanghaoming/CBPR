@@ -1,0 +1,3 @@
+[console_scripts]
+overcooked-demo-move = overcooked_demo:move_agent
+overcooked-demo-up = overcooked_demo:start_server
