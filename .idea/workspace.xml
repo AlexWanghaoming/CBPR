@@ -5,8 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4be4f475-155a-4b0a-9825-15e5576d7ad7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/algorithms/bpr_NN.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithms/okr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithms/okr_gp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/state_trans_func/GP_gpytorch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/state_trans_func/NN.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/state_trans_func/collect_trajs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/GP_gpytorch.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/GP_gpytorch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/GP.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/GP_GPy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/GP2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/GP_gpytorch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/evaluate_bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/evaluate_bcp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/cramped_room/CBPR_switch_intra_100_fix__seed0-10/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/cramped_room/CBPR_switch_intra_100_fix__seed0-6/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/cramped_room/CBPR_switch_intra_100_fix__seed0-7/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/cramped_room/CBPR_switch_intra_100_fix__seed0-8/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/cramped_room/CBPR_switch_intra_100_fix__seed0-9/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/marshmallow_experiment/CBPR_switch_intra_100_fix__seed0-0/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/marshmallow_experiment/CBPR_switch_intra_100_fix__seed0-1/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/marshmallow_experiment/CBPR_switch_intra_100_fix__seed0-2/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/marshmallow_experiment/CBPR_switch_intra_100_fix__seed0-3/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/marshmallow_experiment/CBPR_switch_intra_100_fix__seed0-4/evaluator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/okr_online.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/bpr_gp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/sp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/sp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +50,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
+  &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2UjN23lVTzeNZLD1CgIKofVbwmv" />
   <component name="ProjectViewState">
@@ -56,11 +78,13 @@
       <recent name="$PROJECT_DIR$/algorithms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/state_trans_func" />
+      <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/models/bc" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.GP_gpytorch">
-    <configuration name="GP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.bpr_NN">
+    <configuration name="GP_GPy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,12 +92,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/state_trans_func" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/GP.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/state_trans_func/GP_GPy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -82,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GP2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="NN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -95,7 +119,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/GP2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/state_trans_func/NN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,7 +128,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GP_gpytorch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="bpr_NN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -117,7 +141,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/GP_gpytorch.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/bpr_NN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bpr_gp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="overcooked_rl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/bpr_gp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,35 +194,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="okr_online" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="overcooked_rl" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/okr_online.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.GP_gpytorch" />
-        <item itemvalue="Python.GP2" />
-        <item itemvalue="Python.GP" />
+        <item itemvalue="Python.bpr_NN" />
+        <item itemvalue="Python.NN" />
         <item itemvalue="Python.evaluate_bcp" />
-        <item itemvalue="Python.okr_online" />
+        <item itemvalue="Python.GP_GPy" />
+        <item itemvalue="Python.bpr_gp" />
       </list>
     </recent_temporary>
   </component>
@@ -189,6 +213,12 @@
       <option name="presentableId" value="Default" />
       <updated>1693448826897</updated>
       <workItem from="1693448851820" duration="3349000" />
+      <workItem from="1693484966175" duration="13142000" />
+      <workItem from="1693559402587" duration="308000" />
+      <workItem from="1693560490473" duration="192000" />
+      <workItem from="1693560701445" duration="6000" />
+      <workItem from="1693902531939" duration="17052000" />
+      <workItem from="1693978100218" duration="20725000" />
     </task>
     <servers />
   </component>
@@ -205,27 +235,31 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algorithms/GP.py</url>
-          <line>163</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/state_trans_func/NN.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algorithms/GP2.py</url>
-          <line>153</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/algorithms/bpr_NN.py</url>
+          <line>195</line>
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task.coverage" NAME="bc_hh_meta_task Coverage Results" MODIFIED="1693240307866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp.coverage" NAME="evaluate_bcp Coverage Results" MODIFIED="1693392978031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bcp.coverage" NAME="bcp Coverage Results" MODIFIED="1693379171141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_gp.coverage" NAME="bpr_gp Coverage Results" MODIFIED="1693938318138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$run_test_game.coverage" NAME="run_test_game Coverage Results" MODIFIED="1692714414268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$GP2.coverage" NAME="GP2 Coverage Results" MODIFIED="1693495319930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$NN.coverage" NAME="NN Coverage Results" MODIFIED="1694060420962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp.coverage" NAME="evaluate_bcp Coverage Results" MODIFIED="1694058917295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$okr_online.coverage" NAME="okr_online Coverage Results" MODIFIED="1693387260779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$GP.coverage" NAME="GP Coverage Results" MODIFIED="1693446033828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$GP_gpytorch.coverage" NAME="GP_gpytorch Coverage Results" MODIFIED="1693484790672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$GP_gpytorch.coverage" NAME="GP_gpytorch Coverage Results" MODIFIED="1693932682650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$mtp.coverage" NAME="mtp Coverage Results" MODIFIED="1693379416117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$run_test_game.coverage" NAME="run_test_game Coverage Results" MODIFIED="1692714414268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$GP2.coverage" NAME="GP2 Coverage Results" MODIFIED="1693450231086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$GP_GPy.coverage" NAME="GP_GPy Coverage Results" MODIFIED="1694007339901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN.coverage" NAME="bpr_NN Coverage Results" MODIFIED="1694080002115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
   </component>
 </project>

@@ -40,7 +40,7 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--device', type=str, default='cpu')
     parser.add_argument('--layout', default='marshmallow_experiment', help='layout name')
-    parser.add_argument('--num_episodes', type=int, default=200, help='total episodes')
+    parser.add_argument('--num_episodes', type=int, default=100, help='total episodes')
 
     parser.add_argument('--mode', default='intra', help='swith policy inter or intra')
     parser.add_argument("--switch_human_freq", type=int, default=100, help="Frequency of switching human policy")
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     for i in range(4):
         bc_models.append(torch.load(META_TASK_MODELS[LAYOUT_NAME][i]))  # wanghm GAIL载入模型时不释放内存，需要提前存到列表
 
-    ai_agent = torch.load(f'../models/bcp/bcp_marshmallow_experiment-seed42.pth')
+    ai_agent = torch.load(f'../models/bcp/bcp_{args.layout}-seed42.pth')
 
     for seed in seeds:
         if args.mode == 'inter':
@@ -74,9 +74,9 @@ if __name__ == '__main__':
             policy_id_list = [random.randint(1, 4) for _ in range(N)]
 
         seed_everything(seed)
-        logger = Logger(log_dir=f'./logs/bcp/{LAYOUT_NAME}',
-                        exp_name=f'BCP-switch-{args.mode}-{args.switch_human_freq}',
-                        env_name='')
+        # logger = Logger(log_dir=f'./logs/bcp/{LAYOUT_NAME}',
+        #                 exp_name=f'BCP-switch-{args.mode}-{args.switch_human_freq}',
+        #                 env_name='')
 
         # 初始化人类模型和策略
         policy_idx = 1
@@ -109,6 +109,6 @@ if __name__ == '__main__':
                 ai_obs, h_obs = obs['both_agent_obs']
                 ep_reward += sparse_reward
 
-            logger.update(score=[ep_reward], total_steps=k + 1)
-            print(ep_reward)
+            # logger.update(score=[ep_reward], total_steps=k + 1)
+            print(f'Ep {k+1}:',ep_reward)
 

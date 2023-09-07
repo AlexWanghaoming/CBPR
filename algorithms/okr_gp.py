@@ -9,7 +9,7 @@ import torch
 import torch.nn as nn
 
 import os, sys
-from models import MTP_MODELS, META_TASK_MODELS
+from models import MTP_MODELS, META_TASK_MODELS, GP_MODELS
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 from bc.bc_hh import BehaviorClone
@@ -24,7 +24,7 @@ class HumanPolicyLibrary:
         self.policy_lib = {}
 
     def gen_policy_library(self) -> Dict[str, nn.Module]:
-        for bc_model_path in META_TASK_MODELS[LAYOUT_NAME]:
+        for bc_model_path in GP_MODELS[LAYOUT_NAME]:
             pattern = r'\(\d+\.\d+(?:, \d+\.\d+)*\)'
             user_name = re.findall(pattern, bc_model_path)[0]
             policy = torch.load(bc_model_path)
@@ -81,45 +81,6 @@ class BPR_offline:
         # print('init agent policy library is ', self.ai_policys)
         # print('init human policy library is ', self.human_policys)
 
-    def gen_performance_model(self) -> List[Dict[str, Dict[str, float]]]:
-        """
-        生成performance model
-        implementation of performance model: [
-                                              {'p1':{ppo-bc_p1: , 'ppo-bc_p2: ,  , '}}, 'p2':{ppo-bc_p1: , 'ppo-bc_p2: ,  , '}},
-                                              {'p1':{ppo-bc_p1: , 'ppo-bc_p2: ,  , '}}, 'p2':{ppo-bc_p1: , 'ppo-bc_p2: ,  , '}}
-                                              ]
-        """
-
-        performance_model_save_path = f'../models/performance/init_performance_{LAYOUT_NAME}.pkl'
-        if os.path.exists(performance_model_save_path):
-            with open(performance_model_save_path, 'rb') as ff:
-                performance_model = pickle.load(ff)
-            return performance_model
-
-        env = init_env(layout=args.layout, lossless_state_encoding=False)
-
-        performance_model = [{}, {}]
-        n_rounds = 50  # TODO: performance model n_rounds当前是玩20次的平均值
-        for h_ in self.human_policys:
-            temp_mean = {}
-            temp_std = {}
-
-            for ai_ in self.ai_policys:
-                ai_policy = self.ai_policys[ai_]
-                h_policy = self.human_policys[h_]
-                u_list = []
-                for _ in range(n_rounds):
-                    episodic_reward = eval_rollouts(env, ai_policy, h_policy)
-                    u_list.append(episodic_reward)
-                temp_mean[ai_] = np.mean(u_list)
-                temp_std[ai_] = np.std(u_list)
-            performance_model[0][h_] = temp_mean
-            performance_model[1][h_] = temp_std
-
-        with open(performance_model_save_path, 'wb') as f:
-            pickle.dump(performance_model, f)
-
-        return performance_model
 
     def gen_belief(self) -> Dict[str, float]:
         """
@@ -139,10 +100,10 @@ class BPR_offline:
 class BPR_online:
     def __init__(self, agents: Dict[str, PPO_discrete],
                  human_policys: Dict[str, nn.Module],
-                 performance_model: List[Dict[str, Dict[str, float]]],
+
                  belief: Dict[str, float],
                  new_polcy_threshold=0.3):
-        self.performance_model = performance_model
+
         self.belief = belief
         self.agents = agents
         self.human_policys = human_policys
@@ -151,24 +112,6 @@ class BPR_online:
 
         self.env = init_env(layout=LAYOUT_NAME, lossless_state_encoding=False)
 
-    def update_performance_model(self, cur_agent_id, cur_agent):
-        n_rounds = 20  # TODO: performance model n_rounds当前是玩20次的平均值
-        for h_ in self.human_policys:
-            # ego_idx = int(h_.replace('p', ''))
-            h_policy = self.human_policys[h_]
-            u_list = []
-            for _ in range(n_rounds):
-                episodic_reward = eval_rollouts(self.env, cur_agent, h_policy)
-                u_list.append(episodic_reward)
-            temp_mean = np.mean(u_list)
-            temp_std = np.std(u_list)
-            self.performance_model[0][h_][cur_agent_id] = temp_mean
-            self.performance_model[1][h_][cur_agent_id] = temp_std
-
-        performance_model_save_path = f'../models/performance/updated_performance_{LAYOUT_NAME}.pkl'
-        with open(performance_model_save_path, 'wb') as f:
-            pickle.dump(self.performance_model, f)
-        return performance_model
 
     def play(self, args, logger):
         args.max_episode_steps = 600
@@ -192,7 +135,9 @@ class BPR_online:
                 bc_model = bc_models[policy_idx - 1]
             Q = deque(maxlen=25)  # 记录maxlen条人类交互数据 (s, a)
             episode_steps = 0
+
             self.xi = deepcopy(self.belief)
+
             best_agent_id, best_agent = self._reuse_optimal_policy()  # 选择初始智能体策略
             best_agent_id_prime = ""
             obs = env.reset()
@@ -223,15 +168,6 @@ class BPR_online:
                 else:
                     dw = False
 
-                # if args.new_policy_learning:
-                #     replaybuffer = buffer_dict[best_agent_id]  # 每个智能体的 replay buffer存储各自的交互数据
-                #     replaybuffer.store(ai_obs, ai_act, logprob, r, ai_obs_, dw, done)
-                #     if replaybuffer.count == args.batch_size:
-                #         best_agent.update(replaybuffer, total_steps)  # 自适应优化智能体
-                #         replaybuffer.count = 0
-                #         # print(f'更新智能体{best_agent_id}, 更新性能模型')
-                #         self.update_performance_model(best_agent_id, best_agent)
-                #         # print("Current performance model: ", self.performance_model)
 
                 ai_obs = ai_obs_
                 h_obs = h_obs_

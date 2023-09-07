@@ -1,4 +1,4 @@
-from agents.agent_utils import ReplayBuffer, Normalization, RewardScaling
+from utils import ReplayBuffer, Normalization, RewardScaling
 from agents.ppo_discrete import PPO_discrete
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../PPO-discrete/')

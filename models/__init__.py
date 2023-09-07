@@ -33,3 +33,28 @@ MTP_MODELS = {'cramped_room': [os.path.join(_curr_directory,'mtp/mtp_cramped_roo
                                                    os.path.join(_curr_directory,'mtp/mtp_marshmallow_experiment-(1.0, 0.0, 0.0, 0.0)-seed42.pth')
                                                    ]
                   }
+GP_MODELS = {'cramped_room': [os.path.join(_curr_directory,'gp/gp_cramped_room_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
+                                   os.path.join(_curr_directory,'gp/gp_cramped_room_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth'),
+                                   os.path.join(_curr_directory,'gp/gp_cramped_room_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth'),
+                                    os.path.join(_curr_directory,'gp/gp_cramped_room_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
+                                   ]
+             }
+
+NN_MODELS = {'cramped_room': [os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
+                                   os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth'),
+                                   os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth'),
+                                    os.path.join(_curr_directory,'NN/NN_cramped_room_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
+                                   ],
+            'marshmallow_experiment': [os.path.join(_curr_directory,'NN/NN_marshmallow_experiment_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
+                                       os.path.join(_curr_directory,'NN/NN_marshmallow_experiment_(0.0, 0.0, 0.0, 1.0)_s_prime_r.pth'),
+                                       os.path.join(_curr_directory,'NN/NN_marshmallow_experiment_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth'),
+                                        os.path.join(_curr_directory,'NN/NN_marshmallow_experiment_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth'),
+                                        os.path.join(_curr_directory,'NN/NN_marshmallow_experiment_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
+                                               ],
+             }
+
+
+
+
+
+
