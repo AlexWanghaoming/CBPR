@@ -78,7 +78,7 @@ def group_by_columns_with_indices(matrix:np.ndarray, columns:slice) -> Tuple[Dic
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--layout', type=str, default='cramped_room')
+    parser.add_argument('--layout', type=str, default='marshmallow_experiment')
     parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--lr', type=float, default=1e-3)
     opt = parser.parse_args()
@@ -113,10 +113,12 @@ if __name__ == '__main__':
         y = y_groups[key]
         
         X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.15)
+
         train_loader = DataLoader(TensorDataset(torch.tensor(X_train).float(),
                                                 torch.tensor(y_train, dtype=torch.int64)),
                                   shuffle=True,
                                   batch_size=64)
+
         val_loader = DataLoader(TensorDataset(torch.tensor(X_val).float(),
                                               torch.tensor(y_val, dtype=torch.int64)),
                                 shuffle=True,

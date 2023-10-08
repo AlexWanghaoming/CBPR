@@ -1,4 +1,3 @@
-import time
 from copy import deepcopy
 import numpy as np
 import re
@@ -7,7 +6,7 @@ import argparse
 import torch
 import torch.nn as nn
 import os, sys
-from models import MTP_MODELS, META_TASK_MODELS, GP_MODELS, NN_MODELS
+from models import MTP_MODELS, META_TASK_MODELS, NN_MODELS
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 from agents.ppo_discrete import PPO_discrete
@@ -15,6 +14,7 @@ from utils import seed_everything, init_env
 from rl_plotter.logger import Logger
 import random
 from state_trans_func.NN import NN
+from utils import seed_everything, init_env, ReplayBuffer, Normalization
 
 device = 'cuda'
 
@@ -64,21 +64,21 @@ class NNLibrary:
             self.policy_lib[user_name] = model
         return self.policy_lib
 
-def eval_rollouts(env, ai_agent: PPO_discrete, h_policy:nn.Module):
-    obs = env.reset()
-    ai_obs, h_obs = obs['both_agent_obs']
-    accumulated_reward = 0
-    done = False
-    while not done:
-        # 策略库中的agent和人玩，得到rewards
-        # ai_act = agent_policy.predict(ai_obs)[0]
-        # ai_act = evaluate(agent_policy, ai_obs)  # 确定性策略
-        ai_act = ai_agent.evaluate(ai_obs)  # 随机策略
-        h_act = h_policy.choose_action(h_obs, deterministic=True)
-        obs, sparse_reward, done, info = env.step((ai_act,h_act))
-        ego_obs_, alt_obs_ = obs['both_agent_obs']
-        accumulated_reward += sparse_reward
-    return accumulated_reward
+# def eval_rollouts(env, ai_agent: PPO_discrete, h_policy:nn.Module):
+#     obs = env.reset()
+#     ai_obs, h_obs = obs['both_agent_obs']
+#     accumulated_reward = 0
+#     done = False
+#     while not done:
+#         # 策略库中的agent和人玩，得到rewards
+#         # ai_act = agent_policy.predict(ai_obs)[0]
+#         # ai_act = evaluate(agent_policy, ai_obs)  # 确定性策略
+#         ai_act = ai_agent.evaluate(ai_obs)  # 随机策略
+#         h_act = h_policy.choose_action(h_obs, deterministic=True)
+#         obs, sparse_reward, done, info = env.step((ai_act,h_act))
+#         ego_obs_, alt_obs_ = obs['both_agent_obs']
+#         accumulated_reward += sparse_reward
+#     return accumulated_reward
 
 
 #####################################################
@@ -138,6 +138,13 @@ class BPR_online:
         policy_idx = 1
         bc_model = bc_models[policy_idx - 1]
         env = init_env(layout=args.layout, lossless_state_encoding=False)
+
+        if args.use_state_norm:  # 将模型训练阶段保存的mean和std用于evaluation
+            ego_state_norm = Normalization(shape=args.state_dim)
+            ego_state_dict = torch.load('../models/mtp/ego_ppo_normalization_params.pth')
+            ego_state_norm.running_ms.mean = ego_state_dict['mean']
+            ego_state_norm.running_ms.std = ego_state_dict['std']
+
         for k in range(args.num_episodes):
             if args.mode == 'inter':
                 # 每switch_human_freq 改变一次策略
@@ -150,12 +157,16 @@ class BPR_online:
             best_agent_id_prime = ""
             obs = env.reset()
             ai_obs, h_obs = obs['both_agent_obs']
+
+            if args.use_state_norm:
+                ai_obs = ego_state_norm(ai_obs, update=False)
+
             ep_reward = 0
             done = False
             best_agent_id, best_agent = self._reuse_optimal_policy()
 
             while not done:
-                # best_agent_id, best_agent = self._reuse_optimal_policy()
+                # best_agent_id, best_agent = self._reuse_optimal_policy()  # 选择belief最大的智能体
 
                 total_steps += 1
                 episode_steps += 1
@@ -165,14 +176,18 @@ class BPR_online:
                         # print(f"人类改变至策略:  {policy_idx}")
                         bc_model = bc_models[policy_idx - 1]
 
-                ai_act = best_agent.evaluate(ai_obs)
-                h_act = bc_model.choose_action(h_obs)
+                ai_act = best_agent.evaluate(ai_obs)  # 智能体选动作
+                h_act = bc_model.choose_action(h_obs) # 人类模型选动作
+
                 # if args.new_policy_learning:
                 #     _, logprob = best_agent.choose_action(ai_obs)
 
                 obs_, sparse_reward, done, info = env.step((ai_act, h_act))
                 ep_reward += sparse_reward
                 ai_obs_, h_obs_ = obs_['both_agent_obs']
+
+                if args.use_state_norm:
+                    ai_obs_ = ego_state_norm(ai_obs_, update=False)
 
                 # wanghm 用NN作预测
                 actions_one_hot = np.eye(6)[h_act]
@@ -186,9 +201,8 @@ class BPR_online:
                                                 obs_y=obs_y)
                 ai_obs = ai_obs_
                 h_obs = h_obs_
-
                 # ### debug: 直接选对应的策略作为最优策略
-                best_agent_id = list(self.mtp.keys())[policy_idx-1]
+                best_agent_id = list(self.mtp.keys())[policy_idx - 1]
                 best_agent = self.mtp[best_agent_id]
 
                 # debug
@@ -199,10 +213,9 @@ class BPR_online:
                 # env.render()
 
             print(f'Ep {k + 1} rewards: {ep_reward}')
-            logger.update(score=[ep_reward], total_steps=k + 1)
-            # print("----------------------------------------------------------------------------------------------------")
-            # 更新本轮的belief
+            # logger.update(score=[ep_reward], total_steps=k + 1)
 
+            # print("----------------------------------------------------------------------------------------------------")
 
         # return rewards_list
 
@@ -286,10 +299,10 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='''Bayesian policy reuse algorithm on overcooked''')
     parser.add_argument("--net_arch", type=str, default='mlp', help="policy net arch")
-    parser.add_argument("--hidden_width", type=int, default=32,
-                        help="The number of neurons in hidden layers of the neural network")
+    parser.add_argument("--hidden_width", type=int, default=128)
     parser.add_argument("--batch_size", type=int, default=2048, help="Batch size")
-    parser.add_argument("--mini_batch_size", type=int, default=64, help="Minibatch size")
+    parser.add_argument("--mini_batch_size", type=int, default=128, help="Minibatch size")
+    parser.add_argument("--use_minibatch", type=bool, default=False, help="whether sample Minibatchs during policy updating")
     parser.add_argument("--lr", type=float, default=3e-5, help="Learning rate")
     parser.add_argument("--gamma", type=float, default=0.99, help="Discount factor")
     parser.add_argument("--lamda", type=float, default=0.98, help="GAE parameter")
@@ -297,14 +310,13 @@ def parse_args():
     parser.add_argument("--K_epochs", type=int, default=8, help="PPO parameter")
     parser.add_argument("--use_adv_norm", type=bool, default=True, help="Trick 1:advantage normalization")
     parser.add_argument("--use_state_norm", type=bool, default=False, help="Trick 2:state normalization")
-    # parser.add_argument("--use_reward_norm", type=bool, default=False, help="Trick 3:reward normalization")
     parser.add_argument("--use_reward_scaling", type=bool, default=True, help="Trick 4:reward scaling")
     parser.add_argument("--entropy_coef", type=float, default=0.1, help="Trick 5: policy entropy")
     parser.add_argument("--use_lr_decay", type=bool, default=True, help="Trick 6: 学习率线性衰减")
     parser.add_argument("--use_grad_clip", type=bool, default=True, help="Trick 7: Gradient clip: 0.1")
     parser.add_argument("--use_orthogonal_init", type=bool, default=True, help="Trick 8: orthogonal initialization")
     parser.add_argument("--set_adam_eps", type=bool, default=True, help="Trick 9: set Adam epsilon=1e-5")
-    parser.add_argument("--use_tanh", type=bool, default=True, help="Trick 10: tanh activation function")
+    parser.add_argument("--use_tanh", type=bool, default=False, help="Trick 10: tanh activation function")
     parser.add_argument("--vf_coef", type=float, default=0.5, help="value function coeffcient")
 
     parser.add_argument('--device', type=str, default='cuda')
@@ -313,7 +325,7 @@ def parse_args():
     parser.add_argument('--num_episodes', type=int, default=200, help='total episodes')
     parser.add_argument('--mode', default='intra', help='swith policy inter or intra')
     parser.add_argument('--new_policy_learning', default=False, action='store_true', help='whether to learn new policy')
-    parser.add_argument("--switch_human_freq", type=int, default=100, help="Frequency of switching human policy")
+    parser.add_argument("--switch_human_freq", type=int, default=50, help="Frequency of switching human policy")
 
     args = parser.parse_args()
     return args

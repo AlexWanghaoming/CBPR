@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 from bc.bc_hh import BehaviorClone
 from agents.ppo_discrete import PPO_discrete
-from utils import seed_everything, LinearAnnealer, init_env
+from utils import seed_everything, init_env
 from rl_plotter.logger import Logger
 import random
 
@@ -43,7 +43,7 @@ def parse_args():
     parser.add_argument('--num_episodes', type=int, default=100, help='total episodes')
 
     parser.add_argument('--mode', default='intra', help='swith policy inter or intra')
-    parser.add_argument("--switch_human_freq", type=int, default=100, help="Frequency of switching human policy")
+    parser.add_argument("--switch_human_freq", type=int, default=50, help="Frequency of switching human policy")
     args = parser.parse_args()
     return args
 

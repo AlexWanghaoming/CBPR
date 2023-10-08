@@ -23,9 +23,9 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
     
     cur_steps = 0  # Record the total steps during the training
     
-    ego_state_norm = Normalization(shape=args.state_dim)  # Trick 2:state normalization
-    alt_state_norm = Normalization(shape=args.state_dim)  # Trick 2:state normalization
-    if args.use_reward_scaling:  # Trick 4:reward scaling
+    ego_state_norm = Normalization(shape=args.state_dim)
+    alt_state_norm = Normalization(shape=args.state_dim)
+    if args.use_reward_scaling:
         reward_scaling = RewardScaling(shape=1, gamma=args.gamma)
     
     for k in range(1, n_episodes+1):
@@ -67,7 +67,7 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
                 ego_obs_ = ego_state_norm(ego_obs_)
                 alt_obs_ = ego_state_norm(alt_obs_)
             
-            elif args.use_reward_scaling:
+            if args.use_reward_scaling:
                 r = reward_scaling(r)
             
             if done and episode_steps != args.max_episode_steps:
@@ -115,7 +115,7 @@ def run():
     parser.add_argument("--vf_coef", type=float, default=0.5, help="value function coeffcient")
     
     parser.add_argument('--device', type=str, default='cpu')
-    parser.add_argument('--layout', default='simple', help='layout name')
+    parser.add_argument('--layout', default='cramped_room', help='layout name')
     parser.add_argument('--num_episodes',  type=int, default=1500, help='total episodes')
     args = parser.parse_args()
 

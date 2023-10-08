@@ -141,8 +141,8 @@ class PPO_discrete:
         self.net_arch = args.net_arch
         self.device = args.device
         self.batch_size = args.batch_size
-        self.mini_batch_size = args.mini_batch_size
-        # self.max_train_steps = args.max_train_steps
+        # self.mini_batch_size = args.mini_batch_size
+        self.mini_batch_size = args.mini_batch_size if args.use_minibatch else args.batch_size
         self.lr = args.lr  # Learning rate of actor
         self.gamma = args.gamma  # Discount factor
         self.lamda = args.lamda  # GAE parameter
@@ -162,22 +162,15 @@ class PPO_discrete:
         else:
             self.actor = MlpActor(args)
             self.critic = MlpCritic(args)
-            # self.actor = Actor(args)
-            # self.critic = Critic(args)
 
         self.actor.to(self.device)
         self.critic.to(self.device)
 
-        if self.set_adam_eps:  # Trick 9: set Adam epsilon=1e-5
-            # self.optimizer_actor = torch.optim.Adam(self.actor.parameters(), lr=self.lr, eps=1e-8)
-            # self.optimizer_critic = torch.optim.Adam(self.critic.parameters(), lr=self.lr, eps=1e-8)
-
-            all_parameters = list(set(list(self.actor.parameters()) + list(self.critic.parameters())))
-            self.optimizer = torch.optim.Adam(all_parameters, lr=self.lr, eps=1e-8)
+        all_parameters = list(set(list(self.actor.parameters()) + list(self.critic.parameters())))
+        self.optimizer = torch.optim.Adam(all_parameters, lr=self.lr, eps=1e-8)
 
         # PBT use
         self.total_steps = 0
-
 
     def evaluate(self, s):  # When evaluating the policy, we select the action with the highest probability
         s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
