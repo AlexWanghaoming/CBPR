@@ -1,13 +1,13 @@
 import argparse
 import torch
 from agents.ppo_discrete import PPO_discrete
-from models import BC_MODELS
+from models import BC_MODELS, META_TASK_MODELS
 import torch.nn as nn
 from bc.bc_hh import BehaviorClone
 from utils import seed_everything, LinearAnnealer, init_env, ReplayBuffer, Normalization, RewardScaling
+from rl_plotter.logger import Logger, CustomLogger
 
-
-def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, seed:int, logger):
+def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, seed:int, logger=None):
     annealer = LinearAnnealer(horizon=args.t_max/2)
     env = init_env(layout=args.layout, lossless_state_encoding=False)
     ego_agent.max_train_steps = args.max_episode_steps * n_episodes
@@ -16,22 +16,25 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
     print("state_dim={}".format(args.state_dim))
     print("action_dim={}".format(args.action_dim))
     
-    ego_buffer = ReplayBuffer(args)
+    ego_buffer = ReplayBuffer(args)  # 主模型的buffer
     
     cur_steps = 0  # Record the total steps during the training
-
     if args.use_state_norm:
         ego_state_norm = Normalization(shape=args.state_dim)  # Trick 2:state normalization
 
     if args.use_reward_scaling:  # Trick 4:reward scaling
         reward_scaling = RewardScaling(shape=1, gamma=args.gamma)
-    
+
+    meta_task_buffer = {}
+    mtp_agents = {}
+    meta_task_steps = {}
     for k in range(1, n_episodes+1):
         agent_env_steps = args.max_episode_steps *  (k-1)
         reward_shaping_factor = annealer.param_value(agent_env_steps)
         
-        obs  = env.reset()
+        obs = env.reset()
         ego_obs, alt_obs = obs['both_agent_obs']
+
         if args.use_state_norm:
             ego_obs = ego_state_norm(ego_obs)
         
@@ -44,20 +47,26 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
         while not done:
             cur_steps += 1
             episode_steps += 1
-            
-            ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)  # Action and the corresponding log probability
-            alt_a = alt_agent.choose_action(alt_obs, deterministic=True)  # Action and the corresponding log probability
+            key = tuple(alt_obs[slice(4, 8)])
+
+            if key not in meta_task_buffer:
+                meta_task_buffer[key] = ReplayBuffer(args)
+                mtp_agents[key] = PPO_discrete(args)
+                meta_task_steps[key] = 0
+            meta_task_steps[key] += 1
+
+            # ego_a, ego_a_logprob = mtp_agents[key].choose_action(ego_obs)
+            ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)  # 用主模型选动作
+
+            alt_a = alt_agent.choose_action(alt_obs, deterministic=True)  # 人类模型选择的动作
             
             obs_, sparse_reward, done, info = env.step((ego_a, alt_a))
+
             shaped_r = info["shaped_r_by_agent"][0] + info["shaped_r_by_agent"][1]
             r = sparse_reward + shaped_r*reward_shaping_factor
             
             ego_obs_, alt_obs_ = obs_['both_agent_obs']
-            # obs = {
-            #     "both_agent_obs": both_agents_ob,
-            #     "overcooked_state": next_state,
-            #     "other_agent_env_idx": 1 - self.agent_idx,
-            # }
+
             episode_reward += r
             
             if args.use_state_norm:
@@ -70,20 +79,34 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
                 dw = True
             else:
                 dw = False
+
+            # 主模型的buffer和 MTP模型的buffer分别存储状态
             ego_buffer.store(ego_obs, ego_a, ego_a_logprob, r, ego_obs_, dw, done)
-            
+            meta_task_buffer[key].store(ego_obs, ego_a, ego_a_logprob, r, ego_obs_, dw, done)
+
             ego_obs = ego_obs_
             alt_obs = alt_obs_
+
             if ego_buffer.count == args.batch_size:
-                ego_agent.update(ego_buffer, cur_steps)
-                
+                ego_agent.update(ego_buffer, cur_steps)  # 更新主模型网络
                 ego_buffer.count = 0
-            
+
+            if meta_task_buffer[key].count == args.batch_size:
+                mtp_agents[key].update(meta_task_buffer[key], meta_task_steps[key])   # 更新MTP模型网络
+                meta_task_buffer[key].count = 0
             # env.render()
         print(f"Ep {k}:", episode_reward)
-        # logger.update(score=[episode_reward], total_steps=total_steps)
+        # logger.update(score=[episode_reward], total_steps=cur_steps)
 
-    ego_agent.save_actor(f'../models/bcp/bcp_{args.layout}-seed{seed}.pth')
+    # ego_agent.save_actor(f'../models/bcp/bcp_{args.layout}-seed{seed}.pth')  # 保存主模型
+    for key in mtp_agents:
+        if args.use_state_norm:
+            ego_state_dict = {'mean': ego_state_norm.running_ms.mean,
+                              'std': ego_state_norm.running_ms.std
+                              }
+            torch.save(ego_state_dict, '../models/mtp/ego_ppo_normalization_params.pth')
+
+        mtp_agents[key].save_actor(f'../models/mtp/mtp_{args.layout}-{key}-seed{seed}-gg.pth')
 
 
 def run():
@@ -101,7 +124,7 @@ def run():
     parser.add_argument("--use_adv_norm", type=bool, default=True, help="Trick 1:advantage normalization")
     parser.add_argument("--use_state_norm", type=bool, default=False, help="Trick 2:state normalization")
     parser.add_argument("--use_reward_scaling", type=bool, default=True, help="Trick 4:reward scaling")
-    parser.add_argument("--entropy_coef", type=float, default=0.1, help="Trick 5: policy entropy")
+    parser.add_argument("--entropy_coef", type=float, default=0.01, help="Trick 5: policy entropy")
     parser.add_argument("--use_lr_decay", type=bool, default=True, help="Trick 6: 学习率线性衰减")
     parser.add_argument("--use_grad_clip", type=bool, default=True, help="Trick 7: Gradient clip: 0.1")
     parser.add_argument("--use_orthogonal_init", type=bool, default=True, help="Trick 8: orthogonal initialization")
@@ -109,18 +132,17 @@ def run():
     parser.add_argument("--use_tanh", type=bool, default=True, help="Trick 10: tanh activation function")
     parser.add_argument("--vf_coef", type=float, default=0.5, help="value function coeffcient")
     parser.add_argument('--device', type=str, default='cpu')
-    parser.add_argument('--layout', default='cramped_room', help='layout name')
-    parser.add_argument('--num_episodes',  type=int, default=5000, help='total episodes')
+    parser.add_argument('--layout', default='marshmallow_experiment', help='layout name')
+    parser.add_argument('--num_episodes',  type=int, default=10000, help='total episodes')
     args = parser.parse_args()
     
     args.max_episode_steps = 600 # Maximum number of steps per episode
     args.t_max = args.num_episodes * args.max_episode_steps
     
     test_env = init_env(layout=args.layout, lossless_state_encoding=False)
-    if args.net_arch == "conv":
-        args.state_dim = test_env.observation_space.shape[-1]
-    else:
-        args.state_dim = test_env.observation_space.shape[0]
+
+    args.state_dim = test_env.observation_space.shape[0]
+
     args.action_dim = test_env.action_space.n
     
     # seeds = [0, 1, 42, 2022, 2023]
@@ -128,9 +150,10 @@ def run():
     for seed in seeds:
         seed_everything(seed=seed)
         ego_agent = PPO_discrete(args)
+
+        # key state mtp training
         alt_agent = torch.load(BC_MODELS[args.layout], map_location='cpu')
-        # logger = Logger(exp_name=f'SP', env_name=LAYOUT_NAME)
-        train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=seed, logger=None)  # wanghm
+        train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=seed)
 
 if __name__ == '__main__':
     run()

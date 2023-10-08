@@ -5,8 +5,24 @@ Overcooked-AI is a benchmark environment for fully cooperative human-AI task per
 
 
 ## Code Structure Overview 🗺
+`bc/`:
+- `bc_hh.py`: 用行为克隆拟合当前layout下的人类策略
+- `bc_hh_meta_task.py`: 根据key state划分人类轨迹,分别拟合不同的meta-task models
 
-`overcooked_ai_py` contains:
+`algorithms/`:
+- `bcp.py`: 根据BC模型训练BCP模型
+- `bpr_NN.py`和`bpr_gp.py`: 复现论文 *Efficient Bayesian Policy Reuse With a Scalable Observation Model in Deep Reinforcement Learning* 算法
+- `mtp.py`: 训练与不同meta-task models合作的BCP模型
+- `okr.py`: 复现论文 *Accurate policy detection and efficient knowledge reuse against multi-strategic opponents*算法
+- `sp.py`:  基于PPO的自博弈算法
+
+`state_trans_func/`:
+- `collect_trajs.py`: 收集每一种meta-task的轨迹
+- `GP_GPy.py`: 用GPy拟合 不同meta-tasks的状态转移函数（已弃用）
+- `GP_gpytorch.py`: 用gpytorch拟合 不同meta-tasks的状态转移函数
+- `NN.py`: 用神经网络拟合不同meta-tasks的状态转移函数
+
+`overcooked_ai_py/` contains:
 
 `mdp/`:
 - `overcooked_mdp.py`: main Overcooked game logic
@@ -21,7 +37,7 @@ Overcooked-AI is a benchmark environment for fully cooperative human-AI task per
 - `planners.py`: near-optimal agent planning logic
 - `search.py`: A* search and shortest path logic
 
-`human_aware_rl` contains:
+`human_aware_rl/` contains:
 
 `ppo/`:
 - `ppo_rllib.py`: Primary module where code for training a PPO agent resides. This includes an rllib compatible wrapper on `OvercookedEnv`, utilities for converting rllib `Policy` classes to Overcooked `Agent`s, as well as utility functions and callbacks

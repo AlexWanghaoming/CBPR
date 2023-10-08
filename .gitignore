@@ -1,4 +1,5 @@
 
-algorithms/gp_trajs.pkl
+state_trans_func/gp_trajs_cramped_room.pkl
+state_trans_func/gp_trajs_marshmallow_experiment.pkl
 
 __pycache__/
