@@ -5,16 +5,17 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../PPO-discrete/'
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 import argparse
 # warnings.filterwarnings('ignore', message='Passing (type, 1) or \'1type\' as a synonym of type is deprecated')
-# from rl_plotter.logger import Logger
+from rl_plotter.logger import Logger
 from utils import seed_everything, LinearAnnealer, init_env
 
-
-def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, seed:int, logger):
+def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, seed:int):
     annealer = LinearAnnealer(horizon=args.t_max/2)
     env = init_env(layout=args.layout)
     ego_agent.max_train_steps = args.max_episode_steps * n_episodes
     alt_agent.max_train_steps = args.max_episode_steps * n_episodes
-    
+
+    logger = Logger(exp_name=f'sp/sp_ppo_h32', env_name=args.layout)
+
     print("state_dim={}".format(args.state_dim))
     print("action_dim={}".format(args.action_dim))
     
@@ -61,8 +62,7 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
             #     "other_agent_env_idx": 1 - self.agent_idx,
             # }
             episode_reward += r
-            
-            
+
             if args.use_state_norm:
                 ego_obs_ = ego_state_norm(ego_obs_)
                 alt_obs_ = ego_state_norm(alt_obs_)
@@ -88,7 +88,7 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
             
             # env.render()
         print(f"Ep {k}:", episode_reward)
-        # logger.update(score=[episode_reward], total_steps=total_steps)
+        # logger.update(score=[episode_reward], total_steps=k)
     # ego_agent.save_actor(f'{DIR}/models/sp/sp_{args.layout}-seed{seed}.pth')
 
 
@@ -98,6 +98,7 @@ def run():
     parser.add_argument("--hidden_width", type=int, default=32, help="The number of neurons in hidden layers of the neural network")
     parser.add_argument("--batch_size", type=int, default=2048, help="Batch size")
     parser.add_argument("--mini_batch_size", type=int, default=64, help="Minibatch size")
+    parser.add_argument("--use_minibatch", type=bool, default=True, help="whether sample Minibatchs during policy updating")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")
     parser.add_argument("--gamma", type=float, default=0.99, help="Discount factor")
     parser.add_argument("--lamda", type=float, default=0.98, help="GAE parameter")
@@ -106,12 +107,12 @@ def run():
     parser.add_argument("--use_adv_norm", type=bool, default=True, help="Trick 1:advantage normalization")
     parser.add_argument("--use_state_norm", type=bool, default=False, help="Trick 2:state normalization")
     parser.add_argument("--use_reward_scaling", type=bool, default=True, help="Trick 4:reward scaling")
-    parser.add_argument("--entropy_coef", type=float, default=0.1, help="Trick 5: policy entropy")
-    parser.add_argument("--use_lr_decay", type=bool, default=True, help="Trick 6: 学习率线性衰减")
-    parser.add_argument("--use_grad_clip", type=bool, default=True, help="Trick 7: Gradient clip: 0.1")
+    parser.add_argument("--entropy_coef", type=float, default=0.01, help="Trick 5: policy entropy")
+    parser.add_argument("--use_lr_decay", type=bool, default=False, help="Trick 6: 学习率线性衰减")
+    parser.add_argument("--grad_clip_norm", type=float, default=0.1)
     parser.add_argument("--use_orthogonal_init", type=bool, default=True, help="Trick 8: orthogonal initialization")
     parser.add_argument("--set_adam_eps", type=bool, default=True, help="Trick 9: set Adam epsilon=1e-5")
-    parser.add_argument("--use_tanh", type=bool, default=True, help="Trick 10: tanh activation function")
+    parser.add_argument("--use_tanh", type=bool, default=False, help="Trick 10: tanh activation function")
     parser.add_argument("--vf_coef", type=float, default=0.5, help="value function coeffcient")
     
     parser.add_argument('--device', type=str, default='cpu')
@@ -135,8 +136,7 @@ def run():
         seed_everything(seed=seed)
         ego_agent = PPO_discrete(args)
         alt_agent = PPO_discrete(args)
-        # logger = Logger(exp_name=f'SP', env_name=LAYOUT_NAME)
-        train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=seed, logger=None)  # wanghm
+        train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=seed)  # wanghm
 
 
 if __name__ == '__main__':

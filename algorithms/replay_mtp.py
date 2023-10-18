@@ -38,7 +38,9 @@ if __name__ == '__main__':
     args.action_dim = env.action_space.n
 
     # ai_agent = torch.load(f'../models/bcp/bcp_{args.layout}-seed42.pth')
-    ai_agent = torch.load(f'../models/mtp/mtp_{args.layout}-vaeCluster1-seed42.pth')
+    # ai_agent = torch.load(f'../models/mtp/mtp_{args.layout}-vaeCluster1-seed42.pth')
+
+    ai_agent = torch.load(META_TASK_MODELS[args.layout][2])
     bc_model = torch.load(META_TASK_MODELS[args.layout][1])
 
     # logger = Logger(log_dir=f'./logs/bcp/{LAYOUT_NAME}',
@@ -53,8 +55,9 @@ if __name__ == '__main__':
         episode_steps = 0
         while not done:
             episode_steps += 1
-            ai_act = evaluate(ai_agent, ai_obs)
-            h_act = bc_model.choose_action(h_obs)
+            # ai_act = evaluate(ai_agent, ai_obs)
+            ai_act = ai_agent.choose_action(ai_obs, deterministic=True)
+            h_act = bc_model.choose_action(h_obs, deterministic=True)
             obs, sparse_reward, done, info = env.step((ai_act, h_act))
             ai_obs, h_obs = obs['both_agent_obs']
             ep_reward += sparse_reward

@@ -939,5 +939,5 @@ class Overcooked(gym.Env):
         
         # Display the image using cv2
         cv2.imshow('Rendered Image', image)
-        # cv2.waitKey(1)
+        cv2.waitKey(1)
         return image

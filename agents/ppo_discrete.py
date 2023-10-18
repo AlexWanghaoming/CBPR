@@ -12,7 +12,6 @@ def orthogonal_init(layer, gain=1.0):
     nn.init.constant_(layer.bias, 0)
 
 
-
 class MlpActor(nn.Module):
     def __init__(self, args):
         super(MlpActor, self).__init__()
@@ -150,7 +149,6 @@ class PPO_discrete:
         self.K_epochs = args.K_epochs  # PPO parameter
         self.entropy_coef = args.entropy_coef  # Entropy coefficient
         self.set_adam_eps = args.set_adam_eps
-        self.use_grad_clip = args.use_grad_clip
         self.use_lr_decay = args.use_lr_decay
         self.use_adv_norm = args.use_adv_norm
         self.vf_coef = args.vf_coef
@@ -243,13 +241,11 @@ class PPO_discrete:
                 loss.backward()
                 # Update actor
                 # actor_loss.mean().backward()
-                if self.use_grad_clip:  # Trick 7: Gradient clip
-                    torch.nn.utils.clip_grad_norm_(self.actor.parameters(), 0.1)
+                torch.nn.utils.clip_grad_norm_(self.actor.parameters(), self.args.grad_clip_norm)
                 # self.optimizer_actor.step()
                 # Update critic
                 # critic_loss.backward()
-                if self.use_grad_clip:  # Trick 7: Gradient clip
-                    torch.nn.utils.clip_grad_norm_(self.critic.parameters(), 0.1)
+                torch.nn.utils.clip_grad_norm_(self.critic.parameters(), self.args.grad_clip_norm)
                 # self.optimizer_critic.step()
 
                 self.optimizer.step()
@@ -259,14 +255,7 @@ class PPO_discrete:
 
     def lr_decay(self, cur_steps):
         factor =  max(1 - cur_steps/self.args.t_max, 0.33333)
-    
         lr_a_now = self.lr * factor
-        lr_c_now = self.lr * factor
-    
-        # for p in self.optimizer_actor.param_groups:
-        #     p['lr'] = lr_a_now
-        # for p in self.optimizer_critic.param_groups:
-        #     p['lr'] = lr_c_now
         for p in self.optimizer.param_groups:
             p['lr'] = lr_a_now
 
