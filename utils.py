@@ -116,7 +116,7 @@ class ReplayBuffer:
         return s, a, a_logprob, r, s_, dw, done
 
 
-
+# @ deprecated
 class RunningMeanStd:
     # Dynamically calculate mean and std
     def __init__(self, shape):  # shape:the dimension of input data
@@ -137,7 +137,7 @@ class RunningMeanStd:
             self.S = self.S + (x - old_mean) * (x - self.mean)
             self.std = np.sqrt(self.S / self.n)
 
-
+# @ deprecated
 class Normalization:
     def __init__(self, shape):
         self.running_ms = RunningMeanStd(shape=shape)
@@ -150,7 +150,7 @@ class Normalization:
 
         return x
 
-
+# @ deprecated
 class RewardScaling:
     def __init__(self, shape, gamma):
         self.shape = shape  # reward shape=1

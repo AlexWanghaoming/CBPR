@@ -5,11 +5,9 @@ import numpy as np
 from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
 from torch.distributions import Categorical
 
-
-# Trick 8: orthogonal initialization
-def orthogonal_init(layer, gain=1.0):
-    nn.init.orthogonal_(layer.weight, gain=gain)
-    nn.init.constant_(layer.bias, 0)
+def layer_init_with_orthogonal(layer, std=1.0, bias_const=1e-6):
+    torch.nn.init.orthogonal_(layer.weight, gain=std)
+    torch.nn.init.constant_(layer.bias, bias_const)
 
 
 class MlpActor(nn.Module):
@@ -20,20 +18,24 @@ class MlpActor(nn.Module):
         self.fc1 = nn.Linear(args.state_dim, args.hidden_width)
         self.fc2 = nn.Linear(args.hidden_width, args.hidden_width)
         self.fc3 = nn.Linear(args.hidden_width, args.action_dim)
-        self.activate_func = [nn.ReLU(), nn.Tanh()][args.use_tanh]  # Trick10: use tanh
-        if args.use_orthogonal_init:
-            print("------use_orthogonal_init------")
-            orthogonal_init(self.fc1)
-            orthogonal_init(self.fc2)
-            orthogonal_init(self.fc3, gain=0.01)
+        self.activate_func = nn.ReLU()
+        layer_init_with_orthogonal(self.fc1)
+        layer_init_with_orthogonal(self.fc2)
+        layer_init_with_orthogonal(self.fc3)
+
+        self.state_avg = nn.Parameter(torch.zeros((args.state_dim,)), requires_grad=False)
+        self.state_std = nn.Parameter(torch.ones((args.state_dim,)), requires_grad=False)
 
     def forward(self, s):
+        s = self.state_norm(s)
         s = self.activate_func(self.fc1(s))
         s = self.activate_func(self.fc2(s))
         a_prob = torch.softmax(self.fc3(s), dim=1)
 
         return a_prob
 
+    def state_norm(self, state: torch.Tensor) -> torch.Tensor:
+        return (state - self.state_avg) / self.state_std
 
 class MlpCritic(nn.Module):
     def __init__(self, args):
@@ -44,94 +46,29 @@ class MlpCritic(nn.Module):
         self.fc2 = nn.Linear(args.hidden_width, args.hidden_width)
         self.fc3 = nn.Linear(args.hidden_width, 1)
 
-        self.activate_func = [nn.ReLU(), nn.Tanh()][args.use_tanh]  # Trick10: use tanh
-        if args.use_orthogonal_init:
-            print("------use_orthogonal_init------")
-            orthogonal_init(self.fc1)
-            orthogonal_init(self.fc2)
-            orthogonal_init(self.fc3)
+        self.activate_func = nn.ReLU() #
+        layer_init_with_orthogonal(self.fc1)
+        layer_init_with_orthogonal(self.fc2)
+        layer_init_with_orthogonal(self.fc3)
+
+        self.state_avg = nn.Parameter(torch.zeros((args.state_dim,)), requires_grad=False)
+        self.state_std = nn.Parameter(torch.ones((args.state_dim,)), requires_grad=False)
+        self.value_avg = nn.Parameter(torch.zeros((1,)), requires_grad=False)
+        self.value_std = nn.Parameter(torch.ones((1,)), requires_grad=False)
+
+    def state_norm(self, state: torch.Tensor) -> torch.Tensor:
+        return (state - self.state_avg) / self.state_std  # todo state_norm
+
+    def value_re_norm(self, value: torch.Tensor) -> torch.Tensor:
+        return value * self.value_std + self.value_avg  # todo value_norm
 
     def forward(self, s):
         s = self.activate_func(self.fc1(s))
         s = self.activate_func(self.fc2(s))
         v_s = self.fc3(s)
-        return v_s
 
-
-class SharedFeatureExtractor(nn.Module):
-    def __init__(self, args):
-        super(SharedFeatureExtractor, self).__init__()
-        self.conv_layers = nn.Sequential(
-            nn.Conv2d(args.state_dim, out_channels=25, kernel_size=5, padding='same'),
-            nn.LeakyReLU(),
-            nn.Conv2d(25, out_channels=25, kernel_size=3, padding='same'),
-            nn.LeakyReLU(),
-            nn.Conv2d(25, out_channels=25, kernel_size=3, padding='same'),
-            nn.LeakyReLU(),
-            nn.Flatten(),
-            nn.Linear(500, 64),
-            nn.ReLU(),
-            nn.Linear(64, 64),
-            nn.ReLU(),
-            # nn.Linear(64, 64),
-            # nn.ReLU(),
-        )
-
-    def forward(self, s):  # input state (b, 5,4,20)
-        s = s.permute(0, 3, 1, 2)  # -> (b, 20, 5, 4)
-        s = self.conv_layers(s)
-        return s
-
-
-class CnnMlpActor(nn.Module):
-    def __init__(self, args, feature_extractor):
-        super(CnnMlpActor, self).__init__()
-        self.net_arch = args.net_arch
-        # self.feature_extractor = feature_extractor
-        self.feature_extractor = SharedFeatureExtractor(args)
-        # self.fc1 = nn.Linear(500, args.hidden_width)
-        # self.fc2 = nn.Linear(args.hidden_width, args.hidden_width)
-        self.fc3 = nn.Linear(args.hidden_width, args.action_dim)
-        self.activate_func = [nn.ReLU(), nn.Tanh()][args.use_tanh]
-        # Trick10: use tanh
-        if args.use_orthogonal_init:
-            print("------use_orthogonal_init------")
-            # orthogonal_init(self.fc1)
-            # orthogonal_init(self.fc2)
-            orthogonal_init(self.fc3, gain=0.01)
-
-    def forward(self, s):
-        s = self.feature_extractor(s)
-        # s = self.activate_func(self.fc1(s))
-        # s = self.activate_func(self.fc2(s))
-        a_prob = torch.softmax(self.fc3(s), dim=1)
-
-        return a_prob
-
-
-class CnnMlpCritic(nn.Module):
-    def __init__(self, args, feature_extractor):
-        super(CnnMlpCritic, self).__init__()
-        self.net_arch = args.net_arch
-        # self.feature_extractor = feature_extractor
-        self.feature_extractor = SharedFeatureExtractor(args)
-        # self.fc1 = nn.Linear(args.hidden_width, args.hidden_width)
-        # self.fc2 = nn.Linear(args.hidden_width, args.hidden_width)
-        self.fc3 = nn.Linear(args.hidden_width, 1)
-        self.activate_func = [nn.ReLU(), nn.Tanh()][args.use_tanh]  # Trick10: use tanh
-        if args.use_orthogonal_init:
-            print("------use_orthogonal_init------")
-            # orthogonal_init(self.fc1)
-            # orthogonal_init(self.fc2)
-            orthogonal_init(self.fc3)
-
-    def forward(self, s):
-        s = self.feature_extractor(s)
-        # s = self.activate_func(self.fc1(s))
-        # s = self.activate_func(self.fc2(s))
-        v_s = self.fc3(s)
-        # v_s = self.fc1(s)
-        return v_s
+        values = self.value_re_norm(v_s)
+        return values
 
 
 class PPO_discrete:
@@ -148,19 +85,11 @@ class PPO_discrete:
         self.epsilon = args.epsilon  # PPO clip parameter
         self.K_epochs = args.K_epochs  # PPO parameter
         self.entropy_coef = args.entropy_coef  # Entropy coefficient
-        self.set_adam_eps = args.set_adam_eps
         self.use_lr_decay = args.use_lr_decay
-        self.use_adv_norm = args.use_adv_norm
         self.vf_coef = args.vf_coef
 
-        if self.net_arch == "conv":
-            self.feature_extractor = SharedFeatureExtractor(self.args)
-            self.actor = CnnMlpActor(args, self.feature_extractor)
-            self.critic = CnnMlpCritic(args, self.feature_extractor)
-        else:
-            self.actor = MlpActor(args)
-            self.critic = MlpCritic(args)
-
+        self.actor = MlpActor(args)
+        self.critic = MlpCritic(args)
         self.actor.to(self.device)
         self.critic.to(self.device)
 
@@ -210,9 +139,15 @@ class PPO_discrete:
                 adv.insert(0, gae)
             adv = torch.tensor(adv, dtype=torch.float).view(-1, 1).to(self.device)
             v_target = adv + vs
-            if self.use_adv_norm:  # Trick 1:advantage normalization
-                adv = ((adv - adv.mean()) / (adv.std() + 1e-8))
 
+            reward_sums = adv + vs
+
+            adv = ((adv - adv.mean()) / (adv.std() + 1e-8))   # Trick 1:advantage normalization
+
+            self.update_avg_std_for_normalization(
+                states=s.reshape((-1, self.args.state_dim)),
+                returns=reward_sums.reshape((-1,))
+            )
         # Optimize policy for K epochs:
         for _ in range(self.K_epochs):
             # Random sampling and no repetition. 'False' indicates that training will continue even if the number of samples in the last time is less than mini_batch_size
@@ -252,6 +187,24 @@ class PPO_discrete:
 
         if self.use_lr_decay:  # Trick 6:learning rate Decay
             self.lr_decay(cur_steps)
+
+    def update_avg_std_for_normalization(self, states: torch.Tensor, returns: torch.Tensor):
+        # tau = self.state_value_tau
+        tau = self.args.state_value_tau
+        if tau == 0:
+            return
+
+        state_avg = states.mean(dim=0, keepdim=True)
+        state_std = states.std(dim=0, keepdim=True)
+        self.actor.state_avg[:] = self.actor.state_avg * (1 - tau) + state_avg * tau
+        self.actor.state_std[:] = self.critic.state_std * (1 - tau) + state_std * tau + 1e-4
+        self.critic.state_avg[:] = self.actor.state_avg
+        self.critic.state_std[:] = self.actor.state_std
+
+        returns_avg = returns.mean(dim=0)
+        returns_std = returns.std(dim=0)
+        self.critic.value_avg[:] = self.critic.value_avg * (1 - tau) + returns_avg * tau
+        self.critic.value_std[:] = self.critic.value_std * (1 - tau) + returns_std * tau + 1e-4
 
     def lr_decay(self, cur_steps):
         factor =  max(1 - cur_steps/self.args.t_max, 0.33333)

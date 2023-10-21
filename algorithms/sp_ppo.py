@@ -1,4 +1,4 @@
-from utils import ReplayBuffer, Normalization, RewardScaling
+from utils import ReplayBuffer
 from agents.ppo_discrete import PPO_discrete
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../PPO-discrete/')
@@ -24,24 +24,13 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
     
     cur_steps = 0  # Record the total steps during the training
     
-    ego_state_norm = Normalization(shape=args.state_dim)
-    alt_state_norm = Normalization(shape=args.state_dim)
-    if args.use_reward_scaling:
-        reward_scaling = RewardScaling(shape=1, gamma=args.gamma)
-    
     for k in range(1, n_episodes+1):
         agent_env_steps = args.max_episode_steps *  (k-1)
         reward_shaping_factor = annealer.param_value(agent_env_steps)
         
         obs  = env.reset()
         ego_obs, alt_obs = obs['both_agent_obs']
-        if args.use_state_norm:
-            ego_obs = ego_state_norm(ego_obs)
-            alt_obs = alt_state_norm(alt_obs)
-        
-        if args.use_reward_scaling:
-            reward_scaling.reset()
-        
+
         episode_steps = 0
         done = False
         episode_reward = 0
@@ -62,13 +51,6 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
             #     "other_agent_env_idx": 1 - self.agent_idx,
             # }
             episode_reward += r
-
-            if args.use_state_norm:
-                ego_obs_ = ego_state_norm(ego_obs_)
-                alt_obs_ = ego_state_norm(alt_obs_)
-            
-            if args.use_reward_scaling:
-                r = reward_scaling(r)
             
             if done and episode_steps != args.max_episode_steps:
                 dw = True
@@ -104,17 +86,11 @@ def run():
     parser.add_argument("--lamda", type=float, default=0.98, help="GAE parameter")
     parser.add_argument("--epsilon", type=float, default=0.05, help="PPO clip parameter")
     parser.add_argument("--K_epochs", type=int, default=8, help="PPO parameter")
-    parser.add_argument("--use_adv_norm", type=bool, default=True, help="Trick 1:advantage normalization")
-    parser.add_argument("--use_state_norm", type=bool, default=False, help="Trick 2:state normalization")
-    parser.add_argument("--use_reward_scaling", type=bool, default=True, help="Trick 4:reward scaling")
+    parser.add_argument("--state_value_tau", type=float, default=0.2, help="the tau of normalize for value and state `std = (1-std)*std + tau*std`")
     parser.add_argument("--entropy_coef", type=float, default=0.01, help="Trick 5: policy entropy")
     parser.add_argument("--use_lr_decay", type=bool, default=False, help="Trick 6: 学习率线性衰减")
     parser.add_argument("--grad_clip_norm", type=float, default=0.1)
-    parser.add_argument("--use_orthogonal_init", type=bool, default=True, help="Trick 8: orthogonal initialization")
-    parser.add_argument("--set_adam_eps", type=bool, default=True, help="Trick 9: set Adam epsilon=1e-5")
-    parser.add_argument("--use_tanh", type=bool, default=False, help="Trick 10: tanh activation function")
     parser.add_argument("--vf_coef", type=float, default=0.5, help="value function coeffcient")
-    
     parser.add_argument('--device', type=str, default='cpu')
     parser.add_argument('--layout', default='cramped_room', help='layout name')
     parser.add_argument('--num_episodes',  type=int, default=1500, help='total episodes')
@@ -124,10 +100,8 @@ def run():
     args.t_max = args.num_episodes * args.max_episode_steps
     
     test_env = init_env(layout=args.layout)
-    if args.net_arch == "conv":
-        args.state_dim = test_env.observation_space.shape[-1]
-    else:
-        args.state_dim = test_env.observation_space.shape[0]
+
+    args.state_dim = test_env.observation_space.shape[0]
     args.action_dim = test_env.action_space.n
     
     seeds = [0, 1, 42, 2022, 2023]
