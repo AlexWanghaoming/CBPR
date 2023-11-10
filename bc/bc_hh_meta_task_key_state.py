@@ -11,8 +11,8 @@ import torch
 import argparse
 from typing import Dict, Tuple, List
 from bc_hh import BehaviorClone
-
 device = torch.device("cpu")
+
 
 def train(args, train_loader, val_loader, model):
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, eps=1e-8)
@@ -78,9 +78,11 @@ def group_by_columns_with_indices(matrix:np.ndarray, columns:slice) -> Tuple[Dic
 
 def parse_opt():
     parser = argparse.ArgumentParser()
+    # parser.add_argument('--layout', type=str, default='cramped_room')
     parser.add_argument('--layout', type=str, default='marshmallow_experiment')
-    parser.add_argument('--epochs', type=int, default=100)
-    parser.add_argument('--lr', type=float, default=1e-3)
+    # parser.add_argument('--layout', type=str, default='asymmetric_advantages')
+    parser.add_argument('--epochs', type=int, default=200)
+    parser.add_argument('--lr', type=float, default=5e-4)
     opt = parser.parse_args()
     return opt
 
@@ -89,10 +91,9 @@ if __name__ == '__main__':
     opt = parse_opt()
     DEFAULT_DATA_PARAMS = {
         "layouts": [opt.layout],
-
         "check_trajectories": False,
         "featurize_states": True,
-        "data_path": CLEAN_2020_HUMAN_DATA_TRAIN,
+        "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room', 'asymmetric_advantages'] else CLEAN_2020_HUMAN_DATA_TRAIN,
     }
     processed_trajs = get_human_human_trajectories(**DEFAULT_DATA_PARAMS, silent=False)
     inputs, targets = (processed_trajs["ep_states"], processed_trajs["ep_actions"])
@@ -117,16 +118,17 @@ if __name__ == '__main__':
         train_loader = DataLoader(TensorDataset(torch.tensor(X_train).float(),
                                                 torch.tensor(y_train, dtype=torch.int64)),
                                   shuffle=True,
-                                  batch_size=64)
+                                  batch_size=128)
 
         val_loader = DataLoader(TensorDataset(torch.tensor(X_val).float(),
                                               torch.tensor(y_val, dtype=torch.int64)),
                                 shuffle=True,
-                                batch_size=64)
+                                batch_size=128)
 
         model = BehaviorClone(state_dim=96, hidden_dim=32, action_dim=6)
         model.to(device)
         train(opt, train_loader, val_loader, model)
 
         save_path = f'../models/bc/BC_{opt.layout}_{key}.pth'
+        print(f'Save model at {save_path}')
         torch.save(model, save_path)

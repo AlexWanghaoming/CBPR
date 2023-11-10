@@ -117,7 +117,8 @@ def _val_in_one_epoch(val_loader, model, stochastic=True):
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--layout', type=str, default='cramped_room')
+    # parser.add_argument('--layout', type=str, default='cramped_room')
+    parser.add_argument('--layout', type=str, default='asymmetric_advantages')
     parser.add_argument('--epochs', type=int, default=120)
     parser.add_argument('--lr', type=float, default=1e-3)
     opt = parser.parse_args()
@@ -136,7 +137,7 @@ if __name__ == '__main__':
     
         "check_trajectories": False,
         "featurize_states": True,
-        "data_path": CLEAN_2020_HUMAN_DATA_TRAIN,
+        "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room', 'asymmetric_advantages'] else CLEAN_2020_HUMAN_DATA_TRAIN,
     }
     
     processed_trajs = get_human_human_trajectories(**DEFAULT_DATA_PARAMS, silent=False)

@@ -216,11 +216,6 @@ class BPR_online:
                 obs_, sparse_reward, done, info = env.step((ai_act, h_act))
                 ep_reward += sparse_reward
                 ai_obs_, h_obs_ = obs_['both_agent_obs']
-                if done and episode_steps != args.max_episode_steps:
-                    dw = True
-                else:
-                    dw = False
-
                 # if args.new_policy_learning:
                 #     replaybuffer = buffer_dict[best_agent_id]  # 每个智能体的 replay buffer存储各自的交互数据
                 #     replaybuffer.store(ai_obs, ai_act, logprob, r, ai_obs_, dw, done)

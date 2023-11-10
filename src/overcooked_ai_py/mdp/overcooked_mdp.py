@@ -1141,6 +1141,7 @@ class OvercookedGridworld(object):
         self.layout_name = layout_name
         self.order_bonus = order_bonus
         self.start_state = start_state
+        self.num_items_for_soup = num_items_for_soup
         self._opt_recipe_discount_cache = {}
         self._opt_recipe_cache = {}
         self._prev_potential_params = {}
@@ -1540,7 +1541,6 @@ class OvercookedGridworld(object):
 
                 elif player.get_object().name in Recipe.ALL_INGREDIENTS:
                     # Adding ingredient to soup
-
                     if not new_state.has_object(i_pos):
                         # Pot was empty, add soup to it
                         new_state.add_object(SoupState(i_pos, ingredients=[]))
@@ -1566,6 +1566,10 @@ class OvercookedGridworld(object):
                         )
                         if obj.name == Recipe.ONION:
                             events_infos["potting_onion"][player_idx] = True
+
+                        # wanghm: auto cooking
+                        if self.soup_to_be_cooked_at_location(new_state, i_pos) and len(soup.ingredients) == Recipe.MAX_NUM_INGREDIENTS:
+                            soup.begin_cooking()
 
             elif terrain_type == "S" and player.has_object():
                 obj = player.get_object()

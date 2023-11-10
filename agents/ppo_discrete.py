@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import numpy as np
 from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
 from torch.distributions import Categorical
+import os, sys
 
 def layer_init_with_orthogonal(layer, std=1.0, bias_const=1e-6):
     torch.nn.init.orthogonal_(layer.weight, gain=std)
@@ -11,48 +12,45 @@ def layer_init_with_orthogonal(layer, std=1.0, bias_const=1e-6):
 
 
 class MlpActor(nn.Module):
-    def __init__(self, args):
+    def __init__(self, state_dim, hidden_width, action_dim):
         super(MlpActor, self).__init__()
-        self.net_arch = args.net_arch
-
-        self.fc1 = nn.Linear(args.state_dim, args.hidden_width)
-        self.fc2 = nn.Linear(args.hidden_width, args.hidden_width)
-        self.fc3 = nn.Linear(args.hidden_width, args.action_dim)
+        self.fc1 = nn.Linear(state_dim, hidden_width)
+        self.fc2 = nn.Linear(hidden_width, hidden_width)
+        self.fc3 = nn.Linear(hidden_width, action_dim)
         self.activate_func = nn.ReLU()
         layer_init_with_orthogonal(self.fc1)
         layer_init_with_orthogonal(self.fc2)
         layer_init_with_orthogonal(self.fc3)
-
-        self.state_avg = nn.Parameter(torch.zeros((args.state_dim,)), requires_grad=False)
-        self.state_std = nn.Parameter(torch.ones((args.state_dim,)), requires_grad=False)
+        self.state_avg = nn.Parameter(torch.zeros((state_dim,)), requires_grad=False)
+        self.state_std = nn.Parameter(torch.ones((state_dim,)), requires_grad=False)
+        self.running_mean = 0
+        self.running_std = 1
 
     def forward(self, s):
         s = self.state_norm(s)
         s = self.activate_func(self.fc1(s))
         s = self.activate_func(self.fc2(s))
         a_prob = torch.softmax(self.fc3(s), dim=1)
-
         return a_prob
 
     def state_norm(self, state: torch.Tensor) -> torch.Tensor:
         return (state - self.state_avg) / self.state_std
 
-class MlpCritic(nn.Module):
-    def __init__(self, args):
-        super(MlpCritic, self).__init__()
-        self.net_arch = args.net_arch
 
-        self.fc1 = nn.Linear(args.state_dim, args.hidden_width)
-        self.fc2 = nn.Linear(args.hidden_width, args.hidden_width)
-        self.fc3 = nn.Linear(args.hidden_width, 1)
+class MlpCritic(nn.Module):
+    def __init__(self, state_dim, hidden_width):
+        super(MlpCritic, self).__init__()
+        self.fc1 = nn.Linear(state_dim, hidden_width)
+        self.fc2 = nn.Linear(hidden_width, hidden_width)
+        self.fc3 = nn.Linear(hidden_width, 1)
 
         self.activate_func = nn.ReLU() #
         layer_init_with_orthogonal(self.fc1)
         layer_init_with_orthogonal(self.fc2)
         layer_init_with_orthogonal(self.fc3)
 
-        self.state_avg = nn.Parameter(torch.zeros((args.state_dim,)), requires_grad=False)
-        self.state_std = nn.Parameter(torch.ones((args.state_dim,)), requires_grad=False)
+        self.state_avg = nn.Parameter(torch.zeros((state_dim,)), requires_grad=False)
+        self.state_std = nn.Parameter(torch.ones((state_dim,)), requires_grad=False)
         self.value_avg = nn.Parameter(torch.zeros((1,)), requires_grad=False)
         self.value_std = nn.Parameter(torch.ones((1,)), requires_grad=False)
 
@@ -63,41 +61,58 @@ class MlpCritic(nn.Module):
         return value * self.value_std + self.value_avg  # todo value_norm
 
     def forward(self, s):
+        s = self.state_norm(s)
         s = self.activate_func(self.fc1(s))
         s = self.activate_func(self.fc2(s))
         v_s = self.fc3(s)
-
         values = self.value_re_norm(v_s)
         return values
 
 
 class PPO_discrete:
-    def __init__(self, args):
-        self.args = args
-        self.net_arch = args.net_arch
-        self.device = args.device
-        self.batch_size = args.batch_size
-        # self.mini_batch_size = args.mini_batch_size
-        self.mini_batch_size = args.mini_batch_size if args.use_minibatch else args.batch_size
-        self.lr = args.lr  # Learning rate of actor
-        self.gamma = args.gamma  # Discount factor
-        self.lamda = args.lamda  # GAE parameter
-        self.epsilon = args.epsilon  # PPO clip parameter
-        self.K_epochs = args.K_epochs  # PPO parameter
-        self.entropy_coef = args.entropy_coef  # Entropy coefficient
-        self.use_lr_decay = args.use_lr_decay
-        self.vf_coef = args.vf_coef
-
-        self.actor = MlpActor(args)
-        self.critic = MlpCritic(args)
+    def __init__(self,
+                 state_dim: int,
+                 action_dim: int,
+                 num_episodes: int,
+                 lr:float=0.001,
+                 hidden_dim:int=128,
+                 batch_size:int=2048,
+                 use_minibatch:bool=True,
+                 mini_batch_size:int=128,
+                 epsilon:float=0.05,
+                 entropy_coef:float=0.02,
+                 grad_clip_norm: float = 0.1,
+                 lamda: float=0.95,
+                 gamma:float=0.99,
+                 K_epochs:int=8,
+                 use_lr_decay:bool=True,
+                 vf_coef:int=1,
+                 state_value_tau=0,
+                 device:str='cpu'):
+        self.device = device
+        self.batch_size = batch_size
+        self.mini_batch_size = mini_batch_size if use_minibatch else batch_size
+        self.lr = lr  # Learning rate of actor
+        self.gamma = gamma  # Discount factor
+        self.lamda = lamda  # GAE parameter
+        self.epsilon = epsilon  # PPO clip parameter
+        self.K_epochs = K_epochs  # PPO parameter
+        self.entropy_coef = entropy_coef  # Entropy coefficient
+        self.grad_clip_norm = grad_clip_norm
+        self.use_lr_decay = use_lr_decay
+        self.vf_coef = vf_coef
+        self.state_value_tau = state_value_tau
+        self.actor = MlpActor(state_dim=state_dim, hidden_width=hidden_dim, action_dim=action_dim)
+        self.critic = MlpCritic(state_dim=state_dim, hidden_width=hidden_dim)
         self.actor.to(self.device)
         self.critic.to(self.device)
-
         all_parameters = list(set(list(self.actor.parameters()) + list(self.critic.parameters())))
         self.optimizer = torch.optim.Adam(all_parameters, lr=self.lr, eps=1e-8)
 
         # PBT use
         self.total_steps = 0
+        self.state_dim = state_dim
+        self.t_max = num_episodes * 600
 
     def evaluate(self, s):  # When evaluating the policy, we select the action with the highest probability
         s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
@@ -139,13 +154,11 @@ class PPO_discrete:
                 adv.insert(0, gae)
             adv = torch.tensor(adv, dtype=torch.float).view(-1, 1).to(self.device)
             v_target = adv + vs
-
             reward_sums = adv + vs
-
-            adv = ((adv - adv.mean()) / (adv.std() + 1e-8))   # Trick 1:advantage normalization
+            adv = ((adv - adv.mean()) / (adv.std() + 1e-8))
 
             self.update_avg_std_for_normalization(
-                states=s.reshape((-1, self.args.state_dim)),
+                states=s.reshape((-1, self.state_dim)),
                 returns=reward_sums.reshape((-1,))
             )
         # Optimize policy for K epochs:
@@ -157,43 +170,35 @@ class PPO_discrete:
                 a_logprob_now = dist_now.log_prob(a[index].squeeze()).view(-1, 1)  # shape(mini_batch_size X 1)
                 # a/b=exp(log(a)-log(b))
                 ratios = torch.exp(a_logprob_now - a_logprob[index])  # shape(mini_batch_size X 1)
-
                 # self.optimizer_actor.zero_grad()
                 # self.optimizer_critic.zero_grad()
                 self.optimizer.zero_grad()
-
                 surr1 = ratios * adv[index]  # Only calculate the gradient of 'a_logprob_now' in ratios
                 surr2 = torch.clamp(ratios, 1 - self.epsilon, 1 + self.epsilon) * adv[index]  # clip
                 actor_loss = -torch.min(surr1, surr2) - self.entropy_coef * dist_entropy  # shape(mini_batch_size X 1)
-
                 v_s = self.critic(s[index])
                 critic_loss = F.mse_loss(v_target[index], v_s)
-                #
                 # print("actor loss:", torch.mean(actor_loss))
                 # print("critic loss:", torch.mean(critic_loss))
-
                 loss = actor_loss.mean() + self.vf_coef * critic_loss
                 loss.backward()
                 # Update actor
                 # actor_loss.mean().backward()
-                torch.nn.utils.clip_grad_norm_(self.actor.parameters(), self.args.grad_clip_norm)
+                torch.nn.utils.clip_grad_norm_(self.actor.parameters(), self.grad_clip_norm)
                 # self.optimizer_actor.step()
                 # Update critic
                 # critic_loss.backward()
-                torch.nn.utils.clip_grad_norm_(self.critic.parameters(), self.args.grad_clip_norm)
+                torch.nn.utils.clip_grad_norm_(self.critic.parameters(), self.grad_clip_norm)
                 # self.optimizer_critic.step()
-
                 self.optimizer.step()
 
         if self.use_lr_decay:  # Trick 6:learning rate Decay
             self.lr_decay(cur_steps)
 
     def update_avg_std_for_normalization(self, states: torch.Tensor, returns: torch.Tensor):
-        # tau = self.state_value_tau
-        tau = self.args.state_value_tau
+        tau = self.state_value_tau
         if tau == 0:
             return
-
         state_avg = states.mean(dim=0, keepdim=True)
         state_std = states.std(dim=0, keepdim=True)
         self.actor.state_avg[:] = self.actor.state_avg * (1 - tau) + state_avg * tau
@@ -207,16 +212,22 @@ class PPO_discrete:
         self.critic.value_std[:] = self.critic.value_std * (1 - tau) + returns_std * tau + 1e-4
 
     def lr_decay(self, cur_steps):
-        factor =  max(1 - cur_steps/self.args.t_max, 0.33333)
+        factor =  max(1 - cur_steps/self.t_max, 0.33333)
         lr_a_now = self.lr * factor
         for p in self.optimizer.param_groups:
             p['lr'] = lr_a_now
 
     def save_actor(self, path='ppo_actor.pth'):
+        directory = os.path.dirname(path)
+        if not os.path.exists(directory):
+            os.makedirs(directory, exist_ok=True)  # 创建目录，如果目录已经存在，则不会引发异常
         torch.save(self.actor, path)
 
     def save_critic(self, path='ppo_critic.pth'):
-        torch.save(self.critic, path)
+        directory = os.path.dirname(path)
+        if not os.path.exists(directory):
+            os.makedirs(directory, exist_ok=True)  # 创建目录，如果目录已经存在，则不会引发异常
+        torch.save(self.actor, path)
 
     def load_actor(self, model_path):
         self.actor = torch.load(model_path, map_location=self.device)

@@ -1,6 +1,5 @@
 import copy
 import time
-
 import cv2
 import gym
 import gymnasium
@@ -25,7 +24,7 @@ from overcooked_ai_py.planning.planners import (
 )
 from overcooked_ai_py.utils import append_dictionaries, mean_and_std_err
 from overcooked_ai_py.visualization.state_visualizer import StateVisualizer
-
+from script_agent import SCRIPT_AGENTS
 DEFAULT_ENV_PARAMS = {"horizon": 400}
 
 MAX_HORIZON = 1e10
@@ -306,7 +305,7 @@ class OvercookedEnv(object):
             self.state = self.mdp.get_standard_start_state()
         else:
             self.state = self.start_state_fn()
-
+        # self.state = self.mdp.get_random_start_state_fn()
         events_dict = {
             k: [[] for _ in range(self.mdp.num_players)] for k in EVENT_TYPES
         }
@@ -674,114 +673,6 @@ from pettingzoo.utils.env import ParallelEnv
 from overcooked_ai_py.agents.agent import AgentPair
 
 
-class OvercookedEnvPettingZoo(ParallelEnv):
-    def __init__(self, base_env, agents):
-        """
-        base_env: OvercookedEnv
-        agents: AgentPair
-
-        Example creating a PettingZoo env from a base_env:
-
-        mdp = OvercookedGridworld.from_layout_name("asymmetric_advantages")
-        base_env = OvercookedEnv.from_mdp(mdp, horizon=500)
-        agent_pair = load_agent_pair("path/to/checkpoint", "ppo", "ppo")
-        env = OvercookedEnvPettingZoo(base_env, agent_pair)
-
-        """
-        # we need agent-dependent observation space, and the best way to do it is just to include an agentPair
-        assert isinstance(
-            agents, AgentPair
-        ), "agents must be an AgentPair object"
-
-        self.agents = ["agent_0", "agent_1"]
-        self.possible_agents = ["agent_0", "agent_1"]
-        self.agent_map = {"agent_0": agents.a0, "agent_1": agents.a1}
-        self.base_env = base_env
-        self.observation_spaces = {
-            agent: self.observation_space(agent) for agent in self.agents
-        }
-        self.action_spaces = {
-            agent: gymnasium.spaces.Discrete(len(Action.ALL_ACTIONS))
-            for agent in self.agents
-        }
-        # this is the AgentPair object
-        self.reset()
-
-    import functools
-
-    # we want to return the same space object every time
-    @functools.lru_cache(maxsize=2)
-    def observation_space(self, agent):
-        # the observation can be different for each agent
-        agent = self.agent_map[agent]
-        dummy_mdp = self.base_env.mdp
-        dummy_state = dummy_mdp.get_standard_start_state()
-        obs_shape = agent.featurize(dummy_state)[0].shape
-        high = np.ones(obs_shape) * float("inf")
-        low = np.zeros(obs_shape)
-        return gymnasium.spaces.Box(low, high, dtype=np.float32)
-
-    # we want to return the same space object every time
-    @functools.lru_cache(maxsize=1)
-    def action_space(self, agent):
-        # the action space is the same for each agent
-        return gymnasium.spaces.Discrete(len(Action.ALL_ACTIONS))
-
-    def step(self, joint_action):
-        joint_action = [
-            Action.ALL_ACTIONS[joint_action[agent]] for agent in joint_action
-        ]
-        obs, reward, done, info = self.base_env.step(joint_action)
-        # https://gymnasium.farama.org/content/basic_usage/
-        # we have no early termination condition in this env, and the environment only terminates when the time horizon is reached
-        # therefore the terminated is always False, and we set truncated to done
-        terminated = False
-        truncated = done
-
-        def create_dict(value):
-            """
-            Each agent should have the same reward, terminated, truncated, info
-            """
-            return {agent: value for agent in self.agents}
-
-        def create_obs_dict(obs):
-            """
-            Observation is potentially different for each agent
-            """
-            return {
-                agent: self.agent_map[agent].featurize(obs)
-                for agent in self.agents
-            }
-
-        obs = create_obs_dict(obs)
-        reward = create_dict(reward)
-        terminated = create_dict(terminated)
-        truncated = create_dict(truncated)
-        info = create_dict(info)
-        if done:
-            self.agents = []
-        return obs, reward, terminated, truncated, info
-
-    def reset(self, seed=None, options=None):
-        """
-        Reset the embedded OvercookedEnv envrionment to the starting state
-        """
-        self.base_env.reset()
-        dummy_mdp = self.base_env.mdp
-        dummy_state = dummy_mdp.get_standard_start_state()
-        # when an environment terminates/truncates, PettingZoo wants all agents removed, so during reset we re-add them
-        self.agents = self.possible_agents[:]
-        # return the obsevations as dict
-        obs_dict = {
-            agent: self.agent_map[agent].featurize(dummy_state)[0]
-            for agent in self.agents
-        }
-        return obs_dict, None
-
-    def render(self, mode="human", close=False):
-        pass
-
-
 class Overcooked(gym.Env):
     """
     Wrapper for the Env class above that is SOMEWHAT compatible with the standard gym API.
@@ -807,7 +698,14 @@ class Overcooked(gym.Env):
     # gym checks for the action space and obs space while initializing the env and throws an error if none exists
     # custom_init after __init__ no longer works
     # might as well move all the initilization into the actual __init__
-    def __init__(self, base_env, ego_featurize_fn, alt_featurize_fn, baselines_reproducible=False):
+    def __init__(self,
+                 base_env,
+                 ego_featurize_fn,
+                 alt_featurize_fn,
+                 baselines_reproducible=False,
+                 use_script_policy=False,
+                 agent0_policy_name=None,
+                 agent1_policy_name=None):
         """
         base_env: OvercookedEnv
         featurize_fn(mdp, state): fn used to featurize states returned in the 'both_agent_obs' field
@@ -834,8 +732,20 @@ class Overcooked(gym.Env):
         self.alt_featurize_fn = alt_featurize_fn
         self.observation_space = self._setup_observation_space()
         self.action_space = gym.spaces.Discrete(len(Action.ALL_ACTIONS))
-        self.reset()
+        self.num_agents = 2
+        # self.reset()
         self.visualizer = StateVisualizer()
+        self.random_index = False
+
+        if use_script_policy:
+            assert not self.random_index
+            self.script_agent = [None, None]
+            for player_idx, policy_name in enumerate([agent0_policy_name, agent1_policy_name]):
+                if policy_name.startswith("script:"):
+                    self.script_agent[player_idx] = SCRIPT_AGENTS[policy_name[7:]]()
+                    self.script_agent[player_idx].reset(self.base_env.mdp, self.base_env.state, player_idx)
+        else:
+            self.script_agent = [None, None]
 
     def _setup_observation_space(self):
         dummy_mdp = self.base_env.mdp
@@ -864,14 +774,19 @@ class Overcooked(gym.Env):
             Action.INDEX_TO_ACTION[a] for a in action
         ]
 
-        if self.agent_idx == 0:
-            joint_action = (agent_action, other_agent_action)
-        else:
+        joint_action = [agent_action, other_agent_action]
+        for a in range(self.num_agents):
+            if self.script_agent[a] is not None:
+                joint_action[a] = self.script_agent[a].step(self.base_env.mdp, self.base_env.state, a)
+        joint_action = tuple(joint_action)
+
+        if self.agent_idx == 1:
             joint_action = (other_agent_action, agent_action)
 
         next_state, reward, done, env_info = self.base_env.step(joint_action)
         ob_p0, _ = self.ego_featurize_fn(next_state)
         _, ob_p1 = self.alt_featurize_fn(next_state)
+
         if self.agent_idx == 0:
             both_agents_ob = (ob_p0, ob_p1)
         else:
@@ -899,16 +814,24 @@ class Overcooked(gym.Env):
         have to deal with randomizing indices.
         """
         self.base_env.reset()
+
+        for a in range(self.num_agents):
+            if self.script_agent[a] is not None:
+                self.script_agent[a].reset(self.base_env.mdp, self.base_env.state, player_idx=a)
+
         self.mdp = self.base_env.mdp
-        # self.agent_idx = np.random.choice([0, 1])
-        self.agent_idx = 0
         ob_p0, _ = self.ego_featurize_fn(self.base_env.state)
         _, ob_p1 = self.alt_featurize_fn(self.base_env.state)
 
-        if self.agent_idx == 0:
-            both_agents_ob = (ob_p0, ob_p1)
+        if self.random_index:
+            self.agent_idx = np.random.choice([0, 1])
         else:
+            self.agent_idx = 0
+
+        both_agents_ob = (ob_p0, ob_p1)
+        if self.agent_idx == 1:
             both_agents_ob = (ob_p1, ob_p0)
+
         return {
             "both_agent_obs": both_agents_ob,
             "overcooked_state": self.base_env.state,

@@ -7,6 +7,7 @@ from bc.bc_hh import BehaviorClone
 from utils import seed_everything, LinearAnnealer, init_env, ReplayBuffer, Normalization, RewardScaling
 from rl_plotter.logger import Logger, CustomLogger
 
+
 def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, seed:int, cluster:int, logger=None):
     annealer = LinearAnnealer(horizon=args.t_max/2)
     env = init_env(layout=args.layout, lossless_state_encoding=False)
@@ -51,35 +52,24 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
 
             shaped_r = info["shaped_r_by_agent"][0] + info["shaped_r_by_agent"][1]
             r = sparse_reward + shaped_r*reward_shaping_factor
-
             ego_obs_, alt_obs_ = obs_['both_agent_obs']
-
             episode_reward += r
-            
             if args.use_state_norm:
                 ego_obs_ = ego_state_norm(ego_obs_)
-            
             if args.use_reward_scaling:
                 r = reward_scaling(r)
-            
-            if done and episode_steps != args.max_episode_steps:
+            if done:
                 dw = True
             else:
                 dw = False
-
             ego_buffer.store(ego_obs, ego_a, ego_a_logprob, r, ego_obs_, dw, done)
-
             ego_obs = ego_obs_
             alt_obs = alt_obs_
-
             if ego_buffer.count == args.batch_size:
                 ego_agent.update(ego_buffer, cur_steps)  # 更新主模型网络
                 ego_buffer.count = 0
-
-            # env.render()
         print(f"Ep {k}:", episode_reward)
         # logger.update(score=[episode_reward], total_steps=cur_steps)
-
     ego_agent.save_actor(f'../models/mtp/mtp_{args.layout}-vaeCluster{cluster}-seed{seed}.pth')  # 保存模型
 
 
@@ -112,13 +102,9 @@ def run():
     
     args.max_episode_steps = 600 # Maximum number of steps per episode
     args.t_max = args.num_episodes * args.max_episode_steps
-    
     test_env = init_env(layout=args.layout, lossless_state_encoding=False)
-
     args.state_dim = test_env.observation_space.shape[0]
-
     args.action_dim = test_env.action_space.n
-    
     # seeds = [0, 1, 42, 2022, 2023]
     seeds = [42]
     for seed in seeds:

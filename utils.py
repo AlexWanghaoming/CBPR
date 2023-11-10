@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import itertools
 from typing import *
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/src/')
 from overcooked_ai_py.mdp.overcooked_mdp import (OvercookedGridworld,)
 from overcooked_ai_py.mdp.overcooked_env import OvercookedEnv
 import gym
@@ -37,13 +38,27 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-def init_env(layout, lossless_state_encoding=False):
+def init_env(layout, horizon=600, lossless_state_encoding=False, agent0_policy_name=None, agent1_policy_name=None, use_script_policy=False):
+    # mdp = OvercookedGridworld.from_layout_name(layout, start_state=OvercookedGridworld.get_random_start_state_fn) # bug 随机游戏初始状态
     mdp = OvercookedGridworld.from_layout_name(layout)
-    base_env = OvercookedEnv.from_mdp(mdp, horizon=600)
+
+    base_env = OvercookedEnv.from_mdp(mdp, horizon=horizon)
     if lossless_state_encoding:
-        env = gym.make("Overcooked-v0", base_env=base_env, ego_featurize_fn=base_env.lossless_state_encoding_mdp, alt_featurize_fn=base_env.featurize_state_mdp)
+        env = gym.make("Overcooked-v0",
+                       base_env=base_env,
+                       ego_featurize_fn=base_env.lossless_state_encoding_mdp,
+                       alt_featurize_fn=base_env.featurize_state_mdp,
+                       agent0_policy_name=agent0_policy_name,
+                       agent1_policy_name=agent1_policy_name,
+                       use_script_policy=use_script_policy)
     else:
-        env = gym.make("Overcooked-v0", base_env=base_env, ego_featurize_fn=base_env.featurize_state_mdp, alt_featurize_fn=base_env.featurize_state_mdp )
+        env = gym.make("Overcooked-v0",
+                       base_env=base_env,
+                       ego_featurize_fn=base_env.featurize_state_mdp,
+                       alt_featurize_fn=base_env.featurize_state_mdp,
+                       agent0_policy_name=agent0_policy_name,
+                       agent1_policy_name=agent1_policy_name,
+                       use_script_policy=use_script_policy)
     return env
 
 
@@ -77,21 +92,21 @@ import torch
 import numpy as np
 
 class ReplayBuffer:
-    def __init__(self, args):
-        if args.net_arch == "conv":
-            self.s = np.zeros((args.batch_size, 5, 4, args.state_dim))
+    def __init__(self, batch_size, state_dim, net_arch='mlp'):
+        if net_arch == "conv":
+            self.s = np.zeros((batch_size, 5, 4, state_dim))
         else:
-            self.s = np.zeros((args.batch_size, args.state_dim))
-        self.a = np.zeros((args.batch_size, 1))
-        self.a_logprob = np.zeros((args.batch_size, 1))
-        self.r = np.zeros((args.batch_size, 1))
-        # self.s_ = np.zeros((args.batch_size, args.state_dim))
-        if args.net_arch == "conv":
-            self.s_ = np.zeros((args.batch_size, 5, 4, args.state_dim))
+            self.s = np.zeros((batch_size, state_dim))
+        self.a = np.zeros((batch_size, 1))
+        self.a_logprob = np.zeros((batch_size, 1))
+        self.r = np.zeros((batch_size, 1))
+        # self.s_ = np.zeros((batch_size, state_dim))
+        if net_arch == "conv":
+            self.s_ = np.zeros((batch_size, 5, 4, state_dim))
         else:
-            self.s_ = np.zeros((args.batch_size, args.state_dim))
-        self.dw = np.zeros((args.batch_size, 1))
-        self.done = np.zeros((args.batch_size, 1))
+            self.s_ = np.zeros((batch_size, state_dim))
+        self.dw = np.zeros((batch_size, 1))
+        self.done = np.zeros((batch_size, 1))
         self.count = 0
 
     def store(self, s, a, a_logprob, r, s_, dw, done):

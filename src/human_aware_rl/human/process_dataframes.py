@@ -174,7 +174,8 @@ def get_trajs_from_data(data_path, layouts, silent=True, **kwargs):
         print("Loading data from {}".format(data_path))
 
     main_trials = pd.read_pickle(data_path)
-
+    print(f'{data_path}:', main_trials.shape)
+    print(main_trials['layout_name'].value_counts())
     trajs, info = convert_joint_df_trajs_to_overcooked_single(
         main_trials, layouts, silent=silent, **kwargs
     )

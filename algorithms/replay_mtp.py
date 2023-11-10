@@ -62,6 +62,5 @@ if __name__ == '__main__':
             ai_obs, h_obs = obs['both_agent_obs']
             ep_reward += sparse_reward
             env.render()
-
         # logger.update(score=[ep_reward], total_steps=k + 1)
         print(f'Ep {k+1}:',ep_reward)
