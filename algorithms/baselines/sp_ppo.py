@@ -128,7 +128,7 @@ def run():
                          num_episodes=args.num_episodes,
                          device=args.device)
     train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed)
-    
+
     wandb.finish()
 
 if __name__ == '__main__':

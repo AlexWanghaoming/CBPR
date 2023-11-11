@@ -9,6 +9,8 @@ from torch.distributions import Categorical
 from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, TensorDataset
 import torch
+import random
+from typing import *
 import argparse
 
 device = torch.device("cpu")
@@ -118,50 +120,54 @@ def _val_in_one_epoch(val_loader, model, stochastic=True):
 def parse_opt():
     parser = argparse.ArgumentParser()
     # parser.add_argument('--layout', type=str, default='cramped_room')
-    parser.add_argument('--layout', type=str, default='asymmetric_advantages')
+    parser.add_argument('--layout', type=str, default='cramped_room')
     parser.add_argument('--epochs', type=int, default=120)
     parser.add_argument('--lr', type=float, default=1e-3)
     opt = parser.parse_args()
     return opt
 
 
+def shuff_and_split(list1, list2) -> Tuple[zip, zip]:
+    # 将两个列表zip在一起，形成元素对
+    zipped_list = list(zip(list1, list2))
+    # 打乱这个元素对列表
+    random.shuffle(zipped_list)
+    # 将打乱后的元素对列表分成两半
+    midpoint = len(zipped_list) // 2
+    first_half = zipped_list[:midpoint]
+    second_half = zipped_list[midpoint:]
+    return zip(*first_half), zip(*second_half)
+
+
 if __name__ == '__main__':
     opt = parse_opt()
-
     DEFAULT_DATA_PARAMS = {
         # "layouts": ['cramped_room'],
         # "layouts": ['asymmetric_advantages'],
         # "layouts": ['coordination_ring'],
         # "layouts": ['random0'],
         "layouts": [opt.layout],
-    
         "check_trajectories": False,
         "featurize_states": True,
         "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room', 'asymmetric_advantages'] else CLEAN_2020_HUMAN_DATA_TRAIN,
     }
-    
     processed_trajs = get_human_human_trajectories(**DEFAULT_DATA_PARAMS, silent=False)
     inputs, targets = (processed_trajs["ep_states"], processed_trajs["ep_actions"])
-    # 将每一局的轨迹合并
-    X = np.vstack(inputs) # (n_episode*episode_len, state_dim)
-    y = np.vstack(targets)
-    
-    # 数据集划分
-    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.15)
-    
-    train_loader = DataLoader(TensorDataset(torch.tensor(X_train).float(),
-                                            torch.tensor(y_train, dtype=torch.int64)),
-                              shuffle=True,
-                              batch_size=64)
-    val_loader = DataLoader(TensorDataset(torch.tensor(X_val).float(),
-                                          torch.tensor(y_val, dtype=torch.int64)),
-                            shuffle=True,
-                            batch_size=64)
-    
-    model = BehaviorClone(state_dim=96, hidden_dim=64, action_dim=6)
-    model.to(device)
-    train(opt, train_loader, val_loader, model)
-
-    save_path = f'../models/bc/BC_{opt.layout}.pth'
-    # torch.save(model.state_dict(), opt.save_path) # wanghm 只保存模型的参数
-    torch.save(model, save_path) # 保存整个模型
+    id = 0
+    group = ['BC', 'HP']
+    for states, actions in shuff_and_split(inputs, targets):
+        group_name = group[id]
+        X = np.vstack(states) # (n_episode*episode_len, state_dim)# 将每一局的state合并
+        y = np.vstack(actions) # 将每一局的action合并
+        X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.15)
+        train_loader = DataLoader(TensorDataset(torch.tensor(X_train).float(),
+                                                torch.tensor(y_train, dtype=torch.int64)), shuffle=True, batch_size=64)
+        val_loader = DataLoader(TensorDataset(torch.tensor(X_val).float(),
+                                              torch.tensor(y_val, dtype=torch.int64)), shuffle=True, batch_size=64)
+        model = BehaviorClone(state_dim=96, hidden_dim=64, action_dim=6)
+        model.to(device)
+        train(opt, train_loader, val_loader, model)
+        save_path = f'../models/bc/{group_name}_{opt.layout}.pth'
+        # torch.save(model.state_dict(), opt.save_path) # 只保存模型的参数
+        torch.save(model, save_path) # 保存整个模型
+        id = id + 1

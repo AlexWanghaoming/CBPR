@@ -6,7 +6,8 @@ Overcooked-AI is a benchmark environment for fully cooperative human-AI task per
 
 ## Code Structure Overview 🗺
 `bc/`:
-- `bc_hh.py`: 用行为克隆拟合当前layout下的人类策略
+- `bc_hh.py`: behavior cloning using all collected human trajectories over a specific layout, note: human trajectories were divided into two groups (i.e. BC and HP)
+- `bc.sh`: run `bc_hh.py` in for-loop
 - `bc_hh_meta_task.py`: 根据key state划分人类轨迹,训练 meta-task models
 - `replay_human_data.py`: 回放CLEAN_2019_HUMAN_DATA_TRAIN和CLEAN_2020_HUMAN_DATA_TRAIN中的人类轨迹
 
@@ -17,6 +18,8 @@ Overcooked-AI is a benchmark environment for fully cooperative human-AI task per
     - `train_sp.sh`: FCP的stage1, 训练多个sp合作智能体
     - `sp_sac.py`: 基于SAC的自博弈训练，超参数设置 : `{'hidden_dim': 64, 'lr': 1e-4, 'tau': 0.005, 'adaptive_alpha': True, 'clip_grad_norm': 0.1, 'use_lr_decay': False, 'buffer_size': 1e6, 'batch_size': 256}`
     - `bcp.py`: Behavioral Cloning Play 复现论文 *On the Utility of Learning about Humans for Human-AI Coordination, nips 2019* 算法
+    - `FCP_stage1.py`和`FCP_stage2.py`: 两阶段FCP 复现论文*Collaborating with human without human data, nips 2021* 算法
+    - `evaluate_bcp*.py`: 评估BCP和切换策略的meta-task model合作表现
 - `bpr_NN.py`和`bpr_gp.py`: 复现论文 *Efficient Bayesian Policy Reuse With a Scalable Observation Model in Deep Reinforcement Learning, TNNLS* 算法
 - `mtp*.py`: 训练与不同meta-task models合作的BCP模型
 - `okr.py`: 复现论文 *Accurate policy detection and efficient knowledge reuse against multi-strategic opponents* 算法
@@ -36,4 +39,5 @@ Overcooked-AI is a benchmark environment for fully cooperative human-AI task per
 `script_agent` from *Learning Zero-Shot Cooperation with Humans, Assuming Humans Are Biased, ICLR 2023*:
 - avaliable rule-based policy in overcooked
 
-
+`miscs` contains:
+- `plot_*_distribution.py` 计算并绘制hh（人类+人类），BC-hh(BC+人类)，BCP-BC，BCP-hh(BCP+人类)轨迹分布并计算分布差异

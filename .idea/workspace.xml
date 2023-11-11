@@ -5,542 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4be4f475-155a-4b0a-9825-15e5576d7ad7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithms/baselines/FCP_stage1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithms/baselines/script_agent_playing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithms/baselines/train_sp.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bc/replay_human_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.coveragerc" beforeDir="false" afterPath="$PROJECT_DIR$/.coveragerc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithms/baselines/FCP_stage2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithms/baselines/bcp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_keystat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_scriptPolicy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithms/baselines/train_bcp.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithms/okr_scriptedPolicy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/cal_prob_distance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/game_snaps/exp_layouts.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/heatmap.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/plot_BC-hh_distribution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/plot_BCP-BC_distribution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/plot_BCP-hh_distribution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/plot_hh_distribution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/testing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/state_trans_func/NN_scriptedPolicy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Overcooked Tutorial.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Overcooked Tutorial.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Overcooked Tutorial.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/Overcooked Tutorial.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/ppo_discrete.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/ppo_discrete.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/sac.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/sac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/bcp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/FCP_stage1.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/FCP_stage1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/script_agent_playing.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/script_agent_playing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/debug-cli.wanghm.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/debug-cli.wanghm.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/debug-internal.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/debug-internal.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/latest-run" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/latest-run" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/files/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/files/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/files/output.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/files/output.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/files/wandb-summary.json" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/files/wandb-summary.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/logs/debug-internal.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/logs/debug-internal.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/run-pmnml2hd.wandb" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231110_172118-pmnml2hd/run-pmnml2hd.wandb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/bpr_NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/bpr_NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/bpr_gp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/bpr_gp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/evaluate_bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/evaluate_bcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/cbpr/marshmallow_experiment/CBPR_switch_intra_50_fix_gold__seed0-0/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_cramped_room_seed0-2/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_cramped_room_seed0-3/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_cramped_room_seed0-4/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_cramped_room_seed0-5/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_cramped_room_seed0-6/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-0/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-1/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-10/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-11/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-12/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-13/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-14/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-15/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-16/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-17/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-18/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-19/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-2/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-3/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-4/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-5/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-6/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-7/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-8/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp/sp_ppo_h32_cramped_room_seed0-9/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/logs/sp_sac_cramped_room_seed0-0/evaluator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_keystate.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_keystate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_vae.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_vae.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/evaluate_bcp.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/okr.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/okr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/replay_mtp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/replay_mtp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/sp_ppo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/sp_ppo_elegant.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo_elegant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/sp_sac.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_sac.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bc/bc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bc/bc_hh.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc_hh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/bc_hh_meta_task_key_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc_hh_meta_task_key_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/bc_hh_meta_task_vae.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc_hh_meta_task_vae.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codecov.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentA2C.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentA2C.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentDDPG.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentDDPG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentDQN.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentDQN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentMADDPG.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentMADDPG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentMAPPO.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentMAPPO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentMATD3.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentMATD3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentPPO.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentPPO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentQMix.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentQMix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentREDQ.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentREDQ.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentSAC.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentSAC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentTD3.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentTD3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentVDN.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentVDN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/AgentVMPO.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/AgentVMPO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/agents/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/agents/net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/envs/China_A_shares.numpy.npz" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/envs/China_A_shares.numpy.npz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/envs/CustomGymEnv.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/envs/CustomGymEnv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/envs/IsaacGym.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/envs/IsaacGym.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/envs/IsaacGymEnv.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/envs/IsaacGymEnv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/envs/PointChasingEnv.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/envs/PointChasingEnv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/envs/StockTradingEnv.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/envs/StockTradingEnv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/envs/StockTradingVmapEnv.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/envs/StockTradingVmapEnv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/envs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/envs/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/train/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/train/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/train/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/train/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/train/config_CN.md" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/train/config_CN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/train/config_EN.md" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/train/config_EN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/train/evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/train/evaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/train/replay_buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/train/replay_buffer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elegantrl/train/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/elegantrl/train/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_cramped_room_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_cramped_room_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_cramped_room_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_cramped_room_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_cramped_room_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_cramped_room_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_cramped_room_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_cramped_room_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(0.0, 0.0, 0.0, 1.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(0.0, 0.0, 0.0, 1.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/NN/NN_marshmallow_experiment_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bc/replay_human_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/replay_human_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(0.0, 0.0, 0.0, 0.0).pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(0.0, 0.0, 0.0, 0.0).pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(0.0, 0.0, 0.0, 1.0).pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(0.0, 0.0, 0.0, 1.0).pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(0.0, 0.0, 1.0, 0.0).pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(0.0, 0.0, 1.0, 0.0).pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(0.0, 1.0, 0.0, 0.0).pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(0.0, 1.0, 0.0, 0.0).pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(1.0, 0.0, 0.0, 0.0).pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_(1.0, 0.0, 0.0, 0.0).pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_vae_cluster0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_vae_cluster0.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_vae_cluster1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_vae_cluster1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_vae_cluster2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_vae_cluster2.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_vae_cluster3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment_vae_cluster3.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_simple.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_simple.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_simple_(0.0, 0.0, 0.0, 0.0).pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_simple_(0.0, 0.0, 1.0, 0.0).pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_simple_(0.0, 1.0, 0.0, 0.0).pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_simple_(1.0, 0.0, 0.0, 0.0).pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bcp/bcp_cramped_room-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bcp/bcp_cramped_room-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bcp/bcp_marshmallow_experiment-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bcp/bcp_marshmallow_experiment-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/gp/gp_cramped_room_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/gp/gp_cramped_room_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/gp/gp_cramped_room_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/gp/gp_cramped_room_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/gp/gp_cramped_room_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/gp/gp_cramped_room_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/gp/gp_cramped_room_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/gp/gp_cramped_room_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-(0.0, 0.0, 0.0, 0.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-(0.0, 0.0, 0.0, 0.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-(0.0, 0.0, 1.0, 0.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-(0.0, 0.0, 1.0, 0.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-(0.0, 1.0, 0.0, 0.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-(0.0, 1.0, 0.0, 0.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-(1.0, 0.0, 0.0, 0.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-(1.0, 0.0, 0.0, 0.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(0.0, 0.0, 0.0, 0.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(0.0, 0.0, 0.0, 0.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(0.0, 0.0, 0.0, 1.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(0.0, 0.0, 0.0, 1.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(0.0, 0.0, 1.0, 0.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(0.0, 0.0, 1.0, 0.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(0.0, 1.0, 0.0, 0.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(0.0, 1.0, 0.0, 0.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(1.0, 0.0, 0.0, 0.0)-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-(1.0, 0.0, 0.0, 0.0)-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-vaeCluster0-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-vaeCluster0-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-vaeCluster1-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-vaeCluster1-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-vaeCluster2-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-vaeCluster2-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-vaeCluster3-seed42.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-vaeCluster3-seed42.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/performance/init_performance_cramped_room.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/performance/init_performance_cramped_room.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/performance/init_performance_marshmallow_experiment.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/performance/init_performance_marshmallow_experiment.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/vae/marshmallow_experiment_vae_encoder.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/vae/marshmallow_experiment_vae_encoder.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/data_dir.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/data_dir.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/human/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/human/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/human/data_processing_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/human/data_processing_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/human/data_wrangling.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/human/data_wrangling.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/human/human_data_forward_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/human/human_data_forward_compat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/human/process_dataframes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/human/process_dataframes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/human/process_human_trials.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/human/process_human_trials.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/human/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/human/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/imitation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/imitation/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/imitation/behavior_cloning_tf2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/imitation/behavior_cloning_tf2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/imitation/behavior_cloning_tf2_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/imitation/behavior_cloning_tf2_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/imitation/reproduce_bc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/imitation/reproduce_bc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/performance.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/performance.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/evaluate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/plot_example_experiments.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/plot_example_experiments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/plot_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/plot_graph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/ppo_rllib.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/ppo_rllib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/ppo_rllib_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/ppo_rllib_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/ppo_rllib_from_params_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/ppo_rllib_from_params_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/ppo_rllib_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/ppo_rllib_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/results/example_rewards.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/results/example_rewards.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/results/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/results/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/run_ppo_bc_experiments.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/run_ppo_bc_experiments.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/checkpoint_000500/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/checkpoint_000500/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/checkpoint_000500/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/checkpoint_000500/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/checkpoint_000500/checkpoint-500" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/checkpoint_000500/checkpoint-500" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/result.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/ppo/trained_example/result.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/rllib/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/rllib/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/rllib/rllib.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/rllib/rllib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/rllib/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/rllib/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/rllib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/rllib/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2019_hh_trials_all.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2019_hh_trials_all.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2019_hh_trials_test.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2019_hh_trials_test.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2019_hh_trials_train.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2019_hh_trials_train.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2020_hh_trials_all.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2020_hh_trials_all.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2020_hh_trials_test.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2020_hh_trials_test.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2020_hh_trials_train.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/cleaned/2020_hh_trials_train.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/dummy/dummy_2019_hh_trials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/dummy/dummy_2019_hh_trials.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/dummy/dummy_2019_hh_trials_all.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/dummy/dummy_2019_hh_trials_all.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/dummy/dummy_2020_hh_trials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/dummy/dummy_2020_hh_trials.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/dummy/dummy_2020_hh_trials.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/human_data/dummy/dummy_2020_hh_trials.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/testing_data/bc/expected.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/testing_data/bc/expected.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/static/testing_data/ppo/expected.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/static/testing_data/ppo/expected.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai.egg-info/dependency_links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai.egg-info/dependency_links.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai.egg-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai.egg-info/entry_points.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai.egg-info/requires.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai.egg-info/top_level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/agents/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/agents/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/agents/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/agents/agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/agents/benchmarking.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/agents/benchmarking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/fonts/Roboto-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/fonts/Roboto-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/chefs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/chefs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/chefs.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/chefs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/interact.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/interact.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/objects.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/objects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/objects.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/objects.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/soups.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/soups.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/soups.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/soups.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/stay.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/stay.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/terrain.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/terrain.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/terrain.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/graphics/terrain.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/asymmetric_advantages.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/asymmetric_advantages.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/asymmetric_advantages_tomato.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/asymmetric_advantages_tomato.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/bonus_order_test.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/bonus_order_test.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/bottleneck.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/bottleneck.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/centre_objects.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/centre_objects.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/centre_pots.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/centre_pots.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/coordination_ring.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/coordination_ring.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/corridor.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/corridor.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/counter_circuit.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/counter_circuit.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/counter_circuit_o_1order.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/counter_circuit_o_1order.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_corridor.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_corridor.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_room.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_room.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_room_o_3orders.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_room_o_3orders.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_room_single.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_room_single.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_room_tomato.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/cramped_room_tomato.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/five_by_five.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/five_by_five.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/forced_coordination.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/forced_coordination.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/forced_coordination_tomato.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/forced_coordination_tomato.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/inverse_marshmallow_experiment.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/inverse_marshmallow_experiment.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/large_room.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/large_room.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/long_cook_time.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/long_cook_time.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/m_shaped_s.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/m_shaped_s.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/marshmallow_experiment.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/marshmallow_experiment.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/marshmallow_experiment_coordination.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/marshmallow_experiment_coordination.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/mdp_test.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/mdp_test.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/multiplayer_schelling.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/multiplayer_schelling.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/old_dynamics_cook_test.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/old_dynamics_cook_test.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/old_dynamics_put_test.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/old_dynamics_put_test.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/pipeline.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/pipeline.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/random0.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/random0.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/random3.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/random3.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario1_s.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario1_s.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario2.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario2.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario2_s.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario2_s.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario3.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario3.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario4.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/scenario4.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/schelling.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/schelling.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/schelling_s.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/schelling_s.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/simple_o.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/simple_o.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/simple_o_t.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/simple_o_t.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/simple_tomato.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/simple_tomato.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/small_corridor.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/small_corridor.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/soup_coordination.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/soup_coordination.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/tutorial_0.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/tutorial_0.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/tutorial_1.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/tutorial_1.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/tutorial_2.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/tutorial_2.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/tutorial_3.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/tutorial_3.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/unident.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/unident.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/you_shall_not_pass.layout" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts/you_shall_not_pass.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/planners/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/planners/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/planners/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/planners/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_display/expected.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_display/expected.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_display_phi/expected.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_display_phi/expected.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_lossless_state_featurization/expected.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_lossless_state_featurization/expected.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_mdp_dynamics/expected.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_mdp_dynamics/expected.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_mdp_serialization/dummy.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_mdp_serialization/dummy.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_start_positions/expected.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_start_positions/expected.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_featurization/expected_0.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_featurization/expected_0.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_featurization/expected_1.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_featurization/expected_1.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_featurization/expected_2.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_featurization/expected_2.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/Create_state_visualizer_tests.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/Create_state_visualizer_tests.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/expected_default_hud_data_from_trajectories.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/expected_default_hud_data_from_trajectories.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_action_probs_display" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_action_probs_display" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_action_probs_display.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_action_probs_display.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_cooking_display.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_cooking_display.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_generated_layout.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_generated_layout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_hud.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_hud.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_sizes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_sizes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_various.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/render_state_data_test_various.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_1.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_10.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_10.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_2.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_3.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_4.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_4.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_5.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_5.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_6.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_6.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_7.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_7.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_8.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_8.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_9.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_action_probs_display_9.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_cooking_timer_display_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_cooking_timer_display_1.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_1.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_10.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_10.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_2.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_3.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_4.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_4.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_5.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_5.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_6.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_6.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_7.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_7.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_8.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_8.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_9.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_generated_layout_display_9.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_hud_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_hud_1.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_hud_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_hud_2.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_hud_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_hud_3.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_size_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_size_1.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_size_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_size_2.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_trajectory.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_trajectory.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_1.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_1.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_10.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_10.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_2.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_2.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_3.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_3.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_4.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_4.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_5.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_5.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_6.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_6.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_7.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_7.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_8.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_8.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_9.npy" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_state_visualizer/test_various_display_9.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_transitions_and_environments/expected.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/data/testing/test_transitions_and_environments/expected.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/bc/BC_asymmetric_advantages.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/bc/BC_marshmallow_experiment.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/bc/BC_simple.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/bcp/bcp_asymmetric_advantages-seed42.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/bcp/bcp_cramped_room-seed42.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/bcp/bcp_marshmallow_experiment-seed42.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/performance/init_performance_cramped_room.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/performance/init_performance_marshmallow_experiment.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/layout_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/layout_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_mdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_mdp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_trajectory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_trajectory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/planning/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/planning/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/planning/planners.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/planning/planners.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/planning/search.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/planning/search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/static.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/static.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/visualization/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/visualization/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/visualization/pygame_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/visualization/pygame_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/visualization/state_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/visualization/state_visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/visualization/visualization_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/visualization/visualization_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/dummy_graphics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/dummy_graphics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/overcooked_graphics_v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/overcooked_graphics_v1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/overcooked_graphics_v2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/overcooked_graphics_v2.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/overcooked_graphics_v2.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/overcooked_graphics_v2.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/overcooked_graphics_v2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/graphics/overcooked_graphics_v2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/move_agents.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/move_agents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RandAI/agent.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RandAI/agent.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RandComputeAI/agent.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RandComputeAI/agent.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/agent/checkpoint-600" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/agent/checkpoint-600" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/checkpoints/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/checkpoints/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/checkpoints/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/checkpoints/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/checkpoints/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/checkpoints/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/checkpoints/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/checkpoints/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/logs/train/events.out.tfevents.1678503388.svm.bair.berkeley.edu.1758650.8.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/logs/train/events.out.tfevents.1678503388.svm.bair.berkeley.edu.1758650.8.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/logs/validation/events.out.tfevents.1678503390.svm.bair.berkeley.edu.1758650.9.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/logs/validation/events.out.tfevents.1678503390.svm.bair.berkeley.edu.1758650.9.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/metadata.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/metadata.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/bc_params/asymmetric_advantages/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesBC/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesSP/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesSP/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesSP/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesSP/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesSP/agent/checkpoint-650" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesSP/agent/checkpoint-650" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesSP/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibAsymmetricAdvantagesSP/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/agent/checkpoint-550" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/agent/checkpoint-550" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/checkpoints/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/checkpoints/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/checkpoints/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/checkpoints/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/checkpoints/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/checkpoints/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/checkpoints/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/checkpoints/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/logs/train/events.out.tfevents.1678500907.svm.bair.berkeley.edu.373429.0.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/logs/train/events.out.tfevents.1678500907.svm.bair.berkeley.edu.373429.0.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/logs/train/events.out.tfevents.1678502604.svm.bair.berkeley.edu.1758650.2.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/logs/train/events.out.tfevents.1678502604.svm.bair.berkeley.edu.1758650.2.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/logs/validation/events.out.tfevents.1678500912.svm.bair.berkeley.edu.373429.1.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/logs/validation/events.out.tfevents.1678500912.svm.bair.berkeley.edu.373429.1.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/logs/validation/events.out.tfevents.1678502606.svm.bair.berkeley.edu.1758650.3.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/logs/validation/events.out.tfevents.1678502606.svm.bair.berkeley.edu.1758650.3.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/metadata.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/metadata.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/bc_params/coordination_ring/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingBC/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingSP/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingSP/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingSP/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingSP/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingSP/agent/checkpoint-650" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingSP/agent/checkpoint-650" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingSP/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCoordinationRingSP/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/agent/checkpoint-550" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/agent/checkpoint-550" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/checkpoints/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/checkpoints/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/checkpoints/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/checkpoints/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/checkpoints/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/checkpoints/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/checkpoints/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/checkpoints/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/logs/train/events.out.tfevents.1678502362.svm.bair.berkeley.edu.1758650.0.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/logs/train/events.out.tfevents.1678502362.svm.bair.berkeley.edu.1758650.0.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/logs/validation/events.out.tfevents.1678502365.svm.bair.berkeley.edu.1758650.1.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/logs/validation/events.out.tfevents.1678502365.svm.bair.berkeley.edu.1758650.1.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/metadata.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/metadata.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/bc_params/random3/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderBC/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderSP/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderSP/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderSP/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderSP/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderSP/agent/checkpoint-650" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderSP/agent/checkpoint-650" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderSP/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCounterCircuit1OrderSP/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/agent/checkpoint-550" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/agent/checkpoint-550" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/checkpoints/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/checkpoints/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/checkpoints/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/checkpoints/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/checkpoints/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/checkpoints/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/checkpoints/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/checkpoints/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/logs/train/events.out.tfevents.1678501174.svm.bair.berkeley.edu.373429.2.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/logs/train/events.out.tfevents.1678501174.svm.bair.berkeley.edu.373429.2.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/logs/train/events.out.tfevents.1678502901.svm.bair.berkeley.edu.1758650.4.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/logs/train/events.out.tfevents.1678502901.svm.bair.berkeley.edu.1758650.4.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/logs/validation/events.out.tfevents.1678501176.svm.bair.berkeley.edu.373429.3.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/logs/validation/events.out.tfevents.1678501176.svm.bair.berkeley.edu.373429.3.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/logs/validation/events.out.tfevents.1678502903.svm.bair.berkeley.edu.1758650.5.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/logs/validation/events.out.tfevents.1678502903.svm.bair.berkeley.edu.1758650.5.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/metadata.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/metadata.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/bc_params/cramped_room/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomBC/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomSP/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomSP/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomSP/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomSP/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomSP/agent/checkpoint-550" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomSP/agent/checkpoint-550" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomSP/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibCrampedRoomSP/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/agent/checkpoint-550" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/agent/checkpoint-550" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/checkpoints/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/checkpoints/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/checkpoints/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/checkpoints/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/checkpoints/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/checkpoints/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/checkpoints/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/checkpoints/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/logs/train/events.out.tfevents.1678503189.svm.bair.berkeley.edu.1758650.6.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/logs/train/events.out.tfevents.1678503189.svm.bair.berkeley.edu.1758650.6.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/logs/validation/events.out.tfevents.1678503190.svm.bair.berkeley.edu.1758650.7.v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/logs/validation/events.out.tfevents.1678503190.svm.bair.berkeley.edu.1758650.7.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/metadata.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/metadata.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/bc_params/random0/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationBC/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationSP/agent/.is_checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationSP/agent/.is_checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationSP/agent/.tune_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationSP/agent/.tune_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationSP/agent/checkpoint-650" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationSP/agent/checkpoint-650" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationSP/config.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/RllibForcedCoordinationSP/config.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/StayAI/agent.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/agents/StayAI/agent.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/chefs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/chefs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/chefs.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/chefs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_0_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_0_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_0_onion_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_0_onion_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_0_onion_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_0_onion_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_1_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_1_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_1_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_1_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_1_onion_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_1_onion_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_2_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_2_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_2_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_2_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_3_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_cooked_tomato_3_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_0_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_0_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_0_onion_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_0_onion_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_0_onion_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_0_onion_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_1_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_1_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_1_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_1_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_1_onion_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_1_onion_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_2_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_2_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_2_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_2_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_3_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_done_tomato_3_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_0_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_0_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_0_onion_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_0_onion_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_0_onion_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_0_onion_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_1_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_1_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_1_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_1_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_1_onion_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_1_onion_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_2_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_2_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_2_onion_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_2_onion_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_3_onion_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/new_sprites/soup_idle_tomato_3_onion_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/objects.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/objects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/objects.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/objects.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/soups.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/soups.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/soups.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/soups.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/terrain.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/terrain.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/terrain.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/terrain.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/test_traj.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/test_traj.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/tiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/tiles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/tiles.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/assets/tiles.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/browser_view.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/browser_view.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/info-panel.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/info-panel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/onions-cooking.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/onions-cooking.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/serving-counter.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/serving-counter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/soup-ready.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/soup-ready.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/soup.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/soup.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/soup_icons.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/soup_icons.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/space-arrows.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/space-arrows.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/training0-annotated.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/training0-annotated.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/training0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/training0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/university.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/images/university.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/predefined.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/predefined.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/tutorial.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/tutorial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/babel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/babel.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/backbone-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/backbone-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/d3.v3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/d3.v3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/jquery-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/jquery-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/underscore-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/lib/underscore-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/instructions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/predefined.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/predefined.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/tutorial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_trans_func/GP_GPy.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/GP_GPy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_trans_func/GP_gpytorch.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/GP_gpytorch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_trans_func/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_trans_func/collect_trajs.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/collect_trajs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/agent_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/agent_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/mdp_gen_schedule_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/mdp_gen_schedule_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/overcooked_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/overcooked_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/planners_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/planners_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/visualization_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/visualization_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state_trans_func/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/NN_keystate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/agent_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/testing/agent_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/mdp_gen_schedule_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/testing/mdp_gen_schedule_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/overcooked_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/testing/overcooked_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/planners_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/testing/planners_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/testing/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/visualization_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/testing/visualization_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -580,7 +103,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/alpha/overcooked_rl/algorithms/baselines/sp_ppo.py",
+    "last_opened_file_path": "/alpha/overcooked_rl/algorithms",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -592,41 +115,22 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/algorithms/baselines" />
       <recent name="$PROJECT_DIR$/algorithms" />
-      <recent name="$PROJECT_DIR$/bc" />
+      <recent name="$PROJECT_DIR$/algorithms/baselines" />
+      <recent name="$PROJECT_DIR$/miscs" />
+      <recent name="$PROJECT_DIR$/algorithms/models/bcp" />
+      <recent name="$PROJECT_DIR$/state_trans_func" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/algorithms/baselines" />
+      <recent name="$PROJECT_DIR$/models/bcp" />
+      <recent name="$PROJECT_DIR$/miscs" />
       <recent name="$PROJECT_DIR$/state_trans_func" />
       <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$/models/bc" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.script_agent_playing">
-    <configuration name="replay_human_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="overcooked_rl" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bc" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bc/replay_human_data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="script_agent_playing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.okr_scriptedPolicy">
+    <configuration name="FCP_stage2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -639,7 +143,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/baselines/script_agent_playing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/baselines/FCP_stage2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -648,7 +152,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sp_ppo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="evaluate_bcp_keystat" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -661,7 +165,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_keystat.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -670,7 +174,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sp_ppo_elegant" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="evaluate_bcp_scriptPolicy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -683,7 +187,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/baselines/sp_ppo_elegant.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_scriptPolicy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -692,35 +196,64 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_sp.sh" type="ShConfigurationType" temporary="true">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/algorithms/baselines/train_sp.sh" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms/baselines" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+    <configuration name="okr_scriptedPolicy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/okr_scriptedPolicy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_hh_distribution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="overcooked_rl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/miscs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/miscs/plot_hh_distribution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.script_agent_playing" />
-      <item itemvalue="Python.replay_human_data" />
-      <item itemvalue="Python.sp_ppo" />
-      <item itemvalue="Python.sp_ppo_elegant" />
-      <item itemvalue="Shell Script.train_sp.sh" />
+      <item itemvalue="Python.FCP_stage2" />
+      <item itemvalue="Python.evaluate_bcp_keystat" />
+      <item itemvalue="Python.evaluate_bcp_scriptPolicy" />
+      <item itemvalue="Python.okr_scriptedPolicy" />
+      <item itemvalue="Python.plot_hh_distribution" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.script_agent_playing" />
-        <item itemvalue="Shell Script.train_sp.sh" />
-        <item itemvalue="Python.sp_ppo" />
-        <item itemvalue="Python.sp_ppo_elegant" />
-        <item itemvalue="Python.replay_human_data" />
+        <item itemvalue="Python.okr_scriptedPolicy" />
+        <item itemvalue="Python.evaluate_bcp_scriptPolicy" />
+        <item itemvalue="Python.evaluate_bcp_keystat" />
+        <item itemvalue="Python.FCP_stage2" />
+        <item itemvalue="Python.plot_hh_distribution" />
       </list>
     </recent_temporary>
   </component>
@@ -748,7 +281,7 @@
       <workItem from="1697693774912" duration="30804000" />
       <workItem from="1698304325198" duration="1564000" />
       <workItem from="1699338590769" duration="64749000" />
-      <workItem from="1699583622410" duration="21604000" />
+      <workItem from="1699583622410" duration="70293000" />
     </task>
     <servers />
   </component>
@@ -785,21 +318,28 @@
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algorithms/baselines/FCP_stage1.py</url>
-          <line>58</line>
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bc/bc_hh_meta_task_key_state.py</url>
           <line>98</line>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/algorithms/baselines/FCP_stage2.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="layout_mtx" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh.coverage" NAME="bc_hh Coverage Results" MODIFIED="1699443807620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh.coverage" NAME="bc_hh Coverage Results" MODIFIED="1699691333826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
     <SUITE FILE_PATH="coverage/overcooked_rl$ppo_discrete.coverage" NAME="ppo_discrete Coverage Results" MODIFIED="1698306357024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/agents" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_human_distribution.coverage" NAME="plot_human_distribution Coverage Results" MODIFIED="1699688409531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BC_distribution.coverage" NAME="plot_BCP-BC_distribution Coverage Results" MODIFIED="1699706995907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo.coverage" NAME="sp_ppo Coverage Results" MODIFIED="1699512587698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$process_dataframes.coverage" NAME="process_dataframes Coverage Results" MODIFIED="1699598379397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/human_aware_rl/human" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bcp.coverage" NAME="bcp Coverage Results" MODIFIED="1699444570986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
@@ -808,30 +348,38 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo_elegant.coverage" NAME="sp_ppo_elegant Coverage Results" MODIFIED="1699602446693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1695803481670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/overcooked_rl$run_test_game.coverage" NAME="run_test_game Coverage Results" MODIFIED="1692714414268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$script_agent_playing.coverage" NAME="sp_ppo Coverage Results" MODIFIED="1699605659037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$script_agent_playing.coverage" NAME="script_agent_playing Coverage Results" MODIFIED="1699609314065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$script_period.coverage" NAME="script_period Coverage Results" MODIFIED="1699519982560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script_agent" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$FCP_stage1.coverage" NAME="FCP_stage1 Coverage Results" MODIFIED="1699510631692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BCP_hh_distribution.coverage" NAME="plot_BCP-hh_distribution Coverage Results" MODIFIED="1699703693700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$FCP_stage1.coverage" NAME="FCP_stage1 Coverage Results" MODIFIED="1699632993840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$replay_mtp.coverage" NAME="replay_mtp Coverage Results" MODIFIED="1696763243709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$okr_online.coverage" NAME="okr_online Coverage Results" MODIFIED="1693387260779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$mtp_keystate.coverage" NAME="mtp_keystate Coverage Results" MODIFIED="1699444689475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$GP_gpytorch.coverage" NAME="GP_gpytorch Coverage Results" MODIFIED="1693932682650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$sp_sac.coverage" NAME="sp_sac Coverage Results" MODIFIED="1699462489900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$replay_human_data.coverage" NAME="replay_human_data Coverage Results" MODIFIED="1699602207670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BC_hh_distribution.coverage" NAME="plot_BC-hh_distribution Coverage Results" MODIFIED="1699703446796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$okr.coverage" NAME="okr Coverage Results" MODIFIED="1695702555776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN.coverage" NAME="bpr_NN Coverage Results" MODIFIED="1699433608795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task.coverage" NAME="bc_hh_meta_task Coverage Results" MODIFIED="1693240307866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$mtp_scriptedPolicy.coverage" NAME="mtp_scriptedPolicy Coverage Results" MODIFIED="1699615914311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$functional.coverage" NAME="functional Coverage Results" MODIFIED="1695885294012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/torch/nn" />
     <SUITE FILE_PATH="coverage/overcooked_rl$sp.coverage" NAME="sp_ppo Coverage Results" MODIFIED="1698173506003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_hh_distribution.coverage" NAME="plot_hh_distribution Coverage Results" MODIFIED="1699707018513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$utils.coverage" NAME="utils Coverage Results" MODIFIED="1699465381056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/overcooked_rl$GP2.coverage" NAME="GP2 Coverage Results" MODIFIED="1693495319930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$NN.coverage" NAME="NN Coverage Results" MODIFIED="1694060420962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$mtp_vae.coverage" NAME="mtp_vae Coverage Results" MODIFIED="1696750679997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$okr_scriptedPolicy.coverage" NAME="okr_scriptedPolicy Coverage Results" MODIFIED="1699727447468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task_key_state.coverage" NAME="bc_hh_meta_task_key_state Coverage Results" MODIFIED="1699598386395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task_vae.coverage" NAME="bc_hh_meta_task_vae Coverage Results" MODIFIED="1696741282523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp.coverage" NAME="evaluate_bcp Coverage Results" MODIFIED="1699460346100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp.coverage" NAME="evaluate_bcp Coverage Results" MODIFIED="1699723948781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp_scriptPolicy.coverage" NAME="evaluate_bcp_scriptPolicy Coverage Results" MODIFIED="1699725212711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$GP.coverage" NAME="GP Coverage Results" MODIFIED="1693446033828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$script_agent.coverage" NAME="script_agent Coverage Results" MODIFIED="1699587962414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script_agent" />
     <SUITE FILE_PATH="coverage/overcooked_rl$GP_GPy.coverage" NAME="GP_GPy Coverage Results" MODIFIED="1694007339901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
     <SUITE FILE_PATH="coverage/overcooked_rl$mtp.coverage" NAME="mtp Coverage Results" MODIFIED="1695830222306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$cal_prob_distance.coverage" NAME="cal_prob_distance Coverage Results" MODIFIED="1699694897438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$FCP_stage2.coverage" NAME="FCP_stage2 Coverage Results" MODIFIED="1699711560127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
   </component>
 </project>

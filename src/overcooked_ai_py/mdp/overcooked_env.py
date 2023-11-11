@@ -1,6 +1,7 @@
 import copy
 import time
 import cv2
+import sys, os
 import gym
 import gymnasium
 import numpy as np
@@ -24,7 +25,10 @@ from overcooked_ai_py.planning.planners import (
 )
 from overcooked_ai_py.utils import append_dictionaries, mean_and_std_err
 from overcooked_ai_py.visualization.state_visualizer import StateVisualizer
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../../')
 from script_agent import SCRIPT_AGENTS
+
 DEFAULT_ENV_PARAMS = {"horizon": 400}
 
 MAX_HORIZON = 1e10
@@ -733,10 +737,12 @@ class Overcooked(gym.Env):
         self.observation_space = self._setup_observation_space()
         self.action_space = gym.spaces.Discrete(len(Action.ALL_ACTIONS))
         self.num_agents = 2
-        # self.reset()
+        # self.reset() # 这一行不知道是干啥的
         self.visualizer = StateVisualizer()
         self.random_index = False
 
+        # if use_script_policy is True, you must specify both agent0_policy_name and agent1_policy_name
+        # e.g. 'ppo', 'script: place_onion_in_pot'
         if use_script_policy:
             assert not self.random_index
             self.script_agent = [None, None]
@@ -775,6 +781,7 @@ class Overcooked(gym.Env):
         ]
 
         joint_action = [agent_action, other_agent_action]
+
         for a in range(self.num_agents):
             if self.script_agent[a] is not None:
                 joint_action[a] = self.script_agent[a].step(self.base_env.mdp, self.base_env.state, a)
@@ -802,6 +809,7 @@ class Overcooked(gym.Env):
             "overcooked_state": next_state,
             "other_agent_env_idx": 1 - self.agent_idx,
         }
+        env_info['joint_action'] = joint_action
         return obs, reward, done, env_info
 
     def reset(self):
@@ -831,14 +839,15 @@ class Overcooked(gym.Env):
         both_agents_ob = (ob_p0, ob_p1)
         if self.agent_idx == 1:
             both_agents_ob = (ob_p1, ob_p0)
-
         return {
             "both_agent_obs": both_agents_ob,
             "overcooked_state": self.base_env.state,
             "other_agent_env_idx": 1 - self.agent_idx,
         }
 
-    def render(self, mode="human"):
+    def render(self, mode="human", interval=None):
+        if interval:
+            time.sleep(interval)
         rewards_dict = {}  # dictionary of details you want rendered in the UI
         for key, value in self.base_env.game_stats.items():
             if key in [
@@ -854,7 +863,6 @@ class Overcooked(gym.Env):
                 self.base_env.state, **rewards_dict
             ),
         )
-
         buffer = pygame.surfarray.array3d(image)
         image = copy.deepcopy(buffer)
         image = np.flip(np.rot90(image, 3), 1)
@@ -864,3 +872,10 @@ class Overcooked(gym.Env):
         cv2.imshow('Rendered Image', image)
         cv2.waitKey(1)
         return image
+
+    def switch_script_agent(self, agent0_policy_name, agent1_policy_name):
+        for player_idx, policy_name in enumerate([agent0_policy_name, agent1_policy_name]):
+            if policy_name.startswith("script:"):
+                self.script_agent[player_idx] = SCRIPT_AGENTS[policy_name[7:]]()
+                self.script_agent[player_idx].reset(self.base_env.mdp, self.base_env.state, player_idx)
+

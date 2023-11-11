@@ -12,22 +12,27 @@ print(runs)
 print(run_ids)
 api = wandb.Api()
 i = 0
+
+fcp_s1_dir = f"{POLICY_POOL_PATH}/cramped_room/fcp/s1"
+if not os.path.exists(fcp_s1_dir):
+    os.makedirs(fcp_s1_dir, exist_ok=True)  # 创建目录，如果目录已经存在，则不会引发异常
+
 for run_id in run_ids:
     run = api.run(f"wanghm/overcooked_rl/{run_id}")
-    if run.state == "finished":
+    if run.state == "finished" and run.group == 'FCP':
+        i += 1
         final_ep_sparse_r = run.summary['ep_reward']
         history = run.history()
         history = history[['_step', 'ep_reward']]
         steps = history['_step'].to_numpy()
         ep_sparse_r = history['ep_reward'].to_numpy()
         files = run.files()
-        actor_pts = [f for f in files if f.name.startswith('actor_periodic')]
+        actor_pts = [f for f in files if f.name.startswith('sp_periodic')]
         actor_versions = [eval(f.name.split('_')[-1].split('.pt')[0]) for f in actor_pts]
         actor_pts = {v: p for v, p in zip(actor_versions, actor_pts)}
         actor_versions = sorted(actor_versions)
         max_actor_versions = max(actor_versions) + 1
         max_steps = max(steps)
-
         new_steps = [steps[0]]
         new_ep_sparse_r = [ep_sparse_r[0]]
         for s, er in zip(steps[1:], ep_sparse_r[1:]):
@@ -47,7 +52,6 @@ for run_id in run_ids:
             if min_delta > abs(mid_ep_sparse_r - score):
                 min_delta = abs(mid_ep_sparse_r - score)
                 selected_pts["mid"] = s
-
         selected_pts = {k: int(v / max_steps * max_actor_versions) for k, v in selected_pts.items()}
         for tag, exp_version in selected_pts.items():
             version = actor_versions[0]
@@ -56,6 +60,5 @@ for run_id in run_ids:
                     version = actor_version
             print(f"sp{i}", tag, "Expected", exp_version, "Found", version)
             ckpt = actor_pts[version]
-            ckpt.download("tmp", replace=True)
-            fcp_s1_dir = f"{POLICY_POOL_PATH}/{layout}/fcp/s1"
-            os.system(f"mv tmp/actor_periodic_{version}.pt {fcp_s1_dir}/sp{i}_{tag}_actor.pt")
+            ckpt.download("tmp", replace=True)  # 在当前目录新建一个tmp目录并将选择的checkpoint下载进取
+            os.system(f"mv tmp/sp_periodic_{version}.pt {fcp_s1_dir}/sp{i}_{tag}_actor.pt")

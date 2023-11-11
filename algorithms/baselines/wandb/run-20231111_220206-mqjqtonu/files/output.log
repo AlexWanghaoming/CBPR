@@ -1,0 +1,479 @@
+/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/gym/utils/env_checker.py:149: UserWarning: [33mWARN: Agent's maxmimum observation space value is infinity. This is probably too high
+  "Agent's maxmimum observation space value is infinity. This is probably too high"
+/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/gym/envs/registration.py:620: UserWarning: [33mWARN: Env check failed with the following message: The observation returned by `reset()` method must be a numpy array
+[33mYou can set `disable_env_checker=True` to disable this check.
+  f"Env check failed with the following message: {e}\n"
+Computing MediumLevelActionManager
+Computing MediumLevelActionManager
+switch partner: sp1_final_actor.pt
+Computing MediumLevelActionManager
+Ep 1: 16.0
+switch partner: sp10_final_actor.pt
+Computing MediumLevelActionManager
+Ep 2: 8.9982
+switch partner: sp6_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 3: 82.98280000000001
+switch partner: sp4_final_actor.pt
+Computing MediumLevelActionManager
+Ep 4: 45.9844
+switch partner: sp10_init_actor.pt
+Computing MediumLevelActionManager
+Ep 5: 5.9952
+switch partner: sp7_init_actor.pt
+Computing MediumLevelActionManager
+Ep 6: 2.997
+switch partner: sp2_init_actor.pt
+Computing MediumLevelActionManager
+Ep 7: 5.9928
+switch partner: sp7_final_actor.pt
+Computing MediumLevelActionManager
+Ep 8: 8.987400000000001
+switch partner: sp0_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 9: 82.93119999999998
+switch partner: sp9_init_actor.pt
+Computing MediumLevelActionManager
+Ep 10: 5.9892
+switch partner: sp2_final_actor.pt
+Computing MediumLevelActionManager
+Ep 11: 41.916000000000004
+switch partner: sp10_init_actor.pt
+Computing MediumLevelActionManager
+Ep 12: 19.956000000000003
+switch partner: sp5_init_actor.pt
+Computing MediumLevelActionManager
+Ep 13: 16.9592
+switch partner: sp7_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 14: 27.927200000000003
+switch partner: sp5_init_actor.pt
+Computing MediumLevelActionManager
+Ep 15: 7.9776
+switch partner: sp10_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 16: 50.907
+switch partner: sp4_final_actor.pt
+Computing MediumLevelActionManager
+Ep 17: 25.916800000000002
+switch partner: sp1_init_actor.pt
+Computing MediumLevelActionManager
+Ep 18: 19.932000000000002
+switch partner: sp7_final_actor.pt
+Computing MediumLevelActionManager
+Ep 19: 8.9676
+switch partner: sp10_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 20: 85.82520000000002
+switch partner: sp0_init_actor.pt
+Computing MediumLevelActionManager
+Ep 21: 10.956
+switch partner: sp1_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 22: 29.874000000000002
+switch partner: sp0_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 23: 61.81520000000002
+switch partner: sp10_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 24: 24.884999999999998
+switch partner: sp9_init_actor.pt
+Computing MediumLevelActionManager
+Ep 25: 2.9856
+switch partner: sp6_init_actor.pt
+Computing MediumLevelActionManager
+Ep 26: 5.97
+switch partner: sp9_final_actor.pt
+Computing MediumLevelActionManager
+Ep 27: 99.68799999999997
+switch partner: sp2_final_actor.pt
+Computing MediumLevelActionManager
+Ep 28: 5.9676
+switch partner: sp0_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 29: 70.7144
+switch partner: sp8_final_actor.pt
+Computing MediumLevelActionManager
+Ep 30: 16.9014
+switch partner: sp4_final_actor.pt
+Computing MediumLevelActionManager
+Ep 31: 45.843999999999994
+switch partner: sp5_final_actor.pt
+Computing MediumLevelActionManager
+Ep 32: 25.838800000000003
+switch partner: sp8_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 33: 49.80800000000001
+switch partner: sp9_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 34: 27.815199999999997
+switch partner: sp2_init_actor.pt
+Computing MediumLevelActionManager
+Ep 35: 36.8844
+switch partner: sp8_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 36: 26.811
+switch partner: sp7_init_actor.pt
+Computing MediumLevelActionManager
+Ep 37: 8.9352
+switch partner: sp1_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 38: 10.918600000000001
+switch partner: sp6_final_actor.pt
+Computing MediumLevelActionManager
+Ep 39: 45.8024
+switch partner: sp9_final_actor.pt
+Computing MediumLevelActionManager
+Ep 40: 113.57880000000003
+switch partner: sp0_init_actor.pt
+Computing MediumLevelActionManager
+Ep 41: 10.911999999999999
+switch partner: sp3_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 42: 56.6966
+switch partner: sp8_init_actor.pt
+Computing MediumLevelActionManager
+Ep 43: 53.714400000000005
+switch partner: sp6_final_actor.pt
+Computing MediumLevelActionManager
+Ep 44: 8.9226
+switch partner: sp1_init_actor.pt
+Computing MediumLevelActionManager
+Ep 45: 19.823999999999998
+switch partner: sp8_final_actor.pt
+Computing MediumLevelActionManager
+Ep 46: 7.928
+switch partner: sp9_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 47: 53.6872
+switch partner: sp9_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 48: 41.7932
+switch partner: sp9_final_actor.pt
+Computing MediumLevelActionManager
+Ep 49: 19.807999999999996
+switch partner: sp10_init_actor.pt
+Computing MediumLevelActionManager
+Ep 50: 10.892199999999999
+switch partner: sp7_init_actor.pt
+Computing MediumLevelActionManager
+Ep 51: 21.779999999999998
+switch partner: sp10_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 52: 119.388
+switch partner: sp7_final_actor.pt
+Computing MediumLevelActionManager
+Ep 53: 25.729600000000005
+switch partner: sp7_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 54: 64.52300000000001
+switch partner: sp3_init_actor.pt
+Computing MediumLevelActionManager
+Ep 55: 2.9676
+switch partner: sp1_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 56: 49.67
+switch partner: sp2_final_actor.pt
+Computing MediumLevelActionManager
+Ep 57: 8.8992
+switch partner: sp7_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 58: 53.61240000000001
+switch partner: sp8_final_actor.pt
+Computing MediumLevelActionManager
+Ep 59: 7.9072
+switch partner: sp9_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 60: 42.72859999999999
+switch partner: sp1_final_actor.pt
+Computing MediumLevelActionManager
+Ep 61: 0.0
+switch partner: sp9_final_actor.pt
+Computing MediumLevelActionManager
+Ep 62: 25.6828
+switch partner: sp6_final_actor.pt
+Computing MediumLevelActionManager
+Ep 63: 11.8512
+switch partner: sp7_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 64: 61.47080000000001
+switch partner: sp5_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 65: 11.8464
+switch partner: sp3_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 66: 39.739999999999995
+switch partner: sp5_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 67: 8.8812
+switch partner: sp6_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 68: 11.8392
+switch partner: sp4_final_actor.pt
+Computing MediumLevelActionManager
+Ep 69: 8.877600000000001
+switch partner: sp0_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 70: 113.2548
+switch partner: sp0_init_actor.pt
+Computing MediumLevelActionManager
+Ep 71: 2.958
+switch partner: sp9_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 72: 44.645
+switch partner: sp5_init_actor.pt
+Computing MediumLevelActionManager
+Ep 73: 7.8848
+switch partner: sp1_init_actor.pt
+Computing MediumLevelActionManager
+Ep 74: 16.7518
+switch partner: sp6_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 75: 11.8224
+switch partner: sp9_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 76: 44.625
+switch partner: sp2_init_actor.pt
+Computing MediumLevelActionManager
+Ep 77: 5.9088
+switch partner: sp0_final_actor.pt
+Computing MediumLevelActionManager
+Ep 78: 8.8614
+switch partner: sp6_final_actor.pt
+Computing MediumLevelActionManager
+Ep 79: 45.5944
+switch partner: sp2_final_actor.pt
+Computing MediumLevelActionManager
+Ep 80: 39.684
+switch partner: sp10_final_actor.pt
+Computing MediumLevelActionManager
+Ep 81: 48.535999999999994
+switch partner: sp0_final_actor.pt
+Computing MediumLevelActionManager
+Ep 82: 11.8056
+switch partner: sp8_final_actor.pt
+Computing MediumLevelActionManager
+Ep 83: 16.721200000000003
+switch partner: sp7_init_actor.pt
+Computing MediumLevelActionManager
+Ep 84: 13.7676
+switch partner: sp9_init_actor.pt
+Computing MediumLevelActionManager
+Ep 85: 2.9495999999999998
+switch partner: sp9_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 86: 56.37099999999999
+switch partner: sp9_final_actor.pt
+Computing MediumLevelActionManager
+Ep 87: 8.8452
+switch partner: sp3_init_actor.pt
+Computing MediumLevelActionManager
+Ep 88: 2.9478
+switch partner: sp7_init_actor.pt
+Computing MediumLevelActionManager
+Ep 89: 16.7008
+switch partner: sp1_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 90: 66.16340000000001
+switch partner: sp3_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 91: 42.586
+switch partner: sp6_final_actor.pt
+Computing MediumLevelActionManager
+Ep 92: 45.526799999999994
+switch partner: sp2_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 93: 72.02480000000001
+switch partner: sp0_final_actor.pt
+Computing MediumLevelActionManager
+Ep 94: 45.516400000000004
+switch partner: sp3_init_actor.pt
+Computing MediumLevelActionManager
+Ep 95: 5.8872
+switch partner: sp8_init_actor.pt
+Computing MediumLevelActionManager
+Ep 96: 10.791
+switch partner: sp4_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 97: 22.5584
+switch partner: sp3_final_actor.pt
+Computing MediumLevelActionManager
+Ep 98: 8.8254
+switch partner: sp1_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 99: 50.39240000000001
+switch partner: sp6_init_actor.pt
+Computing MediumLevelActionManager
+Ep 100: 5.8812
+switch partner: sp5_final_actor.pt
+Computing MediumLevelActionManager
+Ep 101: 25.480000000000004
+switch partner: sp10_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 102: 25.4748
+switch partner: sp1_init_actor.pt
+Computing MediumLevelActionManager
+Ep 103: 13.714400000000001
+switch partner: sp8_init_actor.pt
+Computing MediumLevelActionManager
+Ep 104: 10.7734
+switch partner: sp6_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 105: 2.9375999999999998
+switch partner: sp0_init_actor.pt
+Computing MediumLevelActionManager
+Ep 106: 13.705999999999998
+switch partner: sp2_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 107: 8.8092
+switch partner: sp3_init_actor.pt
+Computing MediumLevelActionManager
+Ep 108: 2.9358
+switch partner: sp3_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 109: 45.4384
+switch partner: sp3_init_actor.pt
+Computing MediumLevelActionManager
+Ep 110: 7.8256
+switch partner: sp2_init_actor.pt
+Computing MediumLevelActionManager
+Ep 111: 2.934
+switch partner: sp9_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 112: 19.555999999999997
+switch partner: sp4_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 113: 76.1712
+switch partner: sp3_init_actor.pt
+Computing MediumLevelActionManager
+Ep 114: 10.7514
+switch partner: sp6_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 115: 16.6124
+switch partner: sp2_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 116: 16.609
+switch partner: sp3_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 117: 66.8864
+switch partner: sp5_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 118: 8.7894
+switch partner: sp3_init_actor.pt
+Computing MediumLevelActionManager
+Ep 119: 2.9292000000000002
+switch partner: sp0_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 120: 154.1912
+switch partner: sp2_final_actor.pt
+Computing MediumLevelActionManager
+Ep 121: 50.25599999999999
+switch partner: sp5_final_actor.pt
+Computing MediumLevelActionManager
+Ep 122: 25.370799999999996
+switch partner: sp2_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 123: 50.2436
+switch partner: sp6_init_actor.pt
+Computing MediumLevelActionManager
+Ep 124: 5.8524
+switch partner: sp10_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 125: 76.0824
+switch partner: sp4_final_actor.pt
+Computing MediumLevelActionManager
+Ep 126: 8.774999999999999
+switch partner: sp0_init_actor.pt
+Computing MediumLevelActionManager
+Ep 127: 2.9244
+switch partner: sp8_init_actor.pt
+Computing MediumLevelActionManager
+Ep 128: 13.644400000000001
+switch partner: sp0_init_actor.pt
+Computing MediumLevelActionManager
+Ep 129: 13.641599999999999
+switch partner: sp7_final_actor.pt
+Computing MediumLevelActionManager
+Ep 130: 11.6904
+switch partner: sp9_init_actor.pt
+Computing MediumLevelActionManager
+Ep 131: 11.687999999999999
+switch partner: sp6_init_actor.pt
+Computing MediumLevelActionManager
+Ep 132: 15.5808
+switch partner: sp5_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 133: 8.7624
+switch partner: sp5_final_actor.pt
+Computing MediumLevelActionManager
+Ep 134: 22.388200000000005
+switch partner: sp10_init_actor.pt
+Computing MediumLevelActionManager
+Ep 135: 22.383599999999998
+switch partner: sp4_init_actor.pt
+Computing MediumLevelActionManager
+Ep 136: 8.757
+switch partner: sp6_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 137: 45.29279999999999
+switch partner: sp10_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 138: 28.2054
+switch partner: sp2_init_actor.pt
+Computing MediumLevelActionManager
+Ep 139: 24.310000000000002
+switch partner: sp3_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 140: 63.749
+switch partner: sp4_final_actor.pt
+Computing MediumLevelActionManager
+Ep 141: 11.664
+switch partner: sp9_init_actor.pt
+Computing MediumLevelActionManager
+Ep 142: 13.6052
+switch partner: sp0_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 143: 53.0344
+switch partner: sp3_final_actor.pt
+Computing MediumLevelActionManager
+Ep 144: 8.7426
+switch partner: sp2_final_actor.pt
+Computing MediumLevelActionManager
+Ep 145: 11.654399999999999
+switch partner: sp5_final_actor.pt
+Computing MediumLevelActionManager
+Ep 146: 8.738999999999999
+switch partner: sp3_final_actor.pt
+Computing MediumLevelActionManager
+Ep 147: 38.83199999999999
+switch partner: sp3_final_actor.pt
+Computing MediumLevelActionManager
+Ep 148: 25.235599999999998
+switch partner: sp1_mid_actor.pt
+Computing MediumLevelActionManager
+Ep 149: 57.845600000000005
+switch partner: sp4_final_actor.pt
+Computing MediumLevelActionManager
+Traceback (most recent call last):
+  File "/alpha/overcooked_rl/algorithms/baselines/FCP_stage2.py", line 133, in <module>
+    run()
+  File "/alpha/overcooked_rl/algorithms/baselines/FCP_stage2.py", line 126, in run
+    ego_buffer=ego_buffer)
+  File "/alpha/overcooked_rl/algorithms/baselines/FCP_stage2.py", line 31, in train_one_episode
+    obs_, sparse_reward, done, info = env.step((ego_a, alt_a))
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/gym/wrappers/order_enforcing.py", line 37, in step
+    return self.env.step(action)
+  File "/alpha/overcooked_rl/src/overcooked_ai_py/mdp/overcooked_env.py", line 794, in step
+    _, ob_p1 = self.alt_featurize_fn(next_state)
+  File "/alpha/overcooked_rl/src/overcooked_ai_py/mdp/overcooked_env.py", line 291, in featurize_state_mdp
+    return self.mdp.featurize_state(state, self.mlam, num_pots=num_pots)
+  File "/alpha/overcooked_rl/src/overcooked_ai_py/mdp/overcooked_mdp.py", line 2847, in featurize_state
+    features_np = {k: np.array(v) for k, v in all_features.items()}
+  File "/alpha/overcooked_rl/src/overcooked_ai_py/mdp/overcooked_mdp.py", line 2847, in <dictcomp>
+    features_np = {k: np.array(v) for k, v in all_features.items()}
+KeyboardInterrupt
+Ep 150: 8.7318
+switch partner: sp3_init_actor.pt
+Computing MediumLevelActionManager
+Ep 151: 8.73
+switch partner: sp8_final_actor.pt

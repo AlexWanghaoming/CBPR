@@ -7,7 +7,6 @@ from typing import List, Tuple, Dict, Optional, Type, Union
 import argparse
 import torch
 import torch.nn as nn
-
 import os, sys
 from models import MTP_MODELS, META_TASK_MODELS
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
@@ -71,7 +70,6 @@ class BPR_offline:
     """
     BPR离线部分，performance model初始化，belief初始化
     """
-
     def __init__(self, args):
         # policy name(index) library
         self.human_policys = HPL.gen_policy_library()
@@ -93,9 +91,7 @@ class BPR_offline:
             with open(performance_model_save_path, 'rb') as ff:
                 performance_model = pickle.load(ff)
             return performance_model
-
         env = init_env(layout=args.layout, lossless_state_encoding=False)
-
         performance_model = [{}, {}]
         n_rounds = 50  # TODO: performance model n_rounds当前是玩20次的平均值
         for h_ in self.human_policys:
@@ -170,7 +166,6 @@ class BPR_online:
 
     def play(self, args, logger):
         args.max_episode_steps = 600
-
         # buffer_dict = {"ppo-bc_p1": ReplayBuffer(args),
         #                "ppo-bc_p2": ReplayBuffer(args),
         #                "ppo-bc_p3": ReplayBuffer(args),
@@ -413,61 +408,51 @@ def parse_args():
 
 
 if __name__ == '__main__':
-
     args = parse_args()
-
     test_env = init_env(layout=args.layout, lossless_state_encoding=False)
-    if args.net_arch == "conv":
-        args.state_dim = test_env.observation_space.shape[-1]
-    else:
-        args.state_dim = test_env.observation_space.shape[0]
+
+    args.state_dim = test_env.observation_space.shape[0]
     args.action_dim = test_env.action_space.n
-
     LAYOUT_NAME = args.layout
-
     bc_models = []
     for i in range(4):
         bc_models.append(torch.load(META_TASK_MODELS[args.layout][i]))  # wanghm GAIL载入模型时不释放内存，需要提前存到列表
 
-    seeds = [0, 1, 42, 2022, 2023]
-    # seeds = [0, 1, 42]
+    if args.mode == 'inter':
+        random.seed(55)
+        N = args.num_episodes // args.switch_human_freq
+        policy_id_list = [random.randint(1, 4) for _ in range(N)]  # 固定测试的策略顺序
+        policy_id_list = [val for val in policy_id_list for i in range(args.switch_human_freq)]
+    else:
+        random.seed(55)
+        N = args.num_episodes * (600 // args.switch_human_freq)
+        policy_id_list = [random.randint(1, 4) for _ in range(N)]
 
-    for seed in seeds:
-        if args.mode == 'inter':
-            random.seed(55)
-            N = args.num_episodes // args.switch_human_freq
-            policy_id_list = [random.randint(1, 4) for _ in range(N)]  # 固定测试的策略顺序
-            policy_id_list = [val for val in policy_id_list for i in range(args.switch_human_freq)]
-        else:
-            random.seed(55)
-            N = args.num_episodes * (600 // args.switch_human_freq)
-            policy_id_list = [random.randint(1, 4) for _ in range(N)]
+    seed_everything(seed)
+    HPL = HumanPolicyLibrary()
+    h_pl = HPL.gen_policy_library()  # 构建Human策略库
+    APL = AiPolicyLibrary()
+    apl = APL.gen_policy_library(args)  # 构建AI策略库
 
-        seed_everything(seed)
-        HPL = HumanPolicyLibrary()
-        h_pl = HPL.gen_policy_library()  # 构建Human策略库
-        APL = AiPolicyLibrary()
-        apl = APL.gen_policy_library(args)  # 构建AI策略库
+    bpr_offline = BPR_offline(args)
 
-        bpr_offline = BPR_offline(args)
+    performance_model = bpr_offline.gen_performance_model()
+    print("Initial performance model: ", performance_model)
+    belief = bpr_offline.gen_belief()
+    bpr_online = BPR_online(agents=APL.gen_policy_library(args),
+                            human_policys=HPL.gen_policy_library(),
+                            performance_model=performance_model,
+                            belief=belief,
+                            new_polcy_threshold=0.3)
 
-        performance_model = bpr_offline.gen_performance_model()
-        print("Initial performance model: ", performance_model)
-        belief = bpr_offline.gen_belief()
-        bpr_online = BPR_online(agents=APL.gen_policy_library(args),
-                                human_policys=HPL.gen_policy_library(),
-                                performance_model=performance_model,
-                                belief=belief,
-                                new_polcy_threshold=0.3)
+    if args.new_policy_learning:
+        logger = Logger(log_dir=f'./logs/cbpr/{LAYOUT_NAME}',
+                        exp_name=f'CBPR-switch-{args.mode}-{args.switch_human_freq}-learn', env_name='')
+    else:
+        logger = Logger(log_dir=f'./logs/cbpr/{LAYOUT_NAME}',
+                        exp_name=f'CBPR-switch-{args.mode}-{args.switch_human_freq}-fix', env_name='')
 
-        if args.new_policy_learning:
-            logger = Logger(log_dir=f'./logs/cbpr/{LAYOUT_NAME}',
-                            exp_name=f'CBPR-switch-{args.mode}-{args.switch_human_freq}-learn', env_name='')
-        else:
-            logger = Logger(log_dir=f'./logs/cbpr/{LAYOUT_NAME}',
-                            exp_name=f'CBPR-switch-{args.mode}-{args.switch_human_freq}-fix', env_name='')
-
-        bpr_online.play(args, logger)
+    bpr_online.play(args, logger)
 
 
 

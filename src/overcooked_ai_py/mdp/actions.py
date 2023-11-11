@@ -56,12 +56,12 @@ class Action(object):
     ACTION_TO_INDEX = {a: i for i, a in enumerate(INDEX_TO_ACTION)}
     MOTION_ACTIONS = Direction.ALL_DIRECTIONS + [STAY]
     ACTION_TO_CHAR = {
-        Direction.NORTH: "↑",
-        Direction.SOUTH: "↓",
-        Direction.EAST: "→",
-        Direction.WEST: "←",
-        STAY: "stay",
-        INTERACT: INTERACT,
+        Direction.NORTH: "↑",  # 0
+        Direction.SOUTH: "↓",  # 1
+        Direction.EAST: "→",   # 2
+        Direction.WEST: "←",   # 3
+        STAY: "stay",          # 4
+        INTERACT: INTERACT,    # 5
     }
     NUM_ACTIONS = len(ALL_ACTIONS)
 

@@ -13,27 +13,18 @@ from overcooked_ai_py.mdp.overcooked_env import OvercookedEnv
 import gym
 import argparse
 
+
 def parse_args():
     parser = argparse.ArgumentParser("Hyperparameter Setting for PPO-discrete")
-    parser.add_argument("--net_arch", type=str, default='mlp', help="policy net arch")
     parser.add_argument("--hidden_width", type=int, default=64, help="The number of neurons in hidden layers of the neural network")
     parser.add_argument("--batch_size", type=int, default=2048, help="Batch size")
     parser.add_argument("--mini_batch_size", type=int, default=64, help="Minibatch size")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")
     parser.add_argument("--gamma", type=float, default=0.99, help="Discount factor")
-    parser.add_argument("--lamda", type=float, default=0.98, help="GAE parameter")
     parser.add_argument("--epsilon", type=float, default=0.05, help="PPO clip parameter")
-    parser.add_argument("--K_epochs", type=int, default=8, help="PPO parameter")
-    parser.add_argument("--use_adv_norm", type=bool, default=True, help="Trick 1:advantage normalization")
     parser.add_argument("--use_state_norm", type=bool, default=False, help="Trick 2:state normalization")
     parser.add_argument("--use_reward_scaling", type=bool, default=True, help="Trick 4:reward scaling")
     parser.add_argument("--entropy_coef", type=float, default=0.1, help="Trick 5: policy entropy")
-    parser.add_argument("--use_lr_decay", type=bool, default=True, help="Trick 6: 学习率线性衰减")
-    parser.add_argument("--use_grad_clip", type=bool, default=True, help="Trick 7: Gradient clip: 0.1")
-    parser.add_argument("--use_orthogonal_init", type=bool, default=True, help="Trick 8: orthogonal initialization")
-    parser.add_argument("--set_adam_eps", type=bool, default=True, help="Trick 9: set Adam epsilon=1e-5")
-    parser.add_argument("--use_tanh", type=bool, default=True, help="Trick 10: tanh activation function")
-    parser.add_argument("--vf_coef", type=float, default=0.5, help="value function coeffcient")
     parser.add_argument('--device', type=str, default='cpu')
     args = parser.parse_args()
     return args
@@ -41,7 +32,6 @@ def parse_args():
 def init_env(layout, horizon=600, lossless_state_encoding=False, agent0_policy_name=None, agent1_policy_name=None, use_script_policy=False):
     # mdp = OvercookedGridworld.from_layout_name(layout, start_state=OvercookedGridworld.get_random_start_state_fn) # bug 随机游戏初始状态
     mdp = OvercookedGridworld.from_layout_name(layout)
-
     base_env = OvercookedEnv.from_mdp(mdp, horizon=horizon)
     if lossless_state_encoding:
         env = gym.make("Overcooked-v0",

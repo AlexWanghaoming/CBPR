@@ -13,7 +13,7 @@ from agents.ppo_discrete import PPO_discrete
 from utils import seed_everything, init_env
 from rl_plotter.logger import Logger
 import random
-from state_trans_func.NN import NN
+from state_trans_func.NN_keystate import NN
 from utils import seed_everything, init_env, ReplayBuffer, Normalization
 from datetime import datetime
 import wandb

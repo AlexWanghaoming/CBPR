@@ -1,4 +1,4 @@
-from utils import LinearAnnealer, init_env
+from utils import init_env
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/src/')
 
@@ -21,26 +21,21 @@ SCRIPT_AGENTS = {
 }
 """
 
+
 layout = 'cramped_room'
 num_episodes = 50
-annealer = LinearAnnealer(horizon=num_episodes * 600 * 0.5)
 env = init_env(layout=layout,
-               agent0_policy_name='script:place_tomato_in_pot',
-               agent1_policy_name='script:place_onion_and_deliver_soup',
+               agent0_policy_name='script:place_onion_in_pot',
+               agent1_policy_name='script:deliver_soup',
                use_script_policy=True)
 
 for k in range(1, num_episodes + 1):
     obs = env.reset()
-    episode_steps = 0
     done = False
     episode_reward = 0
     agent_env_steps = 600 * (k - 1)
-    reward_shaping_factor = annealer.param_value(agent_env_steps)
     while not done:
-        episode_steps += 1
         obs_, sparse_reward, done, info = env.step((1, 1)) # if use scripted policy, just random an action here
-        shaped_r = info["shaped_r_by_agent"][0] + info["shaped_r_by_agent"][1]
-        r = sparse_reward + shaped_r * reward_shaping_factor
-        episode_reward += r
-        env.render()
+        episode_reward += sparse_reward
+        env.render(interval=0.01)
     print(f'Ep {k}:', episode_reward)

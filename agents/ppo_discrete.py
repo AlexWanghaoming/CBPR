@@ -192,7 +192,7 @@ class PPO_discrete:
                 # self.optimizer_critic.step()
                 self.optimizer.step()
 
-        if self.use_lr_decay:  # Trick 6:learning rate Decay
+        if self.use_lr_decay:
             self.lr_decay(cur_steps)
 
     def update_avg_std_for_normalization(self, states: torch.Tensor, returns: torch.Tensor):

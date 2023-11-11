@@ -1,1 +1,1 @@
-{"episode": 478, "ep_reward": 438.2239999999999, "_timestamp": 1699608441.4762104, "_runtime": 362.61733627319336, "_step": 477}
+{"episode": 3000, "ep_reward": 320, "_timestamp": 1699610339.9645333, "_runtime": 2261.1056592464447, "_step": 2999, "_wandb": {"runtime": 2259}}
