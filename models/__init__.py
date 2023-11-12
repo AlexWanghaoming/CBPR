@@ -64,11 +64,16 @@ GP_MODELS = {'cramped_room': [os.path.join(_curr_directory,'gp/gp_cramped_room_(
                                    ]
              }
 
-NN_MODELS = {'cramped_room': [os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
-                                   os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth'),
-                                   os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth'),
-                                    os.path.join(_curr_directory,'NN/NN_cramped_room_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
-                                   ],
+NN_MODELS = {'cramped_room':
+                 # [os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
+                 #                   os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth'),
+                 #                   os.path.join(_curr_directory,'NN/NN_cramped_room_(0.0, 1.0, 0.0, 0.0)_s_prime_r.pth'),
+                 #                    os.path.join(_curr_directory,'NN/NN_cramped_room_(1.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
+                 #                   ],
+             [os.path.join(_curr_directory, 'NN/NN_cramped_room_place_onion_in_pot_s_prime_r.pth'),
+              os.path.join(_curr_directory, 'NN/NN_cramped_room_deliver_soup_s_prime_r.pth'),
+              os.path.join(_curr_directory, 'NN/NN_cramped_room_place_onion_and_deliver_soup_s_prime_r.pth'),
+              os.path.join(_curr_directory, 'NN/NN_cramped_room_random_s_prime_r.pth')],
             'marshmallow_experiment': [os.path.join(_curr_directory,'NN/NN_marshmallow_experiment_(0.0, 0.0, 0.0, 0.0)_s_prime_r.pth'),
                                        os.path.join(_curr_directory,'NN/NN_marshmallow_experiment_(0.0, 0.0, 0.0, 1.0)_s_prime_r.pth'),
                                        os.path.join(_curr_directory,'NN/NN_marshmallow_experiment_(0.0, 0.0, 1.0, 0.0)_s_prime_r.pth'),

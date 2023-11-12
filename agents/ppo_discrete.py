@@ -71,12 +71,12 @@ class MlpCritic(nn.Module):
 
 class PPO_discrete:
     def __init__(self,
-                 state_dim: int,
-                 action_dim: int,
-                 num_episodes: int,
-                 lr:float=0.001,
+                 state_dim: int=96,
+                 action_dim: int=6,
+                 num_episodes: int=2000,
+                 lr:float=9e-4,
                  hidden_dim:int=128,
-                 batch_size:int=2048,
+                 batch_size:int=4096,
                  use_minibatch:bool=True,
                  mini_batch_size:int=128,
                  epsilon:float=0.05,
@@ -87,7 +87,7 @@ class PPO_discrete:
                  K_epochs:int=8,
                  use_lr_decay:bool=True,
                  vf_coef:int=1,
-                 state_value_tau=0,
+                 state_value_tau:float=0.0,
                  device:str='cpu'):
         self.device = device
         self.batch_size = batch_size

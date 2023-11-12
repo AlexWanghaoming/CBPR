@@ -11,6 +11,7 @@ from utils import seed_everything, LinearAnnealer, init_env
 import wandb
 from datetime import datetime
 
+
 def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, seed:int):
     annealer = LinearAnnealer(horizon=args.num_episodes * args.max_episode_steps * 0.5)
     env = init_env(layout=args.layout)

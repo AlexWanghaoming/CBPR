@@ -4,21 +4,20 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 from agents.ppo_discrete import PPO_discrete
 from bc.bc_hh import BehaviorClone
-from utils import seed_everything, LinearAnnealer, init_env, ReplayBuffer, Normalization, RewardScaling
+from utils import seed_everything, LinearAnnealer, init_env, ReplayBuffer, RewardScaling
 import wandb
+
 
 def train(args, ego_agent:PPO_discrete, n_episodes:int, seed:int, logger):
     annealer = LinearAnnealer(horizon=args.num_episodes * args.max_episode_steps * 0.5)
     env = init_env(layout=args.layout,
-                   agent0_policy_name='ppo',
+                   agent0_policy_name='mtp',
                    agent1_policy_name=f'script:{args.scripted_policy_name}',
                    use_script_policy=True)
     ego_buffer = ReplayBuffer(args.batch_size, args.state_dim)
     cur_steps = 0  # Record the total steps during the training
-
     if args.use_reward_scaling:
         reward_scaling = RewardScaling(shape=1, gamma=args.gamma)
-
     for k in range(1, n_episodes+1):
         agent_env_steps = args.max_episode_steps *  (k-1)
         reward_shaping_factor = annealer.param_value(agent_env_steps)
@@ -78,7 +77,6 @@ def run():
     parser.add_argument('--scripted_policy_name', type=str, default='place_onion_in_pot')
     parser.add_argument('--seed', type=int, default=0)
     args = parser.parse_args()
-    
     args.max_episode_steps = 600 # Maximum number of steps per episode
     args.t_max = args.num_episodes * args.max_episode_steps
     test_env = init_env(layout=args.layout)
@@ -95,17 +93,7 @@ def run():
                reinit=True)
 
     seed_everything(seed=args.seed)
-    ego_agent = PPO_discrete(lr=args.lr,
-                         hidden_dim=args.hidden_dim,
-                         batch_size=args.batch_size,
-                        use_minibatch=args.use_minibatch,
-                        mini_batch_size=args.mini_batch_size,
-                         epsilon=args.epsilon,
-                         entropy_coef=args.entropy_coef,
-                         state_dim=args.state_dim,
-                         action_dim=args.action_dim,
-                         num_episodes=args.num_episodes,
-                         device=args.device)
+    ego_agent = PPO_discrete(num_episodes=args.num_episodes, device=args.device)
     # logger = Logger(exp_name=f'SP', env_name=LAYOUT_NAME)
     train(args, ego_agent=ego_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)
     wandb.finish()

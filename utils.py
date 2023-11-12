@@ -16,15 +16,18 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser("Hyperparameter Setting for PPO-discrete")
-    parser.add_argument("--hidden_width", type=int, default=64, help="The number of neurons in hidden layers of the neural network")
-    parser.add_argument("--batch_size", type=int, default=2048, help="Batch size")
-    parser.add_argument("--mini_batch_size", type=int, default=64, help="Minibatch size")
+    parser.add_argument("--hidden_width", type=int, default=128, help="The number of neurons in hidden layers of the neural network")
+    parser.add_argument("--batch_size", type=int, default=4096, help="Batch size")
+    parser.add_argument("--mini_batch_size", type=int, default=128, help="Minibatch size")
+    parser.add_argument("--use_minibatch", type=bool, default=False, help="whether sample Minibatchs during policy updating")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")
+    parser.add_argument("--lr", type=float, default=9e-4)
     parser.add_argument("--gamma", type=float, default=0.99, help="Discount factor")
     parser.add_argument("--epsilon", type=float, default=0.05, help="PPO clip parameter")
     parser.add_argument("--use_state_norm", type=bool, default=False, help="Trick 2:state normalization")
     parser.add_argument("--use_reward_scaling", type=bool, default=True, help="Trick 4:reward scaling")
     parser.add_argument("--entropy_coef", type=float, default=0.1, help="Trick 5: policy entropy")
+    parser.add_argument('--num_episodes',  type=int, default=3000)
     parser.add_argument('--device', type=str, default='cpu')
     args = parser.parse_args()
     return args

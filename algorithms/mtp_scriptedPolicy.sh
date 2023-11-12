@@ -1,10 +1,11 @@
 
 # 定义一个包含所有策略名称的数组
-declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup')
+#declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup')  # cramped_room
+declare -a scripted_policies=('place_onion_in_pot' 'place_tomato_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup' 'place_tomato_and_deliver_soup') # marshmallow_experiment
 
-layout='cramped_room'
+layout='marshmallow_experiment'
 
-seed_max=1  # 跑多个种子
+seed_max=1  # 跑seed_max个种子
 
 for policy in "${scripted_policies[@]}"; do
     for seed in `seq ${seed_max}`;

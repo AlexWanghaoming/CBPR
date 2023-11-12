@@ -26,8 +26,8 @@ def train_one_episode(args, env, reward_shaping_factor, ego_agent:PPO_discrete, 
     while not done:
         cur_steps += 1
         episode_steps += 1
-        ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)  # Action and the corresponding log probability
-        alt_a, alt_a_logprob = alt_agent.choose_action(alt_obs)  # Action and the corresponding log probability
+        ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)
+        alt_a, alt_a_logprob = alt_agent.choose_action(alt_obs)
         obs_, sparse_reward, done, info = env.step((ego_a, alt_a))
         shaped_r = info["shaped_r_by_agent"][0] + info["shaped_r_by_agent"][1]
         r = sparse_reward + shaped_r*reward_shaping_factor
@@ -64,10 +64,9 @@ def run():
     parser.add_argument('--layout', default='cramped_room')
     # parser.add_argument('--layout', default='marshmallow_experiment')
     # parser.add_argument('--layout', default='asymmetric_advantages')
-    parser.add_argument('--num_episodes', type=int, default=10000)
+    parser.add_argument('--num_episodes', type=int, default=50000)
     parser.add_argument('--seed', type=int, default=0)
     args = parser.parse_args()
-
     args.max_episode_steps = 600 # Maximum number of steps per episode
     test_env = init_env(layout=args.layout)
     args.state_dim = test_env.observation_space.shape[0]
@@ -76,7 +75,7 @@ def run():
     formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
     wandb.init(project='overcooked_rl',
                group='FCP',
-               name=f'fcp_{args.layout}_seed{args.seed}',
+               name=f'fcp_{args.layout}_seed{args.seed}_{formatted_now}',
                job_type='training',
                config=vars(args),
                reinit=True)
@@ -129,6 +128,7 @@ def run():
         wandb.log({'episode': k, 'ep_reward': episode_reward})
     ego_agent.save_actor(f"../../models/fcp/fcp_{args.layout}_seed{args.seed}.pt")
     wandb.finish()
+
 
 if __name__ == '__main__':
     run()

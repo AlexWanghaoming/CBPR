@@ -13,11 +13,13 @@ from bc.bc_hh import BehaviorClone
 from agents.ppo_discrete import PPO_discrete
 from utils import seed_everything, LinearAnnealer, init_env
 import random
+from src.overcooked_ai_py.mdp.actions import Action
 
-META_TASKS = ['place_onion_in_pot', 'deliver_soup', 'random', 'place_onion_and_deliver_soup']
+
+META_TASKS = ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random']
 
 
-class HumanPolicyLibrary:
+class MetaTaskLibrary:
     def __init__(self):
         self.policy_lib = {}
 
@@ -34,17 +36,7 @@ class AiPolicyLibrary:
     def gen_policy_library(self, args) -> Dict[str, PPO_discrete]:
         for idx, mtp_path in enumerate(MTP_MODELS[LAYOUT_NAME]):
             agent_id = f'mtp{idx+1}'
-            agent = PPO_discrete(lr=args.lr,
-                         hidden_dim=args.hidden_dim,
-                         batch_size=args.batch_size,
-                         use_minibatch=args.use_minibatch,
-                         mini_batch_size=args.mini_batch_size,
-                         epsilon=args.epsilon,
-                         entropy_coef=args.entropy_coef,
-                         state_dim=args.state_dim,
-                         action_dim=args.action_dim,
-                         num_episodes=args.num_episodes,
-                         device=args.device)
+            agent = PPO_discrete()
             agent.load_actor(mtp_path)
             # agent.load_critic(mtp_path[1])
             self.policy_lib[agent_id] = agent
@@ -143,7 +135,7 @@ class BPR_online:
         self.human_policys = human_policys
         self.threshold = new_polcy_threshold
         self.eps = 5e-6
-        self.env = init_env(layout=LAYOUT_NAME, lossless_state_encoding=False)
+        # self.env = init_env(layout=LAYOUT_NAME, lossless_state_encoding=False)
 
     # def update_performance_model(self, cur_agent_id, cur_agent):
     #     n_rounds = 20  # TODO: performance model n_rounds当前是玩20次的平均值
@@ -213,11 +205,11 @@ class BPR_online:
                 ep_reward += sparse_reward
                 ai_obs, h_obs = obs_['both_agent_obs']
                 Q.append((h_obs, info['joint_action'][1]))  # 将当前时间步的人类（s,a）加入经验池
+
                 self.xi = self._update_xi(self.human_policys, Q)  # 更新intra-episode belief \xi
                 # print('xi: ', self.xi)
                 self.zeta = self._update_zeta(t=episode_steps, rho=0.5)  # 更新integrated belief \zeta
                 # print('zeta: ', self.zeta)
-
                 ### debug: 直接选对应的策略作为最优策略
                 best_agent_id = list(self.agents.keys())[policy_idx-1]
                 best_agent = self.agents[best_agent_id]
@@ -278,7 +270,6 @@ class BPR_online:
                 temp[id] = np.exp(su)
             for id in self.xi:
                 Q_prob[id] = (temp[id] + eps) / (sum(temp.values()) + eps * 4)
-
             return Q_prob
 
         p_temp = {}
@@ -354,14 +345,6 @@ class BPR_online:
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='''Bayesian policy reuse algorithm on overcooked''')
-    parser.add_argument("--hidden_dim", type=int, default=64)
-    parser.add_argument("--batch_size", type=int, default=2048)
-    parser.add_argument("--use_minibatch", type=bool, default=False, help="whether sample Minibatchs during policy updating")
-    parser.add_argument("--mini_batch_size", type=int, default=128)
-    parser.add_argument("--lr", type=float, default=9e-4)
-    parser.add_argument("--gamma", type=float, default=0.99)
-    parser.add_argument("--epsilon", type=float, default=0.05)
-    parser.add_argument("--entropy_coef", type=float, default=0.02)
     parser.add_argument('--device', type=str, default='cpu')
     parser.add_argument('--layout', default='cramped_room')
     # parser.add_argument('--layout', default='marshmallow_experiment')
@@ -370,16 +353,12 @@ def parse_args():
     parser.add_argument('--new_policy_learning', default=False, action='store_true', help='whether to learn new policy')
     parser.add_argument("--switch_human_freq", type=int, default=100, help="Frequency of switching human policy")
     parser.add_argument("--seed", type=int, default=1)
-
     args = parser.parse_args()
     return args
 
 
 if __name__ == '__main__':
     args = parse_args()
-    test_env = init_env(layout=args.layout, lossless_state_encoding=False)
-    args.state_dim = test_env.observation_space.shape[0]
-    args.action_dim = test_env.action_space.n
     LAYOUT_NAME = args.layout
 
     if args.mode == 'inter':
@@ -387,13 +366,13 @@ if __name__ == '__main__':
         N = args.num_episodes // args.switch_human_freq
         policy_id_list = [random.randint(1, 4) for _ in range(N)]  # 固定测试的策略顺序
         policy_id_list = [val for val in policy_id_list for i in range(args.switch_human_freq)]
-    else:
+    if args.mode == 'intra':
         random.seed(42)
         N = args.num_episodes * (600 // args.switch_human_freq)
         policy_id_list = [random.randint(1, 4) for _ in range(N)]
 
     seed_everything(args.seed)
-    HPL = HumanPolicyLibrary()
+    HPL = MetaTaskLibrary()
     h_pl = HPL.gen_policy_library()  # 构建Human策略库
     APL = AiPolicyLibrary()
     apl = APL.gen_policy_library(args)  # 构建AI策略库

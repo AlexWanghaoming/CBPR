@@ -2,6 +2,8 @@ import wandb
 import glob
 import os, sys
 
+LAYOUT = 'cramped_room'
+
 SOURCE_DIR = '/alpha/overcooked_rl'
 WANDB_PATH = SOURCE_DIR + '/algorithms/baselines/wandb'
 POLICY_POOL_PATH = SOURCE_DIR + "/models/policy_pool"
@@ -13,13 +15,13 @@ print(run_ids)
 api = wandb.Api()
 i = 0
 
-fcp_s1_dir = f"{POLICY_POOL_PATH}/cramped_room/fcp/s1"
+fcp_s1_dir = f"{POLICY_POOL_PATH}/{LAYOUT}/fcp/s1"
 if not os.path.exists(fcp_s1_dir):
     os.makedirs(fcp_s1_dir, exist_ok=True)  # 创建目录，如果目录已经存在，则不会引发异常
 
 for run_id in run_ids:
     run = api.run(f"wanghm/overcooked_rl/{run_id}")
-    if run.state == "finished" and run.group == 'FCP':
+    if run.state == "finished" and run.group == 'FCP' and LAYOUT in run.name:
         i += 1
         final_ep_sparse_r = run.summary['ep_reward']
         history = run.history()
@@ -45,7 +47,7 @@ for run_id in run_ids:
         ep_sparse_r = new_ep_sparse_r
 
         # select checkpoints
-        selected_pts = dict(init=0, mid=-1, final=max_steps)  # wanghm
+        selected_pts = dict(init=0, mid=-1, final=max_steps)
         mid_ep_sparse_r = final_ep_sparse_r / 2
         min_delta = 1e9
         for s, score in zip(steps, ep_sparse_r):

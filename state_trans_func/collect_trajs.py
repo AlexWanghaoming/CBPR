@@ -26,8 +26,8 @@ def collect_trajs(args, ego_agent:PPO_discrete, alt_agent:nn.Module) -> Dict[Tup
                 meta_task_steps[key] = 0
             meta_task_steps[key] += 1
 
-            ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)  # Action and the corresponding log probability
-            alt_a = alt_agent.choose_action(alt_obs, deterministic=True)  # Action and the corresponding log probability
+            ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)
+            alt_a = alt_agent.choose_action(alt_obs, deterministic=True)
 
             obs_, sparse_reward, done, info = env.step((ego_a, alt_a))
             ego_obs_, alt_obs_ = obs_['both_agent_obs']
