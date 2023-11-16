@@ -22,10 +22,10 @@ SCRIPT_AGENTS = {
 """
 
 
-layout = 'cramped_room'
+layout = 'counter_circuit'
 num_episodes = 50
 env = init_env(layout=layout,
-               agent0_policy_name='script:place_onion_in_pot',
+               agent0_policy_name='script:mixed_order',
                agent1_policy_name='script:deliver_soup',
                use_script_policy=True)
 
@@ -37,5 +37,5 @@ for k in range(1, num_episodes + 1):
     while not done:
         obs_, sparse_reward, done, info = env.step((1, 1)) # if use scripted policy, just random an action here
         episode_reward += sparse_reward
-        env.render(interval=0.01)
+        env.render(interval=0.08)
     print(f'Ep {k}:', episode_reward)

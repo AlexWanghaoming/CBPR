@@ -2,9 +2,9 @@ import numpy as np
 import argparse
 import torch
 import os, sys
-from models import BCP_MODELS
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
+from models import BCP_MODELS
 from bc.bc_hh import BehaviorClone
 from utils import seed_everything, init_env
 from rl_plotter.logger import Logger
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
     wandb.init(project='overcooked_rl',
                group='BPR',
-               name=f'BCP_{args.layout}_{args.mode}{args.switch_human_freq}_{formatted_now}',
+               name=f'BCP_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
                config=vars(args),
                job_type='eval',
                reinit=True)

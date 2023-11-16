@@ -229,7 +229,7 @@ def random_move(mdp, state, player_idx, pre_goal, move_mask=None):
         except TypeError as e:
             print(history)
             raise e
-        if len(history) > 10:
+        if len(history) > 100:  # wanghm 10 -> 100
             print(history)
             raise RuntimeError
     history.append((x, y, action))

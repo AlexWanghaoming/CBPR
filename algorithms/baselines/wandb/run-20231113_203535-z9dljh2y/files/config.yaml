@@ -1,0 +1,50 @@
+wandb_version: 1
+
+device:
+  desc: null
+  value: cpu
+layout:
+  desc: null
+  value: marshmallow_experiment
+num_episodes:
+  desc: null
+  value: 200
+mode:
+  desc: null
+  value: intra
+switch_human_freq:
+  desc: null
+  value: 100
+seed:
+  desc: null
+  value: 2
+_wandb:
+  desc: null
+  value:
+    python_version: 3.7.12
+    cli_version: 0.15.12
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1699878935.716555
+    t:
+      1:
+      - 1
+      - 5
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 53
+      - 55
+      3:
+      - 2
+      - 13
+      - 16
+      - 23
+      4: 3.7.12
+      5: 0.15.12
+      8:
+      - 5
+      13: linux-x86_64

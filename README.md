@@ -13,7 +13,7 @@ Overcooked-AI is a benchmark environment for fully cooperative human-AI task per
 
 `algorithms/` contains: 
 - `baselines/`:
-    - `script_agent_playing.py`: 测试script agents合作性能
+    - `script_agent_playing.py`: 测试 script agents 合作性能
     - `sp_ppo.py`:  基于PPO的自博弈训练
     - `train_sp.sh`: FCP的stage1, 训练多个sp合作智能体
     - `sp_sac.py`: 基于SAC的自博弈训练，超参数设置 : `{'hidden_dim': 64, 'lr': 1e-4, 'tau': 0.005, 'adaptive_alpha': True, 'clip_grad_norm': 0.1, 'use_lr_decay': False, 'buffer_size': 1e6, 'batch_size': 256}`
@@ -40,4 +40,4 @@ Overcooked-AI is a benchmark environment for fully cooperative human-AI task per
 - avaliable rule-based policy in overcooked
 
 `miscs` contains:
-- `plot_*_distribution.py` 计算并绘制hh（人类+人类），BC-hh(BC+人类)，BCP-BC，BCP-hh(BCP+人类)轨迹分布并计算分布差异
+- `plot_*_distribution.py` 计算并绘制hh（人类+人类），BC-hh(BC+人类)，BCP-BC，BCP-hh(BCP+人类)  游戏轨迹分布并计算分布差异

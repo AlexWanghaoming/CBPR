@@ -1,0 +1,1414 @@
+2023-11-13 16:43:55,683 INFO    StreamThr :3062069 [internal.py:wandb_internal():89] W&B internal server running at pid: 3062069, started at: 2023-11-13 16:43:55.683343
+2023-11-13 16:43:55,684 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status
+2023-11-13 16:43:55,685 INFO    WriterThread:3062069 [datastore.py:open_for_write():85] open: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/run-tng6a06e.wandb
+2023-11-13 16:43:55,685 DEBUG   SenderThread:3062069 [sender.py:send():380] send: header
+2023-11-13 16:43:55,695 DEBUG   SenderThread:3062069 [sender.py:send():380] send: run
+2023-11-13 16:43:56,574 INFO    SenderThread:3062069 [dir_watcher.py:__init__():211] watching files in: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files
+2023-11-13 16:43:56,574 INFO    SenderThread:3062069 [sender.py:_start_run_threads():1125] run started: tng6a06e with start time 1699865035.6832
+2023-11-13 16:43:56,580 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: check_version
+2023-11-13 16:43:56,580 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: check_version
+2023-11-13 16:43:57,432 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: run_start
+2023-11-13 16:43:57,437 DEBUG   HandlerThread:3062069 [system_info.py:__init__():32] System info init
+2023-11-13 16:43:57,437 DEBUG   HandlerThread:3062069 [system_info.py:__init__():47] System info init done
+2023-11-13 16:43:57,437 INFO    HandlerThread:3062069 [system_monitor.py:start():194] Starting system monitor
+2023-11-13 16:43:57,437 INFO    SystemMonitor:3062069 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-13 16:43:57,437 INFO    HandlerThread:3062069 [system_monitor.py:probe():214] Collecting system info
+2023-11-13 16:43:57,438 INFO    SystemMonitor:3062069 [interfaces.py:start():190] Started cpu monitoring
+2023-11-13 16:43:57,438 INFO    SystemMonitor:3062069 [interfaces.py:start():190] Started disk monitoring
+2023-11-13 16:43:57,438 INFO    SystemMonitor:3062069 [interfaces.py:start():190] Started gpu monitoring
+2023-11-13 16:43:57,438 INFO    SystemMonitor:3062069 [interfaces.py:start():190] Started memory monitoring
+2023-11-13 16:43:57,439 INFO    SystemMonitor:3062069 [interfaces.py:start():190] Started network monitoring
+2023-11-13 16:43:57,448 DEBUG   HandlerThread:3062069 [system_info.py:probe():196] Probing system
+2023-11-13 16:43:57,451 DEBUG   HandlerThread:3062069 [system_info.py:_probe_git():181] Probing git
+2023-11-13 16:43:57,458 DEBUG   HandlerThread:3062069 [system_info.py:_probe_git():189] Probing git done
+2023-11-13 16:43:57,458 DEBUG   HandlerThread:3062069 [system_info.py:probe():244] Probing system done
+2023-11-13 16:43:57,458 DEBUG   HandlerThread:3062069 [system_monitor.py:probe():223] {'os': 'Linux-6.2.0-26-generic-x86_64-with-debian-bookworm-sid', 'python': '3.7.12', 'heartbeatAt': '2023-11-13T08:43:57.448148', 'startedAt': '2023-11-13T08:43:55.680953', 'docker': None, 'cuda': None, 'args': ('--layout', 'cramped_room', '--num_episodes', '200', '--mode', 'intra', '--switch_human_freq', '100', '--seed', '3'), 'state': 'running', 'program': 'bpr_NN_scriptedPolicy.py', 'codePathLocal': 'bpr_NN_scriptedPolicy.py', 'codePath': 'algorithms/bpr_NN_scriptedPolicy.py', 'git': {'remote': 'git@github.com:AlexWanghaoming/overcooked_rl.git', 'commit': '13a286d7c12f0639988ae897ef486edd046772b7'}, 'email': '568019240@qq.com', 'root': '/alpha/overcooked_rl', 'host': 'wanghm', 'username': 'wanghm', 'executable': '/home/wanghm/anaconda3/envs/overcooked_ai/bin/python', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 4752.039999999999, 'min': 800.0, 'max': 5150.0}, 'cpu_freq_per_core': [{'current': 4814.046, 'min': 800.0, 'max': 5100.0}, {'current': 4802.594, 'min': 800.0, 'max': 5100.0}, {'current': 4868.378, 'min': 800.0, 'max': 5100.0}, {'current': 4865.516, 'min': 800.0, 'max': 5100.0}, {'current': 4850.304, 'min': 800.0, 'max': 5300.0}, {'current': 4822.252, 'min': 800.0, 'max': 5300.0}, {'current': 4833.296, 'min': 800.0, 'max': 5100.0}, {'current': 4815.894, 'min': 800.0, 'max': 5100.0}, {'current': 4793.539, 'min': 800.0, 'max': 5100.0}, {'current': 4875.583, 'min': 800.0, 'max': 5100.0}, {'current': 4887.532, 'min': 800.0, 'max': 5100.0}, {'current': 4800.0, 'min': 800.0, 'max': 5100.0}, {'current': 4871.282, 'min': 800.0, 'max': 5300.0}, {'current': 3500.0, 'min': 800.0, 'max': 5300.0}, {'current': 4823.728, 'min': 800.0, 'max': 5100.0}, {'current': 4808.696, 'min': 800.0, 'max': 5100.0}], 'disk': {'/': {'total': 1832.2072448730469, 'used': 159.57415771484375}}, 'gpu': 'NVIDIA GeForce RTX 3080', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3080', 'memory_total': 10737418240}], 'memory': {'total': 31.163162231445312}}
+2023-11-13 16:43:57,458 INFO    HandlerThread:3062069 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-13 16:43:57,458 INFO    HandlerThread:3062069 [system_monitor.py:probe():227] Publishing system info
+2023-11-13 16:43:57,458 DEBUG   HandlerThread:3062069 [system_info.py:_save_pip():53] Saving list of pip packages installed into the current environment
+2023-11-13 16:43:57,458 DEBUG   HandlerThread:3062069 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-13 16:43:57,458 DEBUG   HandlerThread:3062069 [system_info.py:_save_conda():76] Saving list of conda packages installed into the current environment
+2023-11-13 16:43:57,575 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/conda-environment.yaml
+2023-11-13 16:43:57,576 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/requirements.txt
+2023-11-13 16:43:58,875 DEBUG   HandlerThread:3062069 [system_info.py:_save_conda():87] Saving conda packages done
+2023-11-13 16:43:58,876 INFO    HandlerThread:3062069 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-13 16:43:58,877 DEBUG   SenderThread:3062069 [sender.py:send():380] send: files
+2023-11-13 16:43:58,877 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-11-13 16:43:58,881 DEBUG   SenderThread:3062069 [sender.py:send():380] send: telemetry
+2023-11-13 16:43:58,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:43:58,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:43:58,882 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:43:59,575 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/conda-environment.yaml
+2023-11-13 16:43:59,575 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:43:59,575 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-metadata.json
+2023-11-13 16:43:59,873 INFO    wandb-upload_0:3062069 [upload_job.py:push():131] Uploaded file /tmp/tmpaqpslq43wandb/co8pa3n9-wandb-metadata.json
+2023-11-13 16:44:00,722 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:01,109 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:01,109 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:01,110 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:01,111 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:01,576 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:01,576 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:02,182 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:02,183 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:02,183 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:02,183 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:02,576 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:03,239 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:03,239 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:03,239 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:03,241 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:03,576 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:03,576 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:04,295 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:04,295 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:04,295 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:04,296 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:04,576 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:05,331 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:05,332 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:05,332 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:05,333 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:05,576 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:05,577 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:06,075 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:06,638 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:06,639 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:06,639 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:06,639 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:07,577 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:07,577 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:07,718 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:07,719 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:07,719 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:07,719 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:08,577 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:08,838 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:08,839 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:08,839 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:08,839 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:09,577 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:09,578 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:10,543 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:10,544 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:10,544 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:10,544 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:10,578 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:11,119 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:11,578 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:12,257 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:12,258 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:12,258 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:12,258 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:12,578 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:13,578 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:13,763 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:13,763 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:13,763 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:13,764 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:13,881 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:44:13,881 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:44:13,883 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:44:14,579 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:15,016 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:15,017 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:15,017 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:15,017 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:15,579 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:15,579 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:16,316 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:16,851 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:16,851 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:16,851 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:16,852 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:17,579 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:17,579 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:18,527 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:18,527 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:18,527 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:18,528 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:18,579 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:19,580 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:19,793 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:19,794 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:19,794 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:19,794 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:20,580 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:20,907 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:20,907 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:20,907 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:20,907 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:21,429 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:21,580 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:21,580 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:21,983 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:21,984 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:21,984 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:21,984 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:22,580 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:23,052 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:23,052 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:23,052 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:23,052 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:23,580 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:23,581 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:24,805 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:24,806 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:24,806 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:24,807 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:25,581 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:25,581 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:26,010 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:26,010 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:26,011 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:26,011 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:26,581 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:26,588 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:27,116 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:27,117 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:27,117 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:27,117 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:27,581 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/config.yaml
+2023-11-13 16:44:27,582 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:27,582 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:28,159 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:28,159 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:28,159 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:28,159 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:28,582 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:28,880 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:44:28,880 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:44:28,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:44:29,203 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:29,233 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:29,234 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:29,234 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:29,582 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:29,582 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:30,339 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:30,339 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:30,340 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:30,340 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:30,582 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:31,582 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:31,649 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:31,650 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:31,650 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:31,650 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:32,216 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:32,583 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:33,583 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:33,744 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:33,745 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:33,745 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:33,745 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:34,583 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:35,042 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:35,042 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:35,042 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:35,042 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:35,583 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:35,583 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:36,832 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:36,833 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:36,833 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:36,834 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:37,380 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:37,584 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:37,584 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:38,122 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:38,123 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:38,123 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:38,123 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:38,584 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:39,584 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:39,861 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:39,862 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:39,862 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:39,863 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:40,584 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:41,218 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:41,219 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:41,219 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:41,219 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:41,584 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:41,585 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:42,389 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:42,566 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:42,567 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:42,567 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:42,567 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:42,585 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:43,585 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:43,880 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:44:43,881 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:44:43,881 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:44:44,364 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:44,364 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:44,364 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:44,365 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:44,585 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:45,585 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:46,907 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:46,908 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:46,908 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:46,909 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:47,586 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:47,586 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:47,640 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:48,412 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:48,412 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:48,412 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:48,413 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:48,586 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:49,472 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:49,473 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:49,473 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:49,473 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:49,586 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:49,586 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:50,614 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:50,614 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:50,615 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:50,615 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:51,587 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:51,587 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:51,806 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:51,807 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:51,807 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:51,807 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:52,587 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:52,841 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:53,028 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:53,029 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:53,029 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:53,029 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:53,587 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:53,588 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:54,224 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:54,224 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:54,224 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:54,225 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:54,588 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:55,455 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:55,456 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:55,456 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:55,456 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:55,588 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:55,588 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:56,669 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:56,670 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:56,670 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:56,670 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:57,439 DEBUG   SystemMonitor:3062069 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-13 16:44:57,440 DEBUG   SenderThread:3062069 [sender.py:send():380] send: stats
+2023-11-13 16:44:57,588 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:57,588 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:57,897 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:44:57,899 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:57,900 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:57,900 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:57,901 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:58,589 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:44:58,881 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:44:58,881 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:44:58,882 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:44:59,120 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:44:59,167 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:44:59,168 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:44:59,169 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:44:59,589 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:44:59,589 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:00,237 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:00,238 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:00,238 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:00,238 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:00,589 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:01,298 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:01,299 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:01,299 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:01,300 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:01,589 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:01,590 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:02,431 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:02,432 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:02,432 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:02,432 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:02,590 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:02,973 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:03,557 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:03,590 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:03,626 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:03,626 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:03,626 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:04,590 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:04,675 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:04,676 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:04,676 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:04,676 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:05,590 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:05,590 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:05,771 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:05,772 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:05,772 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:05,772 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:06,590 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:06,819 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:06,820 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:06,820 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:06,820 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:07,591 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:07,591 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:07,927 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:07,928 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:07,928 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:07,928 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:08,113 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:08,591 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:08,989 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:08,989 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:08,990 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:08,990 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:09,591 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:09,591 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:10,054 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:10,055 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:10,055 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:10,055 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:10,591 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:11,110 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:11,111 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:11,111 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:11,111 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:11,592 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:11,592 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:12,214 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:12,214 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:12,215 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:12,215 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:12,592 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:13,186 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:13,378 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:13,379 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:13,379 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:13,379 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:13,592 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:13,592 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:13,881 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:45:13,881 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:45:13,882 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:45:14,453 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:14,453 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:14,453 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:14,454 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:14,592 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:15,593 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:15,782 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:15,782 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:15,783 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:15,783 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:16,593 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:16,904 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:16,904 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:16,905 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:16,905 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:17,593 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:17,593 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:17,991 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:17,991 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:17,991 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:17,992 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:18,341 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:18,593 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:19,029 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:19,030 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:19,030 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:19,030 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:19,593 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:19,594 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:20,083 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:20,084 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:20,084 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:20,084 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:20,594 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:21,129 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:21,129 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:21,129 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:21,130 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:21,594 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:21,594 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:22,186 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:22,186 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:22,187 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:22,187 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:22,594 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:23,317 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:23,317 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:23,318 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:23,318 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:23,487 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:23,594 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:23,594 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:24,506 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:24,507 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:24,507 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:24,507 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:24,595 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:25,579 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:25,579 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:25,579 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:25,580 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:25,595 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:25,595 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:26,680 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:26,681 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:26,681 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:26,681 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:27,440 DEBUG   SenderThread:3062069 [sender.py:send():380] send: stats
+2023-11-13 16:45:27,596 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:27,596 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:27,864 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:27,865 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:27,865 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:27,865 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:28,596 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:28,655 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:28,881 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:45:28,881 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:45:28,882 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:45:29,091 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:29,230 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:29,230 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:29,230 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:29,596 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:29,596 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:30,140 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:30,233 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:30,233 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:30,233 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:30,596 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:31,267 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:31,268 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:31,268 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:31,268 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:31,597 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:31,597 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:32,457 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:32,458 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:32,458 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:32,458 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:32,597 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:33,597 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:33,712 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:33,714 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:33,714 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:33,714 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:33,715 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:34,597 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:34,831 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:34,831 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:34,831 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:34,832 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:35,598 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:35,598 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:36,026 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:36,027 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:36,027 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:36,027 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:36,598 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:37,144 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:37,145 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:37,147 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:37,148 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:37,598 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:37,599 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:38,754 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:38,756 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:38,757 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:38,757 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:38,757 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:39,599 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:39,599 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:40,017 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:40,018 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:40,018 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:40,018 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:40,599 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:41,351 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:41,351 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:41,352 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:41,352 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:41,600 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:41,600 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:42,985 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:42,985 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:42,985 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:42,986 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:43,600 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:43,600 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:43,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:45:43,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:45:43,882 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:45:44,122 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:44,165 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:44,166 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:44,166 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:44,166 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:44,600 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:45,246 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:45,246 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:45,247 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:45,247 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:45,601 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:45,601 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:46,390 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:46,391 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:46,391 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:46,391 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:46,601 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:47,517 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:47,517 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:47,517 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:47,518 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:47,601 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:47,602 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:48,666 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:48,666 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:48,666 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:48,667 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:49,296 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:49,602 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:49,602 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:49,904 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:49,905 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:49,906 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:49,906 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:50,602 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:51,133 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:51,133 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:51,133 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:51,134 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:51,602 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:51,603 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:52,320 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:52,320 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:52,321 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:52,321 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:52,603 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:53,498 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:53,499 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:53,499 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:53,500 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:53,603 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:53,603 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:54,494 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:54,686 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:54,687 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:54,687 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:54,687 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:55,604 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:55,604 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:56,048 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:56,048 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:56,048 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:56,049 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:56,604 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:57,262 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:57,263 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:57,263 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:57,263 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:57,441 DEBUG   SenderThread:3062069 [sender.py:send():380] send: stats
+2023-11-13 16:45:57,604 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:57,604 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:58,507 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:58,508 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:58,508 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:58,508 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:45:58,604 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:45:58,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:45:58,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:45:58,883 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:45:59,555 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:45:59,604 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:45:59,745 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:45:59,745 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:45:59,746 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:45:59,746 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:00,605 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:00,827 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:00,828 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:00,828 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:00,828 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:01,605 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:01,605 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:01,941 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:01,942 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:01,942 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:01,942 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:02,605 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:03,080 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:03,080 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:03,080 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:03,081 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:03,605 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:03,606 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:04,246 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:04,247 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:04,247 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:04,247 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:04,606 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:04,637 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:05,337 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:05,337 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:05,337 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:05,338 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:05,606 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:06,398 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:06,398 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:06,398 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:06,399 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:06,606 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:06,606 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:07,516 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:07,516 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:07,516 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:07,517 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:07,606 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:08,607 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:08,655 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:08,656 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:08,656 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:08,656 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:09,607 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:09,810 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:09,812 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:09,813 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:09,813 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:09,813 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:10,607 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:10,607 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:11,054 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:11,055 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:11,055 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:11,055 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:11,607 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:12,202 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:12,203 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:12,203 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:12,203 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:12,608 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:12,608 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:13,322 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:13,322 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:13,323 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:13,323 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:13,608 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:13,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:46:13,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:46:13,930 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:46:14,491 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:14,492 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:14,492 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:14,493 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:14,608 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:14,608 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:14,818 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:15,539 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:15,540 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:15,540 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:15,540 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:15,608 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:16,609 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:16,623 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:16,624 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:16,624 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:16,625 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:17,609 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:17,746 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:17,747 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:17,747 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:17,747 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:18,609 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:18,609 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:18,945 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:18,946 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:18,946 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:18,946 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:19,609 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:19,920 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:20,144 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:20,144 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:20,145 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:20,145 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:20,610 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:20,610 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:21,319 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:21,319 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:21,320 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:21,320 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:21,610 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:22,456 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:22,457 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:22,457 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:22,457 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:22,610 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:22,610 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:23,605 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:23,606 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:23,606 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:23,606 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:23,610 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:24,611 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:24,702 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:24,703 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:24,703 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:24,703 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:25,056 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:25,611 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:25,788 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:25,789 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:25,789 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:25,789 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:26,611 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:26,611 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:26,870 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:26,870 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:26,871 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:26,871 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:27,493 DEBUG   SenderThread:3062069 [sender.py:send():380] send: stats
+2023-11-13 16:46:27,611 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:27,965 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:27,965 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:27,965 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:27,966 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:28,611 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:28,612 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:28,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:46:28,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:46:28,882 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:46:29,043 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:29,234 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:29,234 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:29,234 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:29,612 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:30,100 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:30,101 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:30,102 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:30,102 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:30,102 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:30,612 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:30,612 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:31,215 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:31,216 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:31,216 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:31,216 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:31,612 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:32,397 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:32,397 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:32,397 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:32,398 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:32,612 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:32,613 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:33,516 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:33,517 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:33,517 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:33,517 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:33,613 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:34,605 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:34,606 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:34,606 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:34,606 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:34,613 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:34,613 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:35,172 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:35,744 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:35,744 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:35,744 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:35,745 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:36,614 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:36,614 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:36,866 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:36,867 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:36,867 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:36,868 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:37,614 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:38,066 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:38,068 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:38,068 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:38,069 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:38,614 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:38,614 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:39,220 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:39,220 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:39,220 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:39,221 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:39,614 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:40,199 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:40,383 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:40,384 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:40,384 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:40,384 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:40,615 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:40,615 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:41,441 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:41,442 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:41,442 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:41,442 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:41,615 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:42,615 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:42,633 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:42,634 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:42,634 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:42,634 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:43,615 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:43,815 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:43,815 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:43,816 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:43,816 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:43,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:46:43,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:46:43,883 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:46:44,616 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:44,616 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:44,939 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:44,939 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:44,939 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:44,940 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:45,295 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:45,616 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:46,036 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:46,037 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:46,037 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:46,037 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:46,616 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:46,616 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:47,154 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:47,154 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:47,155 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:47,155 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:47,616 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:48,294 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:48,294 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:48,294 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:48,295 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:48,617 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:48,617 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:49,401 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:49,402 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:49,402 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:49,402 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:49,617 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:50,334 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:50,516 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:50,516 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:50,516 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:50,517 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:50,617 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:50,617 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:51,667 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:51,668 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:51,668 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:51,668 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:52,618 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:52,618 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:52,870 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:52,871 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:52,871 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:52,871 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:53,618 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:53,991 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:53,992 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:53,992 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:53,992 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:54,618 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:54,618 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:55,103 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:55,161 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:55,162 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:55,162 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:55,476 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:46:55,618 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:56,208 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:56,208 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:56,208 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:56,208 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:56,619 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:56,619 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:57,305 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:57,305 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:57,306 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:57,306 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:57,442 DEBUG   SenderThread:3062069 [sender.py:send():380] send: stats
+2023-11-13 16:46:57,619 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:58,388 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:58,388 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:58,389 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:58,389 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:58,619 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:46:58,619 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:46:58,883 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:46:58,883 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:46:58,883 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:46:59,606 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:46:59,606 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:46:59,606 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:46:59,607 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:46:59,619 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:00,495 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:00,620 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:01,310 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:01,310 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:01,311 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:01,311 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:01,620 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:02,515 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:02,516 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:02,516 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:02,516 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:02,621 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:02,622 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:03,821 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:03,821 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:03,822 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:03,822 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:04,621 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:04,621 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:04,920 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:04,920 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:04,920 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:04,921 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:05,621 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:05,639 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:06,229 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:06,229 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:06,229 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:06,230 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:06,622 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:06,622 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:07,761 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:07,762 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:07,762 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:07,762 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:08,622 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:08,622 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:09,088 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:09,089 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:09,089 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:09,090 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:09,622 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:10,370 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:10,371 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:10,371 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:10,371 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:10,623 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:10,623 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:10,777 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:11,671 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:11,671 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:11,671 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:11,672 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:12,623 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:12,623 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:12,847 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:12,848 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:12,848 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:12,848 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:13,624 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:13,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:47:13,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:47:13,883 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:47:14,051 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:14,206 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:14,206 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:14,207 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:14,624 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:14,624 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:15,163 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:15,163 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:15,164 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:15,164 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:15,624 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:15,913 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:16,283 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:16,284 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:16,284 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:16,284 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:16,625 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:16,625 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:17,541 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:17,542 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:17,542 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:17,542 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:17,625 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:18,625 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:18,701 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:18,702 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:18,702 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:18,702 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:19,625 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:19,810 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:19,811 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:19,811 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:19,811 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:20,625 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:20,626 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:20,971 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:20,973 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:20,973 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:20,973 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:20,974 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:21,626 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:22,162 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:22,163 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:22,163 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:22,164 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:22,626 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:22,626 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:23,350 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:23,350 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:23,350 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:23,351 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:23,626 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:24,491 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:24,555 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:24,555 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:24,555 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:24,626 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:24,627 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:25,691 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:25,692 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:25,692 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:25,694 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:26,070 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:26,627 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:26,627 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:26,898 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:26,898 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:26,899 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:26,899 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:27,443 DEBUG   SenderThread:3062069 [sender.py:send():380] send: stats
+2023-11-13 16:47:27,627 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:28,451 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:28,452 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:28,452 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:28,452 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:28,627 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:28,628 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:28,882 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:47:28,883 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:47:28,883 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:47:30,183 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:30,183 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:30,184 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:30,184 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:30,628 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:30,628 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:31,187 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:31,407 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:31,407 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:31,408 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:31,408 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:31,628 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:32,618 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:32,618 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:32,619 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:32,619 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:32,628 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:32,628 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:34,229 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:34,230 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:34,230 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:34,230 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:34,629 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:34,629 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:35,359 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:35,360 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:35,360 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:35,360 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:35,629 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:36,198 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:36,607 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:36,607 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:36,608 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:36,608 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:36,629 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:36,630 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:37,849 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:37,850 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:37,850 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:37,850 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:38,630 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:38,631 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:39,201 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:39,202 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:39,202 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:39,202 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:39,630 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:40,329 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:40,329 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:40,329 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:40,330 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:40,631 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:40,631 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:41,366 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:41,741 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:41,742 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:41,742 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:41,742 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:42,631 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:42,632 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:42,923 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:42,924 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:42,924 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:42,924 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:43,632 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:43,883 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:47:43,883 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:47:43,883 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:47:44,120 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:44,155 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:44,155 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:44,155 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:44,632 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:44,632 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:45,234 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:45,234 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:45,235 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:45,235 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:45,632 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:46,391 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:46,393 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:46,393 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:46,394 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:46,394 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:46,632 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:46,633 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:47,788 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:47,789 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:47,789 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:47,789 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:48,633 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:48,633 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:49,610 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:49,611 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:49,611 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:49,611 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:49,633 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:50,633 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:51,326 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:51,327 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:51,327 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:51,327 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:51,506 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:51,634 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:52,634 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:52,806 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:52,806 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:52,806 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:52,807 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:53,634 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:54,634 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:55,117 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:55,118 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:55,119 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:55,119 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:55,635 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:56,497 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:56,498 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:56,498 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:56,498 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:56,635 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:56,635 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:47:56,926 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:47:57,444 DEBUG   SenderThread:3062069 [sender.py:send():380] send: stats
+2023-11-13 16:47:58,635 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:47:58,703 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:47:58,704 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:47:58,704 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:47:58,704 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:47:58,883 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:47:58,883 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-13 16:47:58,883 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: stop_status
+2023-11-13 16:47:59,636 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:00,295 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:48:00,296 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:48:00,296 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:48:00,297 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:00,636 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:48:00,637 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:01,723 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:48:01,724 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:48:01,724 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:48:01,725 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:01,970 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:48:02,637 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:48:02,637 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:03,554 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:48:03,555 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:48:03,555 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:48:03,555 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:03,637 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:04,637 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:48:04,739 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:48:04,739 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:48:04,739 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:48:04,740 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:05,638 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:05,933 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:48:05,934 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:48:05,934 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:48:05,934 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:06,638 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:48:06,638 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:07,027 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:48:07,216 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:48:07,217 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:48:07,217 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:48:07,217 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:07,638 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:08,321 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-13 16:48:08,321 DEBUG   SenderThread:3062069 [sender.py:send():380] send: history
+2023-11-13 16:48:08,322 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: summary_record
+2023-11-13 16:48:08,322 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:08,322 DEBUG   SenderThread:3062069 [sender.py:send():380] send: telemetry
+2023-11-13 16:48:08,322 DEBUG   SenderThread:3062069 [sender.py:send():380] send: exit
+2023-11-13 16:48:08,322 INFO    SenderThread:3062069 [sender.py:send_exit():585] handling exit code: 0
+2023-11-13 16:48:08,322 INFO    SenderThread:3062069 [sender.py:send_exit():587] handling runtime: 250
+2023-11-13 16:48:08,322 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:08,322 INFO    SenderThread:3062069 [sender.py:send_exit():593] send defer
+2023-11-13 16:48:08,323 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:08,323 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-13 16:48:08,323 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:08,323 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-13 16:48:08,323 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 1
+2023-11-13 16:48:08,323 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:08,323 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-13 16:48:08,323 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:08,323 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-13 16:48:08,323 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 2
+2023-11-13 16:48:08,323 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:08,323 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-13 16:48:08,323 INFO    HandlerThread:3062069 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-13 16:48:08,323 DEBUG   SystemMonitor:3062069 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-13 16:48:08,323 INFO    HandlerThread:3062069 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-13 16:48:08,324 DEBUG   SystemMonitor:3062069 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-13 16:48:08,324 INFO    HandlerThread:3062069 [interfaces.py:finish():202] Joined disk monitor
+2023-11-13 16:48:08,354 INFO    HandlerThread:3062069 [interfaces.py:finish():202] Joined gpu monitor
+2023-11-13 16:48:08,354 INFO    HandlerThread:3062069 [interfaces.py:finish():202] Joined memory monitor
+2023-11-13 16:48:08,354 INFO    HandlerThread:3062069 [interfaces.py:finish():202] Joined network monitor
+2023-11-13 16:48:08,354 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:08,354 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-13 16:48:08,355 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 3
+2023-11-13 16:48:08,355 DEBUG   SenderThread:3062069 [sender.py:send():380] send: stats
+2023-11-13 16:48:08,355 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:08,355 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-13 16:48:08,355 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:08,355 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-13 16:48:08,355 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 4
+2023-11-13 16:48:08,355 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:08,355 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-13 16:48:08,355 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:08,355 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-13 16:48:08,355 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 5
+2023-11-13 16:48:08,355 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:08,355 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-13 16:48:08,356 DEBUG   SenderThread:3062069 [sender.py:send():380] send: summary
+2023-11-13 16:48:08,356 INFO    SenderThread:3062069 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-13 16:48:08,356 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:08,356 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-13 16:48:08,356 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 6
+2023-11-13 16:48:08,356 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:08,356 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-13 16:48:08,356 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:08,356 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-13 16:48:08,359 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:48:08,629 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 7
+2023-11-13 16:48:08,629 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:08,630 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-13 16:48:08,630 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:08,630 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-13 16:48:08,638 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/config.yaml
+2023-11-13 16:48:08,638 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:48:08,638 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:09,322 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-13 16:48:10,639 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:48:11,667 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 8
+2023-11-13 16:48:11,667 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: poll_exit
+2023-11-13 16:48:11,667 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:11,667 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-13 16:48:11,668 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:11,668 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-13 16:48:11,668 INFO    SenderThread:3062069 [job_builder.py:build():281] Attempting to build job artifact
+2023-11-13 16:48:11,668 INFO    SenderThread:3062069 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-11-13 16:48:11,670 INFO    SenderThread:3062069 [job_builder.py:build():369] adding wandb-job metadata file
+2023-11-13 16:48:11,692 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 9
+2023-11-13 16:48:11,692 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:11,692 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-13 16:48:11,693 DEBUG   SenderThread:3062069 [sender.py:send():380] send: artifact
+2023-11-13 16:48:12,639 INFO    Thread-12 :3062069 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:48:13,393 INFO    wandb-upload_2:3062069 [upload_job.py:push():86] Skipped uploading /home/wanghm/.local/share/wandb/artifacts/staging/tmp9ac9g5w_
+2023-11-13 16:48:13,899 INFO    wandb-upload_1:3062069 [upload_job.py:push():89] Uploaded file /home/wanghm/.local/share/wandb/artifacts/staging/tmpz8o5nr_x
+2023-11-13 16:48:14,323 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-13 16:48:15,714 INFO    SenderThread:3062069 [sender.py:send_artifact():1456] sent artifact job-git_github.com_AlexWanghaoming_overcooked_rl.git_algorithms_bpr_NN_scriptedPolicy.py - {'id': 'QXJ0aWZhY3Q6NjM2NTE0Mzg3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNDk5MjgwMw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjM2NDM2Nzg3', 'versionIndex': 1}}}
+2023-11-13 16:48:15,714 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:15,714 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: status_report
+2023-11-13 16:48:15,714 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-11-13 16:48:15,714 INFO    SenderThread:3062069 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-13 16:48:16,640 INFO    SenderThread:3062069 [dir_watcher.py:finish():388] scan: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files
+2023-11-13 16:48:16,640 INFO    SenderThread:3062069 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json wandb-summary.json
+2023-11-13 16:48:16,640 INFO    SenderThread:3062069 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/conda-environment.yaml conda-environment.yaml
+2023-11-13 16:48:16,640 INFO    SenderThread:3062069 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/config.yaml config.yaml
+2023-11-13 16:48:16,640 INFO    SenderThread:3062069 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/requirements.txt requirements.txt
+2023-11-13 16:48:16,644 INFO    SenderThread:3062069 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log output.log
+2023-11-13 16:48:16,646 INFO    SenderThread:3062069 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-metadata.json wandb-metadata.json
+2023-11-13 16:48:16,646 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 10
+2023-11-13 16:48:16,646 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:16,646 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 10
+2023-11-13 16:48:16,646 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:16,646 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-11-13 16:48:16,648 INFO    SenderThread:3062069 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-13 16:48:17,217 INFO    wandb-upload_3:3062069 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/wandb-summary.json
+2023-11-13 16:48:17,422 INFO    wandb-upload_4:3062069 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/conda-environment.yaml
+2023-11-13 16:48:17,532 INFO    wandb-upload_6:3062069 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/requirements.txt
+2023-11-13 16:48:17,537 INFO    wandb-upload_5:3062069 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/config.yaml
+2023-11-13 16:48:17,670 INFO    wandb-upload_2:3062069 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/files/output.log
+2023-11-13 16:48:17,870 INFO    Thread-11 :3062069 [sender.py:transition_state():613] send defer: 11
+2023-11-13 16:48:17,870 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:17,870 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 11
+2023-11-13 16:48:17,871 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:17,871 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-11-13 16:48:17,871 INFO    SenderThread:3062069 [file_pusher.py:join():181] waiting for file pusher
+2023-11-13 16:48:17,871 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 12
+2023-11-13 16:48:17,871 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:17,871 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 12
+2023-11-13 16:48:17,871 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:17,871 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-11-13 16:48:17,871 INFO    SenderThread:3062069 [file_stream.py:finish():595] file stream finish called
+2023-11-13 16:48:18,124 INFO    SenderThread:3062069 [file_stream.py:finish():599] file stream finish is done
+2023-11-13 16:48:18,124 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 13
+2023-11-13 16:48:18,124 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:18,124 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 13
+2023-11-13 16:48:18,124 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:18,124 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-11-13 16:48:18,124 INFO    SenderThread:3062069 [sender.py:transition_state():613] send defer: 14
+2023-11-13 16:48:18,125 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: defer
+2023-11-13 16:48:18,125 DEBUG   SenderThread:3062069 [sender.py:send():380] send: final
+2023-11-13 16:48:18,125 INFO    HandlerThread:3062069 [handler.py:handle_request_defer():172] handle defer: 14
+2023-11-13 16:48:18,125 DEBUG   SenderThread:3062069 [sender.py:send():380] send: footer
+2023-11-13 16:48:18,125 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: defer
+2023-11-13 16:48:18,125 INFO    SenderThread:3062069 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-11-13 16:48:18,125 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-13 16:48:18,126 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-13 16:48:18,126 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: poll_exit
+2023-11-13 16:48:18,126 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: server_info
+2023-11-13 16:48:18,126 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: get_summary
+2023-11-13 16:48:18,126 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: sampled_history
+2023-11-13 16:48:18,127 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: job_info
+2023-11-13 16:48:18,127 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: server_info
+2023-11-13 16:48:18,372 DEBUG   SenderThread:3062069 [sender.py:send_request():407] send_request: job_info
+2023-11-13 16:48:18,372 DEBUG   HandlerThread:3062069 [handler.py:handle_request():146] handle_request: shutdown
+2023-11-13 16:48:18,372 INFO    HandlerThread:3062069 [handler.py:finish():866] shutting down handler
+2023-11-13 16:48:19,127 INFO    WriterThread:3062069 [datastore.py:close():294] close: /alpha/overcooked_rl/algorithms/wandb/run-20231113_164355-tng6a06e/run-tng6a06e.wandb
+2023-11-13 16:48:19,372 INFO    SenderThread:3062069 [sender.py:finish():1534] shutting down sender
+2023-11-13 16:48:19,372 INFO    SenderThread:3062069 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-13 16:48:19,372 INFO    SenderThread:3062069 [file_pusher.py:join():181] waiting for file pusher

@@ -76,7 +76,7 @@ def merge_two_prob_mtx_dict(mtx1:Dict, mtx2:Dict) -> Dict:
 def parse_opt():
     parser = argparse.ArgumentParser()
     # parser.add_argument('--layout', type=str, default='cramped_room')
-    parser.add_argument('--layout', type=str, default='marshmallow_experiment')
+    parser.add_argument('--layout', type=str, default='counter_circuit')
     opt = parser.parse_args()
     return opt
 
@@ -146,26 +146,26 @@ if __name__ == '__main__':
             episode_reward += r
             episode_steps += 1
             total_steps += 1
-            # env.render(interval=0.05)
+            env.render(interval=0.01)
         # plot_heat(p0_prob_mtx['stage1'], n_row, n_col)
         print(f'Ep {k + 1}:', episode_reward)
 
     # 对于marshmallow_experiment或者 asymmetric_advantages这种p1 p2 轨迹不重合的layout，合并概率矩阵
-    if opt.layout == 'marshmallow_experiment':
-        merged_prob_mtx = merge_two_prob_mtx_dict(p1_prob_mtx, p0_prob_mtx)
-        plot_combined_heatmaps(merged_prob_mtx, n_row, n_col, save_path='H_H_trajs.pdf')
-
-    ## 计算 JS-散度和总方差变异
-    # plot_combined_heatmaps(p0_prob_mtx, n_row, n_col)
-    for idx, (q_s, v_s) in enumerate(p0_prob_mtx.items()):
-        for q_e, v_e in list(p0_prob_mtx.items())[idx + 1:]:
-            if q_s != q_e:
-                print(f'p0, {q_s} -> {q_e}:', cal_tvd_js(np.array(v_s), np.array(v_e)))
-                break
-
-    # plot_combined_heatmaps(p1_prob_mtx, n_row, n_col)
-    for idx, (q_s, v_s) in enumerate(p1_prob_mtx.items()):
-        for q_e, v_e in list(p1_prob_mtx.items())[idx + 1:]:
-            if q_s != q_e:
-                print(f'p1, {q_s} -> {q_e}:', cal_tvd_js(np.array(v_s), np.array(v_e)))
-                break
+    # if opt.layout == 'marshmallow_experiment':
+    #     merged_prob_mtx = merge_two_prob_mtx_dict(p1_prob_mtx, p0_prob_mtx)
+    #     plot_combined_heatmaps(merged_prob_mtx, n_row, n_col, save_path='H_H_trajs.pdf')
+    #
+    # ## 计算 JS-散度和总方差变异
+    # # plot_combined_heatmaps(p0_prob_mtx, n_row, n_col)
+    # for idx, (q_s, v_s) in enumerate(p0_prob_mtx.items()):
+    #     for q_e, v_e in list(p0_prob_mtx.items())[idx + 1:]:
+    #         if q_s != q_e:
+    #             print(f'p0, {q_s} -> {q_e}:', cal_tvd_js(np.array(v_s), np.array(v_e)))
+    #             break
+    #
+    # # plot_combined_heatmaps(p1_prob_mtx, n_row, n_col)
+    # for idx, (q_s, v_s) in enumerate(p1_prob_mtx.items()):
+    #     for q_e, v_e in list(p1_prob_mtx.items())[idx + 1:]:
+    #         if q_s != q_e:
+    #             print(f'p1, {q_s} -> {q_e}:', cal_tvd_js(np.array(v_s), np.array(v_e)))
+    #             break

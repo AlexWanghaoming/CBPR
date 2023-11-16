@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/snap/pycharm-professional/356/plugins/python/helpers/pydev/pydevd.py", line 1500, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "/snap/pycharm-professional/356/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "/alpha/overcooked_rl/algorithms/bpr_NN_scriptedPolicy.py", line 316, in <module>
+    bpr_online.play(args, logger=None)
+  File "/alpha/overcooked_rl/algorithms/bpr_NN_scriptedPolicy.py", line 123, in play
+    META_TASKS = META_TASKS[args.layout]
+UnboundLocalError: local variable 'META_TASKS' referenced before assignment

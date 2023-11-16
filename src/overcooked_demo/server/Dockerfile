@@ -8,13 +8,13 @@ WORKDIR /app
 
 # Install non-chai dependencies
 COPY ./requirements.txt ./requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
 # Install eventlet production server if production build
 RUN if [ "$BUILD_ENV" = "production" ] ; then pip install eventlet ; fi
 
 # Clone chai code
-RUN git clone --recursive https://github.com/HumanCompatibleAI/overcooked_ai.git --branch $OVERCOOKED_BRANCH --single-branch /overcooked_ai
+RUN git clone --recursive https://github.com/AlexWanghaoming/overcooked_ai --branch $OVERCOOKED_BRANCH --single-branch /overcooked_ai
 
 # Dummy data_dir so things don't break
 RUN echo "import os; DATA_DIR=os.path.abspath('.')" >> /overcooked_ai/src/human_aware_rl/data_dir.py
@@ -22,6 +22,7 @@ RUN echo "import os; DATA_DIR=os.path.abspath('.')" >> /overcooked_ai/src/human_
 # Install chai dependencies
 RUN pip install -e '/overcooked_ai[harl]'
 
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
 RUN apt-get -y update
 RUN apt-get install -y libgl1-mesa-dev
 

@@ -120,7 +120,7 @@ def _val_in_one_epoch(val_loader, model, stochastic=True):
 def parse_opt():
     parser = argparse.ArgumentParser()
     # parser.add_argument('--layout', type=str, default='cramped_room')
-    parser.add_argument('--layout', type=str, default='cramped_room')
+    parser.add_argument('--layout', type=str, default='counter_circuit')
     parser.add_argument('--epochs', type=int, default=120)
     parser.add_argument('--lr', type=float, default=1e-3)
     opt = parser.parse_args()

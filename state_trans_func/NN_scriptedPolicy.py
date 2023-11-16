@@ -5,11 +5,19 @@ import os, sys
 import numpy as np
 import torch.nn.functional as F
 from utils import init_env
-device = 'cuda'
 from models import MTP_MODELS
 from tqdm import tqdm
 import random
 from src.overcooked_ai_py.mdp.actions import Action
+
+
+device = 'cuda'
+LAYOUT_NAME = 'marshmallow_experiment'
+META_TASKS = ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random', 'place_onion_and_deliver_soup', 'place_tomato_and_deliver_soup']
+# declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup')  # cramped_room
+# declare -a scripted_policies=('place_onion_in_pot' 'place_tomato_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup' 'place_tomato_and_deliver_soup') # marshmallow_experiment
+# declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup')  # asymmetric_advantages
+
 
 class NN(nn.Module):
     def __init__(self, input_dim, output_dim):
@@ -62,9 +70,6 @@ def shuffle_dict(dictOfList):
 
 
 if __name__ == '__main__':
-    # LAYOUT_NAME = 'marshmallow_experiment'
-    LAYOUT_NAME = 'cramped_room'
-    META_TASKS = ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random']
     N = 50000
     num_episodes = N//600 + 1
     for idx, meta_task in enumerate(META_TASKS):
@@ -72,7 +77,7 @@ if __name__ == '__main__':
         mtp_model_path = MTP_MODELS[LAYOUT_NAME][idx]
         mtp_agent = torch.load(mtp_model_path)
         env = init_env(layout=LAYOUT_NAME,
-                       agent0_policy_name='ppo',
+                       agent0_policy_name='mtp',
                        agent1_policy_name=f'script:{meta_task}',
                        use_script_policy=True)
         print(f'Collecting training data ... for {meta_task}')

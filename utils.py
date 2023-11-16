@@ -32,9 +32,14 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-def init_env(layout, horizon=600, lossless_state_encoding=False, agent0_policy_name=None, agent1_policy_name=None, use_script_policy=False):
-    # mdp = OvercookedGridworld.from_layout_name(layout, start_state=OvercookedGridworld.get_random_start_state_fn) # bug 随机游戏初始状态
-    mdp = OvercookedGridworld.from_layout_name(layout)
+def init_env(layout, horizon=600, lossless_state_encoding=False, agent0_policy_name=None, agent1_policy_name=None, use_script_policy=False, old_dynamic=True):
+    # mdp = OvercookedGridworld.from_layout_name(layout, start_state=OvercookedGridworld.get_random_start_state_fn)  # bug 随机游戏初始状态
+    # wanghm Overcooked旧环境中，锅中放入三个菜后自动开始烹饪，所以无法烹饪配料为两项的菜品
+    # if layout in ['counter_circuit', 'soup_coordination']:
+    #     old_dynamic = False
+    #     print(f'{layout} using old dynamic')
+
+    mdp = OvercookedGridworld.from_layout_name(layout, old_dynamic=old_dynamic)
     base_env = OvercookedEnv.from_mdp(mdp, horizon=horizon)
     if lossless_state_encoding:
         env = gym.make("Overcooked-v0",

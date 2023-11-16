@@ -43,7 +43,6 @@ def train_one_episode(args, env, reward_shaping_factor, ego_agent:PPO_discrete, 
         if ego_buffer.count == args.batch_size:
             ego_agent.update(ego_buffer, cur_steps)
             ego_buffer.count = 0
-
     # logger.update(score=[episode_reward], total_steps=k)
     return episode_reward
 
@@ -65,7 +64,7 @@ def run():
     # parser.add_argument('--layout', default='marshmallow_experiment')
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes', type=int, default=50000)
-    parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--seed', type=int, default=4)
     args = parser.parse_args()
     args.max_episode_steps = 600 # Maximum number of steps per episode
     test_env = init_env(layout=args.layout)
@@ -75,7 +74,9 @@ def run():
     formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
     wandb.init(project='overcooked_rl',
                group='FCP',
-               name=f'fcp_{args.layout}_seed{args.seed}_{formatted_now}',
+               tags="fcp",
+               id="aa",
+               name=f'fcp_{args.layout}_seed{args.seed}',
                job_type='training',
                config=vars(args),
                reinit=True)

@@ -1121,8 +1121,7 @@ class OvercookedGridworld(object):
         if old_dynamics:
             assert all(
                 [
-                    len(order["ingredients"]) == 3
-                    for order in self.start_all_orders
+                    len(order["ingredients"]) == 3 for order in self.start_all_orders
                 ]
             ), "Only accept orders with 3 items when using the old_dynamics"
         self.height = len(terrain)
@@ -1567,9 +1566,9 @@ class OvercookedGridworld(object):
                         if obj.name == Recipe.ONION:
                             events_infos["potting_onion"][player_idx] = True
 
-                        # wanghm: auto cooking
-                        if self.soup_to_be_cooked_at_location(new_state, i_pos) and len(soup.ingredients) == Recipe.MAX_NUM_INGREDIENTS:
-                            soup.begin_cooking()
+                        # # wanghm: auto cooking
+                        # if self.soup_to_be_cooked_at_location(new_state, i_pos) and len(soup.ingredients) == Recipe.MAX_NUM_INGREDIENTS:
+                        #     soup.begin_cooking()
 
             elif terrain_type == "S" and player.has_object():
                 obj = player.get_object()
@@ -1705,6 +1704,35 @@ class OvercookedGridworld(object):
                     obj.begin_cooking()
                 if obj.is_cooking:
                     obj.cook()
+
+
+    def exists_unfull_tomato_soup(self, state):
+        """
+        HSP added
+        """
+        soup_sizes = []
+        for obj in state.objects.values():
+            if obj.name == 'soup' and not obj.is_full and all([x == "tomato" for x in obj.ingredients]) and len(
+                    obj.ingredients) >= 1:
+                soup_sizes.append(len(obj.ingredients))
+        if len(soup_sizes) > 0:
+            return True, soup_sizes
+        return False, []
+
+    def useful_tomato_pickup(self, state, pid):
+        """
+            HSP added
+        """
+        # there is an unfull tomato soup
+        useful, soup_sizes = self.exists_unfull_tomato_soup(state)
+        # other player doesn't hold tomato when every soup has two tomatoes
+        if len(soup_sizes) > 0 and all([x == 2 for x in soup_sizes]):
+            for player_idx, player in enumerate(state.players):
+                if pid == player_idx:
+                    continue
+                useful = useful and (not (player.has_object() and player.get_object().name == "tomato"))
+        return useful
+
 
     def _handle_collisions(self, old_positions, new_positions):
         """If agents collide, they stay at their old locations"""

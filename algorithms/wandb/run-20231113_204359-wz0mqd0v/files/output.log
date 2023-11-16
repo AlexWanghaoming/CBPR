@@ -1,0 +1,11 @@
+Initial belief is  {'metatask_1': 0.25, 'metatask_2': 0.25, 'metatask_3': 0.25, 'metatask_4': 0.25}
+Computing MediumLevelActionManager
+Computing MediumLevelActionManager
+/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/gym/spaces/box.py:74: UserWarning: [33mWARN: Box bound precision lowered by casting to float32
+  "Box bound precision lowered by casting to {}".format(self.dtype)
+Traceback (most recent call last):
+  File "bpr_NN_humanProxy.py", line 217, in <module>
+    bpr_online.play(args, logger=None)
+  File "bpr_NN_humanProxy.py", line 116, in play
+    h_act = human_model.choose_action(h_obs, deterministic=True)
+AttributeError: 'str' object has no attribute 'choose_action'

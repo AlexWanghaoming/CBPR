@@ -34,13 +34,8 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
             alt_a, alt_a_logprob = alt_agent.choose_action(alt_obs)  # Action and the corresponding log probability
             obs_, sparse_reward, done, info = env.step((ego_a, alt_a))
             shaped_r = info["shaped_r_by_agent"][0] + info["shaped_r_by_agent"][1]
-            r = sparse_reward + shaped_r*reward_shaping_factor
+            r = sparse_reward + shaped_r * reward_shaping_factor
             ego_obs_, alt_obs_ = obs_['both_agent_obs']
-            # obs = {
-            #     "both_agent_obs": both_agents_ob,
-            #     "overcooked_state": next_state,
-            #     "other_agent_env_idx": 1 - self.agent_idx,
-            # }
             episode_reward += r
             if done:
                 dw = True
@@ -55,20 +50,20 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
                 alt_agent.update(alt_buffer, cur_steps)
                 ego_buffer.count = 0
                 alt_buffer.count = 0
-        # print(f"Ep {k}:", episode_reward)
-        wandb.log({'episode': k, 'ep_reward': episode_reward})
+        print(f"Ep {k}:", episode_reward)
+        # wandb.log({'episode': k, 'ep_reward': episode_reward})
         # logger.update(score=[episode_reward], total_steps=k)
 
-        # save checkpoints of different skill levels
-        if k < 50:
-            if k % 1 == 0:
-                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
-        elif k < 100:
-            if k % 2 == 0:
-                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
-        else:
-            if (k % 25 == 0 or k == k - 1):
-                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
+        # # save checkpoints of different skill levels
+        # if k < 50:
+        #     if k % 1 == 0:
+        #         ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
+        # elif k < 100:
+        #     if k % 2 == 0:
+        #         ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
+        # else:
+        #     if (k % 25 == 0 or k == k - 1):
+        #         ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
 
 
 def run():
@@ -79,12 +74,12 @@ def run():
     parser.add_argument("--use_minibatch", type=bool, default=False, help="whether sample Minibatchs during policy updating")
     parser.add_argument("--lr", type=float, default=9e-4)
     parser.add_argument("--gamma", type=float, default=0.99)
-    parser.add_argument("--epsilon", type=float, default=0.05, help="PPO clip parameter")
+    parser.add_argument("--epsilon", type=float, default=0.1, help="PPO clip parameter")
     parser.add_argument("--use_state_norm", type=bool, default=False)
     parser.add_argument("--use_reward_scaling", type=bool, default=True)
-    parser.add_argument("--entropy_coef", type=float, default=0.01)
+    parser.add_argument("--entropy_coef", type=float, default=0.1)
     parser.add_argument('--device', type=str, default='cpu')
-    parser.add_argument('--layout', default='cramped_room')
+    parser.add_argument('--layout', default='counter_circuit')
     # parser.add_argument('--layout', default='marshmallow_experiment')
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes', type=int, default=3000)
@@ -98,12 +93,12 @@ def run():
     args.action_dim = test_env.action_space.n
     now = datetime.now()
     formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
-    wandb.init(project='overcooked_rl',
-               group='FCP',
-               name=f'sp_ppo_{args.layout}_seed{args.seed}',
-               job_type='training',
-               config=vars(args),
-               reinit=True)
+    # wandb.init(project='overcooked_rl',
+    #            group='FCP',
+    #            name=f'sp_ppo_{args.layout}_seed{args.seed}',
+    #            job_type='training',
+    #            config=vars(args),
+    #            reinit=True)
 
     seed_everything(args.seed)
     ego_agent = PPO_discrete(lr=args.lr,
@@ -130,7 +125,7 @@ def run():
                          device=args.device)
     train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed)
 
-    wandb.finish()
+    # wandb.finish()
 
 if __name__ == '__main__':
 

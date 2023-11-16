@@ -4,13 +4,10 @@
                 X XXXXX X
                 X   1   X
                 XXXOSTXXX""",
-    "start_bonus_orders": [
-        { "ingredients" : ["onion", "tomato"]},
-    ],
+    "start_bonus_orders": [],
     "start_all_orders" : [
         { "ingredients" : ["onion", "tomato", "tomato"]},
         { "ingredients" : ["onion", "onion", "tomato"]},
-        { "ingredients" : ["onion", "tomato"]}
     ],
     "onion_value" : 21,
     "tomato_value" : 13,
