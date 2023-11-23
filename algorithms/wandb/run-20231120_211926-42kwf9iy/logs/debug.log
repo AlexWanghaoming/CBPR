@@ -1,0 +1,34 @@
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_setup.py:_flush():76] Configure stats pid to 2682472
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_setup.py:_flush():76] Loading settings from /home/wanghm/.config/wandb/settings
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_setup.py:_flush():76] Loading settings from /alpha/overcooked_rl/algorithms/wandb/settings
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'algorithms/mtp_scriptedPolicy.py', 'program_abspath': '/alpha/overcooked_rl/algorithms/mtp_scriptedPolicy.py', 'program': 'mtp_scriptedPolicy.py'}
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_init.py:_log_setup():528] Logging user logs to /alpha/overcooked_rl/algorithms/wandb/run-20231120_211926-42kwf9iy/logs/debug.log
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_init.py:_log_setup():529] Logging internal logs to /alpha/overcooked_rl/algorithms/wandb/run-20231120_211926-42kwf9iy/logs/debug-internal.log
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_init.py:init():568] calling init triggers
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_init.py:init():576] wandb.init called with sweep_config: {}
+config: {'hidden_dim': 128, 'batch_size': 4096, 'mini_batch_size': 128, 'use_minibatch': False, 'lr': 0.0009, 'gamma': 0.99, 'epsilon': 0.05, 'use_state_norm': False, 'use_reward_scaling': True, 'entropy_coef': 0.01, 'device': 'cpu', 'layout': 'coordination_ring', 'num_episodes': 2000, 'scripted_policy_name': 'place_onion_and_deliver_soup', 'seed': 5, 'max_episode_steps': 600, 't_max': 1200000, 'state_dim': 96, 'action_dim': 6}
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_init.py:init():618] starting backend
+2023-11-20 21:19:26,144 INFO    MainThread:2682472 [wandb_init.py:init():622] setting up manager
+2023-11-20 21:19:26,145 INFO    MainThread:2682472 [backend.py:_multiprocessing_setup():107] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-11-20 21:19:26,145 INFO    MainThread:2682472 [wandb_init.py:init():628] backend started and connected
+2023-11-20 21:19:26,147 INFO    MainThread:2682472 [wandb_init.py:init():720] updated telemetry
+2023-11-20 21:19:26,160 INFO    MainThread:2682472 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-11-20 21:19:26,958 INFO    MainThread:2682472 [wandb_run.py:_on_init():2220] communicating current version
+2023-11-20 21:19:27,275 INFO    MainThread:2682472 [wandb_run.py:_on_init():2229] got version response upgrade_message: "wandb version 0.16.0 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-11-20 21:19:27,276 INFO    MainThread:2682472 [wandb_init.py:init():804] starting run threads in backend
+2023-11-20 21:19:28,829 INFO    MainThread:2682472 [wandb_run.py:_console_start():2199] atexit reg
+2023-11-20 21:19:28,829 INFO    MainThread:2682472 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-11-20 21:19:28,829 INFO    MainThread:2682472 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-11-20 21:19:28,829 INFO    MainThread:2682472 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-11-20 21:19:28,830 INFO    MainThread:2682472 [wandb_init.py:init():845] run started, returning control to user process
+2023-11-20 21:44:28,906 INFO    MainThread:2682472 [wandb_run.py:_finish():1934] finishing run wanghm/overcooked_rl/42kwf9iy
+2023-11-20 21:44:28,906 INFO    MainThread:2682472 [wandb_run.py:_atexit_cleanup():2168] got exitcode: 0
+2023-11-20 21:44:28,907 INFO    MainThread:2682472 [wandb_run.py:_restore():2151] restore
+2023-11-20 21:44:28,907 INFO    MainThread:2682472 [wandb_run.py:_restore():2157] restore done
+2023-11-20 21:44:57,717 INFO    MainThread:2682472 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2023-11-20 21:44:57,717 INFO    MainThread:2682472 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2023-11-20 21:44:57,719 INFO    MainThread:2682472 [wandb_run.py:_footer_sync_info():3558] logging synced files

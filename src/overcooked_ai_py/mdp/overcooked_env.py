@@ -27,7 +27,7 @@ from overcooked_ai_py.utils import append_dictionaries, mean_and_std_err
 from overcooked_ai_py.visualization.state_visualizer import StateVisualizer
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../../')
-from script_agent import SCRIPT_AGENTS
+from script_agent import SCRIPT_AGENTS # wanghm
 
 DEFAULT_ENV_PARAMS = {"horizon": 400}
 
@@ -704,8 +704,6 @@ class Overcooked(gym.Env):
     # might as well move all the initilization into the actual __init__
     def __init__(self,
                  base_env,
-                 ego_featurize_fn,
-                 alt_featurize_fn,
                  baselines_reproducible=False,
                  use_script_policy=False,
                  agent0_policy_name=None,
@@ -732,8 +730,8 @@ class Overcooked(gym.Env):
             # controlled by the actual run seeds
             np.random.seed(0)
         self.base_env = base_env
-        self.ego_featurize_fn = ego_featurize_fn
-        self.alt_featurize_fn = alt_featurize_fn
+        self.ego_featurize_fn = self.base_env.featurize_state_mdp
+        self.alt_featurize_fn = self.base_env.featurize_state_mdp
         self.observation_space = self._setup_observation_space()
         self.action_space = gym.spaces.Discrete(len(Action.ALL_ACTIONS))
         self.num_agents = 2

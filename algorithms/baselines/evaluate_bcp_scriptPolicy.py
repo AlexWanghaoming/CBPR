@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import BCP_MODELS
 from bc.bc_hh import BehaviorClone
-from utils import seed_everything, init_env
+from My_utils import seed_everything, init_env
 from rl_plotter.logger import Logger
 import random
 import wandb
@@ -39,12 +39,12 @@ if __name__ == '__main__':
     ai_agent = torch.load(BCP_MODELS[args.layout])
     now = datetime.now()
     formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
-    wandb.init(project='overcooked_rl',
-               group='BPR',
-               name=f'BCP_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
-               config=vars(args),
-               job_type='eval',
-               reinit=True)
+    # wandb.init(project='overcooked_rl',
+    #            group='BPR',
+    #            name=f'BCP_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
+    #            config=vars(args),
+    #            job_type='eval',
+    #            reinit=True)
     if args.mode == 'inter':
         random.seed(42) # 固定测试的策略顺序
         N = args.num_episodes // args.switch_human_freq
@@ -91,7 +91,7 @@ if __name__ == '__main__':
             ep_reward += sparse_reward
             # env.render(interval=0.1)
         print(f'Ep {k+1}:',ep_reward)
-        wandb.log({'episode': k+1, 'ep_reward': ep_reward})
-    wandb.finish()
+        # wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+    # wandb.finish()
 
 

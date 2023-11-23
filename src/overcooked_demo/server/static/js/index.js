@@ -6,7 +6,7 @@ var socket = io();
  * * * * * * * * * * * * * * * */
 
 $(function() {
-    $('#create').click(function () {
+    $('#create').click(function () {   // click： 当用户点击具有 id 为 create 的 HTML 元素时，会触发这个函数。
         params = arrToJSON($('form').serializeArray());
         params.layouts = [params.layout]
         data = {
@@ -14,7 +14,8 @@ $(function() {
             "game_name" : "overcooked",
             "create_if_not_found" : false
         };
-        socket.emit("create", data);
+        socket.emit("create", data);   //发送消息给服务器，这个事件名：create需要与 Flask 服务器端的 @socketio.on("create") 装饰器匹配
+
         $('#waiting').show();
         $('#join').hide();
         $('#join').attr("disabled", true);

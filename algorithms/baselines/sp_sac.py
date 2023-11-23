@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 from typing import *
 # warnings.filterwarnings('ignore', message='Passing (type, 1) or \'1type\' as a synonym of type is deprecated')
 from rl_plotter.logger import Logger
-from utils import seed_everything, LinearAnnealer, init_env
+from My_utils import seed_everything, LinearAnnealer, init_env
 import argparse
 from agents.sac import SAC, OffpolicyReplayBuffer
 import warnings

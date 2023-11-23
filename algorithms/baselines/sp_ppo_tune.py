@@ -1,15 +1,15 @@
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
-from utils import ReplayBuffer
+from My_utils import Normalization, RewardScaling, ReplayBuffer
 from agents.ppo_discrete import PPO_discrete
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../PPO-discrete/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
-from utils import seed_everything, LinearAnnealer, init_env
+from My_utils import seed_everything, LinearAnnealer, init_env
 from ray import train, tune
 from hyperopt import hp
 import ray
 from collections import deque
-from ray.tune.suggest.hyperopt import HyperOptSearch
+from ray.tune.search.hyperopt import HyperOptSearch
 
 
 class FixedQueue(deque):
@@ -43,6 +43,7 @@ state_dim = 96
 action_dim = 6
 
 
+
 def train_n_episodes(ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, config:dict):
     queue = FixedQueue(10)
     annealer = LinearAnnealer(horizon=num_episodes * max_episode_steps * 0.5)
@@ -50,11 +51,22 @@ def train_n_episodes(ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:
     ego_buffer = ReplayBuffer(config['batch_size'], state_dim)
     alt_buffer = ReplayBuffer(config['batch_size'], state_dim)
     cur_steps = 0  # Record the total steps during the training
+    ego_state_norm = Normalization(shape=state_dim)
+    alt_state_norm = Normalization(shape=state_dim)
+    if use_reward_scaling:
+        reward_scaling = RewardScaling(shape=1, gamma=gamma)
     for k in range(1, n_episodes+1):
         agent_env_steps = max_episode_steps *  (k-1)
         reward_shaping_factor = annealer.param_value(agent_env_steps)
+
         obs  = env.reset()
         ego_obs, alt_obs = obs['both_agent_obs']
+        if use_state_norm:
+            ego_obs = ego_state_norm(ego_obs)
+            alt_obs = alt_state_norm(alt_obs)
+        if use_reward_scaling:
+            reward_scaling.reset()
+
         episode_steps = 0
         done = False
         episode_reward = 0
@@ -68,6 +80,11 @@ def train_n_episodes(ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:
             r = sparse_reward + shaped_r * reward_shaping_factor
             ego_obs_, alt_obs_ = obs_['both_agent_obs']
             episode_reward += r
+            if use_state_norm:
+                ego_obs_ = ego_state_norm(ego_obs_)
+                alt_obs_ = ego_state_norm(alt_obs_)
+            elif use_reward_scaling:
+                reward = reward_scaling(r)
             if done:
                 dw = True
             else:
@@ -108,6 +125,7 @@ def run(config):
                          action_dim=action_dim,
                          num_episodes=num_episodes,
                          device=device)
+
     train_n_episodes(ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=num_episodes, config=config)
 
 

@@ -9,12 +9,16 @@ WORKDIR /app
 # Install non-chai dependencies
 COPY ./requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN pip install ray -i https://mirrors.aliyun.com/pypi/simple/
+RUN pip install torch==1.13.1 -i https://mirrors.aliyun.com/pypi/simple/
 
 # Install eventlet production server if production build
 RUN if [ "$BUILD_ENV" = "production" ] ; then pip install eventlet ; fi
 
 # Clone chai code
-RUN git clone --recursive https://github.com/AlexWanghaoming/overcooked_ai --branch $OVERCOOKED_BRANCH --single-branch /overcooked_ai
+#RUN git config --global http.sslVerify false
+#RUN git clone --recursive git@github.com:AlexWanghaoming/overcooked_ai.git --branch $OVERCOOKED_BRANCH --single-branch /overcooked_ai
+RUN git clone --recursive https://github.com/AlexWanghaoming/overcooked_ai.git --branch $OVERCOOKED_BRANCH --single-branch /overcooked_ai
 
 # Dummy data_dir so things don't break
 RUN echo "import os; DATA_DIR=os.path.abspath('.')" >> /overcooked_ai/src/human_aware_rl/data_dir.py
@@ -31,7 +35,7 @@ COPY ./static ./static
 COPY ./*.py ./
 COPY ./graphics/$GRAPHICS ./static/js/graphics.js
 COPY ./config.json ./config.json
-
+#COPY ./bpr_NN_scriptedPolicy.py ./bpr_NN_scriptedPolicy.py
 
 
 # Set environment variables that will be used by app.py

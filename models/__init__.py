@@ -18,7 +18,8 @@ BCP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bcp/bcp_cramped_roo
 
 BC_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bc/BC_cramped_room.pth'),
              'marshmallow_experiment': os.path.join(_curr_directory, 'bc/BC_marshmallow_experiment.pth'),
-             'asymmetric_advantages': os.path.join(_curr_directory, 'bc/BC_asymmetric_advantages.pth')
+             'asymmetric_advantages': os.path.join(_curr_directory, 'bc/BC_asymmetric_advantages.pth'),
+             'coordination_ring': os.path.join(_curr_directory, 'bc/BC_coordination_ring.pth'),
              }
 
 HP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bc/HP_cramped_room.pth'),

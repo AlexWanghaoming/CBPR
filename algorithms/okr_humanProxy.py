@@ -11,7 +11,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 from bc.bc_hh import BehaviorClone
 from models import MTP_MODELS, NN_MODELS, HP_MODELS, META_TASKS
 from agents.ppo_discrete import PPO_discrete
-from utils import seed_everything, init_env
+from My_utils import seed_everything, init_env
 import random
 from state_trans_func.NN_scriptedPolicy import NN
 import torch.nn as nn

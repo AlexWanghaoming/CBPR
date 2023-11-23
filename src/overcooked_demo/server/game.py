@@ -1,5 +1,5 @@
 import json
-import os
+import os,sys
 import pickle
 import random
 from abc import ABC, abstractmethod
@@ -10,14 +10,17 @@ from time import time
 import ray
 from utils import DOCKER_VOLUME, create_dirs
 
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from human_aware_rl.rllib.rllib import load_agent
 from overcooked_ai_py.mdp.actions import Action, Direction
 from overcooked_ai_py.mdp.overcooked_env import OvercookedEnv
-from overcooked_ai_py.mdp.overcooked_mdp import OvercookedGridworld
+from overcooked_ai_py.mdp.overcooked_mdp import OvercookedGridworld, OvercookedState
 from overcooked_ai_py.planning.planners import (
     NO_COUNTERS_PARAMS,
     MotionPlanner,
 )
+from my_agents import CBPR_ai
+
 
 # Relative path to where all static pre-trained agents are stored on server
 AGENT_DIR = None
@@ -476,6 +479,8 @@ class OvercookedGame(Game):
             self.write_data = False
 
         self.trajectory = []
+        self.joint_action = [Action.STAY] * len(self.players)
+        self.curr_reward = 0
 
     def _curr_game_over(self):
         return time() - self.start_time >= self.max_time
@@ -540,7 +545,6 @@ class OvercookedGame(Game):
         # Default joint action, as NPC policies and clients probably don't enqueue actions fast
         # enough to produce one at every tick
         joint_action = [Action.STAY] * len(self.players)
-
         # Synchronize individual player actions into a joint-action as required by overcooked logic
         for i in range(len(self.players)):
             # if this is a human, don't block and inject
@@ -553,6 +557,7 @@ class OvercookedGame(Game):
             else:
                 # we block on agent actions to ensure that the agent gets to do one action per state
                 joint_action[i] = self.pending_actions[i].get(block=True)
+
 
         # Apply overcooked game logic to get state transition
         prev_state = self.state
@@ -572,6 +577,9 @@ class OvercookedGame(Game):
         # Update score based on soup deliveries that might have occured
         curr_reward = sum(info["sparse_reward_by_agent"])
         self.score += curr_reward
+
+        self.joint_action = joint_action
+        self.curr_reward = curr_reward
 
         transition = {
             "state": json.dumps(prev_state.to_dict()),
@@ -694,11 +702,13 @@ class OvercookedGame(Game):
     def get_data(self):
         """
         Returns and then clears the accumulated trajectory
+        每次游戏结束时该函数被调用
         """
         data = {
             "uid": str(time()),
             "trajectory": self.trajectory,
         }
+        print("lens: ",len(data['trajectory']))
         self.trajectory = []
         # if we want to store the data and there is data to store
         if self.write_data and len(data["trajectory"]) > 0:
@@ -710,6 +720,26 @@ class OvercookedGame(Game):
                 pickle.dump(data, f)
         return data
 
+
+class BPR_overcookedGame(OvercookedGame):
+    def __init__(self, layouts=["cramped_room", "asymmetric_advantages", "marshmallow_experiment", "coordination_ring"], **kwargs):
+        super(BPR_overcookedGame, self).__init__(layouts, **kwargs)
+
+    def get_policy(self, npc_id, idx=0):
+        if npc_id == "CBPR":
+            print('BPRBPRBPRBPRBPRBPRBPR')
+            return CBPR_ai(self)
+
+        elif npc_id == "BCP":
+            raise NotImplementedError
+
+        elif npc_id == "FCP":
+            raise NotImplementedError
+
+        elif npc_id == "SP":
+            raise NotImplementedError
+        else:
+            pass
 
 class OvercookedTutorial(OvercookedGame):
 
@@ -800,6 +830,7 @@ class DummyOvercookedGame(OvercookedGame):
         return DummyAI()
 
 
+
 class DummyAI:
     """
     Randomly samples actions. Used for debugging
@@ -808,12 +839,12 @@ class DummyAI:
     def action(self, state):
         [action] = random.sample(
             [
-                Action.STAY,
-                Direction.NORTH,
-                Direction.SOUTH,
+                # Action.STAY,
+                # Direction.NORTH,
+                # Direction.SOUTH,
                 Direction.WEST,
                 Direction.EAST,
-                Action.INTERACT,
+                # Action.INTERACT,
             ],
             1,
         )

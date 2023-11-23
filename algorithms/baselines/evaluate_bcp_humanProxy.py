@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import BCP_MODELS, HP_MODELS
 from bc.bc_hh import BehaviorClone
-from utils import seed_everything, init_env
+from My_utils import seed_everything, init_env
 import wandb
 from datetime import datetime
 

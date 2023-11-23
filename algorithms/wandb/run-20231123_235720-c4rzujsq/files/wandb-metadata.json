@@ -1,0 +1,137 @@
+{
+    "os": "Linux-6.2.0-26-generic-x86_64-with-debian-bookworm-sid",
+    "python": "3.7.12",
+    "heartbeatAt": "2023-11-23T15:57:21.633974",
+    "startedAt": "2023-11-23T15:57:20.100647",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--layout",
+        "cramped_room",
+        "--num_episodes",
+        "2000",
+        "--scripted_policy_name",
+        "place_onion_and_deliver_soup",
+        "--seed",
+        "2"
+    ],
+    "state": "running",
+    "program": "mtp_scriptedPolicy.py",
+    "codePathLocal": "mtp_scriptedPolicy.py",
+    "codePath": "algorithms/mtp_scriptedPolicy.py",
+    "git": {
+        "remote": "git@github.com:AlexWanghaoming/overcooked_rl.git",
+        "commit": "c38c8877e0c918167007cd6e3339f76a8254812b"
+    },
+    "email": "568019240@qq.com",
+    "root": "/alpha/overcooked_rl",
+    "host": "wanghm",
+    "username": "wanghm",
+    "executable": "/home/wanghm/anaconda3/envs/overcooked_ai/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 4484.9386875,
+        "min": 800.0,
+        "max": 5150.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4801.692,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3297.286,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4896.541,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4845.699,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4950.094,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4921.829,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4870.057,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4865.541,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4854.39,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 1480.987,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4901.976,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4842.555,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4971.382,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4884.802,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4874.188,
+            "min": 800.0,
+            "max": 5100.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1832.2072448730469,
+            "used": 178.53366470336914
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3080",
+            "memory_total": 10737418240
+        }
+    ],
+    "memory": {
+        "total": 31.163162231445312
+    }
+}

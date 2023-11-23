@@ -13,7 +13,7 @@ from models import MTP_MODELS, NN_MODELS, META_TASKS
 from agents.ppo_discrete import PPO_discrete
 import random
 from state_trans_func.NN_scriptedPolicy import NN
-from utils import seed_everything, init_env
+from My_utils import seed_everything, init_env
 from datetime import datetime
 from src.overcooked_ai_py.mdp.actions import Action
 import wandb
@@ -36,7 +36,7 @@ class MTPLibrary:
         self.policy_lib = {}
 
     def gen_policy_library(self, args) -> Dict[str, PPO_discrete]:
-        for idx, mtp_path in enumerate(MTP_MODELS[LAYOUT_NAME]):
+        for idx, mtp_path in enumerate(MTP_MODELS[args.layout]):
             agent_id = f'mtp_{idx+1}'
             agent = PPO_discrete()
             agent.load_actor(mtp_path)
@@ -49,8 +49,8 @@ class NNLibrary:
     def __init__(self):
         self.policy_lib = {}
 
-    def gen_policy_library(self) -> Dict[str, nn.Module]:
-        for idx, bc_model_path in enumerate(NN_MODELS[LAYOUT_NAME]):
+    def gen_policy_library(self, args) -> Dict[str, nn.Module]:
+        for idx, bc_model_path in enumerate(NN_MODELS[args.layout]):
             state_dict = torch.load(bc_model_path)
             model = NN(input_dim=102, output_dim=97)
             model.load_state_dict(state_dict)
@@ -82,6 +82,7 @@ class BPR_offline:
     """
     def __init__(self, args):
         HPL = MetaTaskLibrary()
+        APL = MTPLibrary()
         self.human_policys = HPL.gen_policy_library(META_TASKS[args.layout])
         self.ai_policys = APL.gen_policy_library(args)
         # print('init agent policy library is ', self.ai_policys)
@@ -167,7 +168,7 @@ class BPR_online:
                 obs_y = torch.from_numpy(obs_y).float().to(device)
                 Q.append((obs_x, obs_y))
 
-                self.belief = self._update_beta(Q, policy_idx)
+                self.belief = self._update_beta(Q)
                 # if hit:
                 #     n_hit += 1
                 # print(f'Accuracy: {n_hit}/{total_steps}')
@@ -185,7 +186,7 @@ class BPR_online:
             print(f'Ep {k + 1} rewards: {ep_reward}')
             # wandb.log({'episode': k+1, 'ep_reward': ep_reward})
 
-    def _update_beta(self,Q, policy_idx) -> Dict[str, float]:
+    def _update_beta(self,Q) -> Dict[str, float]:
         """
         这里和BPR NN *Efficient Bayesian Policy Reuse With a Scalable Observation Model in Deep Reinforcement Learning, TNNLS* 有区别
         belief: dict
@@ -271,7 +272,7 @@ if __name__ == '__main__':
     APL = MTPLibrary()
     mtp_lib = APL.gen_policy_library(args)  # 构建AI策略库
     NNL = NNLibrary()
-    NN_models = NNL.gen_policy_library()
+    NN_models = NNL.gen_policy_library(args)
     bpr_offline = BPR_offline(args)
     belief = bpr_offline.gen_belief()
     bpr_online = BPR_online(agents=mtp_lib,

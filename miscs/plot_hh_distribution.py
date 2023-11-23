@@ -93,9 +93,7 @@ if __name__ == '__main__':
     mdp = OvercookedGridworld.from_layout_name(opt.layout)
     base_env = OvercookedEnv.from_mdp(mdp, horizon=game_length)
     env = gym.make("Overcooked-v0",
-                   base_env=base_env,
-                   ego_featurize_fn=base_env.featurize_state_mdp,
-                   alt_featurize_fn=base_env.featurize_state_mdp)
+                   base_env=base_env)
 
     layout_mtx = mdp.terrain_mtx
     n_row, n_col = find_empty_space(layout_mtx)

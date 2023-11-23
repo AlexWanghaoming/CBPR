@@ -1,0 +1,4003 @@
+Computing MediumLevelActionManager
+Computing MediumLevelActionManager
+Ep 1: 8.0
+Computing MediumLevelActionManager
+Ep 2: 13.986
+Computing MediumLevelActionManager
+Ep 3: 2.9939999999999998
+Computing MediumLevelActionManager
+Ep 4: 10.967
+Computing MediumLevelActionManager
+Ep 5: 5.976
+Computing MediumLevelActionManager
+/alpha/overcooked_rl/algorithms/../script_agent/script_agent.py:175: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  action = np.random.choice(Action.ALL_ACTIONS)
+Ep 6: 10.944999999999999
+Computing MediumLevelActionManager
+Ep 7: 2.982
+Computing MediumLevelActionManager
+Ep 8: 2.979
+Computing MediumLevelActionManager
+Ep 9: 15.872
+Computing MediumLevelActionManager
+Ep 10: 5.946
+Computing MediumLevelActionManager
+Ep 11: 18.81
+Computing MediumLevelActionManager
+Ep 12: 10.879000000000001
+Computing MediumLevelActionManager
+Ep 13: 8.892
+Computing MediumLevelActionManager
+Ep 14: 10.857
+Computing MediumLevelActionManager
+Ep 15: 10.846
+Computing MediumLevelActionManager
+Ep 16: 19.699999999999996
+Computing MediumLevelActionManager
+Ep 17: 13.776
+Computing MediumLevelActionManager
+Ep 18: 13.761999999999999
+Computing MediumLevelActionManager
+Ep 19: 13.748
+Computing MediumLevelActionManager
+Ep 20: 16.677
+Computing MediumLevelActionManager
+Ep 21: 16.66
+Computing MediumLevelActionManager
+Ep 22: 5.874
+Computing MediumLevelActionManager
+Ep 23: 16.626
+Computing MediumLevelActionManager
+Ep 24: 19.54
+Computing MediumLevelActionManager
+Ep 25: 2.928
+Computing MediumLevelActionManager
+Ep 26: 16.575
+Computing MediumLevelActionManager
+Ep 27: 18.506
+Computing MediumLevelActionManager
+Ep 28: 2.919
+Computing MediumLevelActionManager
+Ep 29: 16.523999999999997
+Computing MediumLevelActionManager
+Ep 30: 30.101
+Computing MediumLevelActionManager
+Ep 31: 7.76
+Computing MediumLevelActionManager
+Ep 32: 21.317999999999998
+Computing MediumLevelActionManager
+Ep 33: 18.392
+Computing MediumLevelActionManager
+Ep 34: 44.175
+Computing MediumLevelActionManager
+Ep 35: 13.524
+Computing MediumLevelActionManager
+Ep 36: 18.335
+Computing MediumLevelActionManager
+Ep 37: 28.919999999999998
+Computing MediumLevelActionManager
+Ep 38: 15.407999999999998
+Computing MediumLevelActionManager
+Ep 39: 5.772
+Computing MediumLevelActionManager
+Ep 40: 16.337
+Computing MediumLevelActionManager
+Ep 41: 13.439999999999998
+Computing MediumLevelActionManager
+Ep 42: 5.754
+Computing MediumLevelActionManager
+Ep 43: 5.747999999999999
+Computing MediumLevelActionManager
+Ep 44: 5.742
+Computing MediumLevelActionManager
+Ep 45: 7.648
+Computing MediumLevelActionManager
+Ep 46: 13.37
+Computing MediumLevelActionManager
+Ep 47: 2.862
+Computing MediumLevelActionManager
+Ep 48: 5.718
+Computing MediumLevelActionManager
+Ep 49: 2.856
+Computing MediumLevelActionManager
+Ep 50: 20.921999999999997
+Computing MediumLevelActionManager
+Ep 51: 10.45
+Computing MediumLevelActionManager
+Ep 52: 20.878000000000004
+Computing MediumLevelActionManager
+Ep 53: 41.804
+Computing MediumLevelActionManager
+Ep 54: 13.258
+Computing MediumLevelActionManager
+Ep 55: 5.676
+Computing MediumLevelActionManager
+Ep 56: 13.23
+Computing MediumLevelActionManager
+Ep 57: 2.832
+Computing MediumLevelActionManager
+Ep 58: 18.86
+Computing MediumLevelActionManager
+Ep 59: 0.0
+Computing MediumLevelActionManager
+Ep 60: 13.174000000000001
+Computing MediumLevelActionManager
+Ep 61: 0.0
+Computing MediumLevelActionManager
+Ep 62: 15.024000000000001
+Computing MediumLevelActionManager
+Ep 63: 2.814
+Computing MediumLevelActionManager
+Ep 64: 20.614
+Computing MediumLevelActionManager
+Ep 65: 17.784
+Computing MediumLevelActionManager
+Ep 66: 5.61
+Computing MediumLevelActionManager
+Ep 67: 14.943999999999999
+Computing MediumLevelActionManager
+Ep 68: 8.397000000000002
+Computing MediumLevelActionManager
+Ep 69: 7.4559999999999995
+Computing MediumLevelActionManager
+Ep 70: 2.793
+Computing MediumLevelActionManager
+Ep 71: 10.23
+Computing MediumLevelActionManager
+Ep 72: 23.224999999999998
+Computing MediumLevelActionManager
+Ep 73: 17.632000000000005
+Computing MediumLevelActionManager
+Ep 74: 10.197000000000001
+Computing MediumLevelActionManager
+Ep 75: 0.0
+Computing MediumLevelActionManager
+Ep 76: 2.7750000000000004
+Computing MediumLevelActionManager
+Ep 77: 10.164000000000001
+Computing MediumLevelActionManager
+Ep 78: 23.075000000000003
+Computing MediumLevelActionManager
+Ep 79: 7.376
+Computing MediumLevelActionManager
+Ep 80: 17.499000000000002
+Computing MediumLevelActionManager
+Ep 81: 12.880000000000003
+Computing MediumLevelActionManager
+Ep 82: 7.352
+Computing MediumLevelActionManager
+Ep 83: 7.343999999999999
+Computing MediumLevelActionManager
+Ep 84: 10.087
+Computing MediumLevelActionManager
+Ep 85: 20.152
+Computing MediumLevelActionManager
+Ep 86: 18.300000000000004
+Computing MediumLevelActionManager
+Ep 87: 18.28
+Computing MediumLevelActionManager
+Ep 88: 10.043
+Computing MediumLevelActionManager
+Ep 89: 2.736
+Computing MediumLevelActionManager
+Ep 90: 30.063000000000002
+Computing MediumLevelActionManager
+Ep 91: 12.739999999999998
+Computing MediumLevelActionManager
+Ep 92: 5.454000000000001
+Computing MediumLevelActionManager
+Ep 93: 24.516
+Computing MediumLevelActionManager
+Ep 94: 18.14
+Computing MediumLevelActionManager
+Ep 95: 17.214000000000002
+Computing MediumLevelActionManager
+Ep 96: 27.15
+Computing MediumLevelActionManager
+Ep 97: 22.6
+Computing MediumLevelActionManager
+Ep 98: 2.709
+Computing MediumLevelActionManager
+Ep 99: 5.412
+Computing MediumLevelActionManager
+Ep 100: 9.911000000000001
+Computing MediumLevelActionManager
+Ep 101: 42.5
+Computing MediumLevelActionManager
+Ep 102: 15.282999999999998
+Computing MediumLevelActionManager
+Ep 103: 19.755999999999997
+Computing MediumLevelActionManager
+Ep 104: 9.867
+Computing MediumLevelActionManager
+Ep 105: 22.400000000000002
+Computing MediumLevelActionManager
+Ep 106: 22.375
+Computing MediumLevelActionManager
+Ep 107: 19.668
+Computing MediumLevelActionManager
+Ep 108: 22.325000000000003
+Computing MediumLevelActionManager
+Ep 109: 30.32800000000001
+Computing MediumLevelActionManager
+Ep 110: 2.673
+Computing MediumLevelActionManager
+Ep 111: 22.25
+Computing MediumLevelActionManager
+Ep 112: 39.11600000000001
+Computing MediumLevelActionManager
+Ep 113: 39.536
+Computing MediumLevelActionManager
+Ep 114: 15.078999999999999
+Computing MediumLevelActionManager
+Ep 115: 16.834
+Computing MediumLevelActionManager
+Ep 116: 12.39
+Computing MediumLevelActionManager
+Ep 117: 27.404000000000003
+Computing MediumLevelActionManager
+Ep 118: 22.075000000000003
+Computing MediumLevelActionManager
+Ep 119: 7.056
+Computing MediumLevelActionManager
+Ep 120: 24.668000000000003
+Computing MediumLevelActionManager
+Ep 121: 31.680000000000007
+Computing MediumLevelActionManager
+Ep 122: 17.580000000000002
+Computing MediumLevelActionManager
+Ep 123: 19.316
+Computing MediumLevelActionManager
+Ep 124: 19.294
+Computing MediumLevelActionManager
+Ep 125: 7.008
+Computing MediumLevelActionManager
+Ep 126: 23.625
+Computing MediumLevelActionManager
+Ep 127: 33.212
+Computing MediumLevelActionManager
+Ep 128: 14.841
+Computing MediumLevelActionManager
+Ep 129: 14.824000000000002
+Computing MediumLevelActionManager
+Ep 130: 23.517
+Computing MediumLevelActionManager
+Ep 131: 9.569999999999999
+Computing MediumLevelActionManager
+Ep 132: 44.331999999999994
+Computing MediumLevelActionManager
+Ep 133: 19.964
+Computing MediumLevelActionManager
+Ep 134: 9.536999999999999
+Computing MediumLevelActionManager
+Ep 135: 16.454
+Computing MediumLevelActionManager
+Ep 136: 13.84
+Computing MediumLevelActionManager
+Ep 137: 26.784
+Computing MediumLevelActionManager
+Ep 138: 45.73899999999998
+Computing MediumLevelActionManager
+Ep 139: 14.654
+Computing MediumLevelActionManager
+Ep 140: 14.637
+Computing MediumLevelActionManager
+Ep 141: 9.46
+Computing MediumLevelActionManager
+Ep 142: 7.731
+Computing MediumLevelActionManager
+Ep 143: 26.597999999999992
+Computing MediumLevelActionManager
+Ep 144: 26.567
+Computing MediumLevelActionManager
+Ep 145: 11.984
+Computing MediumLevelActionManager
+Ep 146: 23.085
+Computing MediumLevelActionManager
+Ep 147: 10.248
+Computing MediumLevelActionManager
+Ep 148: 25.590000000000003
+Computing MediumLevelActionManager
+Ep 149: 11.928
+Computing MediumLevelActionManager
+Ep 150: 41.275
+Computing MediumLevelActionManager
+Ep 151: 14.45
+Computing MediumLevelActionManager
+Ep 152: 16.98
+Computing MediumLevelActionManager
+Ep 153: 21.2
+Computing MediumLevelActionManager
+Ep 154: 18.634
+Computing MediumLevelActionManager
+Ep 155: 22.842
+Computing MediumLevelActionManager
+Ep 156: 9.295
+Computing MediumLevelActionManager
+Ep 157: 57.13599999999998
+Computing MediumLevelActionManager
+Ep 158: 36.86
+Computing MediumLevelActionManager
+Ep 159: 21.05
+Computing MediumLevelActionManager
+Ep 160: 31.958000000000002
+Computing MediumLevelActionManager
+Ep 161: 2.52
+Computing MediumLevelActionManager
+Ep 162: 22.653
+Computing MediumLevelActionManager
+Ep 163: 31.843999999999994
+Computing MediumLevelActionManager
+Ep 164: 36.74
+Computing MediumLevelActionManager
+Ep 165: 18.392
+Computing MediumLevelActionManager
+Ep 166: 60.08
+Computing MediumLevelActionManager
+Ep 167: 32.52599999999999
+Computing MediumLevelActionManager
+Ep 168: 9.163
+Computing MediumLevelActionManager
+Ep 169: 20.8
+Computing MediumLevelActionManager
+Ep 170: 61.550000000000004
+Computing MediumLevelActionManager
+Ep 171: 28.21999999999999
+Computing MediumLevelActionManager
+Ep 172: 16.58
+Computing MediumLevelActionManager
+Ep 173: 23.184000000000005
+Computing MediumLevelActionManager
+Ep 174: 18.194
+Computing MediumLevelActionManager
+Ep 175: 27.258000000000003
+Computing MediumLevelActionManager
+Ep 176: 36.300000000000004
+Computing MediumLevelActionManager
+Ep 177: 34.60800000000001
+Computing MediumLevelActionManager
+Ep 178: 54.56600000000001
+Computing MediumLevelActionManager
+Ep 179: 58.63400000000001
+Computing MediumLevelActionManager
+Ep 180: 24.630000000000003
+Computing MediumLevelActionManager
+Ep 181: 27.880000000000006
+Computing MediumLevelActionManager
+Ep 182: 56.855
+Computing MediumLevelActionManager
+Ep 183: 58.446000000000005
+Computing MediumLevelActionManager
+Ep 184: 11.437999999999999
+Computing MediumLevelActionManager
+Ep 185: 40.4
+Computing MediumLevelActionManager
+Ep 186: 92.15999999999998
+Computing MediumLevelActionManager
+Ep 187: 65.584
+Computing MediumLevelActionManager
+Ep 188: 34.146
+Computing MediumLevelActionManager
+Ep 189: 26.796
+Computing MediumLevelActionManager
+Ep 190: 20.275
+Computing MediumLevelActionManager
+Ep 191: 17.82
+Computing MediumLevelActionManager
+Ep 192: 8.899
+Computing MediumLevelActionManager
+Ep 193: 26.663999999999998
+Computing MediumLevelActionManager
+Ep 194: 9.684
+Computing MediumLevelActionManager
+Ep 195: 44.986
+Computing MediumLevelActionManager
+Ep 196: 22.539999999999996
+Computing MediumLevelActionManager
+Ep 197: 40.1
+Computing MediumLevelActionManager
+Ep 198: 28.907999999999998
+Computing MediumLevelActionManager
+Ep 199: 24.059999999999995
+Computing MediumLevelActionManager
+Ep 200: 33.617
+Computing MediumLevelActionManager
+Ep 201: 20.0
+Computing MediumLevelActionManager
+Ep 202: 33.55799999999999
+Computing MediumLevelActionManager
+Ep 203: 33.516
+Computing MediumLevelActionManager
+Ep 204: 23.909999999999997
+Computing MediumLevelActionManager
+Ep 205: 37.412
+Computing MediumLevelActionManager
+Ep 206: 53.39000000000001
+Computing MediumLevelActionManager
+Ep 207: 49.37799999999999
+Computing MediumLevelActionManager
+Ep 208: 34.892
+Computing MediumLevelActionManager
+Ep 209: 29.30400000000001
+Computing MediumLevelActionManager
+Ep 210: 57.17699999999999
+Computing MediumLevelActionManager
+Ep 211: 26.070000000000004
+Computing MediumLevelActionManager
+Ep 212: 19.725
+Computing MediumLevelActionManager
+Ep 213: 18.124000000000002
+Computing MediumLevelActionManager
+Ep 214: 38.563
+Computing MediumLevelActionManager
+Ep 215: 24.366000000000003
+Computing MediumLevelActionManager
+Ep 216: 43.95999999999999
+Computing MediumLevelActionManager
+Ep 217: 58.41600000000001
+Computing MediumLevelActionManager
+Ep 218: 23.49
+Computing MediumLevelActionManager
+Ep 219: 30.498
+Computing MediumLevelActionManager
+Ep 220: 85.29800000000002
+Computing MediumLevelActionManager
+Ep 221: 7.02
+Computing MediumLevelActionManager
+Ep 222: 51.41400000000002
+Computing MediumLevelActionManager
+Ep 223: 13.225999999999999
+Computing MediumLevelActionManager
+Ep 224: 14.763
+Computing MediumLevelActionManager
+Ep 225: 66.56000000000002
+Computing MediumLevelActionManager
+Ep 226: 63.400000000000006
+Computing MediumLevelActionManager
+Ep 227: 41.022
+Computing MediumLevelActionManager
+Ep 228: 50.14700000000001
+Computing MediumLevelActionManager
+Ep 229: 57.828
+Computing MediumLevelActionManager
+Ep 230: 89.34400000000004
+Computing MediumLevelActionManager
+Ep 231: 47.72
+Computing MediumLevelActionManager
+Ep 232: 53.83
+Computing MediumLevelActionManager
+Ep 233: 52.99200000000002
+Computing MediumLevelActionManager
+Ep 234: 40.65100000000002
+Computing MediumLevelActionManager
+Ep 235: 89.024
+Computing MediumLevelActionManager
+Ep 236: 30.71
+Computing MediumLevelActionManager
+Ep 237: 52.08800000000001
+Computing MediumLevelActionManager
+Ep 238: 37.38700000000001
+Computing MediumLevelActionManager
+Ep 239: 47.24400000000001
+Computing MediumLevelActionManager
+Ep 240: 42.61600000000001
+Computing MediumLevelActionManager
+Ep 241: 94.2
+Computing MediumLevelActionManager
+Ep 242: 54.15500000000001
+Computing MediumLevelActionManager
+Ep 243: 16.676
+Computing MediumLevelActionManager
+Ep 244: 45.42
+Computing MediumLevelActionManager
+Ep 245: 39.312000000000005
+Computing MediumLevelActionManager
+Ep 246: 100.40000000000002
+Computing MediumLevelActionManager
+Ep 247: 47.144000000000005
+Computing MediumLevelActionManager
+Ep 248: 59.909000000000006
+Computing MediumLevelActionManager
+Ep 249: 63.616
+Computing MediumLevelActionManager
+Ep 250: 30.790999999999997
+Computing MediumLevelActionManager
+Ep 251: 28.5
+Computing MediumLevelActionManager
+Ep 252: 52.956
+Computing MediumLevelActionManager
+Ep 253: 30.668
+Computing MediumLevelActionManager
+Ep 254: 47.808
+Computing MediumLevelActionManager
+Ep 255: 53.71199999999999
+Computing MediumLevelActionManager
+Ep 256: 52.895
+Computing MediumLevelActionManager
+Ep 257: 69.84799999999998
+Computing MediumLevelActionManager
+Ep 258: 31.205999999999996
+Computing MediumLevelActionManager
+Ep 259: 28.195999999999998
+Computing MediumLevelActionManager
+Ep 260: 32.60399999999999
+Computing MediumLevelActionManager
+Ep 261: 51.059999999999995
+Computing MediumLevelActionManager
+Ep 262: 14.780000000000001
+Computing MediumLevelActionManager
+Ep 263: 99.77799999999999
+Computing MediumLevelActionManager
+Ep 264: 50.85299999999999
+Computing MediumLevelActionManager
+Ep 265: 90.78399999999999
+Computing MediumLevelActionManager
+Ep 266: 76.74999999999997
+Computing MediumLevelActionManager
+Ep 267: 109.72999999999999
+Computing MediumLevelActionManager
+Ep 268: 64.71299999999998
+Computing MediumLevelActionManager
+Ep 269: 68.31199999999997
+Computing MediumLevelActionManager
+Ep 270: 57.017999999999994
+Computing MediumLevelActionManager
+Ep 271: 82.34
+Computing MediumLevelActionManager
+Ep 272: 57.908
+Computing MediumLevelActionManager
+Ep 273: 40.04
+Computing MediumLevelActionManager
+Ep 274: 50.889999999999986
+Computing MediumLevelActionManager
+Ep 275: 58.80599999999998
+Computing MediumLevelActionManager
+Ep 276: 86.39999999999998
+Computing MediumLevelActionManager
+Ep 277: 58.371999999999986
+Computing MediumLevelActionManager
+Ep 278: 42.65699999999999
+Computing MediumLevelActionManager
+Ep 279: 40.215999999999994
+Computing MediumLevelActionManager
+Ep 280: 60.37599999999999
+Computing MediumLevelActionManager
+Ep 281: 66.08000000000001
+Computing MediumLevelActionManager
+Ep 282: 80.39599999999997
+Computing MediumLevelActionManager
+Ep 283: 72.41399999999997
+Computing MediumLevelActionManager
+Ep 284: 78.71799999999999
+Computing MediumLevelActionManager
+Ep 285: 63.67599999999996
+Computing MediumLevelActionManager
+Ep 286: 72.91
+Computing MediumLevelActionManager
+Ep 287: 137.83399999999995
+Computing MediumLevelActionManager
+Ep 288: 42.06700000000001
+Computing MediumLevelActionManager
+Ep 289: 118.38399999999997
+Computing MediumLevelActionManager
+Ep 290: 115.458
+Computing MediumLevelActionManager
+Ep 291: 37.63
+Computing MediumLevelActionManager
+Ep 292: 44.106000000000016
+Computing MediumLevelActionManager
+Ep 293: 129.56
+Computing MediumLevelActionManager
+Ep 294: 44.03800000000001
+Computing MediumLevelActionManager
+Ep 295: 85.88999999999999
+Computing MediumLevelActionManager
+Ep 296: 83.71000000000001
+Computing MediumLevelActionManager
+Ep 297: 39.712
+Computing MediumLevelActionManager
+Ep 298: 21.793000000000006
+Computing MediumLevelActionManager
+Ep 299: 122.47799999999998
+Computing MediumLevelActionManager
+Ep 300: 75.37899999999999
+Computing MediumLevelActionManager
+Ep 301: 13.999999999999998
+Computing MediumLevelActionManager
+Ep 302: 166.67600000000002
+Computing MediumLevelActionManager
+Ep 303: 147.00799999999992
+Computing MediumLevelActionManager
+Ep 304: 45.78900000000001
+Computing MediumLevelActionManager
+Ep 305: 71.32
+Computing MediumLevelActionManager
+Ep 306: 103.08999999999996
+Computing MediumLevelActionManager
+Ep 307: 60.946
+Computing MediumLevelActionManager
+Ep 308: 136.13299999999998
+Computing MediumLevelActionManager
+Ep 309: 108.43999999999997
+Computing MediumLevelActionManager
+Ep 310: 158.04400000000004
+Computing MediumLevelActionManager
+Ep 311: 66.22999999999999
+Computing MediumLevelActionManager
+Ep 312: 97.18700000000001
+Computing MediumLevelActionManager
+Ep 313: 113.66399999999993
+Computing MediumLevelActionManager
+Ep 314: 91.52500000000003
+Computing MediumLevelActionManager
+Ep 315: 85.96199999999999
+Computing MediumLevelActionManager
+Ep 316: 25.345
+Computing MediumLevelActionManager
+Ep 317: 143.61199999999997
+Computing MediumLevelActionManager
+Ep 318: 133.27400000000006
+Computing MediumLevelActionManager
+Ep 319: 65.01199999999999
+Computing MediumLevelActionManager
+Ep 320: 123.33300000000004
+Computing MediumLevelActionManager
+Ep 321: 29.91999999999999
+Computing MediumLevelActionManager
+Ep 322: 47.16
+Computing MediumLevelActionManager
+Ep 323: 94.91800000000002
+Computing MediumLevelActionManager
+Ep 324: 117.54500000000006
+Computing MediumLevelActionManager
+Ep 325: 144.89600000000002
+Computing MediumLevelActionManager
+Ep 326: 78.47500000000002
+Computing MediumLevelActionManager
+Ep 327: 121.78800000000003
+Computing MediumLevelActionManager
+Ep 328: 127.30000000000001
+Computing MediumLevelActionManager
+Ep 329: 149.88799999999998
+Computing MediumLevelActionManager
+Ep 330: 175.8230000000001
+Computing MediumLevelActionManager
+Ep 331: 128.91
+Computing MediumLevelActionManager
+Ep 332: 154.85800000000006
+Computing MediumLevelActionManager
+Ep 333: 68.76400000000001
+Computing MediumLevelActionManager
+Ep 334: 74.01700000000001
+Computing MediumLevelActionManager
+Ep 335: 103.29000000000002
+Computing MediumLevelActionManager
+Ep 336: 105.22000000000001
+Computing MediumLevelActionManager
+Ep 337: 161.75199999999995
+Computing MediumLevelActionManager
+Ep 338: 83.64800000000002
+Computing MediumLevelActionManager
+Ep 339: 73.762
+Computing MediumLevelActionManager
+Ep 340: 53.04999999999999
+Computing MediumLevelActionManager
+Ep 341: 95.64
+Computing MediumLevelActionManager
+Ep 342: 119.31000000000004
+Computing MediumLevelActionManager
+Ep 343: 84.08599999999997
+Computing MediumLevelActionManager
+Ep 344: 155.18800000000002
+Computing MediumLevelActionManager
+Ep 345: 85.26400000000002
+Computing MediumLevelActionManager
+Ep 346: 56.68000000000002
+Computing MediumLevelActionManager
+Ep 347: 146.70800000000003
+Computing MediumLevelActionManager
+Ep 348: 116.81100000000004
+Computing MediumLevelActionManager
+Ep 349: 106.94400000000005
+Computing MediumLevelActionManager
+Ep 350: 95.15400000000002
+Computing MediumLevelActionManager
+Ep 351: 207.59999999999997
+Computing MediumLevelActionManager
+Ep 352: 180.35700000000006
+Computing MediumLevelActionManager
+Ep 353: 36.848000000000006
+Computing MediumLevelActionManager
+Ep 354: 185.34700000000004
+Computing MediumLevelActionManager
+Ep 355: 110.38800000000002
+Computing MediumLevelActionManager
+Ep 356: 134.82500000000002
+Computing MediumLevelActionManager
+Ep 357: 181.82399999999993
+Computing MediumLevelActionManager
+Ep 358: 186.87200000000004
+Computing MediumLevelActionManager
+Ep 359: 137.77999999999997
+Computing MediumLevelActionManager
+Ep 360: 155.76700000000002
+Computing MediumLevelActionManager
+Ep 361: 77.76000000000002
+Computing MediumLevelActionManager
+Ep 362: 165.178
+Computing MediumLevelActionManager
+Ep 363: 157.41999999999996
+Computing MediumLevelActionManager
+Ep 364: 105.86400000000002
+Computing MediumLevelActionManager
+Ep 365: 129.60800000000003
+Computing MediumLevelActionManager
+Ep 366: 160.96
+Computing MediumLevelActionManager
+Ep 367: 135.15799999999996
+Computing MediumLevelActionManager
+Ep 368: 91.27300000000002
+Computing MediumLevelActionManager
+Ep 369: 187.62399999999988
+Computing MediumLevelActionManager
+Ep 370: 137.421
+Computing MediumLevelActionManager
+Ep 371: 158.58999999999997
+Computing MediumLevelActionManager
+Ep 372: 151.578
+Computing MediumLevelActionManager
+Ep 373: 82.07600000000001
+Computing MediumLevelActionManager
+Ep 374: 34.421
+Computing MediumLevelActionManager
+Ep 375: 172.61599999999987
+Computing MediumLevelActionManager
+Ep 376: 131.25
+Computing MediumLevelActionManager
+Ep 377: 121.808
+Computing MediumLevelActionManager
+Ep 378: 125.47899999999998
+Computing MediumLevelActionManager
+Ep 379: 154.11400000000003
+Computing MediumLevelActionManager
+Ep 380: 66.082
+Computing MediumLevelActionManager
+Ep 381: 147.12
+Computing MediumLevelActionManager
+Ep 382: 164.37599999999998
+Computing MediumLevelActionManager
+Ep 383: 122.024
+Computing MediumLevelActionManager
+Ep 384: 64.68
+Computing MediumLevelActionManager
+Ep 385: 190.8400000000001
+Computing MediumLevelActionManager
+Ep 386: 126.74
+Computing MediumLevelActionManager
+Ep 387: 166.31200000000004
+Computing MediumLevelActionManager
+Ep 388: 147.81399999999996
+Computing MediumLevelActionManager
+Ep 389: 97.944
+Computing MediumLevelActionManager
+Ep 390: 173.931
+Computing MediumLevelActionManager
+Ep 391: 199.30000000000015
+Computing MediumLevelActionManager
+Ep 392: 111.15599999999998
+Computing MediumLevelActionManager
+Ep 393: 174.72000000000006
+Computing MediumLevelActionManager
+Ep 394: 181.30699999999996
+Computing MediumLevelActionManager
+Ep 395: 153.328
+Computing MediumLevelActionManager
+Ep 396: 119.28999999999999
+Computing MediumLevelActionManager
+Ep 397: 142.212
+Computing MediumLevelActionManager
+Ep 398: 152.46099999999996
+Computing MediumLevelActionManager
+Ep 399: 204.41400000000004
+Computing MediumLevelActionManager
+Ep 400: 149.28199999999995
+Computing MediumLevelActionManager
+Ep 401: 107.39999999999996
+Computing MediumLevelActionManager
+Ep 402: 100.73199999999997
+Computing MediumLevelActionManager
+Ep 403: 180.39800000000005
+Computing MediumLevelActionManager
+Ep 404: 140.89399999999995
+Computing MediumLevelActionManager
+Ep 405: 173.64000000000001
+Computing MediumLevelActionManager
+Ep 406: 137.11999999999992
+Computing MediumLevelActionManager
+Ep 407: 105.14399999999996
+Computing MediumLevelActionManager
+Ep 408: 98.70699999999995
+Computing MediumLevelActionManager
+Ep 409: 183.34400000000005
+Computing MediumLevelActionManager
+Ep 410: 186.19199999999998
+Computing MediumLevelActionManager
+Ep 411: 124.84
+Computing MediumLevelActionManager
+Ep 412: 71.806
+Computing MediumLevelActionManager
+Ep 413: 187.62000000000003
+Computing MediumLevelActionManager
+Ep 414: 124.61199999999998
+Computing MediumLevelActionManager
+Ep 415: 149.81000000000003
+Computing MediumLevelActionManager
+Ep 416: 193.12499999999994
+Computing MediumLevelActionManager
+Ep 417: 132.55999999999997
+Computing MediumLevelActionManager
+Ep 418: 147.80599999999998
+Computing MediumLevelActionManager
+Ep 419: 205.76600000000005
+Computing MediumLevelActionManager
+Ep 420: 43.24000000000001
+Computing MediumLevelActionManager
+Ep 421: 178.58
+Computing MediumLevelActionManager
+Ep 422: 179.05799999999994
+Computing MediumLevelActionManager
+Ep 423: 128.55199999999996
+Computing MediumLevelActionManager
+Ep 424: 175.39199999999994
+Computing MediumLevelActionManager
+Ep 425: 153.56799999999996
+Computing MediumLevelActionManager
+Ep 426: 216.47499999999988
+Computing MediumLevelActionManager
+Ep 427: 184.86200000000002
+Computing MediumLevelActionManager
+Ep 428: 189.90599999999992
+Computing MediumLevelActionManager
+Ep 429: 181.20400000000006
+Computing MediumLevelActionManager
+Ep 430: 175.95799999999994
+Computing MediumLevelActionManager
+Ep 431: 188.97
+Computing MediumLevelActionManager
+Ep 432: 61.053
+Computing MediumLevelActionManager
+Ep 433: 218.38400000000004
+Computing MediumLevelActionManager
+Ep 434: 208.60699999999989
+Computing MediumLevelActionManager
+Ep 435: 202.26000000000005
+Computing MediumLevelActionManager
+Ep 436: 162.1499999999999
+Computing MediumLevelActionManager
+Ep 437: 121.17200000000003
+Computing MediumLevelActionManager
+Ep 438: 144.47699999999995
+Computing MediumLevelActionManager
+Ep 439: 173.9520000000001
+Computing MediumLevelActionManager
+Ep 440: 196.66099999999994
+Computing MediumLevelActionManager
+Ep 441: 168.72000000000008
+Computing MediumLevelActionManager
+Ep 442: 155.34100000000004
+Computing MediumLevelActionManager
+Ep 443: 63.43599999999999
+Computing MediumLevelActionManager
+Ep 444: 170.13
+Computing MediumLevelActionManager
+Ep 445: 131.70800000000006
+Computing MediumLevelActionManager
+Ep 446: 123.84500000000006
+Computing MediumLevelActionManager
+Ep 447: 183.7100000000001
+Computing MediumLevelActionManager
+Ep 448: 185.80699999999996
+Computing MediumLevelActionManager
+Ep 449: 185.13600000000008
+Computing MediumLevelActionManager
+Ep 450: 157.304
+Computing MediumLevelActionManager
+Ep 451: 198.85000000000005
+Computing MediumLevelActionManager
+Ep 452: 181.488
+Computing MediumLevelActionManager
+Ep 453: 178.08800000000005
+Computing MediumLevelActionManager
+Ep 454: 211.10999999999993
+Computing MediumLevelActionManager
+Ep 455: 208.25000000000006
+Computing MediumLevelActionManager
+Ep 456: 186.48999999999995
+Computing MediumLevelActionManager
+Ep 457: 222.56000000000006
+Computing MediumLevelActionManager
+Ep 458: 210.04699999999997
+Computing MediumLevelActionManager
+Ep 459: 174.74200000000002
+Computing MediumLevelActionManager
+Ep 460: 206.54299999999998
+Computing MediumLevelActionManager
+Ep 461: 146.98000000000005
+Computing MediumLevelActionManager
+Ep 462: 194.4389999999999
+Computing MediumLevelActionManager
+Ep 463: 151.11
+Computing MediumLevelActionManager
+Ep 464: 180.14399999999995
+Computing MediumLevelActionManager
+Ep 465: 130.92000000000007
+Computing MediumLevelActionManager
+Ep 466: 174.03499999999997
+Computing MediumLevelActionManager
+Ep 467: 201.41000000000003
+Computing MediumLevelActionManager
+Ep 468: 120.50800000000002
+Computing MediumLevelActionManager
+Ep 469: 195.32800000000003
+Computing MediumLevelActionManager
+Ep 470: 201.06499999999994
+Computing MediumLevelActionManager
+Ep 471: 199.3600000000001
+Computing MediumLevelActionManager
+Ep 472: 182.422
+Computing MediumLevelActionManager
+Ep 473: 227.05600000000004
+Computing MediumLevelActionManager
+Ep 474: 220.6049999999999
+Computing MediumLevelActionManager
+Ep 475: 179.43800000000005
+Computing MediumLevelActionManager
+Ep 476: 176.17499999999995
+Computing MediumLevelActionManager
+Ep 477: 221.83200000000008
+Computing MediumLevelActionManager
+Ep 478: 215.31199999999993
+Computing MediumLevelActionManager
+Ep 479: 170.11200000000005
+Computing MediumLevelActionManager
+Ep 480: 205.1249999999999
+Computing MediumLevelActionManager
+Ep 481: 174.08
+Computing MediumLevelActionManager
+Ep 482: 157.08999999999997
+Computing MediumLevelActionManager
+Ep 483: 224.23200000000006
+Computing MediumLevelActionManager
+Ep 484: 196.86999999999992
+Computing MediumLevelActionManager
+Ep 485: 254.3040000000001
+Computing MediumLevelActionManager
+Ep 486: 183.85999999999993
+Computing MediumLevelActionManager
+Ep 487: 193.45600000000002
+Computing MediumLevelActionManager
+Ep 488: 197.4559999999999
+Computing MediumLevelActionManager
+Ep 489: 226.04800000000006
+Computing MediumLevelActionManager
+Ep 490: 232.5619999999999
+Computing MediumLevelActionManager
+Ep 491: 247.32000000000005
+Computing MediumLevelActionManager
+Ep 492: 206.16999999999982
+Computing MediumLevelActionManager
+Ep 493: 229.088
+Computing MediumLevelActionManager
+Ep 494: 178.30499999999992
+Computing MediumLevelActionManager
+Ep 495: 198.19000000000003
+Computing MediumLevelActionManager
+Ep 496: 182.11499999999995
+Computing MediumLevelActionManager
+Ep 497: 200.98400000000004
+Computing MediumLevelActionManager
+Ep 498: 226.39599999999976
+Computing MediumLevelActionManager
+Ep 499: 114.13600000000001
+Computing MediumLevelActionManager
+Ep 500: 142.58499999999998
+Computing MediumLevelActionManager
+Ep 501: 148.0
+Computing MediumLevelActionManager
+Ep 502: 194.89000000000016
+Computing MediumLevelActionManager
+Ep 503: 171.792
+Computing MediumLevelActionManager
+Ep 504: 254.55000000000027
+Computing MediumLevelActionManager
+Ep 505: 205.47199999999995
+Computing MediumLevelActionManager
+Ep 506: 204.3500000000001
+Computing MediumLevelActionManager
+Ep 507: 263.98
+Computing MediumLevelActionManager
+Ep 508: 97.468
+Computing MediumLevelActionManager
+Ep 509: 223.46800000000002
+Computing MediumLevelActionManager
+Ep 510: 150.573
+Computing MediumLevelActionManager
+Ep 511: 205.65999999999994
+Computing MediumLevelActionManager
+Ep 512: 274.32800000000015
+Computing MediumLevelActionManager
+Ep 513: 234.66399999999993
+Computing MediumLevelActionManager
+Ep 514: 245.74500000000018
+Computing MediumLevelActionManager
+Ep 515: 282.62
+Computing MediumLevelActionManager
+Ep 516: 244.02000000000018
+Computing MediumLevelActionManager
+Ep 517: 116.29999999999998
+Computing MediumLevelActionManager
+Ep 518: 174.09600000000006
+Computing MediumLevelActionManager
+Ep 519: 215.42999999999995
+Computing MediumLevelActionManager
+Ep 520: 246.37800000000018
+Computing MediumLevelActionManager
+Ep 521: 203.35999999999999
+Computing MediumLevelActionManager
+Ep 522: 161.67300000000003
+Computing MediumLevelActionManager
+Ep 523: 173.53599999999992
+Computing MediumLevelActionManager
+Ep 524: 173.901
+Computing MediumLevelActionManager
+Ep 525: 221.4039999999999
+Computing MediumLevelActionManager
+Ep 526: 186.50000000000006
+Computing MediumLevelActionManager
+Ep 527: 249.20399999999995
+Computing MediumLevelActionManager
+Ep 528: 214.3950000000001
+Computing MediumLevelActionManager
+Ep 529: 215.69599999999997
+Computing MediumLevelActionManager
+Ep 530: 85.43399999999997
+Computing MediumLevelActionManager
+Ep 531: 223.4499999999999
+Computing MediumLevelActionManager
+Ep 532: 216.7490000000001
+Computing MediumLevelActionManager
+Ep 533: 273.94399999999996
+Computing MediumLevelActionManager
+Ep 534: 203.51200000000003
+Computing MediumLevelActionManager
+Ep 535: 115.88199999999999
+Computing MediumLevelActionManager
+Ep 536: 148.36
+Computing MediumLevelActionManager
+Ep 537: 222.17599999999987
+Computing MediumLevelActionManager
+Ep 538: 246.20900000000012
+Computing MediumLevelActionManager
+Ep 539: 193.12999999999997
+Computing MediumLevelActionManager
+Ep 540: 217.1640000000001
+Computing MediumLevelActionManager
+Ep 541: 222.09999999999997
+Computing MediumLevelActionManager
+Ep 542: 219.21100000000007
+Computing MediumLevelActionManager
+Ep 543: 248.24199999999988
+Computing MediumLevelActionManager
+Ep 544: 220.32400000000007
+Computing MediumLevelActionManager
+Ep 545: 218.82399999999993
+Computing MediumLevelActionManager
+Ep 546: 221.88000000000008
+Computing MediumLevelActionManager
+Ep 547: 194.93399999999994
+Computing MediumLevelActionManager
+Ep 548: 232.933
+Computing MediumLevelActionManager
+Ep 549: 132.99599999999998
+Computing MediumLevelActionManager
+Ep 550: 241.78700000000003
+Computing MediumLevelActionManager
+Ep 551: 256.4999999999999
+Computing MediumLevelActionManager
+Ep 552: 110.53199999999998
+Computing MediumLevelActionManager
+Ep 553: 175.5519999999999
+Computing MediumLevelActionManager
+Ep 554: 189.17000000000007
+Computing MediumLevelActionManager
+Ep 555: 265.1159999999999
+Computing MediumLevelActionManager
+Ep 556: 243.63500000000005
+Computing MediumLevelActionManager
+Ep 557: 263.49199999999985
+Computing MediumLevelActionManager
+Ep 558: 141.199
+Computing MediumLevelActionManager
+Ep 559: 194.8079999999999
+Computing MediumLevelActionManager
+Ep 560: 187.18700000000004
+Computing MediumLevelActionManager
+Ep 561: 266.8799999999998
+Computing MediumLevelActionManager
+Ep 562: 214.436
+Computing MediumLevelActionManager
+Ep 563: 194.31199999999984
+Computing MediumLevelActionManager
+Ep 564: 224.23900000000017
+Computing MediumLevelActionManager
+Ep 565: 168.83200000000002
+Computing MediumLevelActionManager
+Ep 566: 217.42000000000013
+Computing MediumLevelActionManager
+Ep 567: 186.43799999999993
+Computing MediumLevelActionManager
+Ep 568: 206.24900000000014
+Computing MediumLevelActionManager
+Ep 569: 189.67999999999995
+Computing MediumLevelActionManager
+Ep 570: 274.5630000000002
+Computing MediumLevelActionManager
+Ep 571: 187.29999999999998
+Computing MediumLevelActionManager
+Ep 572: 268.6400000000002
+Computing MediumLevelActionManager
+Ep 573: 234.0439999999999
+Computing MediumLevelActionManager
+Ep 574: 241.48800000000008
+Computing MediumLevelActionManager
+Ep 575: 260.9179999999999
+Computing MediumLevelActionManager
+Ep 576: 88.9
+Computing MediumLevelActionManager
+Ep 577: 265.7199999999999
+Computing MediumLevelActionManager
+Ep 578: 251.9100000000002
+Computing MediumLevelActionManager
+Ep 579: 251.73999999999992
+Computing MediumLevelActionManager
+Ep 580: 190.94100000000006
+Computing MediumLevelActionManager
+Ep 581: 265.0999999999998
+Computing MediumLevelActionManager
+Ep 582: 263.6880000000001
+Computing MediumLevelActionManager
+Ep 583: 223.53599999999994
+Computing MediumLevelActionManager
+Ep 584: 263.3840000000001
+Computing MediumLevelActionManager
+Ep 585: 237.408
+Computing MediumLevelActionManager
+Ep 586: 225.98500000000007
+Computing MediumLevelActionManager
+Ep 587: 264.16999999999985
+Computing MediumLevelActionManager
+Ep 588: 241.53700000000006
+Computing MediumLevelActionManager
+Ep 589: 228.80399999999992
+Computing MediumLevelActionManager
+Ep 590: 239.1840000000001
+Computing MediumLevelActionManager
+Ep 591: 161.40999999999997
+Computing MediumLevelActionManager
+Ep 592: 260.94100000000003
+Computing MediumLevelActionManager
+Ep 593: 230.5839999999999
+Computing MediumLevelActionManager
+Ep 594: 193.72400000000005
+Computing MediumLevelActionManager
+Ep 595: 36.24000000000001
+Computing MediumLevelActionManager
+Ep 596: 244.80000000000015
+Computing MediumLevelActionManager
+Ep 597: 190.09599999999995
+Computing MediumLevelActionManager
+Ep 598: 229.71900000000002
+Computing MediumLevelActionManager
+Ep 599: 235.47599999999983
+Computing MediumLevelActionManager
+Ep 600: 226.96700000000004
+Computing MediumLevelActionManager
+Ep 601: 241.99999999999986
+Computing MediumLevelActionManager
+Ep 602: 113.91500000000003
+Computing MediumLevelActionManager
+Ep 603: 208.15799999999993
+Computing MediumLevelActionManager
+Ep 604: 212.00700000000012
+Computing MediumLevelActionManager
+Ep 605: 106.92800000000001
+Computing MediumLevelActionManager
+Ep 606: 234.51000000000002
+Computing MediumLevelActionManager
+Ep 607: 235.55399999999983
+Computing MediumLevelActionManager
+Ep 608: 242.09400000000008
+Computing MediumLevelActionManager
+Ep 609: 189.3919999999999
+Computing MediumLevelActionManager
+Ep 610: 237.08600000000007
+Computing MediumLevelActionManager
+Ep 611: 247.46999999999977
+Computing MediumLevelActionManager
+Ep 612: 215.627
+Computing MediumLevelActionManager
+Ep 613: 238.19999999999982
+Computing MediumLevelActionManager
+Ep 614: 233.01900000000006
+Computing MediumLevelActionManager
+Ep 615: 240.9879999999999
+Computing MediumLevelActionManager
+Ep 616: 189.66500000000005
+Computing MediumLevelActionManager
+Ep 617: 245.27999999999972
+Computing MediumLevelActionManager
+Ep 618: 254.769
+Computing MediumLevelActionManager
+Ep 619: 232.71599999999978
+Computing MediumLevelActionManager
+Ep 620: 241.34100000000004
+Computing MediumLevelActionManager
+Ep 621: 241.17999999999984
+Computing MediumLevelActionManager
+Ep 622: 228.89100000000005
+Computing MediumLevelActionManager
+Ep 623: 145.73799999999997
+Computing MediumLevelActionManager
+Ep 624: 209.76399999999998
+Computing MediumLevelActionManager
+Ep 625: 56.168
+Computing MediumLevelActionManager
+Ep 626: 238.125
+Computing MediumLevelActionManager
+Ep 627: 231.6120000000002
+Computing MediumLevelActionManager
+Ep 628: 266.394
+Computing MediumLevelActionManager
+Ep 629: 254.31200000000027
+Computing MediumLevelActionManager
+Ep 630: 164.891
+Computing MediumLevelActionManager
+Ep 631: 229.95000000000007
+Computing MediumLevelActionManager
+Ep 632: 240.88499999999996
+Computing MediumLevelActionManager
+Ep 633: 254.83200000000022
+Computing MediumLevelActionManager
+Ep 634: 238.72
+Computing MediumLevelActionManager
+Ep 635: 180.2600000000001
+Computing MediumLevelActionManager
+Ep 636: 191.46499999999995
+Computing MediumLevelActionManager
+Ep 637: 158.94800000000004
+Computing MediumLevelActionManager
+Ep 638: 162.83399999999995
+Computing MediumLevelActionManager
+Ep 639: 153.66600000000003
+Computing MediumLevelActionManager
+Ep 640: 237.038
+Computing MediumLevelActionManager
+Ep 641: 232.2000000000002
+Computing MediumLevelActionManager
+Ep 642: 236.0039999999999
+Computing MediumLevelActionManager
+Ep 643: 262.6500000000002
+Computing MediumLevelActionManager
+Ep 644: 231.05099999999993
+Computing MediumLevelActionManager
+Ep 645: 205.92400000000012
+Computing MediumLevelActionManager
+Ep 646: 211.11999999999998
+Computing MediumLevelActionManager
+Ep 647: 243.36600000000024
+Computing MediumLevelActionManager
+Ep 648: 234.71499999999986
+Computing MediumLevelActionManager
+Ep 649: 228.5760000000001
+Computing MediumLevelActionManager
+Ep 650: 212.29899999999992
+Computing MediumLevelActionManager
+Ep 651: 234.25000000000014
+Computing MediumLevelActionManager
+Ep 652: 232.00099999999995
+Computing MediumLevelActionManager
+Ep 653: 208.02400000000011
+Computing MediumLevelActionManager
+Ep 654: 231.703
+Computing MediumLevelActionManager
+Ep 655: 200.82800000000003
+Computing MediumLevelActionManager
+Ep 656: 157.94999999999993
+Computing MediumLevelActionManager
+Ep 657: 230.2240000000001
+Computing MediumLevelActionManager
+Ep 658: 256.25199999999995
+Computing MediumLevelActionManager
+Ep 659: 210.9580000000001
+Computing MediumLevelActionManager
+Ep 660: 210.12699999999998
+Computing MediumLevelActionManager
+Ep 661: 230.32000000000008
+Computing MediumLevelActionManager
+Ep 662: 175.25599999999994
+Computing MediumLevelActionManager
+Ep 663: 251.3760000000001
+Computing MediumLevelActionManager
+Ep 664: 239.3119999999999
+Computing MediumLevelActionManager
+Ep 665: 251.07200000000014
+Computing MediumLevelActionManager
+Ep 666: 227.23499999999996
+Computing MediumLevelActionManager
+Ep 667: 233.1060000000001
+Computing MediumLevelActionManager
+Ep 668: 247.6189999999999
+Computing MediumLevelActionManager
+Ep 669: 248.47200000000007
+Computing MediumLevelActionManager
+Ep 670: 204.0229999999999
+Computing MediumLevelActionManager
+Ep 671: 232.80000000000015
+Computing MediumLevelActionManager
+Ep 672: 125.00399999999996
+Computing MediumLevelActionManager
+Ep 673: 201.984
+Computing MediumLevelActionManager
+Ep 674: 227.74199999999988
+Computing MediumLevelActionManager
+Ep 675: 226.61800000000005
+Computing MediumLevelActionManager
+Ep 676: 202.8999999999999
+Computing MediumLevelActionManager
+Ep 677: 136.28799999999995
+Computing MediumLevelActionManager
+Ep 678: 202.95899999999992
+Computing MediumLevelActionManager
+Ep 679: 228.30000000000013
+Computing MediumLevelActionManager
+Ep 680: 226.22399999999985
+Computing MediumLevelActionManager
+Ep 681: 197.76
+Computing MediumLevelActionManager
+Ep 682: 230.08299999999986
+Computing MediumLevelActionManager
+Ep 683: 245.47400000000005
+Computing MediumLevelActionManager
+Ep 684: 223.74599999999987
+Computing MediumLevelActionManager
+Ep 685: 256.56400000000014
+Computing MediumLevelActionManager
+Ep 686: 199.0599999999999
+Computing MediumLevelActionManager
+Ep 687: 230.86800000000002
+Computing MediumLevelActionManager
+Ep 688: 158.81199999999987
+Computing MediumLevelActionManager
+Ep 689: 156.81600000000012
+Computing MediumLevelActionManager
+Ep 690: 133.8990000000001
+Computing MediumLevelActionManager
+Ep 691: 228.3600000000002
+Computing MediumLevelActionManager
+Ep 692: 221.71499999999995
+Computing MediumLevelActionManager
+Ep 693: 180.6560000000001
+Computing MediumLevelActionManager
+Ep 694: 227.58499999999995
+Computing MediumLevelActionManager
+Ep 695: 200.39200000000014
+Computing MediumLevelActionManager
+Ep 696: 255.20499999999996
+Computing MediumLevelActionManager
+Ep 697: 220.12800000000013
+Computing MediumLevelActionManager
+Ep 698: 251.50999999999985
+Computing MediumLevelActionManager
+Ep 699: 180.46800000000007
+Computing MediumLevelActionManager
+Ep 700: 152.809
+Computing MediumLevelActionManager
+Ep 701: 200.5000000000001
+Computing MediumLevelActionManager
+Ep 702: 269.6339999999999
+Computing MediumLevelActionManager
+Ep 703: 182.31600000000012
+Computing MediumLevelActionManager
+Ep 704: 176.828
+Computing MediumLevelActionManager
+Ep 705: 248.5440000000001
+Computing MediumLevelActionManager
+Ep 706: 177.75999999999996
+Computing MediumLevelActionManager
+Ep 707: 202.33600000000007
+Computing MediumLevelActionManager
+Ep 708: 200.43399999999997
+Computing MediumLevelActionManager
+Ep 709: 243.5080000000001
+Computing MediumLevelActionManager
+Ep 710: 222.48599999999996
+Computing MediumLevelActionManager
+Ep 711: 195.96000000000004
+Computing MediumLevelActionManager
+Ep 712: 220.45999999999995
+Computing MediumLevelActionManager
+Ep 713: 222.9120000000001
+Computing MediumLevelActionManager
+Ep 714: 203.04999999999993
+Computing MediumLevelActionManager
+Ep 715: 240.8980000000001
+Computing MediumLevelActionManager
+Ep 716: 244.17499999999995
+Computing MediumLevelActionManager
+Ep 717: 221.46400000000006
+Computing MediumLevelActionManager
+Ep 718: 172.545
+Computing MediumLevelActionManager
+Ep 719: 154.12200000000004
+Computing MediumLevelActionManager
+Ep 720: 221.86899999999994
+Computing MediumLevelActionManager
+Ep 721: 221.7200000000001
+Computing MediumLevelActionManager
+Ep 722: 179.897
+Computing MediumLevelActionManager
+Ep 723: 177.53000000000003
+Computing MediumLevelActionManager
+Ep 724: 197.39499999999995
+Computing MediumLevelActionManager
+Ep 725: 219.74400000000006
+Computing MediumLevelActionManager
+Ep 726: 241.7999999999999
+Computing MediumLevelActionManager
+Ep 727: 265.48400000000015
+Computing MediumLevelActionManager
+Ep 728: 203.4069999999999
+Computing MediumLevelActionManager
+Ep 729: 218.0800000000001
+Computing MediumLevelActionManager
+Ep 730: 199.56599999999992
+Computing MediumLevelActionManager
+Ep 731: 195.64000000000001
+Computing MediumLevelActionManager
+Ep 732: 197.92899999999992
+Computing MediumLevelActionManager
+Ep 733: 242.34400000000008
+Computing MediumLevelActionManager
+Ep 734: 193.10799999999995
+Computing MediumLevelActionManager
+Ep 735: 215.11200000000005
+Computing MediumLevelActionManager
+Ep 736: 170.47499999999994
+Computing MediumLevelActionManager
+Ep 737: 218.54399999999998
+Computing MediumLevelActionManager
+Ep 738: 123.67000000000002
+Computing MediumLevelActionManager
+Ep 739: 193.01200000000006
+Computing MediumLevelActionManager
+Ep 740: 220.45499999999993
+Computing MediumLevelActionManager
+Ep 741: 240.04000000000008
+Computing MediumLevelActionManager
+Ep 742: 221.6989999999998
+Computing MediumLevelActionManager
+Ep 743: 242.312
+Computing MediumLevelActionManager
+Ep 744: 217.77899999999983
+Computing MediumLevelActionManager
+Ep 745: 240.44800000000004
+Computing MediumLevelActionManager
+Ep 746: 246.40999999999977
+Computing MediumLevelActionManager
+Ep 747: 267.4980000000001
+Computing MediumLevelActionManager
+Ep 748: 170.61299999999994
+Computing MediumLevelActionManager
+Ep 749: 173.264
+Computing MediumLevelActionManager
+Ep 750: 217.6499999999998
+Computing MediumLevelActionManager
+Ep 751: 221.75
+Computing MediumLevelActionManager
+Ep 752: 237.84800000000018
+Computing MediumLevelActionManager
+Ep 753: 244.14400000000003
+Computing MediumLevelActionManager
+Ep 754: 237.54400000000024
+Computing MediumLevelActionManager
+Ep 755: 219.85199999999995
+Computing MediumLevelActionManager
+Ep 756: 149.15500000000003
+Computing MediumLevelActionManager
+Ep 757: 173.67199999999997
+Computing MediumLevelActionManager
+Ep 758: 215.4780000000002
+Computing MediumLevelActionManager
+Ep 759: 174.12199999999996
+Computing MediumLevelActionManager
+Ep 760: 238.80100000000022
+Computing MediumLevelActionManager
+Ep 761: 214.55999999999995
+Computing MediumLevelActionManager
+Ep 762: 239.91300000000012
+Computing MediumLevelActionManager
+Ep 763: 235.46199999999993
+Computing MediumLevelActionManager
+Ep 764: 234.60200000000015
+Computing MediumLevelActionManager
+Ep 765: 144.07199999999997
+Computing MediumLevelActionManager
+Ep 766: 143.73499999999999
+Computing MediumLevelActionManager
+Ep 767: 236.26999999999992
+Computing MediumLevelActionManager
+Ep 768: 234.71700000000013
+Computing MediumLevelActionManager
+Ep 769: 235.95999999999992
+Computing MediumLevelActionManager
+Ep 770: 213.03300000000007
+Computing MediumLevelActionManager
+Ep 771: 212.89
+Computing MediumLevelActionManager
+Ep 772: 216.8690000000001
+Computing MediumLevelActionManager
+Ep 773: 25.928
+Computing MediumLevelActionManager
+Ep 774: 235.8660000000001
+Computing MediumLevelActionManager
+Ep 775: 197.7419999999999
+Computing MediumLevelActionManager
+Ep 776: 139.575
+Computing MediumLevelActionManager
+Ep 777: 209.56799999999996
+Computing MediumLevelActionManager
+Ep 778: 210.77400000000011
+Computing MediumLevelActionManager
+Ep 779: 213.29999999999995
+Computing MediumLevelActionManager
+Ep 780: 211.82400000000007
+Computing MediumLevelActionManager
+Ep 781: 128.5999999999999
+Computing MediumLevelActionManager
+Ep 782: 232.63100000000009
+Computing MediumLevelActionManager
+Ep 783: 96.78599999999997
+Computing MediumLevelActionManager
+Ep 784: 211.24800000000013
+Computing MediumLevelActionManager
+Ep 785: 234.12799999999996
+Computing MediumLevelActionManager
+Ep 786: 186.01500000000004
+Computing MediumLevelActionManager
+Ep 787: 234.23999999999987
+Computing MediumLevelActionManager
+Ep 788: 211.31100000000006
+Computing MediumLevelActionManager
+Ep 789: 212.22399999999993
+Computing MediumLevelActionManager
+Ep 790: 210.38400000000004
+Computing MediumLevelActionManager
+Ep 791: 188.97999999999996
+Computing MediumLevelActionManager
+Ep 792: 231.14100000000005
+Computing MediumLevelActionManager
+Ep 793: 232.23999999999987
+Computing MediumLevelActionManager
+Ep 794: 210.22200000000007
+Computing MediumLevelActionManager
+Ep 795: 70.918
+Computing MediumLevelActionManager
+Ep 796: 148.905
+Computing MediumLevelActionManager
+Ep 797: 209.78399999999993
+Computing MediumLevelActionManager
+Ep 798: 232.48000000000002
+Computing MediumLevelActionManager
+Ep 799: 188.48199999999989
+Computing MediumLevelActionManager
+Ep 800: 208.74300000000005
+Computing MediumLevelActionManager
+Ep 801: 208.7999999999999
+Computing MediumLevelActionManager
+Ep 802: 185.87000000000003
+Computing MediumLevelActionManager
+Ep 803: 185.1459999999999
+Computing MediumLevelActionManager
+Ep 804: 212.30800000000008
+Computing MediumLevelActionManager
+Ep 805: 210.37999999999985
+Computing MediumLevelActionManager
+Ep 806: 229.64000000000001
+Computing MediumLevelActionManager
+Ep 807: 189.09999999999985
+Computing MediumLevelActionManager
+Ep 808: 208.95000000000002
+Computing MediumLevelActionManager
+Ep 809: 230.71999999999989
+Computing MediumLevelActionManager
+Ep 810: 164.63899999999995
+Computing MediumLevelActionManager
+Ep 811: 115.38999999999996
+Computing MediumLevelActionManager
+Ep 812: 230.429
+Computing MediumLevelActionManager
+Ep 813: 229.51599999999985
+Computing MediumLevelActionManager
+Ep 814: 231.79000000000022
+Computing MediumLevelActionManager
+Ep 815: 213.294
+Computing MediumLevelActionManager
+Ep 816: 235.15000000000026
+Computing MediumLevelActionManager
+Ep 817: 227.9679999999999
+Computing MediumLevelActionManager
+Ep 818: 249.82900000000012
+Computing MediumLevelActionManager
+Ep 819: 248.57399999999993
+Computing MediumLevelActionManager
+Ep 820: 227.51200000000017
+Computing MediumLevelActionManager
+Ep 821: 208.26
+Computing MediumLevelActionManager
+Ep 822: 206.13400000000016
+Computing MediumLevelActionManager
+Ep 823: 228.47999999999985
+Computing MediumLevelActionManager
+Ep 824: 230.62100000000015
+Computing MediumLevelActionManager
+Ep 825: 139.36
+Computing MediumLevelActionManager
+Ep 826: 227.47500000000014
+Computing MediumLevelActionManager
+Ep 827: 227.31799999999993
+Computing MediumLevelActionManager
+Ep 828: 206.2960000000001
+Computing MediumLevelActionManager
+Ep 829: 227.004
+Computing MediumLevelActionManager
+Ep 830: 204.45300000000006
+Computing MediumLevelActionManager
+Ep 831: 226.1799999999999
+Computing MediumLevelActionManager
+Ep 832: 225.6880000000001
+Computing MediumLevelActionManager
+Ep 833: 225.53599999999994
+Computing MediumLevelActionManager
+Ep 834: 182.87900000000008
+Computing MediumLevelActionManager
+Ep 835: 182.41
+Computing MediumLevelActionManager
+Ep 836: 247.39000000000004
+Computing MediumLevelActionManager
+Ep 837: 159.35199999999995
+Computing MediumLevelActionManager
+Ep 838: 228.1990000000001
+Computing MediumLevelActionManager
+Ep 839: 161.05999999999997
+Computing MediumLevelActionManager
+Ep 840: 224.95500000000015
+Computing MediumLevelActionManager
+Ep 841: 182.87999999999994
+Computing MediumLevelActionManager
+Ep 842: 225.59900000000005
+Computing MediumLevelActionManager
+Ep 843: 224.01599999999985
+Computing MediumLevelActionManager
+Ep 844: 185.12000000000006
+Computing MediumLevelActionManager
+Ep 845: 184.17999999999995
+Computing MediumLevelActionManager
+Ep 846: 226.66000000000014
+Computing MediumLevelActionManager
+Ep 847: 222.9459999999999
+Computing MediumLevelActionManager
+Ep 848: 224.17400000000004
+Computing MediumLevelActionManager
+Ep 849: 180.06399999999994
+Computing MediumLevelActionManager
+Ep 850: 201.74400000000006
+Computing MediumLevelActionManager
+Ep 851: 179.79999999999993
+Computing MediumLevelActionManager
+Ep 852: 201.3070000000001
+Computing MediumLevelActionManager
+Ep 853: 158.35199999999995
+Computing MediumLevelActionManager
+Ep 854: 222.7850000000001
+Computing MediumLevelActionManager
+Ep 855: 159.85599999999997
+Computing MediumLevelActionManager
+Ep 856: 1.3050000000000002
+Computing MediumLevelActionManager
+Ep 857: 221.88799999999983
+Computing MediumLevelActionManager
+Ep 858: 222.02200000000008
+Computing MediumLevelActionManager
+Ep 859: 202.86199999999988
+Computing MediumLevelActionManager
+Ep 860: 202.27800000000008
+Computing MediumLevelActionManager
+Ep 861: 223.6599999999998
+Computing MediumLevelActionManager
+Ep 862: 243.074
+Computing MediumLevelActionManager
+Ep 863: 114.07600000000002
+Computing MediumLevelActionManager
+Ep 864: 67.80900000000001
+Computing MediumLevelActionManager
+Ep 865: 199.44799999999992
+Computing MediumLevelActionManager
+Ep 866: 222.14000000000007
+Computing MediumLevelActionManager
+Ep 867: 157.41999999999993
+Computing MediumLevelActionManager
+Ep 868: 197.556
+Computing MediumLevelActionManager
+Ep 869: 224.68399999999974
+Computing MediumLevelActionManager
+Ep 870: 178.47100000000003
+Computing MediumLevelActionManager
+Ep 871: 139.49999999999997
+Computing MediumLevelActionManager
+Ep 872: 67.35300000000001
+Computing MediumLevelActionManager
+Ep 873: 25.120000000000005
+Computing MediumLevelActionManager
+Ep 874: 218.542
+Computing MediumLevelActionManager
+Ep 875: 240.9159999999997
+Computing MediumLevelActionManager
+Ep 876: 221.875
+Computing MediumLevelActionManager
+Ep 877: 181.32800000000012
+Computing MediumLevelActionManager
+Ep 878: 177.958
+Computing MediumLevelActionManager
+Ep 879: 241.35000000000028
+Computing MediumLevelActionManager
+Ep 880: 133.30999999999997
+Computing MediumLevelActionManager
+Ep 881: 218.24000000000018
+Computing MediumLevelActionManager
+Ep 882: 239.39699999999996
+Computing MediumLevelActionManager
+Ep 883: 218.64400000000018
+Computing MediumLevelActionManager
+Ep 884: 218.01799999999997
+Computing MediumLevelActionManager
+Ep 885: 238.90800000000024
+Computing MediumLevelActionManager
+Ep 886: 217.82499999999993
+Computing MediumLevelActionManager
+Ep 887: 175.04800000000006
+Computing MediumLevelActionManager
+Ep 888: 174.68999999999994
+Computing MediumLevelActionManager
+Ep 889: 195.79200000000014
+Computing MediumLevelActionManager
+Ep 890: 67.21499999999997
+Computing MediumLevelActionManager
+Ep 891: 175.40000000000003
+Computing MediumLevelActionManager
+Ep 892: 216.56799999999993
+Computing MediumLevelActionManager
+Ep 893: 199.00800000000018
+Computing MediumLevelActionManager
+Ep 894: 195.62199999999993
+Computing MediumLevelActionManager
+Ep 895: 197.59600000000015
+Computing MediumLevelActionManager
+Ep 896: 194.80499999999998
+Computing MediumLevelActionManager
+Ep 897: 236.6400000000002
+Computing MediumLevelActionManager
+Ep 898: 195.3469999999999
+Computing MediumLevelActionManager
+Ep 899: 174.68800000000005
+Computing MediumLevelActionManager
+Ep 900: 215.85699999999989
+Computing MediumLevelActionManager
+Ep 901: 236.60000000000014
+Computing MediumLevelActionManager
+Ep 902: 193.95899999999995
+Computing MediumLevelActionManager
+Ep 903: 176.36600000000004
+Computing MediumLevelActionManager
+Ep 904: 152.70699999999997
+Computing MediumLevelActionManager
+Ep 905: 215.36000000000004
+Computing MediumLevelActionManager
+Ep 906: 235.19999999999985
+Computing MediumLevelActionManager
+Ep 907: 172.12600000000003
+Computing MediumLevelActionManager
+Ep 908: 193.57799999999995
+Computing MediumLevelActionManager
+Ep 909: 213.98400000000015
+Computing MediumLevelActionManager
+Ep 910: 214.55999999999997
+Computing MediumLevelActionManager
+Ep 911: 213.41000000000008
+Computing MediumLevelActionManager
+Ep 912: 173.1719999999999
+Computing MediumLevelActionManager
+Ep 913: 151.96800000000002
+Computing MediumLevelActionManager
+Ep 914: 195.3119999999999
+Computing MediumLevelActionManager
+Ep 915: 213.84600000000015
+Computing MediumLevelActionManager
+Ep 916: 192.23999999999995
+Computing MediumLevelActionManager
+Ep 917: 214.70000000000005
+Computing MediumLevelActionManager
+Ep 918: 234.02699999999987
+Computing MediumLevelActionManager
+Ep 919: 211.972
+Computing MediumLevelActionManager
+Ep 920: 213.04099999999988
+Computing MediumLevelActionManager
+Ep 921: 214.32000000000016
+Computing MediumLevelActionManager
+Ep 922: 171.77099999999987
+Computing MediumLevelActionManager
+Ep 923: 212.402
+Computing MediumLevelActionManager
+Ep 924: 213.01299999999983
+Computing MediumLevelActionManager
+Ep 925: 211.93200000000002
+Computing MediumLevelActionManager
+Ep 926: 127.19999999999996
+Computing MediumLevelActionManager
+Ep 927: 211.8400000000001
+Computing MediumLevelActionManager
+Ep 928: 212.55599999999987
+Computing MediumLevelActionManager
+Ep 929: 231.9520000000001
+Computing MediumLevelActionManager
+Ep 930: 190.36599999999987
+Computing MediumLevelActionManager
+Ep 931: 84.75999999999999
+Computing MediumLevelActionManager
+Ep 932: 210.69499999999985
+Computing MediumLevelActionManager
+Ep 933: 190.67600000000002
+Computing MediumLevelActionManager
+Ep 934: 210.5189999999999
+Computing MediumLevelActionManager
+Ep 935: 190.23000000000005
+Computing MediumLevelActionManager
+Ep 936: 210.39999999999984
+Computing MediumLevelActionManager
+Ep 937: 209.728
+Computing MediumLevelActionManager
+Ep 938: 230.45799999999983
+Computing MediumLevelActionManager
+Ep 939: 209.92000000000016
+Computing MediumLevelActionManager
+Ep 940: 231.59
+Computing MediumLevelActionManager
+Ep 941: 209.48000000000016
+Computing MediumLevelActionManager
+Ep 942: 209.26299999999992
+Computing MediumLevelActionManager
+Ep 943: 209.3380000000001
+Computing MediumLevelActionManager
+Ep 944: 229.57599999999994
+Computing MediumLevelActionManager
+Ep 945: 208.68000000000015
+Computing MediumLevelActionManager
+Ep 946: 209.84499999999997
+Computing MediumLevelActionManager
+Ep 947: 167.72200000000007
+Computing MediumLevelActionManager
+Ep 948: 187.89699999999996
+Computing MediumLevelActionManager
+Ep 949: 167.28000000000006
+Computing MediumLevelActionManager
+Ep 950: 229.68999999999988
+Computing MediumLevelActionManager
+Ep 951: 208.7500000000001
+Computing MediumLevelActionManager
+Ep 952: 188.47699999999998
+Computing MediumLevelActionManager
+Ep 953: 227.53600000000012
+Computing MediumLevelActionManager
+Ep 954: 207.28499999999997
+Computing MediumLevelActionManager
+Ep 955: 206.85400000000004
+Computing MediumLevelActionManager
+Ep 956: 207.87499999999991
+Computing MediumLevelActionManager
+Ep 957: 41.62800000000001
+Computing MediumLevelActionManager
+Ep 958: 208.16999999999993
+Computing MediumLevelActionManager
+Ep 959: 165.58600000000007
+Computing MediumLevelActionManager
+Ep 960: 206.68299999999996
+Computing MediumLevelActionManager
+Ep 961: 206.64000000000004
+Computing MediumLevelActionManager
+Ep 962: 186.39599999999993
+Computing MediumLevelActionManager
+Ep 963: 226.53600000000006
+Computing MediumLevelActionManager
+Ep 964: 206.03099999999992
+Computing MediumLevelActionManager
+Ep 965: 185.3640000000001
+Computing MediumLevelActionManager
+Ep 966: 185.91499999999996
+Computing MediumLevelActionManager
+Ep 967: 206.35800000000006
+Computing MediumLevelActionManager
+Ep 968: 205.1809999999999
+Computing MediumLevelActionManager
+Ep 969: 143.87200000000004
+Computing MediumLevelActionManager
+Ep 970: 184.77399999999997
+Computing MediumLevelActionManager
+Ep 971: 204.4400000000001
+Computing MediumLevelActionManager
+Ep 972: 224.81399999999996
+Computing MediumLevelActionManager
+Ep 973: 205.23600000000005
+Computing MediumLevelActionManager
+Ep 974: 204.7519999999999
+Computing MediumLevelActionManager
+Ep 975: 204.94000000000008
+Computing MediumLevelActionManager
+Ep 976: 183.44999999999993
+Computing MediumLevelActionManager
+Ep 977: 203.57600000000008
+Computing MediumLevelActionManager
+Ep 978: 163.243
+Computing MediumLevelActionManager
+Ep 979: 102.24400000000003
+Computing MediumLevelActionManager
+Ep 980: 223.35999999999984
+Computing MediumLevelActionManager
+Ep 981: 101.52000000000001
+Computing MediumLevelActionManager
+Ep 982: 182.62199999999993
+Computing MediumLevelActionManager
+Ep 983: 182.82600000000008
+Computing MediumLevelActionManager
+Ep 984: 203.0769999999999
+Computing MediumLevelActionManager
+Ep 985: 162.06400000000005
+Computing MediumLevelActionManager
+Ep 986: 182.2349999999999
+Computing MediumLevelActionManager
+Ep 987: 181.848
+Computing MediumLevelActionManager
+Ep 988: 201.97599999999986
+Computing MediumLevelActionManager
+Ep 989: 221.88400000000007
+Computing MediumLevelActionManager
+Ep 990: 201.63899999999992
+Computing MediumLevelActionManager
+Ep 991: 161.37000000000003
+Computing MediumLevelActionManager
+Ep 992: 80.69300000000003
+Computing MediumLevelActionManager
+Ep 993: 201.28
+Computing MediumLevelActionManager
+Ep 994: 140.90999999999994
+Computing MediumLevelActionManager
+Ep 995: 221.01400000000004
+Computing MediumLevelActionManager
+Ep 996: 160.61999999999995
+Computing MediumLevelActionManager
+Ep 997: 180.63200000000003
+Computing MediumLevelActionManager
+Ep 998: 220.54299999999975
+Computing MediumLevelActionManager
+Ep 999: 180.258
+Computing MediumLevelActionManager
+Ep 1000: 220.18399999999977
+Computing MediumLevelActionManager
+Ep 1001: 180.0
+Computing MediumLevelActionManager
+Ep 1002: 220
+Computing MediumLevelActionManager
+Ep 1003: 180
+Computing MediumLevelActionManager
+Ep 1004: 180
+Computing MediumLevelActionManager
+Ep 1005: 220
+Computing MediumLevelActionManager
+Ep 1006: 220
+Computing MediumLevelActionManager
+Ep 1007: 220
+Computing MediumLevelActionManager
+Ep 1008: 200
+Computing MediumLevelActionManager
+Ep 1009: 200
+Computing MediumLevelActionManager
+Ep 1010: 180
+Computing MediumLevelActionManager
+Ep 1011: 200
+Computing MediumLevelActionManager
+Ep 1012: 180
+Computing MediumLevelActionManager
+Ep 1013: 200
+Computing MediumLevelActionManager
+Ep 1014: 220
+Computing MediumLevelActionManager
+Ep 1015: 200
+Computing MediumLevelActionManager
+Ep 1016: 200
+Computing MediumLevelActionManager
+Ep 1017: 160
+Computing MediumLevelActionManager
+Ep 1018: 180
+Computing MediumLevelActionManager
+Ep 1019: 160
+Computing MediumLevelActionManager
+Ep 1020: 220
+Computing MediumLevelActionManager
+Ep 1021: 60
+Computing MediumLevelActionManager
+Ep 1022: 220
+Computing MediumLevelActionManager
+Ep 1023: 200
+Computing MediumLevelActionManager
+Ep 1024: 220
+Computing MediumLevelActionManager
+Ep 1025: 180
+Computing MediumLevelActionManager
+Ep 1026: 160
+Computing MediumLevelActionManager
+Ep 1027: 180
+Computing MediumLevelActionManager
+Ep 1028: 100
+Computing MediumLevelActionManager
+Ep 1029: 200
+Computing MediumLevelActionManager
+Ep 1030: 180
+Computing MediumLevelActionManager
+Ep 1031: 200
+Computing MediumLevelActionManager
+Ep 1032: 200
+Computing MediumLevelActionManager
+Ep 1033: 160
+Computing MediumLevelActionManager
+Ep 1034: 180
+Computing MediumLevelActionManager
+Ep 1035: 220
+Computing MediumLevelActionManager
+Ep 1036: 240
+Computing MediumLevelActionManager
+Ep 1037: 120
+Computing MediumLevelActionManager
+Ep 1038: 200
+Computing MediumLevelActionManager
+Ep 1039: 200
+Computing MediumLevelActionManager
+Ep 1040: 200
+Computing MediumLevelActionManager
+Ep 1041: 220
+Computing MediumLevelActionManager
+Ep 1042: 220
+Computing MediumLevelActionManager
+Ep 1043: 180
+Computing MediumLevelActionManager
+Ep 1044: 200
+Computing MediumLevelActionManager
+Ep 1045: 220
+Computing MediumLevelActionManager
+Ep 1046: 220
+Computing MediumLevelActionManager
+Ep 1047: 200
+Computing MediumLevelActionManager
+Ep 1048: 200
+Computing MediumLevelActionManager
+Ep 1049: 220
+Computing MediumLevelActionManager
+Ep 1050: 200
+Computing MediumLevelActionManager
+Ep 1051: 200
+Computing MediumLevelActionManager
+Ep 1052: 200
+Computing MediumLevelActionManager
+Ep 1053: 200
+Computing MediumLevelActionManager
+Ep 1054: 220
+Computing MediumLevelActionManager
+Ep 1055: 200
+Computing MediumLevelActionManager
+Ep 1056: 180
+Computing MediumLevelActionManager
+Ep 1057: 180
+Computing MediumLevelActionManager
+Ep 1058: 180
+Computing MediumLevelActionManager
+Ep 1059: 200
+Computing MediumLevelActionManager
+Ep 1060: 180
+Computing MediumLevelActionManager
+Ep 1061: 140
+Computing MediumLevelActionManager
+Ep 1062: 160
+Computing MediumLevelActionManager
+Ep 1063: 220
+Computing MediumLevelActionManager
+Ep 1064: 140
+Computing MediumLevelActionManager
+Ep 1065: 200
+Computing MediumLevelActionManager
+Ep 1066: 200
+Computing MediumLevelActionManager
+Ep 1067: 180
+Computing MediumLevelActionManager
+Ep 1068: 200
+Computing MediumLevelActionManager
+Ep 1069: 220
+Computing MediumLevelActionManager
+Ep 1070: 220
+Computing MediumLevelActionManager
+Ep 1071: 200
+Computing MediumLevelActionManager
+Ep 1072: 220
+Computing MediumLevelActionManager
+Ep 1073: 200
+Computing MediumLevelActionManager
+Ep 1074: 180
+Computing MediumLevelActionManager
+Ep 1075: 180
+Computing MediumLevelActionManager
+Ep 1076: 200
+Computing MediumLevelActionManager
+Ep 1077: 200
+Computing MediumLevelActionManager
+Ep 1078: 220
+Computing MediumLevelActionManager
+Ep 1079: 180
+Computing MediumLevelActionManager
+Ep 1080: 220
+Computing MediumLevelActionManager
+Ep 1081: 220
+Computing MediumLevelActionManager
+Ep 1082: 220
+Computing MediumLevelActionManager
+Ep 1083: 220
+Computing MediumLevelActionManager
+Ep 1084: 220
+Computing MediumLevelActionManager
+Ep 1085: 120
+Computing MediumLevelActionManager
+Ep 1086: 220
+Computing MediumLevelActionManager
+Ep 1087: 220
+Computing MediumLevelActionManager
+Ep 1088: 200
+Computing MediumLevelActionManager
+Ep 1089: 120
+Computing MediumLevelActionManager
+Ep 1090: 200
+Computing MediumLevelActionManager
+Ep 1091: 200
+Computing MediumLevelActionManager
+Ep 1092: 160
+Computing MediumLevelActionManager
+Ep 1093: 220
+Computing MediumLevelActionManager
+Ep 1094: 220
+Computing MediumLevelActionManager
+Ep 1095: 120
+Computing MediumLevelActionManager
+Ep 1096: 180
+Computing MediumLevelActionManager
+Ep 1097: 200
+Computing MediumLevelActionManager
+Ep 1098: 200
+Computing MediumLevelActionManager
+Ep 1099: 220
+Computing MediumLevelActionManager
+Ep 1100: 200
+Computing MediumLevelActionManager
+Ep 1101: 220
+Computing MediumLevelActionManager
+Ep 1102: 200
+Computing MediumLevelActionManager
+Ep 1103: 200
+Computing MediumLevelActionManager
+Ep 1104: 220
+Computing MediumLevelActionManager
+Ep 1105: 200
+Computing MediumLevelActionManager
+Ep 1106: 200
+Computing MediumLevelActionManager
+Ep 1107: 220
+Computing MediumLevelActionManager
+Ep 1108: 180
+Computing MediumLevelActionManager
+Ep 1109: 220
+Computing MediumLevelActionManager
+Ep 1110: 200
+Computing MediumLevelActionManager
+Ep 1111: 160
+Computing MediumLevelActionManager
+Ep 1112: 200
+Computing MediumLevelActionManager
+Ep 1113: 180
+Computing MediumLevelActionManager
+Ep 1114: 160
+Computing MediumLevelActionManager
+Ep 1115: 200
+Computing MediumLevelActionManager
+Ep 1116: 200
+Computing MediumLevelActionManager
+Ep 1117: 200
+Computing MediumLevelActionManager
+Ep 1118: 220
+Computing MediumLevelActionManager
+Ep 1119: 120
+Computing MediumLevelActionManager
+Ep 1120: 220
+Computing MediumLevelActionManager
+Ep 1121: 200
+Computing MediumLevelActionManager
+Ep 1122: 180
+Computing MediumLevelActionManager
+Ep 1123: 180
+Computing MediumLevelActionManager
+Ep 1124: 220
+Computing MediumLevelActionManager
+Ep 1125: 220
+Computing MediumLevelActionManager
+Ep 1126: 200
+Computing MediumLevelActionManager
+Ep 1127: 220
+Computing MediumLevelActionManager
+Ep 1128: 220
+Computing MediumLevelActionManager
+Ep 1129: 160
+Computing MediumLevelActionManager
+Ep 1130: 200
+Computing MediumLevelActionManager
+Ep 1131: 240
+Computing MediumLevelActionManager
+Ep 1132: 220
+Computing MediumLevelActionManager
+Ep 1133: 80
+Computing MediumLevelActionManager
+Ep 1134: 200
+Computing MediumLevelActionManager
+Ep 1135: 200
+Computing MediumLevelActionManager
+Ep 1136: 220
+Computing MediumLevelActionManager
+Ep 1137: 160
+Computing MediumLevelActionManager
+Ep 1138: 160
+Computing MediumLevelActionManager
+Ep 1139: 220
+Computing MediumLevelActionManager
+Ep 1140: 220
+Computing MediumLevelActionManager
+Ep 1141: 220
+Computing MediumLevelActionManager
+Ep 1142: 200
+Computing MediumLevelActionManager
+Ep 1143: 200
+Computing MediumLevelActionManager
+Ep 1144: 220
+Computing MediumLevelActionManager
+Ep 1145: 140
+Computing MediumLevelActionManager
+Ep 1146: 180
+Computing MediumLevelActionManager
+Ep 1147: 200
+Computing MediumLevelActionManager
+Ep 1148: 160
+Computing MediumLevelActionManager
+Ep 1149: 140
+Computing MediumLevelActionManager
+Ep 1150: 180
+Computing MediumLevelActionManager
+Ep 1151: 160
+Computing MediumLevelActionManager
+Ep 1152: 220
+Computing MediumLevelActionManager
+Ep 1153: 220
+Computing MediumLevelActionManager
+Ep 1154: 220
+Computing MediumLevelActionManager
+Ep 1155: 200
+Computing MediumLevelActionManager
+Ep 1156: 80
+Computing MediumLevelActionManager
+Ep 1157: 180
+Computing MediumLevelActionManager
+Ep 1158: 220
+Computing MediumLevelActionManager
+Ep 1159: 200
+Computing MediumLevelActionManager
+Ep 1160: 220
+Computing MediumLevelActionManager
+Ep 1161: 200
+Computing MediumLevelActionManager
+Ep 1162: 200
+Computing MediumLevelActionManager
+Ep 1163: 240
+Computing MediumLevelActionManager
+Ep 1164: 180
+Computing MediumLevelActionManager
+Ep 1165: 220
+Computing MediumLevelActionManager
+Ep 1166: 220
+Computing MediumLevelActionManager
+Ep 1167: 180
+Computing MediumLevelActionManager
+Ep 1168: 200
+Computing MediumLevelActionManager
+Ep 1169: 220
+Computing MediumLevelActionManager
+Ep 1170: 180
+Computing MediumLevelActionManager
+Ep 1171: 220
+Computing MediumLevelActionManager
+Ep 1172: 140
+Computing MediumLevelActionManager
+Ep 1173: 140
+Computing MediumLevelActionManager
+Ep 1174: 200
+Computing MediumLevelActionManager
+Ep 1175: 180
+Computing MediumLevelActionManager
+Ep 1176: 200
+Computing MediumLevelActionManager
+Ep 1177: 240
+Computing MediumLevelActionManager
+Ep 1178: 200
+Computing MediumLevelActionManager
+Ep 1179: 220
+Computing MediumLevelActionManager
+Ep 1180: 200
+Computing MediumLevelActionManager
+Ep 1181: 180
+Computing MediumLevelActionManager
+Ep 1182: 160
+Computing MediumLevelActionManager
+Ep 1183: 200
+Computing MediumLevelActionManager
+Ep 1184: 220
+Computing MediumLevelActionManager
+Ep 1185: 180
+Computing MediumLevelActionManager
+Ep 1186: 240
+Computing MediumLevelActionManager
+Ep 1187: 220
+Computing MediumLevelActionManager
+Ep 1188: 200
+Computing MediumLevelActionManager
+Ep 1189: 180
+Computing MediumLevelActionManager
+Ep 1190: 200
+Computing MediumLevelActionManager
+Ep 1191: 180
+Computing MediumLevelActionManager
+Ep 1192: 160
+Computing MediumLevelActionManager
+Ep 1193: 220
+Computing MediumLevelActionManager
+Ep 1194: 200
+Computing MediumLevelActionManager
+Ep 1195: 220
+Computing MediumLevelActionManager
+Ep 1196: 220
+Computing MediumLevelActionManager
+Ep 1197: 200
+Computing MediumLevelActionManager
+Ep 1198: 200
+Computing MediumLevelActionManager
+Ep 1199: 200
+Computing MediumLevelActionManager
+Ep 1200: 220
+Computing MediumLevelActionManager
+Ep 1201: 160
+Computing MediumLevelActionManager
+Ep 1202: 200
+Computing MediumLevelActionManager
+Ep 1203: 160
+Computing MediumLevelActionManager
+Ep 1204: 200
+Computing MediumLevelActionManager
+Ep 1205: 180
+Computing MediumLevelActionManager
+Ep 1206: 220
+Computing MediumLevelActionManager
+Ep 1207: 180
+Computing MediumLevelActionManager
+Ep 1208: 200
+Computing MediumLevelActionManager
+Ep 1209: 200
+Computing MediumLevelActionManager
+Ep 1210: 160
+Computing MediumLevelActionManager
+Ep 1211: 200
+Computing MediumLevelActionManager
+Ep 1212: 200
+Computing MediumLevelActionManager
+Ep 1213: 180
+Computing MediumLevelActionManager
+Ep 1214: 220
+Computing MediumLevelActionManager
+Ep 1215: 160
+Computing MediumLevelActionManager
+Ep 1216: 200
+Computing MediumLevelActionManager
+Ep 1217: 180
+Computing MediumLevelActionManager
+Ep 1218: 220
+Computing MediumLevelActionManager
+Ep 1219: 200
+Computing MediumLevelActionManager
+Ep 1220: 100
+Computing MediumLevelActionManager
+Ep 1221: 240
+Computing MediumLevelActionManager
+Ep 1222: 220
+Computing MediumLevelActionManager
+Ep 1223: 200
+Computing MediumLevelActionManager
+Ep 1224: 220
+Computing MediumLevelActionManager
+Ep 1225: 220
+Computing MediumLevelActionManager
+Ep 1226: 220
+Computing MediumLevelActionManager
+Ep 1227: 200
+Computing MediumLevelActionManager
+Ep 1228: 60
+Computing MediumLevelActionManager
+Ep 1229: 220
+Computing MediumLevelActionManager
+Ep 1230: 200
+Computing MediumLevelActionManager
+Ep 1231: 140
+Computing MediumLevelActionManager
+Ep 1232: 240
+Computing MediumLevelActionManager
+Ep 1233: 220
+Computing MediumLevelActionManager
+Ep 1234: 140
+Computing MediumLevelActionManager
+Ep 1235: 200
+Computing MediumLevelActionManager
+Ep 1236: 220
+Computing MediumLevelActionManager
+Ep 1237: 220
+Computing MediumLevelActionManager
+Ep 1238: 220
+Computing MediumLevelActionManager
+Ep 1239: 200
+Computing MediumLevelActionManager
+Ep 1240: 160
+Computing MediumLevelActionManager
+Ep 1241: 220
+Computing MediumLevelActionManager
+Ep 1242: 220
+Computing MediumLevelActionManager
+Ep 1243: 220
+Computing MediumLevelActionManager
+Ep 1244: 220
+Computing MediumLevelActionManager
+Ep 1245: 220
+Computing MediumLevelActionManager
+Ep 1246: 200
+Computing MediumLevelActionManager
+Ep 1247: 240
+Computing MediumLevelActionManager
+Ep 1248: 180
+Computing MediumLevelActionManager
+Ep 1249: 180
+Computing MediumLevelActionManager
+Ep 1250: 200
+Computing MediumLevelActionManager
+Ep 1251: 200
+Computing MediumLevelActionManager
+Ep 1252: 220
+Computing MediumLevelActionManager
+Ep 1253: 140
+Computing MediumLevelActionManager
+Ep 1254: 220
+Computing MediumLevelActionManager
+Ep 1255: 220
+Computing MediumLevelActionManager
+Ep 1256: 180
+Computing MediumLevelActionManager
+Ep 1257: 220
+Computing MediumLevelActionManager
+Ep 1258: 200
+Computing MediumLevelActionManager
+Ep 1259: 140
+Computing MediumLevelActionManager
+Ep 1260: 220
+Computing MediumLevelActionManager
+Ep 1261: 220
+Computing MediumLevelActionManager
+Ep 1262: 200
+Computing MediumLevelActionManager
+Ep 1263: 160
+Computing MediumLevelActionManager
+Ep 1264: 200
+Computing MediumLevelActionManager
+Ep 1265: 200
+Computing MediumLevelActionManager
+Ep 1266: 200
+Computing MediumLevelActionManager
+Ep 1267: 180
+Computing MediumLevelActionManager
+Ep 1268: 200
+Computing MediumLevelActionManager
+Ep 1269: 140
+Computing MediumLevelActionManager
+Ep 1270: 140
+Computing MediumLevelActionManager
+Ep 1271: 220
+Computing MediumLevelActionManager
+Ep 1272: 220
+Computing MediumLevelActionManager
+Ep 1273: 180
+Computing MediumLevelActionManager
+Ep 1274: 180
+Computing MediumLevelActionManager
+Ep 1275: 220
+Computing MediumLevelActionManager
+Ep 1276: 160
+Computing MediumLevelActionManager
+Ep 1277: 180
+Computing MediumLevelActionManager
+Ep 1278: 200
+Computing MediumLevelActionManager
+Ep 1279: 220
+Computing MediumLevelActionManager
+Ep 1280: 220
+Computing MediumLevelActionManager
+Ep 1281: 160
+Computing MediumLevelActionManager
+Ep 1282: 220
+Computing MediumLevelActionManager
+Ep 1283: 160
+Computing MediumLevelActionManager
+Ep 1284: 200
+Computing MediumLevelActionManager
+Ep 1285: 220
+Computing MediumLevelActionManager
+Ep 1286: 220
+Computing MediumLevelActionManager
+Ep 1287: 200
+Computing MediumLevelActionManager
+Ep 1288: 200
+Computing MediumLevelActionManager
+Ep 1289: 220
+Computing MediumLevelActionManager
+Ep 1290: 220
+Computing MediumLevelActionManager
+Ep 1291: 220
+Computing MediumLevelActionManager
+Ep 1292: 220
+Computing MediumLevelActionManager
+Ep 1293: 220
+Computing MediumLevelActionManager
+Ep 1294: 180
+Computing MediumLevelActionManager
+Ep 1295: 200
+Computing MediumLevelActionManager
+Ep 1296: 200
+Computing MediumLevelActionManager
+Ep 1297: 220
+Computing MediumLevelActionManager
+Ep 1298: 220
+Computing MediumLevelActionManager
+Ep 1299: 200
+Computing MediumLevelActionManager
+Ep 1300: 220
+Computing MediumLevelActionManager
+Ep 1301: 220
+Computing MediumLevelActionManager
+Ep 1302: 200
+Computing MediumLevelActionManager
+Ep 1303: 220
+Computing MediumLevelActionManager
+Ep 1304: 180
+Computing MediumLevelActionManager
+Ep 1305: 220
+Computing MediumLevelActionManager
+Ep 1306: 220
+Computing MediumLevelActionManager
+Ep 1307: 200
+Computing MediumLevelActionManager
+Ep 1308: 80
+Computing MediumLevelActionManager
+Ep 1309: 220
+Computing MediumLevelActionManager
+Ep 1310: 160
+Computing MediumLevelActionManager
+Ep 1311: 200
+Computing MediumLevelActionManager
+Ep 1312: 200
+Computing MediumLevelActionManager
+Ep 1313: 180
+Computing MediumLevelActionManager
+Ep 1314: 60
+Computing MediumLevelActionManager
+Ep 1315: 200
+Computing MediumLevelActionManager
+Ep 1316: 220
+Computing MediumLevelActionManager
+Ep 1317: 240
+Computing MediumLevelActionManager
+Ep 1318: 200
+Computing MediumLevelActionManager
+Ep 1319: 200
+Computing MediumLevelActionManager
+Ep 1320: 220
+Computing MediumLevelActionManager
+Ep 1321: 200
+Computing MediumLevelActionManager
+Ep 1322: 220
+Computing MediumLevelActionManager
+Ep 1323: 220
+Computing MediumLevelActionManager
+Ep 1324: 200
+Computing MediumLevelActionManager
+Ep 1325: 220
+Computing MediumLevelActionManager
+Ep 1326: 200
+Computing MediumLevelActionManager
+Ep 1327: 180
+Computing MediumLevelActionManager
+Ep 1328: 180
+Computing MediumLevelActionManager
+Ep 1329: 180
+Computing MediumLevelActionManager
+Ep 1330: 160
+Computing MediumLevelActionManager
+Ep 1331: 200
+Computing MediumLevelActionManager
+Ep 1332: 180
+Computing MediumLevelActionManager
+Ep 1333: 180
+Computing MediumLevelActionManager
+Ep 1334: 60
+Computing MediumLevelActionManager
+Ep 1335: 200
+Computing MediumLevelActionManager
+Ep 1336: 220
+Computing MediumLevelActionManager
+Ep 1337: 160
+Computing MediumLevelActionManager
+Ep 1338: 180
+Computing MediumLevelActionManager
+Ep 1339: 200
+Computing MediumLevelActionManager
+Ep 1340: 220
+Computing MediumLevelActionManager
+Ep 1341: 180
+Computing MediumLevelActionManager
+Ep 1342: 220
+Computing MediumLevelActionManager
+Ep 1343: 200
+Computing MediumLevelActionManager
+Ep 1344: 220
+Computing MediumLevelActionManager
+Ep 1345: 180
+Computing MediumLevelActionManager
+Ep 1346: 200
+Computing MediumLevelActionManager
+Ep 1347: 220
+Computing MediumLevelActionManager
+Ep 1348: 220
+Computing MediumLevelActionManager
+Ep 1349: 220
+Computing MediumLevelActionManager
+Ep 1350: 180
+Computing MediumLevelActionManager
+Ep 1351: 220
+Computing MediumLevelActionManager
+Ep 1352: 200
+Computing MediumLevelActionManager
+Ep 1353: 200
+Computing MediumLevelActionManager
+Ep 1354: 200
+Computing MediumLevelActionManager
+Ep 1355: 200
+Computing MediumLevelActionManager
+Ep 1356: 180
+Computing MediumLevelActionManager
+Ep 1357: 200
+Computing MediumLevelActionManager
+Ep 1358: 200
+Computing MediumLevelActionManager
+Ep 1359: 200
+Computing MediumLevelActionManager
+Ep 1360: 180
+Computing MediumLevelActionManager
+Ep 1361: 240
+Computing MediumLevelActionManager
+Ep 1362: 220
+Computing MediumLevelActionManager
+Ep 1363: 220
+Computing MediumLevelActionManager
+Ep 1364: 200
+Computing MediumLevelActionManager
+Ep 1365: 220
+Computing MediumLevelActionManager
+Ep 1366: 220
+Computing MediumLevelActionManager
+Ep 1367: 220
+Computing MediumLevelActionManager
+Ep 1368: 220
+Computing MediumLevelActionManager
+Ep 1369: 220
+Computing MediumLevelActionManager
+Ep 1370: 240
+Computing MediumLevelActionManager
+Ep 1371: 200
+Computing MediumLevelActionManager
+Ep 1372: 220
+Computing MediumLevelActionManager
+Ep 1373: 200
+Computing MediumLevelActionManager
+Ep 1374: 220
+Computing MediumLevelActionManager
+Ep 1375: 220
+Computing MediumLevelActionManager
+Ep 1376: 220
+Computing MediumLevelActionManager
+Ep 1377: 220
+Computing MediumLevelActionManager
+Ep 1378: 200
+Computing MediumLevelActionManager
+Ep 1379: 220
+Computing MediumLevelActionManager
+Ep 1380: 180
+Computing MediumLevelActionManager
+Ep 1381: 220
+Computing MediumLevelActionManager
+Ep 1382: 220
+Computing MediumLevelActionManager
+Ep 1383: 220
+Computing MediumLevelActionManager
+Ep 1384: 200
+Computing MediumLevelActionManager
+Ep 1385: 180
+Computing MediumLevelActionManager
+Ep 1386: 60
+Computing MediumLevelActionManager
+Ep 1387: 240
+Computing MediumLevelActionManager
+Ep 1388: 160
+Computing MediumLevelActionManager
+Ep 1389: 200
+Computing MediumLevelActionManager
+Ep 1390: 220
+Computing MediumLevelActionManager
+Ep 1391: 240
+Computing MediumLevelActionManager
+Ep 1392: 200
+Computing MediumLevelActionManager
+Ep 1393: 220
+Computing MediumLevelActionManager
+Ep 1394: 200
+Computing MediumLevelActionManager
+Ep 1395: 220
+Computing MediumLevelActionManager
+Ep 1396: 240
+Computing MediumLevelActionManager
+Ep 1397: 200
+Computing MediumLevelActionManager
+Ep 1398: 200
+Computing MediumLevelActionManager
+Ep 1399: 220
+Computing MediumLevelActionManager
+Ep 1400: 200
+Computing MediumLevelActionManager
+Ep 1401: 220
+Computing MediumLevelActionManager
+Ep 1402: 220
+Computing MediumLevelActionManager
+Ep 1403: 180
+Computing MediumLevelActionManager
+Ep 1404: 220
+Computing MediumLevelActionManager
+Ep 1405: 200
+Computing MediumLevelActionManager
+Ep 1406: 220
+Computing MediumLevelActionManager
+Ep 1407: 200
+Computing MediumLevelActionManager
+Ep 1408: 220
+Computing MediumLevelActionManager
+Ep 1409: 220
+Computing MediumLevelActionManager
+Ep 1410: 160
+Computing MediumLevelActionManager
+Ep 1411: 180
+Computing MediumLevelActionManager
+Ep 1412: 220
+Computing MediumLevelActionManager
+Ep 1413: 200
+Computing MediumLevelActionManager
+Ep 1414: 160
+Computing MediumLevelActionManager
+Ep 1415: 180
+Computing MediumLevelActionManager
+Ep 1416: 220
+Computing MediumLevelActionManager
+Ep 1417: 200
+Computing MediumLevelActionManager
+Ep 1418: 220
+Computing MediumLevelActionManager
+Ep 1419: 200
+Computing MediumLevelActionManager
+Ep 1420: 160
+Computing MediumLevelActionManager
+Ep 1421: 180
+Computing MediumLevelActionManager
+Ep 1422: 220
+Computing MediumLevelActionManager
+Ep 1423: 120
+Computing MediumLevelActionManager
+Ep 1424: 200
+Computing MediumLevelActionManager
+Ep 1425: 200
+Computing MediumLevelActionManager
+Ep 1426: 220
+Computing MediumLevelActionManager
+Ep 1427: 200
+Computing MediumLevelActionManager
+Ep 1428: 200
+Computing MediumLevelActionManager
+Ep 1429: 160
+Computing MediumLevelActionManager
+Ep 1430: 220
+Computing MediumLevelActionManager
+Ep 1431: 200
+Computing MediumLevelActionManager
+Ep 1432: 220
+Computing MediumLevelActionManager
+Ep 1433: 200
+Computing MediumLevelActionManager
+Ep 1434: 240
+Computing MediumLevelActionManager
+Ep 1435: 220
+Computing MediumLevelActionManager
+Ep 1436: 240
+Computing MediumLevelActionManager
+Ep 1437: 220
+Computing MediumLevelActionManager
+Ep 1438: 200
+Computing MediumLevelActionManager
+Ep 1439: 180
+Computing MediumLevelActionManager
+Ep 1440: 220
+Computing MediumLevelActionManager
+Ep 1441: 180
+Computing MediumLevelActionManager
+Ep 1442: 180
+Computing MediumLevelActionManager
+Ep 1443: 220
+Computing MediumLevelActionManager
+Ep 1444: 220
+Computing MediumLevelActionManager
+Ep 1445: 220
+Computing MediumLevelActionManager
+Ep 1446: 200
+Computing MediumLevelActionManager
+Ep 1447: 220
+Computing MediumLevelActionManager
+Ep 1448: 220
+Computing MediumLevelActionManager
+Ep 1449: 200
+Computing MediumLevelActionManager
+Ep 1450: 200
+Computing MediumLevelActionManager
+Ep 1451: 220
+Computing MediumLevelActionManager
+Ep 1452: 200
+Computing MediumLevelActionManager
+Ep 1453: 200
+Computing MediumLevelActionManager
+Ep 1454: 140
+Computing MediumLevelActionManager
+Ep 1455: 180
+Computing MediumLevelActionManager
+Ep 1456: 220
+Computing MediumLevelActionManager
+Ep 1457: 200
+Computing MediumLevelActionManager
+Ep 1458: 180
+Computing MediumLevelActionManager
+Ep 1459: 200
+Computing MediumLevelActionManager
+Ep 1460: 180
+Computing MediumLevelActionManager
+Ep 1461: 120
+Computing MediumLevelActionManager
+Ep 1462: 160
+Computing MediumLevelActionManager
+Ep 1463: 200
+Computing MediumLevelActionManager
+Ep 1464: 220
+Computing MediumLevelActionManager
+Ep 1465: 200
+Computing MediumLevelActionManager
+Ep 1466: 200
+Computing MediumLevelActionManager
+Ep 1467: 220
+Computing MediumLevelActionManager
+Ep 1468: 200
+Computing MediumLevelActionManager
+Ep 1469: 220
+Computing MediumLevelActionManager
+Ep 1470: 220
+Computing MediumLevelActionManager
+Ep 1471: 220
+Computing MediumLevelActionManager
+Ep 1472: 220
+Computing MediumLevelActionManager
+Ep 1473: 220
+Computing MediumLevelActionManager
+Ep 1474: 200
+Computing MediumLevelActionManager
+Ep 1475: 120
+Computing MediumLevelActionManager
+Ep 1476: 220
+Computing MediumLevelActionManager
+Ep 1477: 180
+Computing MediumLevelActionManager
+Ep 1478: 200
+Computing MediumLevelActionManager
+Ep 1479: 220
+Computing MediumLevelActionManager
+Ep 1480: 200
+Computing MediumLevelActionManager
+Ep 1481: 220
+Computing MediumLevelActionManager
+Ep 1482: 220
+Computing MediumLevelActionManager
+Ep 1483: 200
+Computing MediumLevelActionManager
+Ep 1484: 180
+Computing MediumLevelActionManager
+Ep 1485: 220
+Computing MediumLevelActionManager
+Ep 1486: 220
+Computing MediumLevelActionManager
+Ep 1487: 140
+Computing MediumLevelActionManager
+Ep 1488: 220
+Computing MediumLevelActionManager
+Ep 1489: 200
+Computing MediumLevelActionManager
+Ep 1490: 200
+Computing MediumLevelActionManager
+Ep 1491: 200
+Computing MediumLevelActionManager
+Ep 1492: 200
+Computing MediumLevelActionManager
+Ep 1493: 200
+Computing MediumLevelActionManager
+Ep 1494: 160
+Computing MediumLevelActionManager
+Ep 1495: 160
+Computing MediumLevelActionManager
+Ep 1496: 220
+Computing MediumLevelActionManager
+Ep 1497: 200
+Computing MediumLevelActionManager
+Ep 1498: 120
+Computing MediumLevelActionManager
+Ep 1499: 180
+Computing MediumLevelActionManager
+Ep 1500: 180
+Computing MediumLevelActionManager
+Ep 1501: 180
+Computing MediumLevelActionManager
+Ep 1502: 220
+Computing MediumLevelActionManager
+Ep 1503: 180
+Computing MediumLevelActionManager
+Ep 1504: 220
+Computing MediumLevelActionManager
+Ep 1505: 220
+Computing MediumLevelActionManager
+Ep 1506: 200
+Computing MediumLevelActionManager
+Ep 1507: 180
+Computing MediumLevelActionManager
+Ep 1508: 220
+Computing MediumLevelActionManager
+Ep 1509: 220
+Computing MediumLevelActionManager
+Ep 1510: 220
+Computing MediumLevelActionManager
+Ep 1511: 160
+Computing MediumLevelActionManager
+Ep 1512: 220
+Computing MediumLevelActionManager
+Ep 1513: 200
+Computing MediumLevelActionManager
+Ep 1514: 200
+Computing MediumLevelActionManager
+Ep 1515: 220
+Computing MediumLevelActionManager
+Ep 1516: 200
+Computing MediumLevelActionManager
+Ep 1517: 220
+Computing MediumLevelActionManager
+Ep 1518: 220
+Computing MediumLevelActionManager
+Ep 1519: 240
+Computing MediumLevelActionManager
+Ep 1520: 180
+Computing MediumLevelActionManager
+Ep 1521: 200
+Computing MediumLevelActionManager
+Ep 1522: 200
+Computing MediumLevelActionManager
+Ep 1523: 180
+Computing MediumLevelActionManager
+Ep 1524: 220
+Computing MediumLevelActionManager
+Ep 1525: 220
+Computing MediumLevelActionManager
+Ep 1526: 220
+Computing MediumLevelActionManager
+Ep 1527: 180
+Computing MediumLevelActionManager
+Ep 1528: 220
+Computing MediumLevelActionManager
+Ep 1529: 160
+Computing MediumLevelActionManager
+Ep 1530: 180
+Computing MediumLevelActionManager
+Ep 1531: 180
+Computing MediumLevelActionManager
+Ep 1532: 220
+Computing MediumLevelActionManager
+Ep 1533: 220
+Computing MediumLevelActionManager
+Ep 1534: 220
+Computing MediumLevelActionManager
+Ep 1535: 200
+Computing MediumLevelActionManager
+Ep 1536: 200
+Computing MediumLevelActionManager
+Ep 1537: 160
+Computing MediumLevelActionManager
+Ep 1538: 180
+Computing MediumLevelActionManager
+Ep 1539: 140
+Computing MediumLevelActionManager
+Ep 1540: 200
+Computing MediumLevelActionManager
+Ep 1541: 220
+Computing MediumLevelActionManager
+Ep 1542: 200
+Computing MediumLevelActionManager
+Ep 1543: 200
+Computing MediumLevelActionManager
+Ep 1544: 140
+Computing MediumLevelActionManager
+Ep 1545: 180
+Computing MediumLevelActionManager
+Ep 1546: 200
+Computing MediumLevelActionManager
+Ep 1547: 100
+Computing MediumLevelActionManager
+Ep 1548: 220
+Computing MediumLevelActionManager
+Ep 1549: 140
+Computing MediumLevelActionManager
+Ep 1550: 220
+Computing MediumLevelActionManager
+Ep 1551: 200
+Computing MediumLevelActionManager
+Ep 1552: 200
+Computing MediumLevelActionManager
+Ep 1553: 200
+Computing MediumLevelActionManager
+Ep 1554: 200
+Computing MediumLevelActionManager
+Ep 1555: 220
+Computing MediumLevelActionManager
+Ep 1556: 100
+Computing MediumLevelActionManager
+Ep 1557: 220
+Computing MediumLevelActionManager
+Ep 1558: 180
+Computing MediumLevelActionManager
+Ep 1559: 220
+Computing MediumLevelActionManager
+Ep 1560: 200
+Computing MediumLevelActionManager
+Ep 1561: 200
+Computing MediumLevelActionManager
+Ep 1562: 220
+Computing MediumLevelActionManager
+Ep 1563: 180
+Computing MediumLevelActionManager
+Ep 1564: 220
+Computing MediumLevelActionManager
+Ep 1565: 180
+Computing MediumLevelActionManager
+Ep 1566: 200
+Computing MediumLevelActionManager
+Ep 1567: 200
+Computing MediumLevelActionManager
+Ep 1568: 220
+Computing MediumLevelActionManager
+Ep 1569: 200
+Computing MediumLevelActionManager
+Ep 1570: 240
+Computing MediumLevelActionManager
+Ep 1571: 200
+Computing MediumLevelActionManager
+Ep 1572: 200
+Computing MediumLevelActionManager
+Ep 1573: 200
+Computing MediumLevelActionManager
+Ep 1574: 200
+Computing MediumLevelActionManager
+Ep 1575: 180
+Computing MediumLevelActionManager
+Ep 1576: 180
+Computing MediumLevelActionManager
+Ep 1577: 140
+Computing MediumLevelActionManager
+Ep 1578: 200
+Computing MediumLevelActionManager
+Ep 1579: 140
+Computing MediumLevelActionManager
+Ep 1580: 200
+Computing MediumLevelActionManager
+Ep 1581: 180
+Computing MediumLevelActionManager
+Ep 1582: 220
+Computing MediumLevelActionManager
+Ep 1583: 200
+Computing MediumLevelActionManager
+Ep 1584: 220
+Computing MediumLevelActionManager
+Ep 1585: 200
+Computing MediumLevelActionManager
+Ep 1586: 200
+Computing MediumLevelActionManager
+Ep 1587: 200
+Computing MediumLevelActionManager
+Ep 1588: 220
+Computing MediumLevelActionManager
+Ep 1589: 220
+Computing MediumLevelActionManager
+Ep 1590: 200
+Computing MediumLevelActionManager
+Ep 1591: 220
+Computing MediumLevelActionManager
+Ep 1592: 220
+Computing MediumLevelActionManager
+Ep 1593: 220
+Computing MediumLevelActionManager
+Ep 1594: 200
+Computing MediumLevelActionManager
+Ep 1595: 200
+Computing MediumLevelActionManager
+Ep 1596: 180
+Computing MediumLevelActionManager
+Ep 1597: 120
+Computing MediumLevelActionManager
+Ep 1598: 180
+Computing MediumLevelActionManager
+Ep 1599: 200
+Computing MediumLevelActionManager
+Ep 1600: 180
+Computing MediumLevelActionManager
+Ep 1601: 200
+Computing MediumLevelActionManager
+Ep 1602: 200
+Computing MediumLevelActionManager
+Ep 1603: 220
+Computing MediumLevelActionManager
+Ep 1604: 220
+Computing MediumLevelActionManager
+Ep 1605: 200
+Computing MediumLevelActionManager
+Ep 1606: 200
+Computing MediumLevelActionManager
+Ep 1607: 180
+Computing MediumLevelActionManager
+Ep 1608: 200
+Computing MediumLevelActionManager
+Ep 1609: 220
+Computing MediumLevelActionManager
+Ep 1610: 200
+Computing MediumLevelActionManager
+Ep 1611: 220
+Computing MediumLevelActionManager
+Ep 1612: 220
+Computing MediumLevelActionManager
+Ep 1613: 200
+Computing MediumLevelActionManager
+Ep 1614: 240
+Computing MediumLevelActionManager
+Ep 1615: 220
+Computing MediumLevelActionManager
+Ep 1616: 140
+Computing MediumLevelActionManager
+Ep 1617: 180
+Computing MediumLevelActionManager
+Ep 1618: 200
+Computing MediumLevelActionManager
+Ep 1619: 200
+Computing MediumLevelActionManager
+Ep 1620: 200
+Computing MediumLevelActionManager
+Ep 1621: 220
+Computing MediumLevelActionManager
+Ep 1622: 220
+Computing MediumLevelActionManager
+Ep 1623: 200
+Computing MediumLevelActionManager
+Ep 1624: 140
+Computing MediumLevelActionManager
+Ep 1625: 200
+Computing MediumLevelActionManager
+Ep 1626: 200
+Computing MediumLevelActionManager
+Ep 1627: 220
+Computing MediumLevelActionManager
+Ep 1628: 180
+Computing MediumLevelActionManager
+Ep 1629: 200
+Computing MediumLevelActionManager
+Ep 1630: 180
+Computing MediumLevelActionManager
+Ep 1631: 200
+Computing MediumLevelActionManager
+Ep 1632: 200
+Computing MediumLevelActionManager
+Ep 1633: 200
+Computing MediumLevelActionManager
+Ep 1634: 200
+Computing MediumLevelActionManager
+Ep 1635: 200
+Computing MediumLevelActionManager
+Ep 1636: 220
+Computing MediumLevelActionManager
+Ep 1637: 200
+Computing MediumLevelActionManager
+Ep 1638: 160
+Computing MediumLevelActionManager
+Ep 1639: 200
+Computing MediumLevelActionManager
+Ep 1640: 200
+Computing MediumLevelActionManager
+Ep 1641: 200
+Computing MediumLevelActionManager
+Ep 1642: 220
+Computing MediumLevelActionManager
+Ep 1643: 140
+Computing MediumLevelActionManager
+Ep 1644: 220
+Computing MediumLevelActionManager
+Ep 1645: 200
+Computing MediumLevelActionManager
+Ep 1646: 220
+Computing MediumLevelActionManager
+Ep 1647: 200
+Computing MediumLevelActionManager
+Ep 1648: 40
+Computing MediumLevelActionManager
+Ep 1649: 180
+Computing MediumLevelActionManager
+Ep 1650: 200
+Computing MediumLevelActionManager
+Ep 1651: 120
+Computing MediumLevelActionManager
+Ep 1652: 220
+Computing MediumLevelActionManager
+Ep 1653: 200
+Computing MediumLevelActionManager
+Ep 1654: 220
+Computing MediumLevelActionManager
+Ep 1655: 240
+Computing MediumLevelActionManager
+Ep 1656: 180
+Computing MediumLevelActionManager
+Ep 1657: 180
+Computing MediumLevelActionManager
+Ep 1658: 240
+Computing MediumLevelActionManager
+Ep 1659: 220
+Computing MediumLevelActionManager
+Ep 1660: 200
+Computing MediumLevelActionManager
+Ep 1661: 220
+Computing MediumLevelActionManager
+Ep 1662: 220
+Computing MediumLevelActionManager
+Ep 1663: 220
+Computing MediumLevelActionManager
+Ep 1664: 220
+Computing MediumLevelActionManager
+Ep 1665: 220
+Computing MediumLevelActionManager
+Ep 1666: 160
+Computing MediumLevelActionManager
+Ep 1667: 200
+Computing MediumLevelActionManager
+Ep 1668: 220
+Computing MediumLevelActionManager
+Ep 1669: 160
+Computing MediumLevelActionManager
+Ep 1670: 220
+Computing MediumLevelActionManager
+Ep 1671: 200
+Computing MediumLevelActionManager
+Ep 1672: 220
+Computing MediumLevelActionManager
+Ep 1673: 180
+Computing MediumLevelActionManager
+Ep 1674: 220
+Computing MediumLevelActionManager
+Ep 1675: 200
+Computing MediumLevelActionManager
+Ep 1676: 180
+Computing MediumLevelActionManager
+Ep 1677: 200
+Computing MediumLevelActionManager
+Ep 1678: 180
+Computing MediumLevelActionManager
+Ep 1679: 220
+Computing MediumLevelActionManager
+Ep 1680: 200
+Computing MediumLevelActionManager
+Ep 1681: 220
+Computing MediumLevelActionManager
+Ep 1682: 200
+Computing MediumLevelActionManager
+Ep 1683: 200
+Computing MediumLevelActionManager
+Ep 1684: 220
+Computing MediumLevelActionManager
+Ep 1685: 220
+Computing MediumLevelActionManager
+Ep 1686: 200
+Computing MediumLevelActionManager
+Ep 1687: 200
+Computing MediumLevelActionManager
+Ep 1688: 240
+Computing MediumLevelActionManager
+Ep 1689: 80
+Computing MediumLevelActionManager
+Ep 1690: 220
+Computing MediumLevelActionManager
+Ep 1691: 200
+Computing MediumLevelActionManager
+Ep 1692: 200
+Computing MediumLevelActionManager
+Ep 1693: 200
+Computing MediumLevelActionManager
+Ep 1694: 200
+Computing MediumLevelActionManager
+Ep 1695: 240
+Computing MediumLevelActionManager
+Ep 1696: 180
+Computing MediumLevelActionManager
+Ep 1697: 220
+Computing MediumLevelActionManager
+Ep 1698: 180
+Computing MediumLevelActionManager
+Ep 1699: 220
+Computing MediumLevelActionManager
+Ep 1700: 200
+Computing MediumLevelActionManager
+Ep 1701: 200
+Computing MediumLevelActionManager
+Ep 1702: 220
+Computing MediumLevelActionManager
+Ep 1703: 200
+Computing MediumLevelActionManager
+Ep 1704: 200
+Computing MediumLevelActionManager
+Ep 1705: 220
+Computing MediumLevelActionManager
+Ep 1706: 160
+Computing MediumLevelActionManager
+Ep 1707: 200
+Computing MediumLevelActionManager
+Ep 1708: 200
+Computing MediumLevelActionManager
+Ep 1709: 220
+Computing MediumLevelActionManager
+Ep 1710: 200
+Computing MediumLevelActionManager
+Ep 1711: 120
+Computing MediumLevelActionManager
+Ep 1712: 200
+Computing MediumLevelActionManager
+Ep 1713: 220
+Computing MediumLevelActionManager
+Ep 1714: 140
+Computing MediumLevelActionManager
+Ep 1715: 240
+Computing MediumLevelActionManager
+Ep 1716: 220
+Computing MediumLevelActionManager
+Ep 1717: 40
+Computing MediumLevelActionManager
+Ep 1718: 220
+Computing MediumLevelActionManager
+Ep 1719: 200
+Computing MediumLevelActionManager
+Ep 1720: 220
+Computing MediumLevelActionManager
+Ep 1721: 220
+Computing MediumLevelActionManager
+Ep 1722: 220
+Computing MediumLevelActionManager
+Ep 1723: 220
+Computing MediumLevelActionManager
+Ep 1724: 200
+Computing MediumLevelActionManager
+Ep 1725: 220
+Computing MediumLevelActionManager
+Ep 1726: 240
+Computing MediumLevelActionManager
+Ep 1727: 200
+Computing MediumLevelActionManager
+Ep 1728: 220
+Computing MediumLevelActionManager
+Ep 1729: 220
+Computing MediumLevelActionManager
+Ep 1730: 200
+Computing MediumLevelActionManager
+Ep 1731: 220
+Computing MediumLevelActionManager
+Ep 1732: 220
+Computing MediumLevelActionManager
+Ep 1733: 240
+Computing MediumLevelActionManager
+Ep 1734: 220
+Computing MediumLevelActionManager
+Ep 1735: 220
+Computing MediumLevelActionManager
+Ep 1736: 220
+Computing MediumLevelActionManager
+Ep 1737: 220
+Computing MediumLevelActionManager
+Ep 1738: 220
+Computing MediumLevelActionManager
+Ep 1739: 220
+Computing MediumLevelActionManager
+Ep 1740: 220
+Computing MediumLevelActionManager
+Ep 1741: 200
+Computing MediumLevelActionManager
+Ep 1742: 220
+Computing MediumLevelActionManager
+Ep 1743: 200
+Computing MediumLevelActionManager
+Ep 1744: 160
+Computing MediumLevelActionManager
+Ep 1745: 220
+Computing MediumLevelActionManager
+Ep 1746: 200
+Computing MediumLevelActionManager
+Ep 1747: 220
+Computing MediumLevelActionManager
+Ep 1748: 220
+Computing MediumLevelActionManager
+Ep 1749: 180
+Computing MediumLevelActionManager
+Ep 1750: 200
+Computing MediumLevelActionManager
+Ep 1751: 220
+Computing MediumLevelActionManager
+Ep 1752: 200
+Computing MediumLevelActionManager
+Ep 1753: 220
+Computing MediumLevelActionManager
+Ep 1754: 180
+Computing MediumLevelActionManager
+Ep 1755: 220
+Computing MediumLevelActionManager
+Ep 1756: 60
+Computing MediumLevelActionManager
+Ep 1757: 240
+Computing MediumLevelActionManager
+Ep 1758: 220
+Computing MediumLevelActionManager
+Ep 1759: 220
+Computing MediumLevelActionManager
+Ep 1760: 200
+Computing MediumLevelActionManager
+Ep 1761: 240
+Computing MediumLevelActionManager
+Ep 1762: 220
+Computing MediumLevelActionManager
+Ep 1763: 220
+Computing MediumLevelActionManager
+Ep 1764: 220
+Computing MediumLevelActionManager
+Ep 1765: 180
+Computing MediumLevelActionManager
+Ep 1766: 220
+Computing MediumLevelActionManager
+Ep 1767: 200
+Computing MediumLevelActionManager
+Ep 1768: 220
+Computing MediumLevelActionManager
+Ep 1769: 220
+Computing MediumLevelActionManager
+Ep 1770: 220
+Computing MediumLevelActionManager
+Ep 1771: 200
+Computing MediumLevelActionManager
+Ep 1772: 200
+Computing MediumLevelActionManager
+Ep 1773: 220
+Computing MediumLevelActionManager
+Ep 1774: 220
+Computing MediumLevelActionManager
+Ep 1775: 200
+Computing MediumLevelActionManager
+Ep 1776: 220
+Computing MediumLevelActionManager
+Ep 1777: 180
+Computing MediumLevelActionManager
+Ep 1778: 240
+Computing MediumLevelActionManager
+Ep 1779: 200
+Computing MediumLevelActionManager
+Ep 1780: 200
+Computing MediumLevelActionManager
+Ep 1781: 200
+Computing MediumLevelActionManager
+Ep 1782: 240
+Computing MediumLevelActionManager
+Ep 1783: 200
+Computing MediumLevelActionManager
+Ep 1784: 200
+Computing MediumLevelActionManager
+Ep 1785: 220
+Computing MediumLevelActionManager
+Ep 1786: 220
+Computing MediumLevelActionManager
+Ep 1787: 180
+Computing MediumLevelActionManager
+Ep 1788: 200
+Computing MediumLevelActionManager
+Ep 1789: 240
+Computing MediumLevelActionManager
+Ep 1790: 200
+Computing MediumLevelActionManager
+Ep 1791: 200
+Computing MediumLevelActionManager
+Ep 1792: 200
+Computing MediumLevelActionManager
+Ep 1793: 200
+Computing MediumLevelActionManager
+Ep 1794: 200
+Computing MediumLevelActionManager
+Ep 1795: 180
+Computing MediumLevelActionManager
+Ep 1796: 220
+Computing MediumLevelActionManager
+Ep 1797: 240
+Computing MediumLevelActionManager
+Ep 1798: 220
+Computing MediumLevelActionManager
+Ep 1799: 200
+Computing MediumLevelActionManager
+Ep 1800: 120
+Computing MediumLevelActionManager
+Ep 1801: 200
+Computing MediumLevelActionManager
+Ep 1802: 240
+Computing MediumLevelActionManager
+Ep 1803: 200
+Computing MediumLevelActionManager
+Ep 1804: 220
+Computing MediumLevelActionManager
+Ep 1805: 180
+Computing MediumLevelActionManager
+Ep 1806: 160
+Computing MediumLevelActionManager
+Ep 1807: 220
+Computing MediumLevelActionManager
+Ep 1808: 180
+Computing MediumLevelActionManager
+Ep 1809: 220
+Computing MediumLevelActionManager
+Ep 1810: 240
+Computing MediumLevelActionManager
+Ep 1811: 220
+Computing MediumLevelActionManager
+Ep 1812: 220
+Computing MediumLevelActionManager
+Ep 1813: 220
+Computing MediumLevelActionManager
+Ep 1814: 200
+Computing MediumLevelActionManager
+Ep 1815: 220
+Computing MediumLevelActionManager
+Ep 1816: 220
+Computing MediumLevelActionManager
+Ep 1817: 200
+Computing MediumLevelActionManager
+Ep 1818: 200
+Computing MediumLevelActionManager
+Ep 1819: 200
+Computing MediumLevelActionManager
+Ep 1820: 200
+Computing MediumLevelActionManager
+Ep 1821: 220
+Computing MediumLevelActionManager
+Ep 1822: 220
+Computing MediumLevelActionManager
+Ep 1823: 240
+Computing MediumLevelActionManager
+Ep 1824: 160
+Computing MediumLevelActionManager
+Ep 1825: 200
+Computing MediumLevelActionManager
+Ep 1826: 240
+Computing MediumLevelActionManager
+Ep 1827: 240
+Computing MediumLevelActionManager
+Ep 1828: 240
+Computing MediumLevelActionManager
+Ep 1829: 220
+Computing MediumLevelActionManager
+Ep 1830: 200
+Computing MediumLevelActionManager
+Ep 1831: 220
+Computing MediumLevelActionManager
+Ep 1832: 220
+Computing MediumLevelActionManager
+Ep 1833: 180
+Computing MediumLevelActionManager
+Ep 1834: 40
+Computing MediumLevelActionManager
+Ep 1835: 200
+Computing MediumLevelActionManager
+Ep 1836: 120
+Computing MediumLevelActionManager
+Ep 1837: 200
+Computing MediumLevelActionManager
+Ep 1838: 240
+Computing MediumLevelActionManager
+Ep 1839: 220
+Computing MediumLevelActionManager
+Ep 1840: 220
+Computing MediumLevelActionManager
+Ep 1841: 220
+Computing MediumLevelActionManager
+Ep 1842: 220
+Computing MediumLevelActionManager
+Ep 1843: 220
+Computing MediumLevelActionManager
+Ep 1844: 220
+Computing MediumLevelActionManager
+Ep 1845: 220
+Computing MediumLevelActionManager
+Ep 1846: 220
+Computing MediumLevelActionManager
+Ep 1847: 220
+Computing MediumLevelActionManager
+Ep 1848: 240
+Computing MediumLevelActionManager
+Ep 1849: 220
+Computing MediumLevelActionManager
+Ep 1850: 220
+Computing MediumLevelActionManager
+Ep 1851: 240
+Computing MediumLevelActionManager
+Ep 1852: 200
+Computing MediumLevelActionManager
+Ep 1853: 140
+Computing MediumLevelActionManager
+Ep 1854: 200
+Computing MediumLevelActionManager
+Ep 1855: 200
+Computing MediumLevelActionManager
+Ep 1856: 220
+Computing MediumLevelActionManager
+Ep 1857: 200
+Computing MediumLevelActionManager
+Ep 1858: 180
+Computing MediumLevelActionManager
+Ep 1859: 180
+Computing MediumLevelActionManager
+Ep 1860: 240
+Computing MediumLevelActionManager
+Ep 1861: 220
+Computing MediumLevelActionManager
+Ep 1862: 200
+Computing MediumLevelActionManager
+Ep 1863: 200
+Computing MediumLevelActionManager
+Ep 1864: 140
+Computing MediumLevelActionManager
+Ep 1865: 180
+Computing MediumLevelActionManager
+Ep 1866: 200
+Computing MediumLevelActionManager
+Ep 1867: 180
+Computing MediumLevelActionManager
+Ep 1868: 220
+Computing MediumLevelActionManager
+Ep 1869: 240
+Computing MediumLevelActionManager
+Ep 1870: 220
+Computing MediumLevelActionManager
+Ep 1871: 240
+Computing MediumLevelActionManager
+Ep 1872: 160
+Computing MediumLevelActionManager
+Ep 1873: 200
+Computing MediumLevelActionManager
+Ep 1874: 160
+Computing MediumLevelActionManager
+Ep 1875: 220
+Computing MediumLevelActionManager
+Ep 1876: 240
+Computing MediumLevelActionManager
+Ep 1877: 200
+Computing MediumLevelActionManager
+Ep 1878: 200
+Computing MediumLevelActionManager
+Ep 1879: 200
+Computing MediumLevelActionManager
+Ep 1880: 220
+Computing MediumLevelActionManager
+Ep 1881: 120
+Computing MediumLevelActionManager
+Ep 1882: 140
+Computing MediumLevelActionManager
+Ep 1883: 240
+Computing MediumLevelActionManager
+Ep 1884: 200
+Computing MediumLevelActionManager
+Ep 1885: 220
+Computing MediumLevelActionManager
+Ep 1886: 220
+Computing MediumLevelActionManager
+Ep 1887: 20
+Computing MediumLevelActionManager
+Ep 1888: 220
+Computing MediumLevelActionManager
+Ep 1889: 160
+Computing MediumLevelActionManager
+Ep 1890: 220
+Computing MediumLevelActionManager
+Ep 1891: 240
+Computing MediumLevelActionManager
+Ep 1892: 220
+Computing MediumLevelActionManager
+Ep 1893: 220
+Computing MediumLevelActionManager
+Ep 1894: 240
+Computing MediumLevelActionManager
+Ep 1895: 220
+Computing MediumLevelActionManager
+Ep 1896: 100
+Computing MediumLevelActionManager
+Ep 1897: 220
+Computing MediumLevelActionManager
+Ep 1898: 220
+Computing MediumLevelActionManager
+Ep 1899: 220
+Computing MediumLevelActionManager
+Ep 1900: 140
+Computing MediumLevelActionManager
+Ep 1901: 240
+Computing MediumLevelActionManager
+Ep 1902: 200
+Computing MediumLevelActionManager
+Ep 1903: 240
+Computing MediumLevelActionManager
+Ep 1904: 220
+Computing MediumLevelActionManager
+Ep 1905: 220
+Computing MediumLevelActionManager
+Ep 1906: 180
+Computing MediumLevelActionManager
+Ep 1907: 220
+Computing MediumLevelActionManager
+Ep 1908: 220
+Computing MediumLevelActionManager
+Ep 1909: 220
+Computing MediumLevelActionManager
+Ep 1910: 200
+Computing MediumLevelActionManager
+Ep 1911: 220
+Computing MediumLevelActionManager
+Ep 1912: 220
+Computing MediumLevelActionManager
+Ep 1913: 140
+Computing MediumLevelActionManager
+Ep 1914: 180
+Computing MediumLevelActionManager
+Ep 1915: 160
+Computing MediumLevelActionManager
+Ep 1916: 240
+Computing MediumLevelActionManager
+Ep 1917: 220
+Computing MediumLevelActionManager
+Ep 1918: 220
+Computing MediumLevelActionManager
+Ep 1919: 220
+Computing MediumLevelActionManager
+Ep 1920: 180
+Computing MediumLevelActionManager
+Ep 1921: 220
+Computing MediumLevelActionManager
+Ep 1922: 200
+Computing MediumLevelActionManager
+Ep 1923: 120
+Computing MediumLevelActionManager
+Ep 1924: 220
+Computing MediumLevelActionManager
+Ep 1925: 220
+Computing MediumLevelActionManager
+Ep 1926: 220
+Computing MediumLevelActionManager
+Ep 1927: 220
+Computing MediumLevelActionManager
+Ep 1928: 200
+Computing MediumLevelActionManager
+Ep 1929: 200
+Computing MediumLevelActionManager
+Ep 1930: 240
+Computing MediumLevelActionManager
+Ep 1931: 220
+Computing MediumLevelActionManager
+Ep 1932: 200
+Computing MediumLevelActionManager
+Ep 1933: 220
+Computing MediumLevelActionManager
+Ep 1934: 200
+Computing MediumLevelActionManager
+Ep 1935: 220
+Computing MediumLevelActionManager
+Ep 1936: 220
+Computing MediumLevelActionManager
+Ep 1937: 200
+Computing MediumLevelActionManager
+Ep 1938: 160
+Computing MediumLevelActionManager
+Ep 1939: 200
+Computing MediumLevelActionManager
+Ep 1940: 200
+Computing MediumLevelActionManager
+Ep 1941: 220
+Computing MediumLevelActionManager
+Ep 1942: 240
+Computing MediumLevelActionManager
+Ep 1943: 200
+Computing MediumLevelActionManager
+Ep 1944: 220
+Computing MediumLevelActionManager
+Ep 1945: 220
+Computing MediumLevelActionManager
+Ep 1946: 200
+Computing MediumLevelActionManager
+Ep 1947: 200
+Computing MediumLevelActionManager
+Ep 1948: 240
+Computing MediumLevelActionManager
+Ep 1949: 100
+Computing MediumLevelActionManager
+Ep 1950: 200
+Computing MediumLevelActionManager
+Ep 1951: 240
+Computing MediumLevelActionManager
+Ep 1952: 200
+Computing MediumLevelActionManager
+Ep 1953: 200
+Computing MediumLevelActionManager
+Ep 1954: 180
+Computing MediumLevelActionManager
+Ep 1955: 220
+Computing MediumLevelActionManager
+Ep 1956: 240
+Computing MediumLevelActionManager
+Ep 1957: 200
+Computing MediumLevelActionManager
+Ep 1958: 220
+Computing MediumLevelActionManager
+Ep 1959: 220
+Computing MediumLevelActionManager
+Ep 1960: 220
+Computing MediumLevelActionManager
+Ep 1961: 180
+Computing MediumLevelActionManager
+Ep 1962: 80
+Computing MediumLevelActionManager
+Ep 1963: 240
+Computing MediumLevelActionManager
+Ep 1964: 180
+Computing MediumLevelActionManager
+Ep 1965: 220
+Computing MediumLevelActionManager
+Ep 1966: 200
+Computing MediumLevelActionManager
+Ep 1967: 220
+Computing MediumLevelActionManager
+Ep 1968: 220
+Computing MediumLevelActionManager
+Ep 1969: 220
+Computing MediumLevelActionManager
+Ep 1970: 200
+Computing MediumLevelActionManager
+Ep 1971: 220
+Computing MediumLevelActionManager
+Ep 1972: 160
+Computing MediumLevelActionManager
+Ep 1973: 220
+Computing MediumLevelActionManager
+Ep 1974: 180
+Computing MediumLevelActionManager
+Ep 1975: 220
+Computing MediumLevelActionManager
+Ep 1976: 220
+Computing MediumLevelActionManager
+Ep 1977: 200
+Computing MediumLevelActionManager
+Ep 1978: 240
+Computing MediumLevelActionManager
+Ep 1979: 140
+Computing MediumLevelActionManager
+Ep 1980: 220
+Computing MediumLevelActionManager
+Ep 1981: 220
+Computing MediumLevelActionManager
+Ep 1982: 220
+Computing MediumLevelActionManager
+Ep 1983: 240
+Computing MediumLevelActionManager
+Ep 1984: 220
+Computing MediumLevelActionManager
+Ep 1985: 220
+Computing MediumLevelActionManager
+Ep 1986: 220
+Computing MediumLevelActionManager
+Ep 1987: 180
+Computing MediumLevelActionManager
+Ep 1988: 200
+Computing MediumLevelActionManager
+Ep 1989: 200
+Computing MediumLevelActionManager
+Ep 1990: 220
+Computing MediumLevelActionManager
+Ep 1991: 220
+Computing MediumLevelActionManager
+Ep 1992: 180
+Computing MediumLevelActionManager
+Ep 1993: 200
+Computing MediumLevelActionManager
+Ep 1994: 160
+Computing MediumLevelActionManager
+Ep 1995: 220
+Computing MediumLevelActionManager
+Ep 1996: 200
+Computing MediumLevelActionManager
+Ep 1997: 180
+Computing MediumLevelActionManager
+Ep 1998: 220
+Computing MediumLevelActionManager
+Ep 1999: 220
+Computing MediumLevelActionManager
+Ep 2000: 140

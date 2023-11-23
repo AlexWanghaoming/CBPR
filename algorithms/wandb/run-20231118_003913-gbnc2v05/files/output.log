@@ -1,0 +1,13 @@
+Computing MediumLevelActionManager
+Computing MediumLevelActionManager
+Ep 1: 18.0
+Computing MediumLevelActionManager
+Ep 2: 11.991999999999999
+Computing MediumLevelActionManager
+/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/gym/spaces/box.py:74: UserWarning: [33mWARN: Box bound precision lowered by casting to float32
+  "Box bound precision lowered by casting to {}".format(self.dtype)
+Ep 3: 20.971999999999998
+Computing MediumLevelActionManager
+Ep 4: 31.936
+Computing MediumLevelActionManager
+Ep 5: 17.952

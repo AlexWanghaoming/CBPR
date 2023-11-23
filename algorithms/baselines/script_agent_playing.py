@@ -1,4 +1,4 @@
-from utils import init_env
+from My_utils import init_env
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/src/')
 
@@ -25,8 +25,8 @@ SCRIPT_AGENTS = {
 layout = 'counter_circuit'
 num_episodes = 50
 env = init_env(layout=layout,
-               agent0_policy_name='script:mixed_order',
-               agent1_policy_name='script:deliver_soup',
+               agent0_policy_name='script:pickup_ingredient_and_place_mix',
+               agent1_policy_name='script:place_onion_and_deliver_soup',
                use_script_policy=True)
 
 for k in range(1, num_episodes + 1):

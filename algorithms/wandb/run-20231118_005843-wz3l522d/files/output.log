@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "mtp_scriptedPolicy.py", line 102, in <module>
+    run()
+  File "mtp_scriptedPolicy.py", line 97, in run
+    train(args, ego_agent=ego_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)
+  File "mtp_scriptedPolicy.py", line 17, in train
+    use_script_policy=True)
+  File "/alpha/overcooked_rl/algorithms/../utils.py", line 50, in init_env
+    use_script_policy=use_script_policy)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/gym/envs/registration.py", line 235, in make
+    return registry.make(id, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/gym/envs/registration.py", line 129, in make
+    env = spec.make(**kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/gym/envs/registration.py", line 90, in make
+    env = cls(**_kwargs)
+TypeError: __init__() got an unexpected keyword argument 'agent0_policy_name'

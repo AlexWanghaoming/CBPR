@@ -12,7 +12,7 @@ from models import MTP_MODELS, NN_MODELS, HP_MODELS, META_TASKS
 from agents.ppo_discrete import PPO_discrete
 import random
 from state_trans_func.NN_scriptedPolicy import NN
-from utils import seed_everything, init_env
+from My_utils import seed_everything, init_env
 from datetime import datetime
 from src.overcooked_ai_py.mdp.actions import Action
 import wandb

@@ -75,7 +75,7 @@ def create_dirs(config: dict, cur_layout: str):
     We group the data by layout/type/time
     """
     path = os.path.join(
-        DOCKER_VOLUME,
+        # DOCKER_VOLUME,  # wanghm
         cur_layout,
         config["old_dynamics"],
         config["type"],

@@ -10,11 +10,11 @@ from models import MTP_MODELS, META_TASK_MODELS, NN_MODELS
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 from agents.ppo_discrete import PPO_discrete
-from utils import seed_everything, init_env
+from My_utils import seed_everything, init_env
 from rl_plotter.logger import Logger
 import random
 from state_trans_func.NN_keystate import NN
-from utils import seed_everything, init_env, ReplayBuffer, Normalization
+from My_utils import seed_everything, init_env, ReplayBuffer, Normalization
 from datetime import datetime
 import wandb
 

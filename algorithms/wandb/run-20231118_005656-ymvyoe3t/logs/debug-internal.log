@@ -1,0 +1,142 @@
+2023-11-18 00:56:56,329 INFO    StreamThr :2483594 [internal.py:wandb_internal():89] W&B internal server running at pid: 2483594, started at: 2023-11-18 00:56:56.328744
+2023-11-18 00:56:56,330 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: status
+2023-11-18 00:56:56,332 INFO    WriterThread:2483594 [datastore.py:open_for_write():85] open: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/run-ymvyoe3t.wandb
+2023-11-18 00:56:56,332 DEBUG   SenderThread:2483594 [sender.py:send():380] send: header
+2023-11-18 00:56:56,351 DEBUG   SenderThread:2483594 [sender.py:send():380] send: run
+2023-11-18 00:56:57,305 INFO    SenderThread:2483594 [dir_watcher.py:__init__():211] watching files in: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files
+2023-11-18 00:56:57,305 INFO    SenderThread:2483594 [sender.py:_start_run_threads():1125] run started: ymvyoe3t with start time 1700240216.32887
+2023-11-18 00:56:57,316 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: check_version
+2023-11-18 00:56:57,316 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: check_version
+2023-11-18 00:56:59,613 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: run_start
+2023-11-18 00:56:59,619 DEBUG   HandlerThread:2483594 [system_info.py:__init__():32] System info init
+2023-11-18 00:56:59,620 DEBUG   HandlerThread:2483594 [system_info.py:__init__():47] System info init done
+2023-11-18 00:56:59,620 INFO    HandlerThread:2483594 [system_monitor.py:start():194] Starting system monitor
+2023-11-18 00:56:59,620 INFO    SystemMonitor:2483594 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-18 00:56:59,620 INFO    HandlerThread:2483594 [system_monitor.py:probe():214] Collecting system info
+2023-11-18 00:56:59,621 INFO    SystemMonitor:2483594 [interfaces.py:start():190] Started cpu monitoring
+2023-11-18 00:56:59,621 INFO    SystemMonitor:2483594 [interfaces.py:start():190] Started disk monitoring
+2023-11-18 00:56:59,622 INFO    SystemMonitor:2483594 [interfaces.py:start():190] Started gpu monitoring
+2023-11-18 00:56:59,622 INFO    SystemMonitor:2483594 [interfaces.py:start():190] Started memory monitoring
+2023-11-18 00:56:59,623 INFO    SystemMonitor:2483594 [interfaces.py:start():190] Started network monitoring
+2023-11-18 00:56:59,628 DEBUG   HandlerThread:2483594 [system_info.py:probe():196] Probing system
+2023-11-18 00:56:59,633 DEBUG   HandlerThread:2483594 [system_info.py:_probe_git():181] Probing git
+2023-11-18 00:56:59,644 DEBUG   HandlerThread:2483594 [system_info.py:_probe_git():189] Probing git done
+2023-11-18 00:56:59,644 DEBUG   HandlerThread:2483594 [system_info.py:probe():244] Probing system done
+2023-11-18 00:56:59,644 DEBUG   HandlerThread:2483594 [system_monitor.py:probe():223] {'os': 'Linux-6.2.0-26-generic-x86_64-with-debian-bookworm-sid', 'python': '3.7.12', 'heartbeatAt': '2023-11-17T16:56:59.628738', 'startedAt': '2023-11-17T16:56:56.324521', 'docker': None, 'cuda': None, 'args': ('--layout', 'coordination_ring', '--num_episodes', '2000', '--scripted_policy_name', 'random', '--seed', '1'), 'state': 'running', 'program': 'mtp_scriptedPolicy.py', 'codePathLocal': 'mtp_scriptedPolicy.py', 'codePath': 'algorithms/mtp_scriptedPolicy.py', 'git': {'remote': 'git@github.com:AlexWanghaoming/overcooked_rl.git', 'commit': 'c38c8877e0c918167007cd6e3339f76a8254812b'}, 'email': '568019240@qq.com', 'root': '/alpha/overcooked_rl', 'host': 'wanghm', 'username': 'wanghm', 'executable': '/home/wanghm/anaconda3/envs/overcooked_ai/bin/python', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 4544.0790625, 'min': 800.0, 'max': 5150.0}, 'cpu_freq_per_core': [{'current': 4680.213, 'min': 800.0, 'max': 5100.0}, {'current': 4646.604, 'min': 800.0, 'max': 5100.0}, {'current': 4753.052, 'min': 800.0, 'max': 5100.0}, {'current': 4661.261, 'min': 800.0, 'max': 5100.0}, {'current': 4661.25, 'min': 800.0, 'max': 5300.0}, {'current': 4661.111, 'min': 800.0, 'max': 5300.0}, {'current': 4661.384, 'min': 800.0, 'max': 5100.0}, {'current': 4786.017, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 4716.185, 'min': 800.0, 'max': 5100.0}, {'current': 4660.826, 'min': 800.0, 'max': 5100.0}, {'current': 4694.008, 'min': 800.0, 'max': 5100.0}, {'current': 4777.257, 'min': 800.0, 'max': 5300.0}, {'current': 3500.0, 'min': 800.0, 'max': 5300.0}, {'current': 4654.862, 'min': 800.0, 'max': 5100.0}, {'current': 4691.235, 'min': 800.0, 'max': 5100.0}], 'disk': {'/': {'total': 1832.2072448730469, 'used': 172.93442916870117}}, 'gpu': 'NVIDIA GeForce RTX 3080', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3080', 'memory_total': 10737418240}], 'memory': {'total': 31.163162231445312}}
+2023-11-18 00:56:59,644 INFO    HandlerThread:2483594 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-18 00:56:59,644 INFO    HandlerThread:2483594 [system_monitor.py:probe():227] Publishing system info
+2023-11-18 00:56:59,644 DEBUG   HandlerThread:2483594 [system_info.py:_save_pip():53] Saving list of pip packages installed into the current environment
+2023-11-18 00:56:59,644 DEBUG   HandlerThread:2483594 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-18 00:56:59,644 DEBUG   HandlerThread:2483594 [system_info.py:_save_conda():76] Saving list of conda packages installed into the current environment
+2023-11-18 00:57:00,306 INFO    Thread-12 :2483594 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/requirements.txt
+2023-11-18 00:57:00,306 INFO    Thread-12 :2483594 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/conda-environment.yaml
+2023-11-18 00:57:01,306 INFO    Thread-12 :2483594 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/conda-environment.yaml
+2023-11-18 00:57:01,456 DEBUG   HandlerThread:2483594 [system_info.py:_save_conda():87] Saving conda packages done
+2023-11-18 00:57:01,456 INFO    HandlerThread:2483594 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-18 00:57:01,458 DEBUG   SenderThread:2483594 [sender.py:send():380] send: files
+2023-11-18 00:57:01,458 INFO    SenderThread:2483594 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-11-18 00:57:01,459 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 00:57:01,461 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-18 00:57:01,462 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: stop_status
+2023-11-18 00:57:01,463 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-18 00:57:01,948 DEBUG   SenderThread:2483594 [sender.py:send():380] send: telemetry
+2023-11-18 00:57:01,949 DEBUG   SenderThread:2483594 [sender.py:send():380] send: exit
+2023-11-18 00:57:01,949 INFO    SenderThread:2483594 [sender.py:send_exit():585] handling exit code: 1
+2023-11-18 00:57:01,949 INFO    SenderThread:2483594 [sender.py:send_exit():587] handling runtime: 1
+2023-11-18 00:57:01,951 INFO    SenderThread:2483594 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-18 00:57:01,951 INFO    SenderThread:2483594 [sender.py:send_exit():593] send defer
+2023-11-18 00:57:01,951 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:01,951 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-18 00:57:01,951 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:01,951 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-18 00:57:01,951 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 1
+2023-11-18 00:57:01,951 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:01,951 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-18 00:57:01,952 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:01,952 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-18 00:57:01,952 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 2
+2023-11-18 00:57:01,952 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:01,952 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-18 00:57:01,952 INFO    HandlerThread:2483594 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-18 00:57:01,952 DEBUG   SystemMonitor:2483594 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-18 00:57:01,952 DEBUG   SystemMonitor:2483594 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-18 00:57:01,952 DEBUG   SystemMonitor:2483594 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-18 00:57:01,952 INFO    HandlerThread:2483594 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-18 00:57:01,953 INFO    HandlerThread:2483594 [interfaces.py:finish():202] Joined disk monitor
+2023-11-18 00:57:01,995 INFO    HandlerThread:2483594 [interfaces.py:finish():202] Joined gpu monitor
+2023-11-18 00:57:01,995 INFO    HandlerThread:2483594 [interfaces.py:finish():202] Joined memory monitor
+2023-11-18 00:57:01,995 INFO    HandlerThread:2483594 [interfaces.py:finish():202] Joined network monitor
+2023-11-18 00:57:01,996 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:01,996 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-18 00:57:01,996 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 3
+2023-11-18 00:57:01,996 DEBUG   SenderThread:2483594 [sender.py:send():380] send: stats
+2023-11-18 00:57:01,996 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:01,996 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-18 00:57:01,997 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:01,997 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-18 00:57:01,997 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 4
+2023-11-18 00:57:01,997 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:01,997 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-18 00:57:01,997 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:01,997 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-18 00:57:01,997 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 5
+2023-11-18 00:57:01,997 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:01,997 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-18 00:57:01,997 DEBUG   SenderThread:2483594 [sender.py:send():380] send: summary
+2023-11-18 00:57:01,998 INFO    SenderThread:2483594 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-18 00:57:01,998 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:01,998 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-18 00:57:01,998 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 6
+2023-11-18 00:57:01,998 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:01,998 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-18 00:57:01,998 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:01,998 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-18 00:57:02,003 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: status_report
+2023-11-18 00:57:02,306 INFO    Thread-12 :2483594 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/output.log
+2023-11-18 00:57:02,306 INFO    Thread-12 :2483594 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/wandb-summary.json
+2023-11-18 00:57:02,306 INFO    Thread-12 :2483594 [dir_watcher.py:_on_file_created():271] file/dir created: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/wandb-metadata.json
+2023-11-18 00:57:02,488 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 7
+2023-11-18 00:57:02,488 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:02,488 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-18 00:57:02,488 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:02,488 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-18 00:57:02,514 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-18 00:57:02,681 INFO    wandb-upload_0:2483594 [upload_job.py:push():131] Uploaded file /tmp/tmpxjqf0oaawandb/g9jqbh6d-wandb-metadata.json
+2023-11-18 00:57:03,306 INFO    Thread-12 :2483594 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/config.yaml
+2023-11-18 00:57:03,953 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 8
+2023-11-18 00:57:03,953 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: poll_exit
+2023-11-18 00:57:03,953 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:03,954 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-18 00:57:03,954 DEBUG   SenderThread:2483594 [sender.py:send_request():407] send_request: defer
+2023-11-18 00:57:03,954 INFO    SenderThread:2483594 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-18 00:57:03,954 INFO    SenderThread:2483594 [job_builder.py:build():281] Attempting to build job artifact
+2023-11-18 00:57:03,954 INFO    SenderThread:2483594 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-11-18 00:57:03,955 INFO    SenderThread:2483594 [job_builder.py:build():369] adding wandb-job metadata file
+2023-11-18 00:57:03,982 INFO    SenderThread:2483594 [sender.py:transition_state():613] send defer: 9
+2023-11-18 00:57:03,982 DEBUG   HandlerThread:2483594 [handler.py:handle_request():146] handle_request: defer
+2023-11-18 00:57:03,982 DEBUG   SenderThread:2483594 [sender.py:send():380] send: artifact
+2023-11-18 00:57:03,982 INFO    HandlerThread:2483594 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-18 00:57:04,306 INFO    Thread-12 :2483594 [dir_watcher.py:_on_file_modified():288] file/dir modified: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/output.log
+2023-11-18 00:57:05,338 WARNING StreamThr :2483594 [internal.py:is_dead():415] Internal process exiting, parent pid 2483568 disappeared
+2023-11-18 00:57:05,338 ERROR   StreamThr :2483594 [internal.py:wandb_internal():152] Internal process shutdown.
+2023-11-18 00:57:05,873 INFO    SenderThread:2483594 [sender.py:send_artifact():1456] sent artifact job-git_github.com_AlexWanghaoming_overcooked_rl.git_algorithms_mtp_scriptedPolicy.py - {'id': 'QXJ0aWZhY3Q6NjQxNjU5NzE3', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExNDUxNzU4NQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjQxNjU5NzE3', 'versionIndex': 6}}}
+2023-11-18 00:57:05,873 INFO    SenderThread:2483594 [sender.py:finish():1534] shutting down sender
+2023-11-18 00:57:05,873 INFO    SenderThread:2483594 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-18 00:57:05,984 INFO    HandlerThread:2483594 [handler.py:finish():866] shutting down handler
+2023-11-18 00:57:05,984 INFO    WriterThread:2483594 [datastore.py:close():294] close: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/run-ymvyoe3t.wandb
+2023-11-18 00:57:06,307 INFO    SenderThread:2483594 [dir_watcher.py:finish():388] scan: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files
+2023-11-18 00:57:06,307 INFO    SenderThread:2483594 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/wandb-summary.json wandb-summary.json
+2023-11-18 00:57:06,307 INFO    SenderThread:2483594 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/conda-environment.yaml conda-environment.yaml
+2023-11-18 00:57:06,307 INFO    SenderThread:2483594 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/config.yaml config.yaml
+2023-11-18 00:57:06,307 INFO    SenderThread:2483594 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/requirements.txt requirements.txt
+2023-11-18 00:57:06,309 INFO    SenderThread:2483594 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/output.log output.log
+2023-11-18 00:57:06,312 INFO    SenderThread:2483594 [dir_watcher.py:finish():402] scan save: /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/wandb-metadata.json wandb-metadata.json
+2023-11-18 00:57:06,312 INFO    SenderThread:2483594 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-18 00:57:06,312 INFO    SenderThread:2483594 [file_pusher.py:join():181] waiting for file pusher
+2023-11-18 00:57:06,947 INFO    wandb-upload_1:2483594 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/wandb-summary.json
+2023-11-18 00:57:07,208 INFO    wandb-upload_0:2483594 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/conda-environment.yaml
+2023-11-18 00:57:07,283 INFO    wandb-upload_2:2483594 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/output.log
+2023-11-18 00:57:07,306 INFO    wandb-upload_3:2483594 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/config.yaml
+2023-11-18 00:57:07,340 INFO    wandb-upload_4:2483594 [upload_job.py:push():131] Uploaded file /alpha/overcooked_rl/algorithms/wandb/run-20231118_005656-ymvyoe3t/files/requirements.txt
+2023-11-18 00:57:07,815 INFO    SenderThread:2483594 [file_stream.py:finish():595] file stream finish called
+2023-11-18 00:57:08,243 INFO    SenderThread:2483594 [file_stream.py:finish():599] file stream finish is done

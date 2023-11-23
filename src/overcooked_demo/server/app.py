@@ -20,7 +20,7 @@ from threading import Lock
 import game
 from flask import Flask, jsonify, render_template, request
 from flask_socketio import SocketIO, emit, join_room, leave_room
-from game import Game, OvercookedGame, OvercookedTutorial
+from game import Game, OvercookedTutorial, DummyOvercookedGame, BPR_overcookedGame
 from utils import ThreadSafeDict, ThreadSafeSet
 
 ### Thoughts -- where I'll log potential issues/ideas as they come up
@@ -94,7 +94,7 @@ USER_ROOMS = ThreadSafeDict()
 
 # Mapping of string game names to corresponding classes
 GAME_NAME_TO_CLS = {
-    "overcooked": OvercookedGame,
+    "overcooked": BPR_overcookedGame,
     "tutorial": OvercookedTutorial,
 }
 
@@ -137,7 +137,7 @@ def try_create_game(game_name, **kwargs):
     try:
         curr_id = FREE_IDS.get(block=False)
         assert FREE_MAP[curr_id], "Current id is already in use"
-        game_cls = GAME_NAME_TO_CLS.get(game_name, OvercookedGame)
+        game_cls = GAME_NAME_TO_CLS.get(game_name, BPR_overcookedGame)  #game_name不存在则默认输出 DummyOvercookedGame
         game = game_cls(id=curr_id, **kwargs)
     except queue.Empty:
         err = RuntimeError("Server at max capacity")
@@ -150,7 +150,7 @@ def try_create_game(game_name, **kwargs):
         return game, None
 
 
-def cleanup_game(game: OvercookedGame):
+def cleanup_game(game: BPR_overcookedGame):
     if FREE_MAP[game.id]:
         raise ValueError("Double free on a game")
 
@@ -360,7 +360,7 @@ def get_agent_names():
 # at after the server response is received. Standard HTTP protocol
 
 
-@app.route("/")
+@app.route("/")  # 定义一个路由，当用户访问网页localhost:port时，执行下面的函数
 def index():
     agent_names = get_agent_names()
     return render_template(
@@ -482,6 +482,7 @@ def creation_params(params):
         params["dataCollection"] = False
 
 
+# 这个装饰器用于定义一个 WebSocket 事件处理器。当客户端通过 WebSocket 发送一个特定的事件，例如 create 时，与该事件关联的函数会被调用。这是 flask_socketio 扩展的功能，用于处理实时双向通信。
 @socketio.on("create")
 def on_create(data):
     user_id = request.sid
@@ -511,7 +512,6 @@ def on_join(data):
         if curr_game:
             # Cannot join if currently in a game
             return
-
         # Retrieve a currently open game if one exists
         game = get_waiting_game()
 
@@ -522,7 +522,6 @@ def on_join(data):
             game_name = data.get("game_name", "overcooked")
             _create_game(user_id, game_name, params)
             return
-
         elif not game:
             # No available game was found so start waiting to join one
             emit("waiting", {"in_game": False})
@@ -615,7 +614,7 @@ def on_exit():
 #############
 
 
-def play_game(game: OvercookedGame, fps=6):
+def play_game(game: BPR_overcookedGame, fps=6):
     """
     Asynchronously apply real-time game updates and broadcast state to all clients currently active
     in the game. Note that this loop must be initiated by a parallel thread for each active game
@@ -661,7 +660,7 @@ def play_game(game: OvercookedGame, fps=6):
 if __name__ == "__main__":
     # Dynamically parse host and port from environment variables (set by docker build)
     host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", 80))
+    port = int(os.getenv("PORT", 5000))
 
     # Attach exit handler to ensure graceful shutdown
     atexit.register(on_exit)

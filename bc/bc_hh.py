@@ -149,7 +149,7 @@ if __name__ == '__main__':
         "layouts": [opt.layout],
         "check_trajectories": False,
         "featurize_states": True,
-        "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room', 'asymmetric_advantages'] else CLEAN_2020_HUMAN_DATA_TRAIN,
+        "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room', 'asymmetric_advantages', "coordination_ring"] else CLEAN_2020_HUMAN_DATA_TRAIN,
     }
     processed_trajs = get_human_human_trajectories(**DEFAULT_DATA_PARAMS, silent=False)
     inputs, targets = (processed_trajs["ep_states"], processed_trajs["ep_actions"])
