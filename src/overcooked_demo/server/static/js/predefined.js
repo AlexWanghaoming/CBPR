@@ -4,7 +4,7 @@ var socket = io();
 
 var config;
 var experimentParams = {
-    layouts : ["cramped_room", "counter_circuit"],
+    layouts : ["cramped_room", "asymmetric_advantages","counter_circuit"],
     gameTime : 10,
     playerZero : "DummyAI"
 };

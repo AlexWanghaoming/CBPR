@@ -59,22 +59,6 @@ class NNLibrary:
             self.policy_lib[f'metatask_{idx+1}'] = model
         return self.policy_lib
 
-# def eval_rollouts(env, ai_agent: PPO_discrete, h_policy:nn.Module):
-#     obs = env.reset()
-#     ai_obs, h_obs = obs['both_agent_obs']
-#     accumulated_reward = 0
-#     done = False
-#     while not done:
-#         # 策略库中的agent和人玩，得到rewards
-#         # ai_act = agent_policy.predict(ai_obs)[0]
-#         # ai_act = evaluate(agent_policy, ai_obs)  # 确定性策略
-#         ai_act = ai_agent.evaluate(ai_obs)  # 随机策略
-#         h_act = h_policy.choose_action(h_obs, deterministic=True)
-#         obs, sparse_reward, done, info = env.step((ai_act,h_act))
-#         ego_obs_, alt_obs_ = obs['both_agent_obs']
-#         accumulated_reward += sparse_reward
-#     return accumulated_reward
-
 
 class BPR_offline:
     """
@@ -85,8 +69,7 @@ class BPR_offline:
         APL = MTPLibrary()
         self.human_policys = HPL.gen_policy_library(META_TASKS[args.layout])
         self.ai_policys = APL.gen_policy_library(args)
-        # print('init agent policy library is ', self.ai_policys)
-        # print('init human policy library is ', self.human_policys)
+
 
     def gen_belief(self) -> Dict[str, float]:
         """
@@ -159,6 +142,7 @@ class BPR_online:
                 ai_obs_, h_obs_ = obs_['both_agent_obs']
                 h_dire = info['joint_action'][1]
                 h_act = Action.INDEX_TO_ACTION.index(h_dire)
+
                 # wanghm 用NN作预测
                 actions_one_hot = np.eye(6)[h_act]
                 obs_x = np.hstack([h_obs, actions_one_hot])
@@ -184,7 +168,7 @@ class BPR_online:
                 #     best_agent_id_prime = best_agent_id
 
             print(f'Ep {k + 1} rewards: {ep_reward}')
-            # wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+            wandb.log({'episode': k+1, 'ep_reward': ep_reward})
 
     def _update_beta(self,Q) -> Dict[str, float]:
         """
@@ -233,7 +217,7 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='''Bayesian policy reuse algorithm on overcooked''')
     parser.add_argument('--device', type=str, default='cuda')
-    parser.add_argument('--layout', default='cramped_room')
+    parser.add_argument('--layout', default='marshmallow_experiment')
     # parser.add_argument('--layout', default='marshmallow_experiment')
     parser.add_argument('--num_episodes', type=int, default=100)
     parser.add_argument('--mode', type=str, default='intra', help='swith policy inter or intra')
@@ -249,14 +233,14 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     LAYOUT_NAME = args.layout
-    now = datetime.now()
-    formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
-    # wandb.init(project='overcooked_rl',
-    #            group='BPR',
-    #            name=f'bprNN_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
-    #            config=vars(args),
-    #            job_type='eval',
-    #            reinit=True)
+    # now = datetime.now()
+    # formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
+    wandb.init(project='overcooked_rl',
+               group='BPR',
+               name=f'bprNN_{args.layout}_{args.mode}{args.switch_human_freq}-Q{args.Q_len}_seed{args.seed}',
+               config=vars(args),
+               job_type='eval',
+               reinit=True)
 
     if args.mode == 'inter':
         random.seed(42)
@@ -282,7 +266,7 @@ if __name__ == '__main__':
                             belief=belief)
 
     bpr_online.play(args, logger=None)
-    # wandb.finish()
+    wandb.finish()
 
 
 

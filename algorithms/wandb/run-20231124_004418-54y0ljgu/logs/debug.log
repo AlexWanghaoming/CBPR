@@ -25,3 +25,10 @@ config: {'hidden_dim': 128, 'batch_size': 4096, 'mini_batch_size': 128, 'use_min
 2023-11-24 00:44:22,020 INFO    MainThread:1543986 [wandb_run.py:_redirect():2119] Wrapping output streams.
 2023-11-24 00:44:22,020 INFO    MainThread:1543986 [wandb_run.py:_redirect():2144] Redirects installed.
 2023-11-24 00:44:22,021 INFO    MainThread:1543986 [wandb_init.py:init():845] run started, returning control to user process
+2023-11-24 01:08:02,444 INFO    MainThread:1543986 [wandb_run.py:_finish():1934] finishing run wanghm/overcooked_rl/54y0ljgu
+2023-11-24 01:08:02,444 INFO    MainThread:1543986 [wandb_run.py:_atexit_cleanup():2168] got exitcode: 0
+2023-11-24 01:08:02,444 INFO    MainThread:1543986 [wandb_run.py:_restore():2151] restore
+2023-11-24 01:08:02,444 INFO    MainThread:1543986 [wandb_run.py:_restore():2157] restore done
+2023-11-24 01:25:20,306 INFO    MainThread:1543986 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2023-11-24 01:25:20,306 INFO    MainThread:1543986 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2023-11-24 01:25:20,308 INFO    MainThread:1543986 [wandb_run.py:_footer_sync_info():3558] logging synced files

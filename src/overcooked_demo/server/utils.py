@@ -2,7 +2,7 @@ import os
 from threading import Lock
 
 # this is the mounted volume
-DOCKER_VOLUME = "/app/data"
+SOURCE_DIR = "/alpha/overcooked_rl/src/overcooked_demo/real_human_test"
 
 
 class ThreadSafeSet(set):
@@ -75,10 +75,11 @@ def create_dirs(config: dict, cur_layout: str):
     We group the data by layout/type/time
     """
     path = os.path.join(
-        # DOCKER_VOLUME,  # wanghm
+        SOURCE_DIR,
         cur_layout,
         config["old_dynamics"],
         config["type"],
+        config["playerName"],  # wanghm
         config["time"],
     )
     if not os.path.exists(path):

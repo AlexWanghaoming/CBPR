@@ -22,11 +22,11 @@ SCRIPT_AGENTS = {
 """
 
 
-layout = 'counter_circuit'
+layout = 'asymmetric_advantages'
 num_episodes = 50
 env = init_env(layout=layout,
-               agent0_policy_name='script:pickup_ingredient_and_place_mix',
-               agent1_policy_name='script:place_onion_and_deliver_soup',
+               agent0_policy_name='script:place_onion_in_pot',
+               agent1_policy_name='script:deliver_soup',
                use_script_policy=True)
 
 for k in range(1, num_episodes + 1):

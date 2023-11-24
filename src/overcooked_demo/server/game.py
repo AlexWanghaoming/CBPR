@@ -8,7 +8,7 @@ from threading import Lock, Thread
 from time import time
 
 import ray
-from utils import DOCKER_VOLUME, create_dirs
+from utils import create_dirs
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from human_aware_rl.rllib.rllib import load_agent
@@ -19,7 +19,7 @@ from overcooked_ai_py.planning.planners import (
     NO_COUNTERS_PARAMS,
     MotionPlanner,
 )
-from my_agents import CBPR_ai
+from my_agents import CBPR_ai, BCP_ai
 
 
 # Relative path to where all static pre-trained agents are stored on server
@@ -413,7 +413,7 @@ class OvercookedGame(Game):
 
     def __init__(
         self,
-        layouts=["cramped_room"],
+        layouts=["cramped_room", "asymmetric_advantages"],
         mdp_params={},
         num_players=2,
         gameTime=30,
@@ -707,8 +707,9 @@ class OvercookedGame(Game):
         data = {
             "uid": str(time()),
             "trajectory": self.trajectory,
+            "final_reward": self.score
         }
-        print("lens: ",len(data['trajectory']))
+        # print("lens: ",len(data['trajectory']))
         self.trajectory = []
         # if we want to store the data and there is data to store
         if self.write_data and len(data["trajectory"]) > 0:
@@ -722,16 +723,20 @@ class OvercookedGame(Game):
 
 
 class BPR_overcookedGame(OvercookedGame):
-    def __init__(self, layouts=["cramped_room", "asymmetric_advantages", "marshmallow_experiment", "coordination_ring"], **kwargs):
+    def __init__(self, layouts=["asymmetric_advantages",
+                                "cramped_room",
+                                "marshmallow_experiment",
+                                "coordination_ring"], **kwargs):
         super(BPR_overcookedGame, self).__init__(layouts, **kwargs)
 
     def get_policy(self, npc_id, idx=0):
         if npc_id == "CBPR":
-            print('BPRBPRBPRBPRBPRBPRBPR')
+            print('BPRBPRBPR')
             return CBPR_ai(self)
 
         elif npc_id == "BCP":
-            raise NotImplementedError
+            print('BCPBCPBCP')
+            return BCP_ai(self)
 
         elif npc_id == "FCP":
             raise NotImplementedError
@@ -823,7 +828,7 @@ class DummyOvercookedGame(OvercookedGame):
     Class that hardcodes the AI to be random. Used for debugging
     """
 
-    def __init__(self, layouts=["cramped_room"], **kwargs):
+    def __init__(self, layouts=["cramped_room", "asymmetric_advantages"], **kwargs):
         super(DummyOvercookedGame, self).__init__(layouts, **kwargs)
 
     def get_policy(self, *args, **kwargs):

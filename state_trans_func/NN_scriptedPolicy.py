@@ -5,18 +5,15 @@ import os, sys
 import numpy as np
 import torch.nn.functional as F
 from My_utils import init_env
-from models import MTP_MODELS
+from models import MTP_MODELS, META_TASKS
 from tqdm import tqdm
 import random
 from src.overcooked_ai_py.mdp.actions import Action
 
 
 device = 'cuda'
-LAYOUT_NAME = 'marshmallow_experiment'
-META_TASKS = ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random', 'place_onion_and_deliver_soup', 'place_tomato_and_deliver_soup']
-# declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup')  # cramped_room
-# declare -a scripted_policies=('place_onion_in_pot' 'place_tomato_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup' 'place_tomato_and_deliver_soup') # marshmallow_experiment
-# declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup')  # asymmetric_advantages
+LAYOUT_NAME = 'coordination_ring'
+# LAYOUT_NAME = 'marshmallow_experiment'
 
 
 class NN(nn.Module):
@@ -72,9 +69,10 @@ def shuffle_dict(dictOfList):
 if __name__ == '__main__':
     N = 50000
     num_episodes = N//600 + 1
-    for idx, meta_task in enumerate(META_TASKS):
+    for idx, meta_task in enumerate(META_TASKS[LAYOUT_NAME]):
         meta_task_trajs = {'train_s': [], 'train_a': [], 'train_r': [], 'train_s_': []}
         mtp_model_path = MTP_MODELS[LAYOUT_NAME][idx]
+        print('mtp model path:',mtp_model_path )
         mtp_agent = torch.load(mtp_model_path)
         env = init_env(layout=LAYOUT_NAME,
                        agent0_policy_name='mtp',
@@ -101,6 +99,7 @@ if __name__ == '__main__':
                 else:
                     break
                 ego_obs, alt_obs = ego_obs_, alt_obs_
+                # env.render(interval=0.08)
             print(f'Ep:', ep_reward)
 
         shuffle_dict(meta_task_trajs) # 将样本打乱，方便神经网络学习

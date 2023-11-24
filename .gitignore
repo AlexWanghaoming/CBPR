@@ -1,5 +1,7 @@
 
 state_trans_func/gp_trajs_cramped_room.pkl
 state_trans_func/gp_trajs_marshmallow_experiment.pkl
+algorithms/wandb
+algorithms/baselines/wandb
 
 __pycache__/

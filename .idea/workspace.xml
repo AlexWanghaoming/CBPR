@@ -5,74 +5,108 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4be4f475-155a-4b0a-9825-15e5576d7ad7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy2.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/figures/wandb_plot_bcp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overcooked_demo/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overcooked_demo/server/app_old.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overcooked_demo/server/my_agents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/index_old.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overcooked_demo/server/xxx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/overcooked_rl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/overcooked_rl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/wandb_plot_sp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/sac.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/sac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/FCP_stage2.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/FCP_stage2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/bcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/eval_bcp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/eval_bcp.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_humanProxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_humanProxy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_keystat.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_keystat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_scriptPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/evaluate_bcp_scriptPolicy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/baselines/script_agent_playing.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/script_agent_playing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/sp_ppo_elegant.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo_elegant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/sp_ppo_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo_tune.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/sp_sac.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_sac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/train_bcp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/train_bcp.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/debug-internal.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/debug-internal.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/latest-run" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/latest-run" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/bpr_NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/bpr_NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/bpr_NN_humanProxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/bpr_NN_humanProxy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/bpr_NN_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/bpr_NN_scriptedPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/bpr_gp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/bpr_gp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_keystate.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_keystate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_vae.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_vae.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/okr.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/okr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/okr_humanProxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/okr_humanProxy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/okr_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/okr_scriptedPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/replay_mtp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/replay_mtp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/eval_CBPR.sh" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/eval_CBPR.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy2.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/wandb/debug-internal.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/debug-internal.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/wandb/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/wandb/latest-run" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/latest-run" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/bc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/bc_hh.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc_hh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/replay_human_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/replay_human_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miscs/plot_BCP-BC_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/plot_BCP-BC_distribution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miscs/plot_hh_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/plot_hh_distribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/files/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/files/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/files/output.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/files/output.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/files/wandb-summary.json" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/files/wandb-summary.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/logs/debug-internal.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/logs/debug-internal.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/run-54y0ljgu.wandb" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/wandb/run-20231124_004418-54y0ljgu/run-54y0ljgu.wandb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_counter_circuit.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_counter_circuit.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/HP_counter_circuit.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/HP_counter_circuit.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bcp/bcp_asymmetric_advantages-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bcp/bcp_asymmetric_advantages-seed1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bcp/bcp_cramped_room-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bcp/bcp_cramped_room-seed1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bcp/bcp_marshmallow_experiment-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bcp/bcp_marshmallow_experiment-seed1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-deliver_soup-seed1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_and_deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_and_deliver_soup-seed1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_in_pot-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_in_pot-seed1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-random-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-random-seed1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_asymmetric_advantages-deliver_soup-seed1.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_asymmetric_advantages-place_onion_and_deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/asymmetric_advantages/mtp_asymmetric_advantages-place_onion_and_deliver_soup-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_asymmetric_advantages-place_onion_in_pot-seed1.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_asymmetric_advantages-random-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/asymmetric_advantages/mtp_asymmetric_advantages-random-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-deliver_soup-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-deliver_soup-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-deliver_soup-seed2.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-deliver_soup-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-deliver_soup-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-deliver_soup-seed4.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-deliver_soup-seed4.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-deliver_soup-seed5.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-deliver_soup-seed5.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_and_deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_and_deliver_soup-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_and_deliver_soup-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_and_deliver_soup-seed2.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_and_deliver_soup-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_and_deliver_soup-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_and_deliver_soup-seed4.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_and_deliver_soup-seed4.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_and_deliver_soup-seed5.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_and_deliver_soup-seed5.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_in_pot-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_in_pot-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_in_pot-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_in_pot-seed2.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_in_pot-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_in_pot-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_in_pot-seed4.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_in_pot-seed4.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-place_onion_in_pot-seed5.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-place_onion_in_pot-seed5.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-random-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-random-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-random-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-random-seed2.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-random-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-random-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-random-seed4.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-random-seed4.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_coordination_ring-random-seed5.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/coordination_ring/mtp_coordination_ring-random-seed5.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-deliver_soup-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-deliver_soup-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-deliver_soup-seed2.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-deliver_soup-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-deliver_soup-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-deliver_soup-seed4.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-deliver_soup-seed4.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-deliver_soup-seed5.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-deliver_soup-seed5.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_and_deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-place_onion_and_deliver_soup-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_and_deliver_soup-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-place_onion_and_deliver_soup-seed2.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_and_deliver_soup-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-place_onion_and_deliver_soup-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_in_pot-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-place_onion_in_pot-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_in_pot-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-place_onion_in_pot-seed2.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_in_pot-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-place_onion_in_pot-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_in_pot-seed4.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-place_onion_in_pot-seed4.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-place_onion_in_pot-seed5.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-place_onion_in_pot-seed5.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-random-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-random-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-random-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-random-seed2.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-random-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-random-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-random-seed4.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-random-seed4.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_cramped_room-random-seed5.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/cramped_room/mtp_cramped_room-random-seed5.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/marshmallow_experiment/mtp_marshmallow_experiment-deliver_soup-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-place_onion_and_deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_onion_and_deliver_soup-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-place_onion_in_pot-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_onion_in_pot-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-place_tomato_and_deliver_soup-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_tomato_and_deliver_soup-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-place_tomato_in_pot-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_tomato_in_pot-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_marshmallow_experiment-random-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/marshmallow_experiment/mtp_marshmallow_experiment-random-seed1.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_mdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_mdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/down.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/app.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/app_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/New/AH/2023-11-23_21-36-31/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/New/AH/2023-11-23_21-54-04/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/New/AH/2023-11-23_22-29-00/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-23_22-39-37/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-23_22-41-25/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-23_23-03-24/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-23_23-06-19/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-23_23-06-52/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-33-59/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-39-57/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-41-48/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-45-30/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-46-18/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-49-45/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-51-33/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-52-06/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-53-18/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-54-11/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-56-26/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-57-11/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/cramped_room/Old/AH/2023-11-24_00-59-31/result.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/my_agents.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/my_agents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/predefined.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/js/predefined.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/static/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_trans_func/GP_GPy.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/GP_GPy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/up.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/state_trans_func/NN_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/NN_scriptedPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_trans_func/collect_trajs.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_trans_func/collect_trajs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,21 +158,21 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/figures" />
+      <recent name="$PROJECT_DIR$/models/mtp" />
       <recent name="$PROJECT_DIR$/src/overcooked_demo/server" />
       <recent name="$PROJECT_DIR$/src/overcooked_demo/server/static/templates" />
       <recent name="$PROJECT_DIR$/algorithms" />
-      <recent name="$PROJECT_DIR$/src/overcooked_ai_py/data/layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/mtp/asymmetric_advantages" />
+      <recent name="$PROJECT_DIR$/models/mtp/marshmallow_experiment" />
+      <recent name="$PROJECT_DIR$/models/mtp/cramped_room" />
+      <recent name="$PROJECT_DIR$/models/mtp/coordination_ring" />
       <recent name="$PROJECT_DIR$/figures" />
-      <recent name="$PROJECT_DIR$/algorithms/baselines" />
-      <recent name="$PROJECT_DIR$/models/bcp" />
-      <recent name="$PROJECT_DIR$/miscs" />
-      <recent name="$PROJECT_DIR$/state_trans_func" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.my_agents">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Shell Script.eval_CBPR.sh">
+    <configuration name="NN_scriptedPolicy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -146,12 +180,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/overcooked_demo/server" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/state_trans_func" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/overcooked_demo/server/app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/state_trans_func/NN_scriptedPolicy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,73 +194,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="overcooked_rl" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/overcooked_demo/server" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/overcooked_demo/server/game.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="my_agents" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="overcooked_rl" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/overcooked_demo/server" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/overcooked_demo/server/my_agents.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="wandb_plot_bcp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="overcooked_rl" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/figures" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/figures/wandb_plot_bcp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="wandb_plot_mtp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="bpr_NN_scriptedPolicy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -239,13 +207,65 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/figures/wandb_plot_mtp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/bpr_NN_scriptedPolicy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="script_agent_playing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="overcooked_rl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms/baselines" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/baselines/script_agent_playing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="eval_CBPR.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/algorithms/eval_CBPR.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="mtp_scriptedPolicy2.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy2.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="mtp_scriptedPolicy.sh" type="ShConfigurationType">
@@ -264,20 +284,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.app" />
-      <item itemvalue="Python.game" />
-      <item itemvalue="Python.my_agents" />
-      <item itemvalue="Python.wandb_plot_bcp" />
-      <item itemvalue="Python.wandb_plot_mtp" />
+      <item itemvalue="Python.NN_scriptedPolicy" />
+      <item itemvalue="Python.bpr_NN_scriptedPolicy" />
+      <item itemvalue="Python.script_agent_playing" />
       <item itemvalue="Shell Script.mtp_scriptedPolicy.sh" />
+      <item itemvalue="Shell Script.eval_CBPR.sh" />
+      <item itemvalue="Shell Script.mtp_scriptedPolicy2.sh" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.my_agents" />
-        <item itemvalue="Python.app" />
-        <item itemvalue="Python.game" />
-        <item itemvalue="Python.wandb_plot_bcp" />
-        <item itemvalue="Python.wandb_plot_mtp" />
+        <item itemvalue="Shell Script.eval_CBPR.sh" />
+        <item itemvalue="Python.bpr_NN_scriptedPolicy" />
+        <item itemvalue="Shell Script.mtp_scriptedPolicy2.sh" />
+        <item itemvalue="Python.NN_scriptedPolicy" />
+        <item itemvalue="Python.script_agent_playing" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +327,7 @@
       <workItem from="1699338590769" duration="64749000" />
       <workItem from="1699583622410" duration="88424000" />
       <workItem from="1699809148835" duration="109268000" />
-      <workItem from="1700240614449" duration="49379000" />
+      <workItem from="1700240614449" duration="70933000" />
     </task>
     <servers />
   </component>
@@ -430,7 +450,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/overcooked_demo/server/my_agents.py</url>
-          <line>95</line>
+          <line>124</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
@@ -461,8 +481,8 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$bpr_gp.coverage" NAME="bpr_gp Coverage Results" MODIFIED="1693938318138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1695803481670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/overcooked_rl$run_test_game.coverage" NAME="run_test_game Coverage Results" MODIFIED="1692714414268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$script_agent_playing.coverage" NAME="script_agent_playing Coverage Results" MODIFIED="1700238781088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$NN_scriptedPolicy.coverage" NAME="NN_scriptedPolicy Coverage Results" MODIFIED="1699846242214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$script_agent_playing.coverage" NAME="script_agent_playing Coverage Results" MODIFIED="1700766559952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$NN_scriptedPolicy.coverage" NAME="NN_scriptedPolicy Coverage Results" MODIFIED="1700767583393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_BCP_hh_distribution.coverage" NAME="plot_BCP-hh_distribution Coverage Results" MODIFIED="1699703693700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$FCP_stage1.coverage" NAME="FCP_stage1 Coverage Results" MODIFIED="1699809552072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$okr_online.coverage" NAME="okr_online Coverage Results" MODIFIED="1693387260779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
@@ -506,7 +526,7 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_hh_distribution.coverage" NAME="plot_hh_distribution Coverage Results" MODIFIED="1700497027072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$utils.coverage" NAME="utils Coverage Results" MODIFIED="1700240377854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_BCP_BC_distribution.coverage" NAME="plot_BCP-BC_distribution Coverage Results" MODIFIED="1700498189019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN_scriptedPolicy.coverage" NAME="bpr_NN_scriptedPolicy Coverage Results" MODIFIED="1700051997962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN_scriptedPolicy.coverage" NAME="bpr_NN_scriptedPolicy Coverage Results" MODIFIED="1700813762234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$okr_scriptedPolicy.coverage" NAME="okr_scriptedPolicy Coverage Results" MODIFIED="1699857703158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp.coverage" NAME="evaluate_bcp Coverage Results" MODIFIED="1699723948781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp_scriptPolicy.coverage" NAME="evaluate_bcp_scriptPolicy Coverage Results" MODIFIED="1699781425385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />

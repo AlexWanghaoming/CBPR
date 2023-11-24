@@ -9,6 +9,8 @@ $(function() {
     $('#create').click(function () {   // click： 当用户点击具有 id 为 create 的 HTML 元素时，会触发这个函数。
         params = arrToJSON($('form').serializeArray());
         params.layouts = [params.layout]
+        params.playerName = [params.playerName]  // wanghm 拿到html表单中的用户名
+
         data = {
             "params" : params,
             "game_name" : "overcooked",

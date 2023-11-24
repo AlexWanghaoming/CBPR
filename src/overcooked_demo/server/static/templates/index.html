@@ -28,24 +28,33 @@
   <body>
     <form>
       <div class="container">
+
+    <div class="form-group col-lg-3">
+      <label for="playerName">玩家姓名</label>
+      <input type="text" class="form-control" id="playerName" name="playerName" placeholder="Enter your name">
+    </div>
+
       <div class="row text-center">
 	<div class="form-group col-lg-3">
 	  <label for="playerZero" style="color:#1E6A9E">Player 1</label>
 	  <select class="form-control" id="playerZero" name="playerZero">
         <option value="CBPR">CBPR</option>
+        <option value="BCP">BCP</option>
+        <option value="FCP">FCP</option>
+        <option value="SP">SP</option>
 <!--        <option value="human">Human Keyboard Input</option>-->
-        {% for agent_name in agent_names %}
-            <option value={{agent_name}}>{{agent_name}}</option>
-        {% endfor %}
+<!--        {% for agent_name in agent_names %}-->
+<!--            <option value={{agent_name}}>{{agent_name}}</option>-->
+<!--        {% endfor %}-->
 	  </select>
     </div>
   <div class="form-group col-lg-3">
     <label for="playerOne" style="color:#44956B">Player 2</label>
     <select class="form-control" id="playerOne" name="playerOne">
         <option value="human">Human Keyboard Input</option>
-        {% for agent_name in agent_names %}
-            <option value={{agent_name}}>{{agent_name}}</option>
-        {% endfor %}
+<!--        {% for agent_name in agent_names %}-->
+<!--            <option value={{agent_name}}>{{agent_name}}</option>-->
+<!--        {% endfor %}-->
     </select>
   </div>
 	<div class="form-group col-lg-2">

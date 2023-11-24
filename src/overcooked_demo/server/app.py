@@ -461,6 +461,9 @@ def creation_params(params):
         use_old = True
 
     if "dataCollection" in params and params["dataCollection"] == "on":
+        player_name = params['playerName'][0]
+        print(f"用户{player_name}开始游戏")
+
         # config the necessary setting to properly save data
         params["dataCollection"] = True
         mapping = {"human": "H"}
@@ -472,6 +475,7 @@ def creation_params(params):
         params["collection_config"] = {
             "time": datetime.today().strftime("%Y-%m-%d_%H-%M-%S"),
             "type": gameType,
+            "playerName": player_name
         }
         if use_old:
             params["collection_config"]["old_dynamics"] = "Old"
@@ -660,7 +664,7 @@ def play_game(game: BPR_overcookedGame, fps=6):
 if __name__ == "__main__":
     # Dynamically parse host and port from environment variables (set by docker build)
     host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", 5000))
+    port = int(os.getenv("PORT", 5001))
 
     # Attach exit handler to ensure graceful shutdown
     atexit.register(on_exit)
