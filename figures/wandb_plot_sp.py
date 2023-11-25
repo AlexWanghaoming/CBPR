@@ -7,6 +7,9 @@ import matplotlib as mpl
 from scipy.ndimage import gaussian_filter1d
 
 
+WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+GROUP = 'SP'
+
 # 设置字体和样式
 plt.style.use('seaborn-whitegrid')  # 一个清晰、美观的样式
 mpl.rcParams['font.family'] = 'Arial'  # 设置字体为 Arial
@@ -19,34 +22,34 @@ mpl.rcParams['legend.fontsize'] = 13  # 设置图例的字体大小
 # mpl.rcParams['image.cmap'] = 'viridis'
 
 
-GROUP = 'SP'
-SOURCE_DIR = '/alpha/overcooked_rl'
-WANDB_PATH = SOURCE_DIR + '/algorithms/baselines/wandb'
-
 l2c = {'cramped_room': '#FF0000',
        'asymmetric_advantages': '#0000FF',
        'coordination_ring': '#008000',
        'marshmallow_experiment': '#8B4513'}
 
 
-runs = glob.glob(f"{WANDB_PATH}/run*")
+runs = glob.glob(f"{WANDB_DIR}/*run*")
 run_ids = [x.split('-')[-1] for x in runs]
 print(runs)
 print(run_ids)
 api = wandb.Api()
-num_episodes = 2000
 
+num_episodes = 2000
 
 plt.figure(figsize=(8, 5))
 for layout_name in l2c:
     reward_list = []
+    num_runs = 0
     for run_id in run_ids:
+        if num_runs>5:
+            break
         try:
             run = api.run(f"wanghm/overcooked_rl/{run_id}")
         except wandb.errors.CommError:
             continue
-        if run.state == "finished" and run.name.startswith(f'bcp_ppo_{layout_name}_seed'):
-            print(run.name)
+        if run.state == "finished" and run.name.startswith(f'sp_ppo_{layout_name}_seed'):
+            print(f"{run_id}:{run.name}")
+            num_runs += 1
             num_ep = run.config['num_episodes']
             # print(num_ep)
             history = run.history(samples=num_episodes)[['_step', 'ep_reward']]
@@ -59,18 +62,19 @@ for layout_name in l2c:
     mean_rewards = gaussian_filter1d(mean_rewards, sigma=5)  # 平滑处理
     std_rewards = np.std(rewards_array, axis=0)
     std_rewards = gaussian_filter1d(std_rewards, sigma=5)
-    episodes = np.arange(1, num_episodes+1)
+    episodes = np.arange(1, num_episodes+1) * 600
     plt.plot(episodes, mean_rewards, color=l2c[layout_name], label=layout_name)
     # plt.plot(episodes, mean_rewards)
     plt.fill_between(episodes, mean_rewards-std_rewards, mean_rewards+std_rewards, alpha=0.2, color=l2c[layout_name])
     # plt.fill_between(episodes, mean_rewards-std_rewards, mean_rewards+std_rewards, alpha=0.2)
-    plt.xlabel('Episode')
+    plt.xlabel('Environment steps')
     plt.ylabel('Mean episode reward')
-    plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+    # plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+    # plt.gca().xaxis.set_major_formatter(FuncFormatter(format_ticks))
 plt.legend(loc='best')
 plt.grid(axis='x')
 plt.tight_layout()
-plt.savefig(f'bcp_training.pdf', bbox_inches='tight')
+plt.savefig(f'sp_training.pdf', bbox_inches='tight')
 plt.show()
 
 

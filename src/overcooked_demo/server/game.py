@@ -19,7 +19,7 @@ from overcooked_ai_py.planning.planners import (
     NO_COUNTERS_PARAMS,
     MotionPlanner,
 )
-from my_agents import CBPR_ai, BCP_ai
+from my_agents import CBPR_ai, Baseline_ai
 
 
 # Relative path to where all static pre-trained agents are stored on server
@@ -736,13 +736,16 @@ class BPR_overcookedGame(OvercookedGame):
 
         elif npc_id == "BCP":
             print('BCPBCPBCP')
-            return BCP_ai(self)
+            return Baseline_ai(self, agent_type='BCP')
 
         elif npc_id == "FCP":
-            raise NotImplementedError
+            print('FCPFCPFCP')
+            return Baseline_ai(self, agent_type='FCP')
 
         elif npc_id == "SP":
-            raise NotImplementedError
+            print('SPSPSP')
+            return Baseline_ai(self, agent_type='SP')
+
         else:
             pass
 

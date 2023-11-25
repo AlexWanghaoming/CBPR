@@ -8,7 +8,7 @@ import argparse
 from collections import deque
 import numpy as np
 import torch
-from models import BCP_MODELS
+from models import BCP_MODELS, SP_MODELS, FCP_MODELS
 
 
 class CBPR_ai(BPR_online):
@@ -85,7 +85,82 @@ class CBPR_ai(BPR_online):
         self.Q = deque(maxlen=self.args.Q_len)
 
 
-class BCP_ai():
+class Baseline_ai():
+    def __init__(self, og, agent_type:str):
+        self.og  = og
+        self.layout = self.og.layouts[0]
+        print('Current layout:', self.og.layouts[0])
+        agent_evaluator = AgentEvaluator.from_layout_name(
+            mdp_params={"layout_name": self.layout},
+            env_params={
+                "horizon": 600
+            },
+        )
+        self.mdp = agent_evaluator.env.mdp
+        self.env = agent_evaluator.env
+        self.device = 'cuda'
+        self.ep_reward = 0
+        if agent_type == 'BCP':
+            self.ai_agent = torch.load(BCP_MODELS[self.layout])
+        elif agent_type == 'FCP':
+            self.ai_agent = torch.load(FCP_MODELS[self.layout])
+        elif agent_type == "SP":
+            self.ai_agent = torch.load(SP_MODELS[self.layout])
+        else:
+            pass
+
+    def evaluate(self, actor, s):
+        s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
+        a_prob = actor(s).detach().cpu().numpy().flatten()
+        a = np.argmax(a_prob)
+        return a
+
+    def action(self, state):
+        # print('trajs:', self.og.trajectory[-1])
+        ai_obs, h_obs = self.env.featurize_state_mdp(state)  # OvercookedState -> featurized state
+        ai_act = self.evaluate(self.ai_agent, ai_obs)
+        action = Action.ALL_ACTIONS[ai_act]
+        return action, None
+
+    def reset(self):
+        print('RESET GAME！')
+
+
+class FCP_ai():
+    def __init__(self, og):
+        self.og  = og
+        self.layout = self.og.layouts[0]
+        print('Current layout:', self.og.layouts[0])
+        agent_evaluator = AgentEvaluator.from_layout_name(
+            mdp_params={"layout_name": self.layout},
+            env_params={
+                "horizon": 600
+            },
+        )
+        self.mdp = agent_evaluator.env.mdp
+        self.env = agent_evaluator.env
+        self.device = 'cuda'
+        self.ep_reward = 0
+        self.ai_agent = torch.load(FCP_MODELS[self.layout])
+
+    def evaluate(self, actor, s):
+        s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
+        a_prob = actor(s).detach().cpu().numpy().flatten()
+        a = np.argmax(a_prob)
+        return a
+
+    def action(self, state):
+        # print('trajs:', self.og.trajectory[-1])
+        ai_obs, h_obs = self.env.featurize_state_mdp(state)  # OvercookedState -> featurized state
+        ai_act = self.evaluate(self.ai_agent, ai_obs)
+        action = Action.ALL_ACTIONS[ai_act]
+        return action, None
+
+    def reset(self):
+        print('RESET GAME！')
+
+
+class SP_ai():
     def __init__(self, og):
         self.og  = og
         self.layout = self.og.layouts[0]
@@ -117,7 +192,6 @@ class BCP_ai():
 
     def reset(self):
         print('RESET GAME！')
-
 
 
 # if __name__ == '__main__':

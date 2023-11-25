@@ -17,10 +17,10 @@ FCP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'fcp/fcp_cramped_roo
               'coordination_ring': os.path.join(_curr_directory, 'fcp/fcp_coordination_ring-seed1.pth')
               }
 
-SP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'sp/sp_cramped_room-seed1.pth'),
+SP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'sp/cramped_room_sp_periodic_3000.pt'),
              'marshmallow_experiment': os.path.join(_curr_directory, 'sp/sp_marshmallow_experiment-seed1.pth'),
-              'asymmetric_advantages': os.path.join(_curr_directory, 'sp/sp_asymmetric_advantages-seed1.pth'),
-              'coordination_ring': os.path.join(_curr_directory, 'sp/sp_coordination_ring-seed1.pth')
+              'asymmetric_advantages': os.path.join(_curr_directory, 'sp/marshmallow_experiment_sp_periodic_3000.pt'),
+              'coordination_ring': os.path.join(_curr_directory, 'sp/coordination_ring_sp_periodic_3000.pt')
               }
 
 BCP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bcp/bcp_cramped_room-seed1.pth'),
