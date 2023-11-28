@@ -12,7 +12,7 @@ from src.overcooked_ai_py.mdp.actions import Action
 
 
 device = 'cuda'
-LAYOUT_NAME = 'coordination_ring'
+LAYOUT_NAME = 'cramped_room'
 # LAYOUT_NAME = 'marshmallow_experiment'
 
 
@@ -67,10 +67,11 @@ def shuffle_dict(dictOfList):
 
 
 if __name__ == '__main__':
-    N = 50000
+    N = 100000
     num_episodes = N//600 + 1
     for idx, meta_task in enumerate(META_TASKS[LAYOUT_NAME]):
-        meta_task_trajs = {'train_s': [], 'train_a': [], 'train_r': [], 'train_s_': []}
+        # meta_task_trajs = {'train_s': [], 'train_a': [], 'train_r': [], 'train_s_': []}
+        meta_task_trajs = {'train_s': [], 'train_a': [], 'train_s_': []}
         mtp_model_path = MTP_MODELS[LAYOUT_NAME][idx]
         print('mtp model path:',mtp_model_path )
         mtp_agent = torch.load(mtp_model_path)
@@ -94,7 +95,7 @@ if __name__ == '__main__':
                 if len(meta_task_trajs['train_s']) <= N:
                     meta_task_trajs['train_s'].append(alt_obs)
                     meta_task_trajs['train_a'].append(alt_a)
-                    meta_task_trajs['train_r'].append(sparse_reward)
+                    # meta_task_trajs['train_r'].append(sparse_reward)
                     meta_task_trajs['train_s_'].append(alt_obs_)
                 else:
                     break
@@ -114,30 +115,26 @@ if __name__ == '__main__':
         save_path = f'../models/NN/NN_{LAYOUT_NAME}_{meta_task}_s_prime_r.pth'
         states_train = meta_task_trajs['train_s']
         actions_train = meta_task_trajs['train_a']
-        rewards_train = np.reshape(meta_task_trajs['train_r'], (-1, 1))
+        # rewards_train = np.reshape(meta_task_trajs['train_r'], (-1, 1))
         s_prime_train = meta_task_trajs['train_s_']
         actions_one_hot = np.eye(action_dim)[actions_train]
         # 拼接状态和动作
         s_a = np.hstack([states_train, actions_one_hot])
         s_a = torch.from_numpy(s_a).float().to(device)
-        rewards_train = torch.from_numpy(rewards_train).float().to(device)
+
+        # rewards_train = torch.from_numpy(rewards_train).float().to(device)
         s_prime_train = torch.from_numpy(s_prime_train).float().to(device)
-        s_prime_r = torch.hstack([s_prime_train, rewards_train])
+        # s_prime_r = torch.hstack([s_prime_train, rewards_train])
 
-        # s_prime_r = torch.from_numpy(s_prime_train).float().to(device)  # s,a -> s_prime
-        # s_a_test = s_a
-        # s_prime_r_test = s_prime_r
-        # s_a_train = s_a
-        # s_prime_r_train = s_prime_r
 
-        model = NN(input_dim=s_a.shape[1], output_dim=s_prime_r.shape[1]).to(device)
+        model = NN(input_dim=s_a.shape[1], output_dim=s_prime_train.shape[1]).to(device)
         model.train()
         # Use the adam optimizer
         optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
         for i in range(epochs):
             optimizer.zero_grad()
             output = model(s_a)
-            train_loss = loss_fn(output, s_prime_r)
+            train_loss = loss_fn(output, s_prime_train)
             train_loss.backward()
             optimizer.step()
             # val_loss = val(model, x_val=s_a_test, y_val=s_prime_r_test)

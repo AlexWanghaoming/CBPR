@@ -61,7 +61,8 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
             if ego_buffer.count == args.batch_size:
                 ego_agent.update(ego_buffer, cur_steps)
                 ego_buffer.count = 0
-        wandb.log({'episode': k, 'ep_reward': episode_reward})
+        # wandb.log({'episode': k, 'ep_reward': episode_reward})
+        print(f'Ep {k} reward:', episode_reward)
     ego_agent.save_actor(f'../../models/bcp/bcp_{args.layout}-seed{seed}.pth')
 
 
@@ -90,12 +91,12 @@ def run():
     args.state_dim = 96
     args.action_dim = 6
 
-    wandb.init(project='overcooked_rl',
-               group='BCP',
-               name=f'bcp_ppo_{args.layout}_seed{args.seed}',
-               job_type='training',
-               config=vars(args),
-               reinit=True)
+    # wandb.init(project='overcooked_rl',
+    #            group='BCP',
+    #            name=f'bcp_ppo_{args.layout}_seed{args.seed}',
+    #            job_type='training',
+    #            config=vars(args),
+    #            reinit=True)
 
 
     seed_everything(seed=args.seed)
@@ -113,7 +114,7 @@ def run():
 
     alt_agent = torch.load(BC_MODELS[args.layout], map_location='cpu')
     train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)  # wanghm
-    wandb.finish()
+    # wandb.finish()
 if __name__ == '__main__':
     run()
 

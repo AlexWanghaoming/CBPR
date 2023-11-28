@@ -1,9 +1,9 @@
 import sys, os
 from overcooked_ai_py.agents.benchmarking import AgentEvaluator
-from overcooked_ai_py.mdp.actions import Action, Direction
-import random
+from overcooked_ai_py.mdp.actions import Action
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../../algorithms')
-from bpr_NN_scriptedPolicy import BPR_online, MTPLibrary, NNLibrary, BPR_offline
+from experiments.exp1.bpr_NN_scriptedPolicy import BPR_online, MTPLibrary, NNLibrary, BPR_offline
 import argparse
 from collections import deque
 import numpy as np

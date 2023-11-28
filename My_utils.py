@@ -8,7 +8,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/src/')
 # print("当前系统路径", sys.path)
 from overcooked_ai_py.mdp.overcooked_mdp import OvercookedGridworld
 from overcooked_ai_py.mdp.overcooked_env import OvercookedEnv
-
+from torch.distributions import Categorical
 
 
 def parse_args():
@@ -168,7 +168,6 @@ class RewardScaling:
         self.R = np.zeros(self.shape)
 
 
-
 def get_device(device: Union[torch.device, str] = "auto") -> torch.device:
     """
     Retrieve PyTorch device.
@@ -184,9 +183,18 @@ def get_device(device: Union[torch.device, str] = "auto") -> torch.device:
         device = "cuda"
     # Force conversion to th.device
     device = torch.device(device)
-
     # Cuda not available
     if device.type == torch.device("cuda").type and not torch.cuda.is_available():
         return torch.device("cpu")
-
     return device
+
+
+def evaluate_actor(actor, s, deterministic=True):
+    s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
+    a_prob = actor(s)
+    if deterministic:
+        a = np.argmax(a_prob.detach().cpu().numpy().flatten())
+    else:
+        dist = Categorical(probs=a_prob)
+        a = dist.sample().cpu().numpy()[0]
+    return a

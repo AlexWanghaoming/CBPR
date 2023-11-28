@@ -75,7 +75,7 @@ def run():
     wandb.init(project='overcooked_rl',
                group='FCP',
                tags="fcp",
-               id="aa",
+               # id="aa",
                name=f'fcp_{args.layout}_seed{args.seed}',
                job_type='training',
                config=vars(args),
