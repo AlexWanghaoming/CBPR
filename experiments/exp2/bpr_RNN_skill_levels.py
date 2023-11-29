@@ -12,7 +12,7 @@ from bc.bc_hh import BehaviorClone
 from models import MTP_MODELS, NN_MODELS, SKILL_MODELS, META_TASKS
 from agents.ppo_discrete import PPO_discrete
 from state_trans_func.RNN_scriptedPolicy import RNNPredictor
-from My_utils import seed_everything, init_env, evaluate_actor
+from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval
 import math
 from src.overcooked_ai_py.mdp.actions import Action
 import wandb
@@ -140,7 +140,7 @@ class BPR_online:
             print(f'Ep {k + 1} rewards: {ep_reward}')
             r_list.append(ep_reward)
             # wandb.log({'episode': k+1, 'ep_reward': ep_reward})
-        print('Average reward:', sum(r_list)/len(r_list))
+        print_mean_interval(r_list)
 
     def _update_beta(self,Q) -> Dict[str, float]:
         """
@@ -151,7 +151,7 @@ class BPR_online:
         input_seqs = state_seq[:INPUT_LENGTH].unsqueeze(dim=0)
         target_seqs = state_seq[INPUT_LENGTH:][:, :96].unsqueeze(dim=0)
 
-        var = torch.tensor([1]).to(device)
+        var = torch.tensor([0.01]).to(device)
         std_dev = torch.sqrt(var)
         temp = {}
         new_belief = {}
@@ -189,8 +189,8 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='''Bayesian policy reuse algorithm on overcooked''')
     parser.add_argument('--device', type=str, default='cpu')
-    # parser.add_argument('--layout', default='cramped_room')
-    parser.add_argument('--layout', default='marshmallow_experiment')
+    parser.add_argument('--layout', default='cramped_room')
+    # parser.add_argument('--layout', default='marshmallow_experiment')
     parser.add_argument('--num_episodes', type=int, default=20)
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--Q_len', type=int, default=40)

@@ -13,7 +13,7 @@ from models import MTP_MODELS, NN_MODELS, META_TASKS
 from agents.ppo_discrete import PPO_discrete
 import random
 from state_trans_func.RNN_scriptedPolicy import RNNPredictor
-from My_utils import seed_everything, init_env
+from My_utils import seed_everything, init_env, print_mean_interval
 from datetime import datetime
 from src.overcooked_ai_py.mdp.actions import Action
 import wandb
@@ -84,7 +84,7 @@ class BPR_offline:
         beta = self.human_policys
         for i in beta.keys():
             beta[i] = 1 / lens
-        print('Initial belief is ', beta)
+        # print('Initial belief is ', beta)
         ss = deepcopy(beta)
         return ss
 
@@ -93,13 +93,11 @@ class BPR_online:
     def __init__(self, agents: Dict[str, PPO_discrete],
                  human_policys: Optional[Dict[str, nn.Module]],
                  NN_models: Dict[str, nn.Module],
-                 belief: Dict[str, float],
-                 new_polcy_threshold=0.3):
+                 belief: Dict[str, float]):
         self.belief = belief
         self.mtp = agents
         self.meta_tasks = human_policys
         self.NNs = NN_models
-        self.threshold = new_polcy_threshold
         # self.eps = 1e-6
         self.eps = 1e-7
 
@@ -109,7 +107,7 @@ class BPR_online:
         # 初始化人类模型和策略
         policy_idx = 2
         mts = META_TASKS[args.layout]
-        print(f"初始策略: metatask_{policy_idx}", mts[policy_idx - 1])
+        # print(f"初始策略: metatask_{policy_idx}", mts[policy_idx - 1])
         env = init_env(layout=args.layout,
                        agent0_policy_name='mtp',
                        agent1_policy_name=f'script:{mts[policy_idx - 1]}',
@@ -119,7 +117,7 @@ class BPR_online:
         for k in range(args.num_episodes):
             if args.mode == 'inter':
                 policy_idx = policy_id_list.pop()
-                print(f"人类改变至策略: metatask_{policy_idx}", mts[policy_idx - 1])  # log
+                # print(f"人类改变至策略: metatask_{policy_idx}", mts[policy_idx - 1])  # log
                 env.switch_script_agent(agent0_policy_name='mtp',
                                         agent1_policy_name=f'script:{mts[policy_idx - 1]}')
             Q = deque(maxlen=args.Q_len)
@@ -137,7 +135,7 @@ class BPR_online:
                 if args.mode == "intra":
                     if episode_steps % args.switch_human_freq == 0:
                         policy_idx = policy_id_list.pop()
-                        print(f"人类改变至策略: metatask_{policy_idx}", mts[policy_idx - 1])  # log
+                        # print(f"人类改变至策略: metatask_{policy_idx}", mts[policy_idx - 1])  # log
                         env.switch_script_agent(agent0_policy_name='mtp',
                                                 agent1_policy_name=f'script:{mts[policy_idx - 1]}')
                 ai_act = best_agent.evaluate(ai_obs)  # 智能体选动作
@@ -147,20 +145,9 @@ class BPR_online:
                 h_dire = info['joint_action'][1]
                 h_act = Action.INDEX_TO_ACTION.index(h_dire)
                 actions_one_hot = np.eye(6)[h_act]
-
-                # wanghm 用NN作预测
-                # actions_one_hot = np.eye(6)[h_act]
-                # obs_x = np.hstack([h_obs, actions_one_hot])
-                # obs_x = torch.from_numpy(h_obs).float().to(device)
-                # obs_y = np.hstack([h_obs_, sparse_reward]) # s_prime, r
-                # obs_y = h_obs_ # s_prime
-                # obs_y = torch.from_numpy(obs_y).float().to(device)
                 Q.append(np.hstack([h_obs, actions_one_hot]))
-
-                # if episode_steps % 10 == 0:
                 if len(Q) == args.Q_len:
-                    self.belief = self._update_beta(Q)
-
+                    self.belief = self._update_beta(args ,Q)
                 ai_obs, h_obs = ai_obs_, h_obs_
 
                 # # debug: 直接选对应的策略作为最优策略
@@ -174,10 +161,9 @@ class BPR_online:
             print(f'Ep {k + 1} rewards: {ep_reward}')
             r_list.append(ep_reward)
             # wandb.log({'episode': k+1, 'ep_reward': ep_reward})
-        print('Average reward:', sum(r_list)/len(r_list))
+        print_mean_interval(r_list)
 
-
-    def _update_beta(self,Q) -> Dict[str, float]:
+    def _update_beta(self, args, Q) -> Dict[str, float]:
         """
         这里和BPR NN *Efficient Bayesian Policy Reuse With a Scalable Observation Model in Deep Reinforcement Learning, TNNLS* 有区别
         belief: dict
@@ -186,28 +172,22 @@ class BPR_online:
         input_seqs = state_seq[:INPUT_LENGTH].unsqueeze(dim=0)
         target_seqs = state_seq[INPUT_LENGTH:][:, :96].unsqueeze(dim=0)
 
-        var = torch.tensor([0.01]).to(device)
+        var = torch.tensor([0.1]).to(device)
         std_dev = torch.sqrt(var)
 
         temp = {}
         new_belief = {}
-        exp_v = []
 
         for mt in self.belief:
             NN = self.NNs[mt]
             means = NN(input_seqs)  # (1, 960)  # 输入30个时间步的s,a，NN预测10个时间步（10*96）的状态，
             probs = (1 / (std_dev * (math.pi * 2) ** 0.5)) * torch.exp(-(means - target_seqs.contiguous().view(target_seqs.size(0), -1)) ** 2 / (2 * std_dev ** 2))
             su = torch.mean(probs).item()
-            print(mt, su)
             temp[mt] = su * self.belief[mt]
-            # temp[mt] = np.exp(su) * self.belief[mt]
 
-        # max_index = max(enumerate(exp_v), key=lambda x: x[1])[0] + 1
         for mt in self.belief:
             new_belief[mt] = (temp[mt] + self.eps) / (sum(temp.values()) + self.eps*len(META_TASKS[args.layout]))
 
-        # return new_belief, max_index == policy_idx
-        print('new belief:', new_belief)
         return new_belief
 
     def _reuse_optimal_policy(self) -> Tuple[str, PPO_discrete]:
@@ -222,14 +202,13 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='''Bayesian policy reuse algorithm on overcooked''')
     parser.add_argument('--device', type=str, default='cuda')
-    parser.add_argument('--layout', default='cramped_room')
+    parser.add_argument('--layout', default='coordination_ring')
     # parser.add_argument('--layout', default='marshmallow_experiment')
-    parser.add_argument('--num_episodes', type=int, default=50)
+    parser.add_argument('--num_episodes', type=int, default=20)
     parser.add_argument('--mode', type=str, default='intra', help='swith policy inter or intra')
     parser.add_argument("--switch_human_freq", type=int, default=100, help="Frequency of switching human policy")
-    parser.add_argument('--seed', type=int, default=2022),
+    parser.add_argument('--seed', type=int, default=1),
     parser.add_argument('--Q_len', type=int, default=40)
-    parser.add_argument('--plot_group', type=str, default='BPR_NN_MOD')
     args = parser.parse_args()
     return args
 

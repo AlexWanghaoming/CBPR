@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import META_TASKS, BCP_MODELS, SP_MODELS, FCP_MODELS
 from bc.bc_hh import BehaviorClone
-from My_utils import seed_everything, init_env, evaluate_actor
+from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval
 import random
 import wandb
 from datetime import datetime
@@ -17,14 +17,14 @@ WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--device', type=str, default='cpu')
-    # parser.add_argument('--layout', default='asymmetric_advantages')
+    parser.add_argument('--layout', default='coordination_ring')
+    # parser.add_argument('--layout', default='cramped_room')
     # parser.add_argument('--layout', default='marshmallow_experiment')
-    parser.add_argument('--layout', default='marshmallow_experiment')
-    parser.add_argument('--num_episodes', type=int, default=50)
+    parser.add_argument('--num_episodes', type=int, default=20)
     parser.add_argument('--mode', default='intra', help='swith policy inter or intra')
     parser.add_argument("--switch_human_freq", type=int, default=100, help="Frequency of switching human policy")
     parser.add_argument('--seed', type=int, default=2022)
-    parser.add_argument('--algorithm', default='BCP', help='BCP or SP or FCP')
+    parser.add_argument('--algorithm', default='FCP', help='BCP or SP or FCP')
     args = parser.parse_args()
     return args
 
@@ -33,11 +33,11 @@ if __name__ == '__main__':
     args = parse_args()
     mts = META_TASKS[args.layout]
     if args.algorithm == 'BCP':
-        ai_agent = torch.load(FCP_MODELS[args.layout], map_location='cpu')
+        ai_agent = torch.load(BCP_MODELS[args.layout], map_location='cpu')
     elif args.algorithm == 'FCP':
         ai_agent = torch.load(FCP_MODELS[args.layout], map_location='cpu')
     elif args.algorithm == 'SP':
-        ai_agent = torch.load(FCP_MODELS[args.layout], map_location='cpu')
+        ai_agent = torch.load(SP_MODELS[args.layout], map_location='cpu')
     else:
         pass
 
@@ -97,7 +97,7 @@ if __name__ == '__main__':
         print(f'Ep {k+1}:',ep_reward)
         r_list.append(ep_reward)
         # wandb.log({'episode': k+1, 'ep_reward': ep_reward})
-    print('Average reward:', sum(r_list)/len(r_list))
-    # wandb.finish()
+    print_mean_interval(r_list)
+        # wandb.finish()
 
 

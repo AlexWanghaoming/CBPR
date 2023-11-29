@@ -5,7 +5,7 @@ import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import BCP_MODELS, SP_MODELS, FCP_MODELS, SKILL_MODELS
-from My_utils import seed_everything, init_env, evaluate_actor
+from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval
 import wandb
 
 
@@ -13,11 +13,11 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--device', type=str, default='cpu')
     # parser.add_argument('--layout', default='cramped_room')
-    parser.add_argument('--layout', default='marshmallow_experiment')
+    parser.add_argument('--layout', default='cramped_room')
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes', type=int, default=20)
     parser.add_argument('--seed', type=int, default=0)
-    parser.add_argument('--algorithm', default='BCP', help='BCP or SP or FCP')
+    parser.add_argument('--algorithm', default='FCP', help='BCP or SP or FCP')
     parser.add_argument('--skill_level', default='low', help='low or medium or high')
     args = parser.parse_args()
     return args
@@ -73,6 +73,6 @@ if __name__ == '__main__':
         r_list.append(ep_reward)
     #     wandb.log({'episode': k+1, 'ep_reward': ep_reward})
     # wandb.finish()
-    print('Average reward:', sum(r_list) / len(r_list))
+    print_mean_interval(r_list)
 
 

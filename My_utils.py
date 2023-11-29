@@ -198,3 +198,17 @@ def evaluate_actor(actor, s, deterministic=True):
         dist = Categorical(probs=a_prob)
         a = dist.sample().cpu().numpy()[0]
     return a
+
+
+from scipy import stats
+
+
+def print_mean_interval(data:list):
+    # 计算平均值和标准误差
+    mean = np.mean(data)
+    std = np.std(data)
+    sem = stats.sem(data)
+    # 计算置信区间
+    confidence = 0.95
+    interval = stats.t.interval(confidence, len(data)-1, loc=mean, scale=sem)
+    print(f"\033[91m  mean: {mean}, 95% interval: {interval}, std: {std} \033[0m")

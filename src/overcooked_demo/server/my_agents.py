@@ -3,7 +3,7 @@ from overcooked_ai_py.agents.benchmarking import AgentEvaluator
 from overcooked_ai_py.mdp.actions import Action
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../../algorithms')
-from experiments.exp1.bpr_NN_scriptedPolicy import BPR_online, MTPLibrary, NNLibrary, BPR_offline
+from experiments.exp1.bpr_RNN_scriptedPolicy import BPR_online, MTPLibrary, NNLibrary, BPR_offline
 import argparse
 from collections import deque
 import numpy as np
@@ -24,9 +24,9 @@ class CBPR_ai(BPR_online):
         self.env = agent_evaluator.env
         parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                          description='''Bayesian policy reuse algorithm on overcooked''')
-        parser.add_argument('--Q_len', type=int, default=25)
         self.args = parser.parse_args()
         self.args.layout = self.og.layouts[0]
+        self.Q_len = 40
         self.device = 'cuda'
 
         APL = MTPLibrary()
@@ -65,24 +65,21 @@ class CBPR_ai(BPR_online):
             return action, None
 
         _, h_dire = self.og.joint_action
-        h_act = Action.ALL_ACTIONS.index(h_dire)
-        next_state, info = self.mdp.get_state_transition(state, self.og.joint_action)  # 手动进行一次状态转移
+        # next_state, info = self.mdp.get_state_transition(state, self.og.joint_action)  # 手动进行一次状态转移
         self.ep_reward += self.og.curr_reward
-        # print('cummulated ep_reward:', self.ep_reward)
-        _, h_obs_ = self.env.featurize_state_mdp(next_state)
+
+        h_act = Action.INDEX_TO_ACTION.index(h_dire)
         actions_one_hot = np.eye(6)[h_act]
-        obs_x = np.hstack([h_obs, actions_one_hot])
-        obs_x = torch.from_numpy(obs_x).float().to(self.device)
-        obs_y = np.hstack([h_obs_, self.og.curr_reward])  # s_prime, r
-        obs_y = torch.from_numpy(obs_y).float().to(self.device)
-        self.Q.append((obs_x, obs_y))
-        self.belief = self._update_beta(self.Q)
+        self.Q.append(np.hstack([h_obs, actions_one_hot]))
+        if len(self.Q) == self.Q_len:
+            self.belief = self._update_beta(self.args, self.Q)
+
         action = Action.ALL_ACTIONS[ai_act]
         return action, None
 
     def reset(self):
         print('RESET GAME！')
-        self.Q = deque(maxlen=self.args.Q_len)
+        self.Q = deque(maxlen=self.Q_len)
 
 
 class Baseline_ai():
@@ -125,73 +122,6 @@ class Baseline_ai():
     def reset(self):
         print('RESET GAME！')
 
-
-class FCP_ai():
-    def __init__(self, og):
-        self.og  = og
-        self.layout = self.og.layouts[0]
-        print('Current layout:', self.og.layouts[0])
-        agent_evaluator = AgentEvaluator.from_layout_name(
-            mdp_params={"layout_name": self.layout},
-            env_params={
-                "horizon": 600
-            },
-        )
-        self.mdp = agent_evaluator.env.mdp
-        self.env = agent_evaluator.env
-        self.device = 'cuda'
-        self.ep_reward = 0
-        self.ai_agent = torch.load(FCP_MODELS[self.layout])
-
-    def evaluate(self, actor, s):
-        s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
-        a_prob = actor(s).detach().cpu().numpy().flatten()
-        a = np.argmax(a_prob)
-        return a
-
-    def action(self, state):
-        # print('trajs:', self.og.trajectory[-1])
-        ai_obs, h_obs = self.env.featurize_state_mdp(state)  # OvercookedState -> featurized state
-        ai_act = self.evaluate(self.ai_agent, ai_obs)
-        action = Action.ALL_ACTIONS[ai_act]
-        return action, None
-
-    def reset(self):
-        print('RESET GAME！')
-
-
-class SP_ai():
-    def __init__(self, og):
-        self.og  = og
-        self.layout = self.og.layouts[0]
-        print('Current layout:', self.og.layouts[0])
-        agent_evaluator = AgentEvaluator.from_layout_name(
-            mdp_params={"layout_name": self.layout},
-            env_params={
-                "horizon": 600
-            },
-        )
-        self.mdp = agent_evaluator.env.mdp
-        self.env = agent_evaluator.env
-        self.device = 'cuda'
-        self.ep_reward = 0
-        self.ai_agent = torch.load(BCP_MODELS[self.layout])
-
-    def evaluate(self, actor, s):
-        s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
-        a_prob = actor(s).detach().cpu().numpy().flatten()
-        a = np.argmax(a_prob)
-        return a
-
-    def action(self, state):
-        # print('trajs:', self.og.trajectory[-1])
-        ai_obs, h_obs = self.env.featurize_state_mdp(state)  # OvercookedState -> featurized state
-        ai_act = self.evaluate(self.ai_agent, ai_obs)
-        action = Action.ALL_ACTIONS[ai_act]
-        return action, None
-
-    def reset(self):
-        print('RESET GAME！')
 
 
 # if __name__ == '__main__':

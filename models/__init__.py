@@ -5,11 +5,19 @@ _curr_directory = os.path.dirname(os.path.abspath(__file__))
 
 
 META_TASKS = {
-            'cramped_room': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
-             'marshmallow_experiment': ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random', 'place_onion_and_deliver_soup', 'place_tomato_and_deliver_soup'],
-              'asymmetric_advantages': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
-              'coordination_ring': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random']
-              }
+            # 'cramped_room': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
+    'cramped_room': ['place_onion_in_pot', 'deliver_soup', 'random'],
+
+    # 'marshmallow_experiment': ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random', 'place_onion_and_deliver_soup', 'place_tomato_and_deliver_soup'],
+     'marshmallow_experiment': ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup'],
+
+    # 'asymmetric_advantages': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
+    'asymmetric_advantages': ['place_onion_in_pot', 'deliver_soup'],
+
+    'coordination_ring': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
+    # 'coordination_ring': ['place_onion_in_pot', 'deliver_soup']
+
+}
 
 FCP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'fcp/fcp_cramped_room_seed1.pt'),
              'marshmallow_experiment': os.path.join(_curr_directory, 'fcp/fcp_marshmallow_experiment_seed1.pt'),
@@ -35,11 +43,6 @@ BC_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bc/BC_cramped_room.p
              'coordination_ring': os.path.join(_curr_directory, 'bc/BC_coordination_ring.pth'),
              }
 
-# HP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bc/HP_cramped_room.pth'),
-#              'marshmallow_experiment': os.path.join(_curr_directory, 'bc/HP_marshmallow_experiment.pth'),
-#              'asymmetric_advantages': os.path.join(_curr_directory, 'bc/HP_asymmetric_advantages.pth')
-#              }
-
 SKILL_MODELS = {'cramped_room': [os.path.join(_curr_directory, 'policy_pool_alt_agent/cramped_room/fcp/s1/sp1_init_actor.pt'),
                                  os.path.join(_curr_directory, 'policy_pool_alt_agent/cramped_room/fcp/s1/sp1_mid_actor.pt'),
                                  os.path.join(_curr_directory, 'policy_pool_alt_agent/cramped_room/fcp/s1/sp1_final_actor.pt')],
@@ -59,8 +62,8 @@ MTP_MODELS = {'cramped_room':
                             'mtp/cramped_room/mtp_cramped_room-place_onion_in_pot-seed1.pth'),
                            os.path.join(_curr_directory,
                                         'mtp/cramped_room/mtp_cramped_room-deliver_soup-seed1.pth'),
-                           os.path.join(_curr_directory,
-                                        'mtp/cramped_room/mtp_cramped_room-place_onion_and_deliver_soup-seed1.pth'),
+                           # os.path.join(_curr_directory,
+                           #              'mtp/cramped_room/mtp_cramped_room-place_onion_and_deliver_soup-seed1.pth'),
                            os.path.join(_curr_directory,
                                         'mtp/cramped_room/mtp_cramped_room-random-seed1.pth'),
                            ],
@@ -72,12 +75,12 @@ MTP_MODELS = {'cramped_room':
                                'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_tomato_in_pot-seed1.pth'),
                   os.path.join(_curr_directory,
                                'mtp/marshmallow_experiment/mtp_marshmallow_experiment-deliver_soup-seed1.pth'),
-                  os.path.join(_curr_directory,
-                               'mtp/marshmallow_experiment/mtp_marshmallow_experiment-random-seed1.pth'),
-                  os.path.join(_curr_directory,
-                               'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_onion_and_deliver_soup-seed1.pth'),
-                  os.path.join(_curr_directory,
-                               'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_tomato_and_deliver_soup-seed1.pth')
+                  # os.path.join(_curr_directory,
+                  #              'mtp/marshmallow_experiment/mtp_marshmallow_experiment-random-seed1.pth'),
+                  # os.path.join(_curr_directory,
+                  #              'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_onion_and_deliver_soup-seed1.pth'),
+                  # os.path.join(_curr_directory,
+                  #              'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_tomato_and_deliver_soup-seed1.pth')
                   ],
 
               'asymmetric_advantages':
@@ -85,10 +88,10 @@ MTP_MODELS = {'cramped_room':
                                 'mtp/asymmetric_advantages/mtp_asymmetric_advantages-place_onion_in_pot-seed1.pth'),
                    os.path.join(_curr_directory,
                                 'mtp/asymmetric_advantages/mtp_asymmetric_advantages-deliver_soup-seed1.pth'),
-                   os.path.join(_curr_directory,
-                                'mtp/asymmetric_advantages/mtp_asymmetric_advantages-place_onion_and_deliver_soup-seed1.pth'),
-                   os.path.join(_curr_directory,
-                                'mtp/asymmetric_advantages/mtp_asymmetric_advantages-random-seed1.pth'),
+                   # os.path.join(_curr_directory,
+                   #              'mtp/asymmetric_advantages/mtp_asymmetric_advantages-place_onion_and_deliver_soup-seed1.pth'),
+                   # os.path.join(_curr_directory,
+                   #              'mtp/asymmetric_advantages/mtp_asymmetric_advantages-random-seed1.pth'),
                    ],
                 'coordination_ring':
                     [os.path.join(_curr_directory,
@@ -117,8 +120,9 @@ NN_MODELS = {'cramped_room':
              #  os.path.join(_curr_directory, 'NN/NN_cramped_room_random_s_prime_r.pth')],
              [os.path.join(_curr_directory, 'RNN/rnn_cramped_room_place_onion_in_pot_s_prime_r.pth'),
               os.path.join(_curr_directory, 'RNN/rnn_cramped_room_deliver_soup_s_prime_r.pth'),
-              os.path.join(_curr_directory, 'RNN/rnn_cramped_room_place_onion_and_deliver_soup_s_prime_r.pth'),
-              os.path.join(_curr_directory, 'RNN/rnn_cramped_room_random_s_prime_r.pth')],
+              # os.path.join(_curr_directory, 'RNN/rnn_cramped_room_place_onion_and_deliver_soup_s_prime_r.pth'),
+              os.path.join(_curr_directory, 'RNN/rnn_cramped_room_random_s_prime_r.pth')
+              ],
 
             'marshmallow_experiment':
                 # [os.path.join(_curr_directory,
@@ -140,12 +144,12 @@ NN_MODELS = {'cramped_room':
                                                     'RNN/rnn_marshmallow_experiment_place_tomato_in_pot_s_prime_r.pth'),
                                        os.path.join(_curr_directory,
                                                     'RNN/rnn_marshmallow_experiment_deliver_soup_s_prime_r.pth'),
-                                        os.path.join(_curr_directory,
-                                                     'RNN/rnn_marshmallow_experiment_random_s_prime_r.pth'),
-                                        os.path.join(_curr_directory,
-                                                     'RNN/rnn_marshmallow_experiment_place_onion_and_deliver_soup_s_prime_r.pth'),
-                                       os.path.join(_curr_directory,
-                                                    'RNN/rnn_marshmallow_experiment_place_tomato_and_deliver_soup_s_prime_r.pth'),
+                                       #  os.path.join(_curr_directory,
+                                       #               'RNN/rnn_marshmallow_experiment_random_s_prime_r.pth'),
+                                       #  os.path.join(_curr_directory,
+                                       #               'RNN/rnn_marshmallow_experiment_place_onion_and_deliver_soup_s_prime_r.pth'),
+                                       # os.path.join(_curr_directory,
+                                       #              'RNN/rnn_marshmallow_experiment_place_tomato_and_deliver_soup_s_prime_r.pth'),
                                        ],
             'asymmetric_advantages':
              # [os.path.join(_curr_directory, 'NN/NN_asymmetric_advantages_place_onion_in_pot_s_prime_r.pth'),
@@ -154,8 +158,10 @@ NN_MODELS = {'cramped_room':
              #  os.path.join(_curr_directory, 'NN/NN_asymmetric_advantages_random_s_prime_r.pth')],
              [os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_place_onion_in_pot_s_prime_r.pth'),
               os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_deliver_soup_s_prime_r.pth'),
-              os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_place_onion_and_deliver_soup_s_prime_r.pth'),
-              os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_random_s_prime_r.pth')],
+              # os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_place_onion_and_deliver_soup_s_prime_r.pth'),
+              # os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_random_s_prime_r.pth')
+              ],
+
             'coordination_ring':
              # [os.path.join(_curr_directory, 'NN/NN_coordination_ring_place_onion_in_pot_s_prime_r.pth'),
              #  os.path.join(_curr_directory, 'NN/NN_coordination_ring_deliver_soup_s_prime_r.pth'),
@@ -164,7 +170,8 @@ NN_MODELS = {'cramped_room':
             [os.path.join(_curr_directory, 'RNN/rnn_coordination_ring_place_onion_in_pot_s_prime_r.pth'),
               os.path.join(_curr_directory, 'RNN/rnn_coordination_ring_deliver_soup_s_prime_r.pth'),
               os.path.join(_curr_directory, 'RNN/rnn_coordination_ring_place_onion_and_deliver_soup_s_prime_r.pth'),
-              os.path.join(_curr_directory, 'RNN/rnn_coordination_ring_random_s_prime_r.pth')]
+              os.path.join(_curr_directory, 'RNN/rnn_coordination_ring_random_s_prime_r.pth')
+             ]
              }
 
 
