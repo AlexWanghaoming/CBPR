@@ -8,7 +8,7 @@ import torch.nn as nn
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
-from bc.bc_hh import BehaviorClone
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import MTP_MODELS, NN_MODELS, META_TASKS
 from agents.ppo_discrete import PPO_discrete
 import random
@@ -158,9 +158,10 @@ class BPR_online:
                 #     print(f'CBPR重用策略 {best_agent_id} 和人合作!')
                 #     best_agent_id_prime = best_agent_id
 
-            print(f'Ep {k + 1} rewards: {ep_reward}')
+            # print(f'Ep {k + 1} rewards: {ep_reward}')
             r_list.append(ep_reward)
-            # wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+            wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+        print(f'CBPR_{args.layout}_{args.mode}_{args.switch_human_freq}')
         print_mean_interval(r_list)
 
     def _update_beta(self, args, Q) -> Dict[str, float]:
@@ -171,23 +172,18 @@ class BPR_online:
         state_seq = torch.tensor(Q, dtype=torch.float32).to(device)
         input_seqs = state_seq[:INPUT_LENGTH].unsqueeze(dim=0)
         target_seqs = state_seq[INPUT_LENGTH:][:, :96].unsqueeze(dim=0)
-
         var = torch.tensor([0.1]).to(device)
         std_dev = torch.sqrt(var)
-
         temp = {}
         new_belief = {}
-
         for mt in self.belief:
             NN = self.NNs[mt]
             means = NN(input_seqs)  # (1, 960)  # 输入30个时间步的s,a，NN预测10个时间步（10*96）的状态，
             probs = (1 / (std_dev * (math.pi * 2) ** 0.5)) * torch.exp(-(means - target_seqs.contiguous().view(target_seqs.size(0), -1)) ** 2 / (2 * std_dev ** 2))
             su = torch.mean(probs).item()
             temp[mt] = su * self.belief[mt]
-
         for mt in self.belief:
             new_belief[mt] = (temp[mt] + self.eps) / (sum(temp.values()) + self.eps*len(META_TASKS[args.layout]))
-
         return new_belief
 
     def _reuse_optimal_policy(self) -> Tuple[str, PPO_discrete]:
@@ -214,16 +210,16 @@ def parse_args():
 
 
 if __name__ == '__main__':
-    WANDB_DIR = '/my_wandb_log'
+    WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
     args = parse_args()
     LAYOUT_NAME = args.layout
-    # wandb.init(project='overcooked_rl',
-    #            group='BPR',
-    #            name=f'bprNN_{args.layout}_{args.mode}{args.switch_human_freq}-Q{args.Q_len}_seed{args.seed}',
-    #            config=vars(args),
-    #            job_type='eval',
-    #            dir=os.path.join(WANDB_DIR, 'bpr_scriptedPolicy'),
-    #            reinit=True)
+    wandb.init(project='overcooked_rl',
+               group='exp1',
+               name=f'bprRNN_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
+               config=vars(args),
+               job_type='eval',
+               dir=os.path.join(WANDB_DIR, 'exp1'),
+               reinit=True)
 
     if args.mode == 'inter':
         random.seed(42)
@@ -249,7 +245,7 @@ if __name__ == '__main__':
                             belief=belief)
 
     bpr_online.play(args, logger=None)
-    # wandb.finish()
+    wandb.finish()
 
 
 

@@ -8,7 +8,7 @@ import os, sys
 from collections import deque
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
-from bc.bc_hh import BehaviorClone
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import MTP_MODELS, NN_MODELS, SKILL_MODELS, META_TASKS
 from agents.ppo_discrete import PPO_discrete
 from state_trans_func.RNN_scriptedPolicy import RNNPredictor
@@ -90,13 +90,11 @@ class BPR_online:
     def __init__(self, agents: Dict[str, PPO_discrete],
                  human_policys: Optional[Dict[str, nn.Module]],
                  NN_models: Dict[str, nn.Module],
-                 belief: Dict[str, float],
-                 new_polcy_threshold=0.3):
+                 belief: Dict[str, float]):
         self.belief = belief
         self.mtp = agents
         self.meta_tasks = human_policys
         self.NNs = NN_models
-        self.threshold = new_polcy_threshold
         self.eps = 1e-6
 
     def play(self, args, skill_model):
@@ -123,16 +121,7 @@ class BPR_online:
                 h_dire = info['joint_action'][1]
                 h_act = Action.INDEX_TO_ACTION.index(h_dire)
                 actions_one_hot = np.eye(6)[h_act]
-
-                # wanghm 用NN作预测
-                # actions_one_hot = np.eye(6)[h_act]
-                # obs_x = np.hstack([h_obs, actions_one_hot])
-                # obs_x = torch.from_numpy(h_obs).float().to(device)
-                # obs_y = np.hstack([h_obs_, sparse_reward]) # s_prime, r
-                # obs_y = h_obs_ # s_prime
-                # obs_y = torch.from_numpy(obs_y).float().to(device)
                 Q.append(np.hstack([h_obs, actions_one_hot]))
-                # if episode_steps % 10 == 0:
                 if len(Q) == args.Q_len:
                     self.belief = self._update_beta(Q)
                 ai_obs, h_obs = ai_obs_, h_obs_
@@ -189,8 +178,8 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='''Bayesian policy reuse algorithm on overcooked''')
     parser.add_argument('--device', type=str, default='cpu')
-    parser.add_argument('--layout', default='cramped_room')
-    # parser.add_argument('--layout', default='marshmallow_experiment')
+    # parser.add_argument('--layout', default='cramped_room')
+    parser.add_argument('--layout', default='marshmallow_experiment')
     parser.add_argument('--num_episodes', type=int, default=20)
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--Q_len', type=int, default=40)
@@ -200,7 +189,7 @@ def parse_args():
 
 
 if __name__ == '__main__':
-    WANDB_DIR = '/my_wandb_log'
+    WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
     args = parse_args()
     LAYOUT_NAME = args.layout
     if args.skill_level == 'low':
@@ -219,6 +208,7 @@ if __name__ == '__main__':
     #            name=f'bprRNN_{args.layout}_{args.skill_level}_seed{args.seed}',
     #            config=vars(args),
     #            job_type='eval',
+    #            dir=os.path.join(WANDB_DIR, 'exp2'),
     #            reinit=True)
 
     seed_everything(args.seed)
@@ -229,7 +219,6 @@ if __name__ == '__main__':
     bpr_offline = BPR_offline(args)
     belief = bpr_offline.gen_belief()
     bpr_online = BPR_online(agents=mtp_lib,
-                            # human_policys=meta_task_lib,
                             human_policys=None,
                             NN_models=NN_models,
                             belief=belief)

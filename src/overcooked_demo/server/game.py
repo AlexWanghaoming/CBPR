@@ -436,6 +436,7 @@ class OvercookedGame(Game):
         self.max_time = min(int(gameTime), MAX_GAME_TIME)
         self.npc_policies = {}
         self.npc_state_queues = {}
+        self.agent_type=None
         self.action_to_overcooked_action = {
             "STAY": Action.STAY,
             "UP": Direction.NORTH,
@@ -714,6 +715,7 @@ class OvercookedGame(Game):
         # if we want to store the data and there is data to store
         if self.write_data and len(data["trajectory"]) > 0:
             configs = self.write_config
+            configs['agent_type'] = self.agent_type
             # create necessary dirs
             data_path = create_dirs(configs, self.curr_layout)
             # the 3-layer-directory structure should be able to uniquely define any experiment
@@ -730,6 +732,7 @@ class BPR_overcookedGame(OvercookedGame):
         super(BPR_overcookedGame, self).__init__(layouts, **kwargs)
 
     def get_policy(self, npc_id, idx=0):
+        self.agent_type = npc_id
         if npc_id == "CBPR":
             print('BPRBPRBPR')
             return CBPR_ai(self)

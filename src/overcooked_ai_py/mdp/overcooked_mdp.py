@@ -1022,6 +1022,7 @@ BASE_REW_SHAPING_PARAMS = {
     "DISH_DISP_DISTANCE_REW": 0,
     "POT_DISTANCE_REW": 0,
     "SOUP_DISTANCE_REW": 0,
+    "MIX_PUNISHMENT":0
 }
 
 EVENT_TYPES = [
@@ -1443,9 +1444,7 @@ class OvercookedGridworld(object):
             [0] * self.num_players,
         )
 
-        for player_idx, (player, action) in enumerate(
-            zip(new_state.players, joint_action)
-        ):
+        for player_idx, (player, action) in enumerate(zip(new_state.players, joint_action)):
             if action != Action.INTERACT:
                 continue
 
@@ -1538,7 +1537,7 @@ class OvercookedGridworld(object):
                         "SOUP_PICKUP_REWARD"
                     ]
 
-                elif player.get_object().name in Recipe.ALL_INGREDIENTS:
+                elif player.get_object().name in Recipe.ALL_INGREDIENTS:  # 当玩家手上拿着烹饪材料和POT交互时
                     # Adding ingredient to soup
                     if not new_state.has_object(i_pos):
                         # Pot was empty, add soup to it
@@ -1549,11 +1548,12 @@ class OvercookedGridworld(object):
                     if not soup.is_full:
                         old_soup = soup.deepcopy()
                         obj = player.remove_object()
+                        if len(soup.ingredients) != 0 and obj.name not in soup.ingredients:  # 当玩家放入锅中的材料和锅中已有材料不符时给予惩罚
+                            print('MIX_PUNISHMENT')
+                            shaped_reward[player_idx] -= self.reward_shaping_params["MIX_PUNISHMENT"]
+                        else:
+                            shaped_reward[player_idx] += self.reward_shaping_params["PLACEMENT_IN_POT_REW"]
                         soup.add_ingredient(obj)
-                        shaped_reward[
-                            player_idx
-                        ] += self.reward_shaping_params["PLACEMENT_IN_POT_REW"]
-
                         # Log potting
                         self.log_object_potting(
                             events_infos,

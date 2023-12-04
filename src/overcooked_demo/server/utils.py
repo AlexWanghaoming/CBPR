@@ -77,8 +77,9 @@ def create_dirs(config: dict, cur_layout: str):
     path = os.path.join(
         SOURCE_DIR,
         cur_layout,
-        config["old_dynamics"],
-        config["type"],
+        config['agent_type'],
+        # config["old_dynamics"],
+        # config["type"],
         config["playerName"],  # wanghm
         config["time"],
     )

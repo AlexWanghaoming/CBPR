@@ -82,7 +82,7 @@ if __name__ == '__main__':
             ep_reward += sparse_reward
             episode_steps += 1
             total_steps += 1
-            # env.render(interval=0.05)
+            env.render(interval=0.05)
         # plot_heat(ai_prob_mtx['stage1'], n_row, n_col)
         # plot_heat(h_prob_mtx['stage1'], n_row, n_col)
         print(f'Ep {k + 1}:', ep_reward)

@@ -41,13 +41,13 @@ if __name__ == '__main__':
     else:
         pass
 
-    # wandb.init(project='overcooked_rl',
-    #            group='exp1',
-    #            name=f'{args.algorithm}_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
-    #            config=vars(args),
-    #            job_type='eval',
-    #            dir=os.path.join(WANDB_DIR, 'exp1'),
-    #            reinit=True)
+    wandb.init(project='overcooked_rl',
+               group='exp1',
+               name=f'{args.algorithm}_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
+               config=vars(args),
+               job_type='eval',
+               dir=os.path.join(WANDB_DIR, 'exp1'),
+               reinit=True)
 
     if args.mode == 'inter':
         random.seed(42) # 固定测试的策略顺序
@@ -94,10 +94,11 @@ if __name__ == '__main__':
             ai_obs, h_obs = obs['both_agent_obs']
             ep_reward += sparse_reward
             # env.render(interval=0.1)
-        print(f'Ep {k+1}:',ep_reward)
+        # print(f'Ep {k+1}:',ep_reward)
         r_list.append(ep_reward)
-        # wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+        wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+    print(f'{args.algorithm}_{args.layout}_{args.mode}_{args.switch_human_freq}')
     print_mean_interval(r_list)
-        # wandb.finish()
+    wandb.finish()
 
 

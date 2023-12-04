@@ -8,6 +8,8 @@ from models import BCP_MODELS, SP_MODELS, FCP_MODELS, SKILL_MODELS
 from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval
 import wandb
 
+WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+
 
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -45,12 +47,14 @@ if __name__ == '__main__':
         skill_model = torch.load(skill_model_path, map_location='cpu')
     else:
         pass
-    # wandb.init(project='overcooked_rl',
-    #            group='exp2',
-    #            name=f'{args.algorithm}_{args.layout}_{args.skill_level}_seed{args.seed}',
-    #            config=vars(args),
-    #            job_type='eval',
-    #            reinit=True)
+
+    wandb.init(project='overcooked_rl',
+               group='exp2',
+               name=f'{args.algorithm}_{args.layout}_{args.skill_level}_seed{args.seed}',
+               config=vars(args),
+               job_type='eval',
+               dir=os.path.join(WANDB_DIR, 'exp2'),
+               reinit=True)
 
     seed_everything(args.seed)
     env = init_env(layout=args.layout)
@@ -71,8 +75,8 @@ if __name__ == '__main__':
             # env.render(interval=0.1)
         print(f'Ep {k+1}:',ep_reward)
         r_list.append(ep_reward)
-    #     wandb.log({'episode': k+1, 'ep_reward': ep_reward})
-    # wandb.finish()
+        wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+    wandb.finish()
     print_mean_interval(r_list)
 
 
