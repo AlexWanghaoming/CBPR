@@ -8,8 +8,8 @@ META_TASKS = {
             'cramped_room': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
             # 'cramped_room': ['place_onion_in_pot', 'deliver_soup', 'random'],
 
-            'marshmallow_experiment': ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random', 'place_onion_and_deliver_soup', 'place_tomato_and_deliver_soup'],
-             # 'marshmallow_experiment': ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random'],
+            # 'marshmallow_experiment': ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random', 'place_onion_and_deliver_soup', 'place_tomato_and_deliver_soup'],
+             'marshmallow_experiment': ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random'],
 
             'asymmetric_advantages': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
             # 'asymmetric_advantages': ['place_onion_in_pot', 'deliver_soup'],
@@ -91,10 +91,10 @@ NN_MODELS = {'cramped_room':
                                                     'RNN/rnn_marshmallow_experiment_deliver_soup_s_prime_r.pth'),
                                         os.path.join(_curr_directory,
                                                      'RNN/rnn_marshmallow_experiment_random_s_prime_r.pth'),
-                                        os.path.join(_curr_directory,
-                                                     'RNN/rnn_marshmallow_experiment_place_onion_and_deliver_soup_s_prime_r.pth'),
-                                       os.path.join(_curr_directory,
-                                                    'RNN/rnn_marshmallow_experiment_place_tomato_and_deliver_soup_s_prime_r.pth'),
+                                       #  os.path.join(_curr_directory,
+                                       #               'RNN/rnn_marshmallow_experiment_place_onion_and_deliver_soup_s_prime_r.pth'),
+                                       # os.path.join(_curr_directory,
+                                       #              'RNN/rnn_marshmallow_experiment_place_tomato_and_deliver_soup_s_prime_r.pth'),
                                        ],
             'asymmetric_advantages':
              # [os.path.join(_curr_directory, 'NN/NN_asymmetric_advantages_place_onion_in_pot_s_prime_r.pth'),
@@ -139,10 +139,10 @@ MTP_MODELS = {'cramped_room':
                                'mtp/marshmallow_experiment/mtp_marshmallow_experiment-deliver_soup-seed1.pth'),
                   os.path.join(_curr_directory,
                                'mtp/marshmallow_experiment/mtp_marshmallow_experiment-random-seed1.pth'),
-                  os.path.join(_curr_directory,
-                               'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_onion_and_deliver_soup-seed1.pth'),
-                  os.path.join(_curr_directory,
-                               'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_tomato_and_deliver_soup-seed1.pth')
+                  # os.path.join(_curr_directory,
+                  #              'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_onion_and_deliver_soup-seed1.pth'),
+                  # os.path.join(_curr_directory,
+                  #              'mtp/marshmallow_experiment/mtp_marshmallow_experiment-place_tomato_and_deliver_soup-seed1.pth')
                   ],
 
               'asymmetric_advantages':
@@ -183,10 +183,10 @@ METATASK_MODELS = {'cramped_room':
                                'opponent/opponent_marshmallow_experiment_deliver_soup.pth'),
                   os.path.join(_curr_directory,
                                'opponent/opponent_marshmallow_experiment_random.pth'),
-                  os.path.join(_curr_directory,
-                               'opponent/opponent_marshmallow_experiment_place_onion_and_deliver_soup.pth'),
-                  os.path.join(_curr_directory,
-                               'opponent/opponent_marshmallow_experiment_place_tomato_and_deliver_soup.pth')
+                  # os.path.join(_curr_directory,
+                  #              'opponent/opponent_marshmallow_experiment_place_onion_and_deliver_soup.pth'),
+                  # os.path.join(_curr_directory,
+                  #              'opponent/opponent_marshmallow_experiment_place_tomato_and_deliver_soup.pth')
                   ],
 
               'asymmetric_advantages':

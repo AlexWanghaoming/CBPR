@@ -11,7 +11,7 @@ import argparse
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp2/wandb'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('--layout', default='coordination_ring')
+parser.add_argument('--layout', default='asymmetric_advantages')
 args = parser.parse_args()
 
 
@@ -23,18 +23,17 @@ mpl.rcParams['axes.labelsize'] = 18  # 设置坐标轴标签的字体大小
 mpl.rcParams['axes.titlesize'] = 18  # 设置坐标轴标题的字体大小
 mpl.rcParams['xtick.labelsize'] = 18  # 设置x轴刻度标签的字体大小
 mpl.rcParams['ytick.labelsize'] = 14  # 设置y轴刻度标签的字体大小
-mpl.rcParams['legend.fontsize'] = 12  # 设置图例的字体大小
+mpl.rcParams['legend.fontsize'] = 13  # 设置图例的字体大小
 # mpl.rcParams['image.cmap'] = 'viridis'
 
 
 groups = ['low', 'medium', 'high']
 subgroups = ['CBPR', 'BCP', 'FCP', 'SP']
 a2c = {
-       # 'bprRNN': '#b23a48',
-      'okr': '#b23a48',
-       'BCP': '#9d4edd',
-       'FCP': '#219ebc',
-       'SP': '#c0c0c0',
+      'okr': '#d90429',
+       'BCP': '#3f7d20',
+       'FCP': '#9d4edd',
+       'SP': '#f6ae2d',
        }
 
 runs = glob.glob(f"{WANDB_DIR}/run*")
@@ -67,12 +66,12 @@ for level in groups:
                 sem = stats.sem(ep_sparse_r)
                 confidence = 0.95
                 interval = stats.t.interval(confidence, len(ep_sparse_r) - 1, loc=mean_r, scale=sem)
+                # mean_r = mean_r-300
                 sub_group_mean.append(mean_r)
                 sub_group_interval.append(interval[1] - mean_r)
                 break
     group_mean.append(sub_group_mean)
     group_interval.append(sub_group_interval)
-
 group_mean = np.array(group_mean,dtype=float)
 group_interval = np.array(group_interval,dtype=float)
 
@@ -91,10 +90,11 @@ ax.set_ylabel('Mean episode reward')
 # ax.set_title('Grouped Bar Chart with Confidence Intervals')
 ax.set_xticks(index + bar_width)
 ax.set_xticklabels(['Low', 'Medium', 'High'])
-ax.legend(loc='best')
+if args.layout == 'cramped_room':
+    ax.legend(loc='upper left', ncol=2)
 plt.grid(axis='x')
 plt.tight_layout()
-# plt.savefig(f'bcp_training.pdf', bbox_inches='tight')
+plt.savefig(f'{args.layout}_exp2.pdf', bbox_inches='tight')
 plt.show()
 
 

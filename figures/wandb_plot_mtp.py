@@ -8,14 +8,11 @@ from scipy.ndimage import gaussian_filter1d
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
 GROUP = 'MTP'
-LAYOUT = 'cramped_room'
-p2c = {'place_onion_in_pot': '#FF0000', 'deliver_soup': '#0000FF', 'place_onion_and_deliver_soup': '#008000', 'random': '#8B4513'}
+LAYOUT = 'asymmetric_advantages'
+p2c = {'place_onion_in_pot': '#33658a', 'deliver_soup': '#758e4f', 'place_onion_and_deliver_soup': '#f6ae2d', 'random': '#f26419'}
+
 # LAYOUT = 'marshmallow_experiment'
-# p2c = {'place_onion_in_pot': '#FF0000', 'place_tomato_in_pot': '#00FFFF' , 'deliver_soup': '#0000FF', 'place_onion_and_deliver_soup': '#008000', 'random': '#8B4513', 'place_tomato_and_deliver_soup': '#9370DB'}
-# LAYOUT = 'asymmetric_advantages'
-# p2c = {'place_onion_in_pot': '#FF0000', 'deliver_soup': '#0000FF', 'place_onion_and_deliver_soup': '#008000', 'random': '#8B4513'}
-# LAYOUT = 'coordination_ring'
-# p2c = {'place_onion_in_pot': '#FF0000', 'deliver_soup': '#0000FF', 'place_onion_and_deliver_soup': '#008000', 'random': '#8B4513'}
+# p2c = {'place_onion_in_pot': '#33658a', 'place_tomato_in_pot': '#f6ae2d' , 'deliver_soup': '#758e4f', 'random': '#f26419'}
 
 # 设置字体和样式
 plt.style.use('seaborn-whitegrid')  # 一个清晰、美观的样式
@@ -25,7 +22,7 @@ mpl.rcParams['axes.labelsize'] = 20  # 设置坐标轴标签的字体大小
 mpl.rcParams['axes.titlesize'] = 20  # 设置坐标轴标题的字体大小
 mpl.rcParams['xtick.labelsize'] = 14  # 设置x轴刻度标签的字体大小
 mpl.rcParams['ytick.labelsize'] = 14  # 设置y轴刻度标签的字体大小
-mpl.rcParams['legend.fontsize'] = 12  # 设置图例的字体大小
+mpl.rcParams['legend.fontsize'] = 14  # 设置图例的字体大小
 # mpl.rcParams['image.cmap'] = 'viridis'
 
 

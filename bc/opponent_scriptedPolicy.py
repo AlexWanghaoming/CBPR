@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import pickle
+import math
 import os, sys
 import numpy as np
 import torch.nn.functional as F
@@ -11,7 +11,7 @@ from src.overcooked_ai_py.mdp.actions import Action
 
 
 device = 'cuda'
-LAYOUT_NAME = 'cramped_room'
+LAYOUT_NAME = 'marshmallow_experiment'
 # LAYOUT_NAME = 'asymmetric_advantages'
 
 
@@ -20,6 +20,16 @@ def init(module, weight_init, bias_init, gain=1):
     if module.bias is not None:
         bias_init(module.bias.data)
     return module
+
+def adjust_learning_rate(optimizer, epoch, warmup_epochs, total_epochs, initial_lr):
+    """根据 epoch 调整学习率"""
+    if epoch < warmup_epochs:
+        lr = initial_lr * (epoch + 1) / warmup_epochs
+    else:
+        lr = initial_lr * 0.5 * (1 + math.cos(math.pi * (epoch - warmup_epochs) / (total_epochs - warmup_epochs)))
+    # print("lr:", lr)
+    for param_group in optimizer.param_groups:
+        param_group['lr'] = lr
 
 
 class Opponent(nn.Module):
@@ -52,6 +62,7 @@ def evaluate(actor, s):
 
 
 def log_prob_loss(model, input, target):
+    # eta = 0.001
     eta = 0.001
     probs = model(input, target.unsqueeze(dim=1))
     log_probs = torch.log(probs)
@@ -61,21 +72,25 @@ def log_prob_loss(model, input, target):
 
 
 if __name__ == '__main__':
-    epochs = 50
+    num_epochs = 100
+    warmup_epochs = 2
+    initial_lr = 0.001
     for idx, meta_task in enumerate(META_TASKS[LAYOUT_NAME]):
-        # agent_path = SP_MODELS[LAYOUT_NAME]  # bcp agent的能力最差， 和script policy agent 合作可以见到尽可能大的状态空间
+        # agent_path = BCP_MODELS[LAYOUT_NAME]  # bcp agent的能力最差， 和script policy agent 合作可以见到尽可能大的状态空间
         agent_path = MTP_MODELS[LAYOUT_NAME][idx]
+
         ego_agent = torch.load(agent_path)
         env = init_env(layout=LAYOUT_NAME,
                        agent0_policy_name='mtp',
                        agent1_policy_name=f'script:{meta_task}',
                        use_script_policy=True)
         save_path = f'../models/opponent/opponent_{LAYOUT_NAME}_{meta_task}.pth'
-        model = Opponent(state_dim=96, hidden_dim=256, action_dim=6).to(device)
+        model = Opponent(state_dim=96, hidden_dim=128, action_dim=6).to(device)
         model.train()
-        optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+        optimizer = torch.optim.Adam(model.parameters(), lr=initial_lr)
         best_loss = 99999
-        for i in range(epochs):
+        for i in range(num_epochs):
+            adjust_learning_rate(optimizer, i, warmup_epochs, num_epochs, initial_lr)
             obs = env.reset()
             ego_obs, alt_obs = obs['both_agent_obs']
             ep_reward = 0
@@ -92,7 +107,7 @@ if __name__ == '__main__':
                 alt_dire = info['joint_action'][1]
                 alt_a = Action.INDEX_TO_ACTION.index(alt_dire)
                 ep_reward += sparse_reward
-                # env.render(interval=0.08)
+                env.render(interval=0.08)
                 episodic_train_x.append(alt_obs)
                 episodic_train_y.append(alt_a)
             print(f'Ep {i+1}:', ep_reward)
@@ -101,7 +116,7 @@ if __name__ == '__main__':
             if eval:
                 model.eval()
                 val_loss = log_prob_loss(model, input_tensor, out_tensor).item()
-                print(f'Meta-task: {meta_task}, iter %d/%d - Test loss: %.3f' % (i + 1, epochs, val_loss))
+                print(f'Meta-task: {meta_task}, iter %d/%d - Test loss: %.3f' % (i + 1, num_epochs, val_loss))
                 if val_loss < best_loss:
                     torch.save(model.state_dict(), save_path)
                     best_loss = val_loss
@@ -109,5 +124,5 @@ if __name__ == '__main__':
                 train_loss = log_prob_loss(model, input_tensor, out_tensor)
                 train_loss.backward()
                 optimizer.step()
-                print(f'Meta-task: {meta_task}, iter %d/%d - Train loss: %.3f' % (i + 1, epochs, train_loss.item()))
+                print(f'Meta-task: {meta_task}, iter %d/%d - Train loss: %.3f' % (i + 1, num_epochs, train_loss.item()))
 

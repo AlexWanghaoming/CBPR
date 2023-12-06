@@ -1,6 +1,6 @@
 
 #layouts=('cramped_room' 'asymmetric_advantages' 'marshmallow_experiment' 'coordination_ring')
-layouts=('asymmetric_advantages' 'coordination_ring')
+layouts=('marshmallow_experiment' 'coordination_ring')
 switch_freqs=('inter2' 'inter1' 'intra200' 'intra100')
 
 for layout in "${layouts[@]}"; do

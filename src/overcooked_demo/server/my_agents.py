@@ -1,14 +1,15 @@
 import sys, os
 from overcooked_ai_py.agents.benchmarking import AgentEvaluator
 from overcooked_ai_py.mdp.actions import Action
-
+from copy import deepcopy
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../../algorithms')
-from experiments.exp1.bpr_RNN_scriptedPolicy import BPR_online, MTPLibrary, NNLibrary, BPR_offline
+# from experiments.exp1.bpr_RNN_scriptedPolicy import BPR_online, MTPLibrary, NNLibrary, BPR_offline
+from experiments.exp1.okr_scriptedPolicy import BPR_online, MTLibrary, AiPolicyLibrary, BPR_offline, MetaTaskLibrary
 import argparse
 from collections import deque
 import numpy as np
 import torch
-from models import BCP_MODELS, SP_MODELS, FCP_MODELS
+from models import BCP_MODELS, SP_MODELS, FCP_MODELS, META_TASKS
 
 
 class CBPR_ai(BPR_online):
@@ -26,17 +27,23 @@ class CBPR_ai(BPR_online):
                                          description='''Bayesian policy reuse algorithm on overcooked''')
         self.args = parser.parse_args()
         self.args.layout = self.og.layouts[0]
-        self.Q_len = 40
+        self.Q_len = 5
+        self.rho = 0.1
         self.device = 'cuda'
 
-        APL = MTPLibrary()
-        mtp_lib = APL.gen_policy_library(args=self.args)  # 构建AI策略库
-        NNL = NNLibrary()
-        NN_models = NNL.gen_policy_library(self.args)
-        bpr_offline = BPR_offline(self.args)
+        HPL = MetaTaskLibrary()
+        APL = AiPolicyLibrary()
+        MTL = MTLibrary()
+        bpr_offline = BPR_offline(self.args, HPL=HPL, APL=APL)
+        performance_model = bpr_offline.gen_performance_model()
+        print("初始performance_model: ", performance_model)
         belief = bpr_offline.gen_belief()
         self.ep_reward = 0
-        super(CBPR_ai, self).__init__(agents=mtp_lib, human_policys=None, NN_models=NN_models, belief=belief)
+        super(CBPR_ai, self).__init__(agents=APL.gen_policy_library(self.args),
+                                      human_policys=HPL.gen_policy_library(tasks=META_TASKS[self.args.layout]),
+                                      MT_models=MTL.gen_policy_library(self.args),
+                                      performance_model=performance_model,
+                                      belief=belief)
 
     # debug 用于测试
     # def action(self, state):
@@ -55,32 +62,34 @@ class CBPR_ai(BPR_online):
     #     return action, None
 
     def action(self, state):
+        self.episode_steps += 1
         # print('trajs:', self.og.trajectory[-1])
         ai_obs, h_obs = self.env.featurize_state_mdp(state)  # OvercookedState -> featurized state
-        best_agent_id, best_agent = self._reuse_optimal_policy()  # 选择belief最大的智能体
+        if self.episode_steps < 5:  # 每一句开始时还没有zeta
+            best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.belief)  # 选择belief最大的智能体
+        else:
+            best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.zeta)  # 选择belief最大的智能体
         ai_act = best_agent.evaluate(ai_obs)  # 智能体选动作
-
-        if len(self.og.joint_action) == 1:  #
+        if len(self.og.joint_action) == 1:  # bug 每一句最开始 joint_action长度是1
             action = Action.ALL_ACTIONS[ai_act]
             return action, None
-
         _, h_dire = self.og.joint_action
-        # next_state, info = self.mdp.get_state_transition(state, self.og.joint_action)  # 手动进行一次状态转移
         self.ep_reward += self.og.curr_reward
-
         h_act = Action.INDEX_TO_ACTION.index(h_dire)
-        actions_one_hot = np.eye(6)[h_act]
-        self.Q.append(np.hstack([h_obs, actions_one_hot]))
-        if len(self.Q) == self.Q_len:
-            self.belief = self._update_beta(self.args, self.Q)
-
+        h_obs = torch.tensor(h_obs, dtype=torch.float32).to(self.device)
+        h_act = torch.tensor(np.array([h_act]), dtype=torch.int64).to(self.device)
+        self.Q.append((h_obs, h_act))
+        self.xi = self._update_xi(self.Q)
+        self.zeta = self._update_zeta(t=self.episode_steps, rho=self.rho)
+        self.xi =deepcopy(self.zeta)
         action = Action.ALL_ACTIONS[ai_act]
         return action, None
 
     def reset(self):
         print('RESET GAME！')
+        self.episode_steps = 0
         self.Q = deque(maxlen=self.Q_len)
-
+        self.xi = deepcopy(self.belief)
 
 class Baseline_ai():
     def __init__(self, og, agent_type:str):

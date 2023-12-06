@@ -12,7 +12,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import MTP_MODELS, METATASK_MODELS, META_TASKS, SKILL_MODELS
 from agents.ppo_discrete import PPO_discrete
 from bc.opponent_scriptedPolicy import Opponent
-from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval
+from bc.bc_hh import BehaviorClone
+from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval, limit_value
 import math
 from src.overcooked_ai_py.mdp.actions import Action
 import wandb
@@ -53,7 +54,8 @@ class MTLibrary:
     def gen_policy_library(self) -> Dict[str, nn.Module]:
         for idx, mt_model in enumerate(METATASK_MODELS[LAYOUT_NAME]):
             state_dict = torch.load(mt_model)
-            model = Opponent(state_dim=96, hidden_dim=256, action_dim=6)
+            # model = Opponent(state_dim=96, hidden_dim=256, action_dim=6)
+            model = BehaviorClone(state_dim=96, hidden_dim=128, action_dim=6)
             model.load_state_dict(state_dict)
             model.eval()
             model.to(device)
@@ -139,7 +141,7 @@ class BPR_online:
         self.agents = agents
         self.human_policys = human_policys
         self.MTs = MT_models
-        self.eps = 1e-8
+        self.eps = 1e-7
 
     def play(self, args, skill_model):
         args.max_episode_steps = 600
@@ -150,7 +152,7 @@ class BPR_online:
             Q = deque(maxlen=args.Q_len)
             episode_steps = 0
             self.xi = deepcopy(self.belief)
-            best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.xi)  # 选择初始智能体策略
+            best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.belief)  # 选择初始智能体策略
             obs = env.reset()
             ai_obs, h_obs = obs['both_agent_obs']
             ep_reward = 0
@@ -170,13 +172,12 @@ class BPR_online:
                 h_act = torch.tensor(np.array([h_act]), dtype=torch.int64).to(device)
                 Q.append((h_obs, h_act))
 
-                if episode_steps % 5 == 0:
-                    self.xi = self._update_xi(Q)  # 更新intra-episode belief $\xi$ 原文公式8,9
-                    # print('xi: ', self.xi)
-                    self.zeta = self._update_zeta(t=episode_steps, rho=args.rho)  # 更新integrated belief $\zeta$ 原文公式10
-                    belief = self.zeta
-                    best_agent_id, best_agent = self._reuse_optimal_policy(belief=belief)  # 轮内重用最优策略
-                    self.xi = deepcopy(self.zeta)  # 每一步更新 \xi
+                # if episode_steps % 1 == 0:
+                self.xi = self._update_xi(Q)  # 更新intra-episode belief $\xi$ 原文公式8,9
+                # print('xi: ', self.xi)
+                self.zeta = self._update_zeta(t=episode_steps, rho=args.rho)  # 更新integrated belief $\zeta$ 原文公式10
+                best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.zeta)  # 轮内重用最优策略
+                self.xi = deepcopy(self.zeta)  # 每一步更新 \xi
 
                 ### debug: 直接选对应的策略作为最优策略
                 # best_agent_id = list(self.agents.keys())[policy_idx-1]
@@ -211,6 +212,7 @@ class BPR_online:
                                        u) * self.belief[id]
         for id in self.belief:
             new_belief[id] = (p_temp[id] + self.eps) / (sum(p_temp.values()) + self.eps * len(META_TASKS[args.layout]))
+        new_belief = {key: limit_value(value) for key, value in new_belief.items()}
 
         return new_belief
 
@@ -219,7 +221,6 @@ class BPR_online:
         每 step 利用Bayesian公式更新回合内belif
         xi: dict
         """
-
         def gen_Q_prob(Q):
             Q_prob = {}
             temp = {}
@@ -228,13 +229,13 @@ class BPR_online:
                 opponent_model = self.MTs[id]
                 for q in Q:
                     s, a = q
-                    su += torch.log(opponent_model(s.unsqueeze(dim=0), a.unsqueeze(dim=1))).item()
+                    # su += torch.log(opponent_model(s.unsqueeze(dim=0), a.unsqueeze(dim=1))).item()   # opponent model
+                    su += np.log(opponent_model.action_probability(s)[a])   # behavior cloning model
                 temp[id] = np.exp(su)
 
             for id in self.xi:
                 Q_prob[id] = (temp[id] + self.eps) / (sum(temp.values()) + self.eps * len(META_TASKS[args.layout]))
             return Q_prob
-
         p_temp = {}
         new_xi = {}
         Q_prob = gen_Q_prob(Q)
@@ -242,6 +243,7 @@ class BPR_online:
             p_temp[id] = Q_prob[id] * self.xi[id]
         for id in self.xi:
             new_xi[id] = (p_temp[id] + self.eps) / (sum(p_temp.values()) + self.eps * len(META_TASKS[args.layout]))
+        new_xi = {key: limit_value(value) for key, value in new_xi.items()}
         return new_xi
 
     def _gen_pdf(self, mu, sigma, x):
@@ -304,10 +306,10 @@ def parse_args():
                                      description='''Bayesian policy reuse algorithm on overcooked''')
     parser.add_argument('--device', type=str, default='cpu')
     # parser.add_argument('--layout', default='cramped_room')
-    parser.add_argument('--layout', default='marshmallow_experiment')
+    parser.add_argument('--layout', default='cramped_room')
     parser.add_argument('--num_episodes', type=int, default=20)
-    parser.add_argument('--Q_len', type=int, default=10)
-    parser.add_argument('--rho', type=float, default=0.5,
+    parser.add_argument('--Q_len', type=int, default=5)
+    parser.add_argument('--rho', type=float, default=0.1,
                         help="a hyperparameter which controls the weight of the inter-episode and intra-episode beliefs")
     parser.add_argument('--skill_level', default='low', help='low or medium or high')
     parser.add_argument('--seed', type=int, default=0)

@@ -223,3 +223,12 @@ def print_mean_interval(data:list):
     confidence = 0.95
     interval = stats.t.interval(confidence, len(data)-1, loc=mean, scale=sem)
     print(f"\033[91m  mean: {mean}, 95% interval: {interval}, std: {std} \033[0m")
+
+def limit_value(value, min=0.0001, max=0.9999):
+    """限制值在0.01到0.99之间"""
+    if value < min:
+        return min
+    elif value > max:
+        return max
+    else:
+        return value

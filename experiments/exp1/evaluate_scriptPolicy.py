@@ -46,7 +46,7 @@ if __name__ == '__main__':
                name=f'{args.algorithm}_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
                config=vars(args),
                job_type='eval',
-               dir=os.path.join(WANDB_DIR, 'exp1'),
+               dir=os.path.join(WANDB_DIR, 'exp1', args.algorithm),  # 这个目录需要手动创建
                reinit=True)
 
     if args.mode == 'inter':
@@ -98,7 +98,7 @@ if __name__ == '__main__':
         r_list.append(ep_reward)
         wandb.log({'episode': k+1, 'ep_reward': ep_reward})
     print(f'{args.algorithm}_{args.layout}_{args.mode}_{args.switch_human_freq}')
-    print_mean_interval(r_list)
+    # print_mean_interval(r_list)
     wandb.finish()
 
 

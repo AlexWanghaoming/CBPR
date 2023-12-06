@@ -12,6 +12,7 @@ import torch
 import random
 from typing import *
 import argparse
+import math
 
 device = torch.device("cpu")
 
@@ -164,8 +165,7 @@ if __name__ == '__main__':
                                                 torch.tensor(y_train, dtype=torch.int64)), shuffle=True, batch_size=64)
         val_loader = DataLoader(TensorDataset(torch.tensor(X_val).float(),
                                               torch.tensor(y_val, dtype=torch.int64)), shuffle=True, batch_size=64)
-        model = BehaviorClone(state_dim=96, hidden_dim=64, action_dim=6)
-        model.to(device)
+        model = BehaviorClone(state_dim=96, hidden_dim=64, action_dim=6).to(device)
         train(opt, train_loader, val_loader, model)
         save_path = f'../models/bc/{group_name}_{opt.layout}.pth'
         # torch.save(model.state_dict(), opt.save_path) # 只保存模型的参数

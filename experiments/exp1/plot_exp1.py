@@ -10,10 +10,10 @@ from scipy.ndimage import gaussian_filter1d
 import argparse
 
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp1/wandb'
+WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp1'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('--layout', default='coordination_ring')
-parser.add_argument('--switch_freq', type=str, default='intra100')
+parser.add_argument('--layout', default='cramped_room')
+parser.add_argument('--switch_freq', type=str, default='inter2')
 args = parser.parse_args()
 
 # 设置字体和样式
@@ -29,24 +29,28 @@ mpl.rcParams['legend.fontsize'] = 12  # 设置图例的字体大小
 
 
 a2c = {
-       'bprRNN': '#b23a48',
-       'BCP': '#9d4edd',
-       'FCP': '#219ebc',
-       'SP': '#c0c0c0',
+       'okr': '#d90429',
+       # 'BCP': '#9d4edd', # 紫色
+       'BCP': '#3f7d20',
+       # 'FCP': '#219ebc', # 蓝色
+       'FCP': '#9d4edd',
+       'SP': '#f6ae2d',
        }
 
-runs = glob.glob(f"{WANDB_DIR}/run*")
-run_ids = [x.split('-')[-1] for x in runs]
-print(runs)
-print(run_ids)
+
 api = wandb.Api()
 num_episodes = 50
 num_seeds = 5
 
 plt.figure(figsize=(8, 5))
 for algorithm in a2c:
+    runs = glob.glob(f"{WANDB_DIR}/{algorithm}/wandb/run*")
+    run_ids = [x.split('-')[-1] for x in runs]
+    print(runs)
+    print(run_ids)
     reward_list = []
     num_runs = 0
+
     for run_id in run_ids:
         if num_runs > num_seeds:  #只运行5个seed
             break
@@ -73,7 +77,7 @@ for algorithm in a2c:
     interval = stats.t.interval(confidence, len(reward_list) - 1, loc=mean_rewards, scale=sem)
 
     episodes = np.arange(1, num_episodes+1)
-    lab = 'CBPR' if algorithm == 'bprRNN' else algorithm
+    lab = 'CBPR' if algorithm == 'okr' else algorithm
     plt.plot(episodes, mean_rewards, color=a2c[algorithm], label=lab, linewidth=2)
     # plt.plot(episodes, mean_rewards)
     plt.fill_between(episodes, mean_rewards-ste_rewards, mean_rewards+ste_rewards, alpha=0.2, color=a2c[algorithm])
@@ -82,7 +86,8 @@ for algorithm in a2c:
 plt.xlabel('Episodes')
 plt.ylabel('Mean episode reward')
 # plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
-plt.legend(loc='best')
+if args.switch_freq == 'inter2':
+    plt.legend(loc='lower left')
 plt.grid(axis='x')
 plt.tight_layout()
 plt.savefig(f'exp1_{args.layout}_{args.switch_freq}.pdf', bbox_inches='tight')
