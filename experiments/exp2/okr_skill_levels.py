@@ -300,7 +300,6 @@ class BPR_online:
         return upper
 
 
-
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='''Bayesian policy reuse algorithm on overcooked''')
@@ -334,10 +333,11 @@ if __name__ == '__main__':
         pass
     wandb.init(project='overcooked_rl',
                group='exp2',
-               name=f'okr_{args.layout}_{args.skill_level}_seed{args.seed}',
+               name=f'okr_{args.layout}_{args.skill_level}_seed{args.seed}_Q{args.Q_len}_rho{args.rho}',
                config=vars(args),
                job_type='eval',
-               dir=os.path.join(WANDB_DIR, 'exp2'),
+               dir=os.path.join(WANDB_DIR, 'exp2', 'ablations'),
+               # dir=os.path.join(WANDB_DIR, 'exp2'),
                reinit=True)
 
     seed_everything(args.seed)

@@ -87,7 +87,7 @@ plt.xlabel('Episodes')
 plt.ylabel('Mean episode reward')
 # plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
 if args.switch_freq == 'inter2':
-    plt.legend(loc='lower left')
+    plt.legend(loc='upper left')
 plt.grid(axis='x')
 plt.tight_layout()
 plt.savefig(f'exp1_{args.layout}_{args.switch_freq}.pdf', bbox_inches='tight')

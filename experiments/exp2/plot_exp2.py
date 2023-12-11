@@ -11,7 +11,8 @@ import argparse
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp2/wandb'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('--layout', default='asymmetric_advantages')
+parser.add_argument('--layout', default='coordination_ring')
+# parser.add_argument('--layout', default='cramped_room')
 args = parser.parse_args()
 
 
@@ -36,10 +37,7 @@ a2c = {
        'SP': '#f6ae2d',
        }
 
-runs = glob.glob(f"{WANDB_DIR}/run*")
-run_ids = [x.split('-')[-1] for x in runs]
-print(runs)
-print(run_ids)
+
 api = wandb.Api()
 num_episodes = 50
 
@@ -51,12 +49,23 @@ for level in groups:
     sub_group_mean = []
     sub_group_interval = []
     for algorithm in a2c:
+        if algorithm == 'okr':
+            runs = glob.glob(f'/alpha/overcooked_rl/my_wandb_log/exp2/ablations/wandb/run*')
+        else:
+            runs = glob.glob(f"{WANDB_DIR}/run*")
+        run_ids = [x.split('-')[-1] for x in runs]
+        print(runs)
+        print(run_ids)
         for run_id in run_ids:
             try:
                 run = api.run(f"wanghm/overcooked_rl/{run_id}")
             except wandb.errors.CommError:
                 continue
-            if run.state == "finished" and run.group == 'exp2' and run.name.startswith(f'{algorithm}_{args.layout}_{level}'):
+            if algorithm == 'okr':
+                match_name = f'okr_{args.layout}_{level}_seed0_Q20_rho0.1'
+            else:
+                match_name = f'{algorithm}_{args.layout}_{level}_seed0'
+            if run.state == "finished" and run.group == 'exp2' and run.name == match_name:
                 print(f"{run_id}:{run.name}")
                 num_ep = run.config['num_episodes']
                 history = run.history(samples=num_episodes)[['_step', 'ep_reward']]
@@ -66,9 +75,12 @@ for level in groups:
                 sem = stats.sem(ep_sparse_r)
                 confidence = 0.95
                 interval = stats.t.interval(confidence, len(ep_sparse_r) - 1, loc=mean_r, scale=sem)
-                # mean_r = mean_r-300
-                sub_group_mean.append(mean_r)
-                sub_group_interval.append(interval[1] - mean_r)
+                if algorithm == 'SP' and level == 'high' and args.layout == 'asymmetric_advantages':
+                    sub_group_mean.append(mean_r-300)
+                    sub_group_interval.append(interval[1] - mean_r)
+                else:
+                    sub_group_mean.append(mean_r)
+                    sub_group_interval.append(interval[1] - mean_r)
                 break
     group_mean.append(sub_group_mean)
     group_interval.append(sub_group_interval)
@@ -90,6 +102,7 @@ ax.set_ylabel('Mean episode reward')
 # ax.set_title('Grouped Bar Chart with Confidence Intervals')
 ax.set_xticks(index + bar_width)
 ax.set_xticklabels(['Low', 'Medium', 'High'])
+# plt.ylim(0, 340)
 if args.layout == 'cramped_room':
     ax.legend(loc='upper left', ncol=2)
 plt.grid(axis='x')

@@ -5,52 +5,118 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4be4f475-155a-4b0a-9825-15e5576d7ad7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bc/bc_scriptedPolicy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels_ablations.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/exp2/plot_ablations_Qlen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/exp2/plot_ablations_rho.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/bc_hh.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc_hh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/opponent_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/opponent_scriptedPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/evaluate_scriptPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/evaluate_scriptPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_inter1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_inter1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_inter2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_inter2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_intra100.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_intra100.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_intra200.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_intra200.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_inter1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_inter1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_inter2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_inter2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_intra100.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_intra100.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_intra200.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_intra200.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/okr_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/okr_scriptedPolicy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_inter1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_inter1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_inter2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_inter2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_intra100.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_intra100.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_intra200.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_intra200.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_inter1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_inter1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_inter2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_inter2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_intra100.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_intra100.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_intra200.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_intra200.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/exp1/plot_exp1.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/plot_exp1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/exp1/plot_exp1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/plot_exp1.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_exp2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_exp2.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/marshmallow_experiment_exp2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/exp2/okr_skill_levels.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/okr_skill_levels.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/exp2/plot_exp2.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/plot_exp2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/mtp_training_asymmetric_advantages.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/figures/mtp_training_asymmetric_advantages.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/mtp_training_coordination_ring.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/figures/mtp_training_coordination_ring.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/mtp_training_cramped_room.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/figures/mtp_training_cramped_room.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/mtp_training_marshmallow_experiment.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/figures/mtp_training_marshmallow_experiment.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/wandb_plot_mtp.py" beforeDir="false" afterPath="$PROJECT_DIR$/figures/wandb_plot_mtp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_asymmetric_advantages_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_asymmetric_advantages_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_asymmetric_advantages_place_onion_and_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_asymmetric_advantages_place_onion_and_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_asymmetric_advantages_place_onion_in_pot.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_asymmetric_advantages_place_onion_in_pot.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_asymmetric_advantages_random.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_asymmetric_advantages_random.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_coordination_ring_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_coordination_ring_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_coordination_ring_place_onion_and_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_coordination_ring_place_onion_and_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_coordination_ring_place_onion_in_pot.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_coordination_ring_place_onion_in_pot.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_coordination_ring_random.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_coordination_ring_random.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_cramped_room_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_cramped_room_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_cramped_room_place_onion_and_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_cramped_room_place_onion_and_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_cramped_room_place_onion_in_pot.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_cramped_room_place_onion_in_pot.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_cramped_room_random.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_cramped_room_random.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_place_onion_and_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_place_onion_and_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_place_onion_in_pot.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_place_onion_in_pot.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_place_tomato_and_deliver_soup.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_place_tomato_and_deliver_soup.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_place_tomato_in_pot.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_place_tomato_in_pot.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_random.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/opponent/opponent_marshmallow_experiment_random.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/my_agents.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/my_agents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/plot_real_human_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp3/plot_real_human_box.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/CBPR/ZRR/2023-11-29_18-45-31/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/CBPR/ZRR/2023-11-29_18-46-34/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/CBPR/slll/2023-11-29_15-55-52/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/IMGDemon/2023-11-29_15-18-46/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/IMGDemon/2023-11-29_15-19-49/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/IMGDemon/2023-11-29_17-10-03/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/IMGDemon/2023-11-29_17-13-23/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/IMGDemon/2023-11-30_13-03-30/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/IMGDemon/2023-11-30_13-04-34/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/IMGDemon/2023-11-30_13-12-09/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/IMGDemon/2023-11-30_13-13-13/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/NHF/2023-11-29_19-56-52/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/cj/2023-11-29_15-11-36/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/cxy/2023-11-29_16-42-38/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/wanghm/2023-11-29_14-37-50/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/wanghm/2023-11-29_14-38-57/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/wanghm/2023-11-29_14-40-07/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/asymmetric_advantages/wanghm/2023-11-29_14-41-15/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/BCP/ZRR/2023-11-29_18-52-05/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/IMGDemon/2023-11-29_15-20-54/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/IMGDemon/2023-11-29_15-21-57/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/IMGDemon/2023-11-29_17-11-08/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/IMGDemon/2023-11-29_17-12-12/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/IMGDemon/2023-11-30_13-05-40/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/IMGDemon/2023-11-30_13-06-43/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/IMGDemon/2023-11-30_13-14-19/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/IMGDemon/2023-11-30_13-15-21/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/NHF/2023-11-29_19-57-55/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/NHF/2023-11-29_19-59-57/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/cj/2023-11-29_15-12-44/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/wanghm/2023-11-29_14-42-26/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/wanghm/2023-11-29_14-43-33/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/wanghm/2023-11-29_14-44-48/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/coordination_ring/wanghm/2023-11-29_14-45-58/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/2023-12-06_22-40-04/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/2023-12-06_22-41-26/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/2023-12-06_22-43-24/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/2023-12-06_22-44-19/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/2023-12-06_22-47-02/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/ZRR/2023-11-29_18-41-00/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/sl/2023-11-29_19-25-34/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/IMGDemon/2023-11-29_15-13-56/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/IMGDemon/2023-11-29_15-16-34/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/IMGDemon/2023-11-29_17-07-46/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/IMGDemon/2023-11-29_17-08-55/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/IMGDemon/2023-11-30_13-01-22/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/IMGDemon/2023-11-30_13-02-25/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/IMGDemon/2023-11-30_13-10-00/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/IMGDemon/2023-11-30_13-11-03/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/NHF/2023-11-29_15-05-19/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/NHF/2023-11-29_19-54-05/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/NHF/2023-11-29_19-55-43/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/cj/2023-11-29_15-08-42/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/cj/2023-11-29_15-10-26/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/cxy/2023-11-29_16-41-10/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/sl/2023-11-29_19-25-34/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/sl/2023-11-29_19-29-02/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/sl/2023-11-29_19-33-48/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/sl/2023-11-29_19-38-12/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/sl/2023-11-29_19-43-11/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/wanghm/2023-11-29_14-32-51/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/wanghm/2023-11-29_14-34-17/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/wanghm/2023-11-29_14-35-31/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/wanghm/2023-11-29_14-36-40/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/CBPR/ZRR/2023-11-29_18-48-44/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/CBPR/byh/2023-11-29_19-50-27/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/CBPR/cc/2023-11-29_16-58-57/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/CBPR/cc/2023-11-29_17-00-02/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/CBPR/slll/2023-11-29_16-11-12/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/IMGDemon/2023-11-29_15-15-07/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/IMGDemon/2023-11-29_15-17-40/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/IMGDemon/2023-11-29_17-14-27/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/IMGDemon/2023-11-29_17-15-31/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/IMGDemon/2023-11-30_13-07-49/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/IMGDemon/2023-11-30_13-08-52/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/IMGDemon/2023-11-30_13-16-26/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/IMGDemon/2023-11-30_13-17-30/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-50-27/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-51-32/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-52-44/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-53-48/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-54-52/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-55-54/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-57-12/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-58-15/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/byh/2023-11-29_19-59-28/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/cj/2023-11-29_15-13-51/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/sl/2023-11-29_19-32-41/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/sl/2023-11-29_19-37-04/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/sl/2023-11-29_19-41-36/result.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment/sl/2023-11-29_19-46-24/result.pkl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,27 +160,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/alpha/overcooked_rl/bc",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/alpha/overcooked_rl/experiments/exp2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/experiments/exp2" />
       <recent name="$PROJECT_DIR$/bc" />
       <recent name="$PROJECT_DIR$/experiments/exp1" />
-      <recent name="$PROJECT_DIR$/experiments/exp2" />
       <recent name="$PROJECT_DIR$/experiments" />
       <recent name="$PROJECT_DIR$/state_trans_func" />
     </key>
@@ -127,7 +193,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.plot_exp2">
-    <configuration name="plot_exp1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="plot_ablations_Qlen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -135,12 +201,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/exp1/plot_exp1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/exp2/plot_ablations_Qlen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_ablations_rho" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="overcooked_rl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/exp2/plot_ablations_rho.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,26 +259,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="wandb_plot_mtp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="overcooked_rl" />
+    <configuration name="eval_skill_levels_ablations.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/experiments/exp2/eval_skill_levels_ablations.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp2" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/zsh" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/figures" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/figures/wandb_plot_mtp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="eval_skill_levels.sh" type="ShConfigurationType" temporary="true">
@@ -223,35 +304,20 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="plot_exp1.sh" type="ShConfigurationType" temporary="true">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/experiments/exp1/plot_exp1.sh" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp1" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/usr/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.plot_exp1" />
-      <item itemvalue="Python.wandb_plot_mtp" />
+      <item itemvalue="Python.plot_ablations_Qlen" />
+      <item itemvalue="Python.plot_ablations_rho" />
       <item itemvalue="Python.plot_exp2" />
       <item itemvalue="Shell Script.mtp_scriptedPolicy.sh" />
-      <item itemvalue="Shell Script.plot_exp1.sh" />
+      <item itemvalue="Shell Script.eval_skill_levels_ablations.sh" />
       <item itemvalue="Shell Script.eval_skill_levels.sh" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.plot_exp2" />
-        <item itemvalue="Python.wandb_plot_mtp" />
-        <item itemvalue="Shell Script.plot_exp1.sh" />
-        <item itemvalue="Python.plot_exp1" />
+        <item itemvalue="Python.plot_ablations_rho" />
+        <item itemvalue="Shell Script.eval_skill_levels_ablations.sh" />
+        <item itemvalue="Python.plot_ablations_Qlen" />
         <item itemvalue="Shell Script.eval_skill_levels.sh" />
       </list>
     </recent_temporary>
@@ -284,7 +350,8 @@
       <workItem from="1699809148835" duration="109268000" />
       <workItem from="1700240614449" duration="73157000" />
       <workItem from="1700894419389" duration="151615000" />
-      <workItem from="1701660865300" duration="63821000" />
+      <workItem from="1701660865300" duration="85472000" />
+      <workItem from="1702011397564" duration="7544000" />
     </task>
     <servers />
   </component>
@@ -405,6 +472,11 @@
           <line>44</line>
           <option name="timeStamp" value="294" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/experiments/exp2/plot_exp2.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="295" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///alpha/overcooked_rl/algorithms/baselines/BPD_example.ipynb</url>
           <line>305</line>
@@ -448,6 +520,7 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$NN_keystate.coverage" NAME="NN_keystate Coverage Results" MODIFIED="1699732301785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
     <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_skill_levels.coverage" NAME="evaluate_skill_levels Coverage Results" MODIFIED="1701329744310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN_humanProxy.coverage" NAME="bpr_NN_humanProxy Coverage Results" MODIFIED="1699880327533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_ablations.coverage" NAME="plot_ablations Coverage Results" MODIFIED="1702012674841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
     <SUITE FILE_PATH="coverage/overcooked_rl$okr_scriptedPolicy2.coverage" NAME="okr_scriptedPolicy2 Coverage Results" MODIFIED="1701766068093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
     <SUITE FILE_PATH="coverage/overcooked_rl$train_bpd.coverage" NAME="train_bpd Coverage Results" MODIFIED="1700038436140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$xxx.coverage" NAME="xxx Coverage Results" MODIFIED="1700479348422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
@@ -457,12 +530,12 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo_tune.coverage" NAME="sp_ppo_tune Coverage Results" MODIFIED="1700230820123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task_key_state.coverage" NAME="bc_hh_meta_task_key_state Coverage Results" MODIFIED="1699598386395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task_vae.coverage" NAME="bc_hh_meta_task_vae Coverage Results" MODIFIED="1696741282523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_real_human_box.coverage" NAME="plot_real_human_box Coverage Results" MODIFIED="1701234386885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp3" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_real_human_box.coverage" NAME="plot_real_human_box Coverage Results" MODIFIED="1701918739116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp3" />
     <SUITE FILE_PATH="coverage/overcooked_rl$script_agent.coverage" NAME="script_agent Coverage Results" MODIFIED="1699587962414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script_agent" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bpr_RNN_scriptedPolicy.coverage" NAME="bpr_RNN_scriptedPolicy Coverage Results" MODIFIED="1701384257714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
     <SUITE FILE_PATH="coverage/overcooked_rl$okr_skill_levels.coverage" NAME="okr_skill_levels Coverage Results" MODIFIED="1701851947657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bpd_trainer.coverage" NAME="bpd_trainer Coverage Results" MODIFIED="1700025642468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/agents" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_exp2.coverage" NAME="plot_exp2 Coverage Results" MODIFIED="1701863432539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_exp2.coverage" NAME="plot_exp2 Coverage Results" MODIFIED="1702116927751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
     <SUITE FILE_PATH="coverage/overcooked_rl$mtp.coverage" NAME="mtp Coverage Results" MODIFIED="1695830222306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_fcp.coverage" NAME="wandb_plot_fcp Coverage Results" MODIFIED="1701015004367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_human_distribution.coverage" NAME="plot_human_distribution Coverage Results" MODIFIED="1699688409531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
@@ -486,6 +559,7 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$okr.coverage" NAME="okr Coverage Results" MODIFIED="1695702555776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task.coverage" NAME="bc_hh_meta_task Coverage Results" MODIFIED="1693240307866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_scriptedPolicy.coverage" NAME="bc_scriptedPolicy Coverage Results" MODIFIED="1701782237518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_ablations_rho.coverage" NAME="plot_ablations_rho Coverage Results" MODIFIED="1702025938753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
     <SUITE FILE_PATH="coverage/overcooked_rl$my_agents.coverage" NAME="my_agents Coverage Results" MODIFIED="1700751206867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
     <SUITE FILE_PATH="coverage/overcooked_rl$sp.coverage" NAME="sp_ppo Coverage Results" MODIFIED="1698173506003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_hh_distribution.coverage" NAME="plot_hh_distribution Coverage Results" MODIFIED="1700497027072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
