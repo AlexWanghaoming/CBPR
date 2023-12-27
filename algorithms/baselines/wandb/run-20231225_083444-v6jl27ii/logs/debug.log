@@ -1,0 +1,86 @@
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_setup.py:_flush():76] Current SDK version is 0.16.1
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_setup.py:_flush():76] Configure stats pid to 2017537
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_setup.py:_flush():76] Loading settings from /home/wanghm/.config/wandb/settings
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_setup.py:_flush():76] Loading settings from /alpha/overcooked_rl/algorithms/baselines/wandb/settings
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'algorithms/baselines/sp_ppo.py', 'program_abspath': '/alpha/overcooked_rl/algorithms/baselines/sp_ppo.py', 'program': '/alpha/overcooked_rl/algorithms/baselines/sp_ppo.py'}
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_init.py:_log_setup():524] Logging user logs to /alpha/overcooked_rl/algorithms/baselines/wandb/run-20231225_083444-v6jl27ii/logs/debug.log
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_init.py:_log_setup():525] Logging internal logs to /alpha/overcooked_rl/algorithms/baselines/wandb/run-20231225_083444-v6jl27ii/logs/debug-internal.log
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_init.py:init():564] calling init triggers
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_init.py:init():572] wandb.init called with sweep_config: {}
+config: {'hidden_dim': 128, 'batch_size': 4096, 'mini_batch_size': 128, 'use_minibatch': False, 'lr': 0.0008, 'gamma': 0.99, 'epsilon': 0.05, 'use_state_norm': False, 'use_reward_scaling': True, 'entropy_coef': 0.01, 'device': 'cpu', 'layout': 'soup_coordination', 'num_episodes': 2000, 'seed': 0, 'use_wandb': True, 'max_episode_steps': 600, 'state_dim': 96, 'action_dim': 6}
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_init.py:init():614] starting backend
+2023-12-25 08:34:44,306 INFO    MainThread:2017537 [wandb_init.py:init():618] setting up manager
+2023-12-25 08:34:44,307 INFO    MainThread:2017537 [backend.py:_multiprocessing_setup():107] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-12-25 08:34:44,309 INFO    MainThread:2017537 [wandb_init.py:init():624] backend started and connected
+2023-12-25 08:34:44,312 INFO    MainThread:2017537 [wandb_init.py:init():716] updated telemetry
+2023-12-25 08:34:44,331 INFO    MainThread:2017537 [wandb_init.py:init():749] communicating run to backend with 90.0 second timeout
+2023-12-25 08:35:50,146 INFO    MainThread:2017537 [wandb_run.py:_on_init():2254] communicating current version
+2023-12-25 08:35:50,412 INFO    MainThread:2017537 [wandb_run.py:_on_init():2263] got version response 
+2023-12-25 08:35:50,412 INFO    MainThread:2017537 [wandb_init.py:init():800] starting run threads in backend
+2023-12-25 08:35:53,023 INFO    MainThread:2017537 [wandb_run.py:_console_start():2233] atexit reg
+2023-12-25 08:35:53,023 INFO    MainThread:2017537 [wandb_run.py:_redirect():2088] redirect: wrap_raw
+2023-12-25 08:35:53,023 INFO    MainThread:2017537 [wandb_run.py:_redirect():2153] Wrapping output streams.
+2023-12-25 08:35:53,023 INFO    MainThread:2017537 [wandb_run.py:_redirect():2178] Redirects installed.
+2023-12-25 08:35:53,023 INFO    MainThread:2017537 [wandb_init.py:init():841] run started, returning control to user process
+2023-12-25 08:35:56,166 INFO    Thread-1  :2017537 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 426, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    httplib_response = conn.getresponse()
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/http/client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/ssl.py", line 1071, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/ssl.py", line 929, in read
+    return self._sslobj.read(len, buffer)
+ssl.SSLError: [SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:2570)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/util/retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:2570)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 578, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/adapters.py", line 514, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:2570)')))
+2023-12-25 09:09:58,859 INFO    MainThread:2017537 [wandb_run.py:_finish():1962] finishing run wanghm/overcooked_rl/v6jl27ii
+2023-12-25 09:09:58,859 INFO    MainThread:2017537 [wandb_run.py:_atexit_cleanup():2202] got exitcode: 0
+2023-12-25 09:09:58,859 INFO    MainThread:2017537 [wandb_run.py:_restore():2185] restore
+2023-12-25 09:09:58,859 INFO    MainThread:2017537 [wandb_run.py:_restore():2191] restore done

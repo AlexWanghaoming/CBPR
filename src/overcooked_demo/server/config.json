@@ -3,7 +3,8 @@
     "layouts" : ["cramped_room",
         "asymmetric_advantages",
         "coordination_ring",
-        "marshmallow_experiment"],
+        "marshmallow_experiment",
+        "soup_coordination"],
 
     "MAX_GAMES" : 10,
     "MAX_GAME_LENGTH" : 120,
@@ -11,7 +12,7 @@
     "MAX_FPS" : 30,
     "predefined" : {
         "experimentParams" : {
-            "layouts" : ["cramped_room", "asymmetric_advantages", "marshmallow_experiment"],
+            "layouts" : ["cramped_room", "asymmetric_advantages", "coordination_ring", "marshmallow_experiment", "soup_coordination"],
             "gameTime" : 5,
             "playerZero" : "human",
             "playerOne" : "human",

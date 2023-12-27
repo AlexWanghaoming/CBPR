@@ -6,6 +6,9 @@ from agents.ppo_discrete import PPO_discrete
 from My_utils import seed_everything, LinearAnnealer, init_env, ReplayBuffer, RewardScaling
 import wandb
 
+add = 'http://127.0.0.1:7890'
+os.environ['http_proxy'] = add
+os.environ['https_proxy'] = add
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
 
 
@@ -54,9 +57,9 @@ def train(args, ego_agent:PPO_discrete, n_episodes:int, seed:int, logger):
             if ego_buffer.count == args.batch_size:
                 ego_agent.update(ego_buffer, cur_steps)
                 ego_buffer.count = 0
-        # wandb.log({'episode': k, 'ep_reward': episode_reward})
-        print(f"Ep {k}:", episode_reward)
-    # ego_agent.save_actor(f'../models/mtp/mtp_{args.layout}-{args.scripted_policy_name}-seed{seed}.pth')
+        wandb.log({'episode': k, 'ep_reward': episode_reward})
+        # print(f"Ep {k}:", episode_reward)
+    ego_agent.save_actor(f'../models/mtp/mtp_{args.layout}-{args.scripted_policy_name}-seed{seed}.pth')
 
 
 def run():
@@ -83,18 +86,18 @@ def run():
     args.t_max = args.num_episodes * args.max_episode_steps
     args.state_dim = 96
     args.action_dim = 6
-    # wandb.init(project='overcooked_rl',
-    #            group='MTP',
-    #            name=f'mtp_ppo_{args.layout}_{args.scripted_policy_name}_seed{args.seed}',
-    #            job_type='training',
-    #            config=vars(args),
-    #            # dir=os.path.join(WANDB_DIR, 'mtp'),
-    #            reinit=True)
+    wandb.init(project='overcooked_rl',
+               group='MTP',
+               name=f'mtp_ppo_{args.layout}_{args.scripted_policy_name}_seed{args.seed}',
+               job_type='training',
+               config=vars(args),
+               dir=os.path.join(WANDB_DIR, 'mtp'),
+               reinit=True)
 
     seed_everything(seed=args.seed)
     ego_agent = PPO_discrete(num_episodes=args.num_episodes, device=args.device)
     train(args, ego_agent=ego_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)
-    # wandb.finish()
+    wandb.finish()
 
 
 if __name__ == '__main__':

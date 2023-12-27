@@ -1,0 +1,83 @@
+2023-12-25 08:30:24,778 INFO    StreamThr :2016996 [internal.py:wandb_internal():89] W&B internal server running at pid: 2016996, started at: 2023-12-25 08:30:24.775914
+2023-12-25 08:30:24,780 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: status
+2023-12-25 08:30:24,781 INFO    WriterThread:2016996 [datastore.py:open_for_write():85] open: /alpha/overcooked_rl/algorithms/baselines/wandb/run-20231225_083024-s3ix4cgb/run-s3ix4cgb.wandb
+2023-12-25 08:30:24,782 DEBUG   SenderThread:2016996 [sender.py:send():380] send: header
+2023-12-25 08:30:24,797 DEBUG   SenderThread:2016996 [sender.py:send():380] send: run
+2023-12-25 08:30:29,798 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:30:34,799 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:30:39,800 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:30:44,802 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:30:49,804 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:30:54,805 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:30:59,807 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:04,809 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:09,810 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:14,811 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:19,812 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:24,814 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:24,923 INFO    SenderThread:2016996 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connection.py", line 371, in connect
+    ssl_context=context,
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 386, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/ssl.py", line 423, in wrap_socket
+    session=session
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/ssl.py", line 870, in _create
+    self.do_handshake()
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/ssl.py", line 1139, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:1091)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/util/retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:1091)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 366, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 578, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/adapters.py", line 514, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:1091)')))
+2023-12-25 08:31:29,816 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:34,817 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:39,819 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:44,820 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:49,822 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 08:31:54,824 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: cancel
+2023-12-25 08:31:54,824 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: cancel
+2023-12-25 08:31:54,824 DEBUG   SenderThread:2016996 [sender.py:send():389] Record cancelled: run
+2023-12-25 08:31:54,825 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: status_report
+2023-12-25 08:31:56,829 DEBUG   HandlerThread:2016996 [handler.py:handle_request():146] handle_request: shutdown
+2023-12-25 08:31:56,829 INFO    HandlerThread:2016996 [handler.py:finish():866] shutting down handler
+2023-12-25 08:31:57,825 INFO    SenderThread:2016996 [sender.py:finish():1534] shutting down sender
+2023-12-25 08:31:57,825 INFO    WriterThread:2016996 [datastore.py:close():294] close: /alpha/overcooked_rl/algorithms/baselines/wandb/run-20231225_083024-s3ix4cgb/run-s3ix4cgb.wandb

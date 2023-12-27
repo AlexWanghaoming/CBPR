@@ -4,7 +4,7 @@ import os
 import random
 from collections import defaultdict
 from typing import DefaultDict
-
+import pickle
 import numpy as np
 import pandas as pd
 from numpy.core.numeric import full
@@ -174,6 +174,10 @@ def get_trajs_from_data(data_path, layouts, silent=True, **kwargs):
         print("Loading data from {}".format(data_path))
 
     main_trials = pd.read_pickle(data_path)
+    # main_trials2 = pd.read_pickle('/alpha/overcooked_rl/experiments/exp3/real_human_test/asymmetric_advantages/CBPR/byh/2023-11-29_19-30-46/result.pkl')
+    # with open('/alpha/overcooked_rl/experiments/exp3/real_human_test/asymmetric_advantages/CBPR/byh/2023-11-29_19-30-46/result.pkl', 'rb') as f:
+        # 加载pickle文件
+        # data = pickle.load(f)
     print(f'{data_path}:', main_trials.shape)
     print(main_trials['layout_name'].value_counts())
     trajs, info = convert_joint_df_trajs_to_overcooked_single(

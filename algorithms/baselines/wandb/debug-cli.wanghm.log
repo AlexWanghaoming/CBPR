@@ -1,0 +1,1 @@
+2023-12-25 08:38:34 WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: KRB5_S_TKT_NYV] unexpected eof while reading (_ssl.c:2570)'))': /api/4504800232407040/envelope/

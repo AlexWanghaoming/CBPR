@@ -32,12 +32,12 @@ class FixedQueue(deque):
 
 
 gamma = 0.99
-use_state_norm = True
+use_state_norm = False
 use_reward_scaling = True
 device = 'cpu'
-num_episodes = 2000
+num_episodes = 1000
 hidden_dim = 128
-layout = 'counter_circuit'
+layout = 'random3'
 max_episode_steps =  600
 state_dim = 96
 action_dim = 6
@@ -48,8 +48,8 @@ def train_n_episodes(ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:
     queue = FixedQueue(10)
     annealer = LinearAnnealer(horizon=num_episodes * max_episode_steps * 0.5)
     env = init_env(layout=layout)
-    ego_buffer = ReplayBuffer(config['batch_size'], state_dim)
-    alt_buffer = ReplayBuffer(config['batch_size'], state_dim)
+    ego_buffer = ReplayBuffer(4096, state_dim)
+    alt_buffer = ReplayBuffer(4096, state_dim)
     cur_steps = 0  # Record the total steps during the training
     ego_state_norm = Normalization(shape=state_dim)
     alt_state_norm = Normalization(shape=state_dim)
@@ -93,14 +93,14 @@ def train_n_episodes(ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:
             alt_buffer.store(alt_obs, alt_a, alt_a_logprob, r, alt_obs_, dw, done)
             ego_obs = ego_obs_
             alt_obs = alt_obs_
-            if ego_buffer.count == config['batch_size']:
+            if ego_buffer.count == 4096:
                 ego_agent.update(ego_buffer, cur_steps)
                 alt_agent.update(alt_buffer, cur_steps)
                 ego_buffer.count = 0
                 alt_buffer.count = 0
         # print(f"Ep {k}:", episode_reward)
         queue.append(episode_reward)
-    train.report({"mean_reward": queue.average()})
+        train.report({'mean_reward':queue.average()})
 
 
 def run(config):
@@ -109,7 +109,8 @@ def run(config):
     action_dim = test_env.action_space.n
     ego_agent = PPO_discrete(lr=config['lr'],
                          hidden_dim=hidden_dim,
-                         batch_size=config['batch_size'],
+                         batch_size=4096,
+                         # batch_size=config['batch_size'],
                          epsilon=config['epsilon'],
                          entropy_coef=config['entropy_coef'],
                          state_dim=state_dim,
@@ -118,7 +119,8 @@ def run(config):
                          device=device)
     alt_agent = PPO_discrete(lr=config['lr'],
                          hidden_dim=hidden_dim,
-                         batch_size=config['batch_size'],
+                         batch_size=4096,
+                         # batch_size=config['batch_size'],
                          epsilon=config['epsilon'],
                          entropy_coef=config['entropy_coef'],
                          state_dim=state_dim,
@@ -134,7 +136,7 @@ if __name__ == '__main__':
     ray.init(num_cpus=4, local_mode=False)
     search_space = {
         "lr": hp.uniform('lr', 0.0005, 0.001),
-        "batch_size":hp.choice('batch_size',[2048, 4096]),
+        # "batch_size":hp.choice('batch_size',[2048, 4096]),
         'entropy_coef': hp.uniform('entropy_coef', 0.01, 0.1),
         'epsilon': hp.uniform('epsilon', 0.05, 0.2)
 

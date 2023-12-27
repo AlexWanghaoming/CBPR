@@ -17,7 +17,7 @@ device = 'cuda'
 def parse_opt():
     parser = argparse.ArgumentParser()
     # parser.add_argument('--layout', type=str, default='coordination_ring')
-    parser.add_argument('--layout', type=str, default='asymmetric_advantages')
+    parser.add_argument('--layout', type=str, default='soup_coordination')
     parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--lr', type=float, default=1e-3)
     opt = parser.parse_args()

@@ -1,6 +1,6 @@
 
 #layouts=('cramped_room' 'asymmetric_advantages' 'marshmallow_experiment' 'coordination_ring')
-layouts=('marshmallow_experiment' 'asymmetric_advantages')
+layouts=('cramped_room')
 #switch_freqs=('inter2' 'inter1' 'intra200' 'intra100')
 switch_freqs=('inter2')
 

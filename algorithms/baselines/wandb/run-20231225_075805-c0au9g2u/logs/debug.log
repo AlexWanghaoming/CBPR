@@ -1,0 +1,30 @@
+2023-12-25 07:58:05,824 INFO    MainThread:2014259 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-12-25 07:58:05,824 INFO    MainThread:2014259 [wandb_setup.py:_flush():76] Configure stats pid to 2014259
+2023-12-25 07:58:05,824 INFO    MainThread:2014259 [wandb_setup.py:_flush():76] Loading settings from /home/wanghm/.config/wandb/settings
+2023-12-25 07:58:05,824 INFO    MainThread:2014259 [wandb_setup.py:_flush():76] Loading settings from /alpha/overcooked_rl/algorithms/baselines/wandb/settings
+2023-12-25 07:58:05,824 INFO    MainThread:2014259 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-12-25 07:58:05,824 INFO    MainThread:2014259 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-12-25 07:58:05,824 INFO    MainThread:2014259 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'algorithms/baselines/sp_ppo.py', 'program_abspath': '/alpha/overcooked_rl/algorithms/baselines/sp_ppo.py', 'program': '/alpha/overcooked_rl/algorithms/baselines/sp_ppo.py'}
+2023-12-25 07:58:05,824 INFO    MainThread:2014259 [wandb_init.py:_log_setup():528] Logging user logs to /alpha/overcooked_rl/algorithms/baselines/wandb/run-20231225_075805-c0au9g2u/logs/debug.log
+2023-12-25 07:58:05,825 INFO    MainThread:2014259 [wandb_init.py:_log_setup():529] Logging internal logs to /alpha/overcooked_rl/algorithms/baselines/wandb/run-20231225_075805-c0au9g2u/logs/debug-internal.log
+2023-12-25 07:58:05,825 INFO    MainThread:2014259 [wandb_init.py:init():568] calling init triggers
+2023-12-25 07:58:05,825 INFO    MainThread:2014259 [wandb_init.py:init():576] wandb.init called with sweep_config: {}
+config: {'hidden_dim': 128, 'batch_size': 4096, 'mini_batch_size': 128, 'use_minibatch': False, 'lr': 0.0008, 'gamma': 0.99, 'epsilon': 0.05, 'use_state_norm': False, 'use_reward_scaling': True, 'entropy_coef': 0.001, 'vf_coef': 0.5, 'device': 'cpu', 'layout': 'random3', 'num_episodes': 2000, 'seed': 0, 'use_wandb': True, 'max_episode_steps': 600, 'state_dim': 96, 'action_dim': 6}
+2023-12-25 07:58:05,825 INFO    MainThread:2014259 [wandb_init.py:init():618] starting backend
+2023-12-25 07:58:05,825 INFO    MainThread:2014259 [wandb_init.py:init():622] setting up manager
+2023-12-25 07:58:05,826 INFO    MainThread:2014259 [backend.py:_multiprocessing_setup():107] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-12-25 07:58:05,826 INFO    MainThread:2014259 [wandb_init.py:init():628] backend started and connected
+2023-12-25 07:58:05,828 INFO    MainThread:2014259 [wandb_init.py:init():720] updated telemetry
+2023-12-25 07:58:05,838 INFO    MainThread:2014259 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-12-25 07:59:35,854 ERROR   MainThread:2014259 [wandb_init.py:init():779] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-12-25 07:59:37,455 ERROR   MainThread:2014259 [wandb_init.py:init():1188] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-12-25 07:59:41,495 WARNING MsgRouterThr:2014259 [router.py:message_loop():77] message_loop has been closed

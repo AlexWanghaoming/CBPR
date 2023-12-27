@@ -30,7 +30,7 @@ def parse_args():
     return args
 
 
-def init_env(layout, horizon=600, agent0_policy_name=None, agent1_policy_name=None, use_script_policy=False, old_dynamic=True):
+def init_env(layout, horizon=600, agent0_policy_name=None, agent1_policy_name=None, use_script_policy=False, old_dynamics=False):
     # mdp = OvercookedGridworld.from_layout_name(layout, start_state=OvercookedGridworld.get_random_start_state_fn)  # bug 随机游戏初始状态
     # wanghm Overcooked旧环境中，锅中放入三个菜后自动开始烹饪，所以无法烹饪原材料数量为2的菜品
     # if layout in ['counter_circuit', 'soup_coordination']:
@@ -47,9 +47,9 @@ def init_env(layout, horizon=600, agent0_policy_name=None, agent1_policy_name=No
         "MIX_PUNISHMENT": 3
     }
     if layout in ['marshmallow_experiment']:
-        mdp = OvercookedGridworld.from_layout_name(layout, rew_shaping_params=marshmallow_experiment_shaped_rew, old_dynamic=old_dynamic)
+        mdp = OvercookedGridworld.from_layout_name(layout, rew_shaping_params=marshmallow_experiment_shaped_rew, old_dynamic=old_dynamics)
     else:
-        mdp = OvercookedGridworld.from_layout_name(layout, old_dynamic=old_dynamic)
+        mdp = OvercookedGridworld.from_layout_name(layout, old_dynamic=old_dynamics)
     base_env = OvercookedEnv.from_mdp(mdp, horizon=horizon)
     env = gym.make("Overcooked-v0",
                    base_env=base_env,
@@ -174,6 +174,7 @@ class RewardScaling:
         self.R = self.gamma * self.R + x
         self.running_ms.update(self.R)
         x = x / (self.running_ms.std + 1e-8)  # Only divided std
+        # x = np.clip(x, -self.clip, self.clip)
         return x
 
     def reset(self):  # When an episode is done,we should reset 'self.R'

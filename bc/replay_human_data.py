@@ -10,7 +10,7 @@ from typing import Dict, Tuple, List
 def parse_opt():
     parser = argparse.ArgumentParser()
     # parser.add_argument('--layout', type=str, default='cramped_room')
-    parser.add_argument('--layout', type=str, default='cramped_room')
+    parser.add_argument('--layout', type=str, default='soup_coordination')
     # parser.add_argument('--layout', type=str, default='asymmetric_advantages')
     parser.add_argument('--epochs', type=int, default=200)
     parser.add_argument('--lr', type=float, default=5e-4)
@@ -51,5 +51,5 @@ if __name__ == '__main__':
             r = sparse_reward
             episode_reward += r
             episode_steps += 1
-            env.render()
+            env.render(interval=0.08)
         print(f'Ep {k+1}:', episode_reward)

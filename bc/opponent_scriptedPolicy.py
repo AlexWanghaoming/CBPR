@@ -1,3 +1,6 @@
+"""
+对手建模：Accurate policy detection and efficient knowledge reuse against muti-strategic opponents (2022, KBS )
+"""
 import torch
 import torch.nn as nn
 import math

@@ -8,7 +8,9 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 from scipy.ndimage import gaussian_filter1d
 import argparse
-
+add = 'http://127.0.0.1:7890'
+os.environ['http_proxy'] = add
+os.environ['https_proxy'] = add
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp1'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -19,12 +21,12 @@ args = parser.parse_args()
 # 设置字体和样式
 plt.style.use('seaborn-whitegrid')  # 一个清晰、美观的样式
 mpl.rcParams['font.family'] = 'Arial'  # 设置字体为 Arial
-mpl.rcParams['font.size'] = 14  # 设置基本字体大小为 12 点
+mpl.rcParams['font.size'] = 18  # 设置基本字体大小为 12 点
 mpl.rcParams['axes.labelsize'] = 18  # 设置坐标轴标签的字体大小
-mpl.rcParams['axes.titlesize'] = 18  # 设置坐标轴标题的字体大小
-mpl.rcParams['xtick.labelsize'] = 14  # 设置x轴刻度标签的字体大小
-mpl.rcParams['ytick.labelsize'] = 14  # 设置y轴刻度标签的字体大小
-mpl.rcParams['legend.fontsize'] = 12  # 设置图例的字体大小
+# mpl.rcParams['axes.titlesize'] = 16  # 设置坐标轴标题的字体大小
+mpl.rcParams['xtick.labelsize'] = 24  # 设置x轴刻度标签的字体大小
+mpl.rcParams['ytick.labelsize'] = 24  # 设置y轴刻度标签的字体大小
+mpl.rcParams['legend.fontsize'] = 24  # 设置图例的字体大小
 # mpl.rcParams['image.cmap'] = 'viridis'
 
 
@@ -36,62 +38,63 @@ a2c = {
        'FCP': '#9d4edd',
        'SP': '#f6ae2d',
        }
-
+layouts = ['Cramped Room',
+           'Coordination Ring',
+           'Asymmetric Advantages',
+           'Soup Coordination']
 
 api = wandb.Api()
 num_episodes = 50
 num_seeds = 5
+runs = api.runs(f"wanghm/overcooked_rl")
+group_runs = [run for run in runs if run.group == 'exp1']
 
-plt.figure(figsize=(8, 5))
-for algorithm in a2c:
-    runs = glob.glob(f"{WANDB_DIR}/{algorithm}/wandb/run*")
-    run_ids = [x.split('-')[-1] for x in runs]
-    print(runs)
-    print(run_ids)
-    reward_list = []
-    num_runs = 0
-
-    for run_id in run_ids:
-        if num_runs > num_seeds:  #只运行5个seed
-            break
-        try:
-            run = api.run(f"wanghm/overcooked_rl/{run_id}")
-        except wandb.errors.CommError:
-            continue
-        if run.state == "finished" and run.group == 'exp1' and run.name.startswith(f'{algorithm}_{args.layout}_{args.switch_freq}'):
-            print(f"{run_id}:{run.name}")
-            num_runs+=1
-            num_ep = run.config['num_episodes']
-            # print(num_ep)
-            history = run.history(samples=num_episodes)[['_step', 'ep_reward']]
-            ep_sparse_r = history['ep_reward'].tolist()
-            reward_list.append(ep_sparse_r)
-            # print(len(ep_sparse_r))
-
-    rewards_array = np.array(reward_list)
-    mean_rewards = np.mean(rewards_array, axis=0)
-    ste_rewards = np.std(rewards_array, axis=0)/np.sqrt(num_seeds)
-    # 计算置信区间
-    sem = stats.sem(reward_list)
-    confidence = 0.95
-    interval = stats.t.interval(confidence, len(reward_list) - 1, loc=mean_rewards, scale=sem)
-
-    episodes = np.arange(1, num_episodes+1)
-    lab = 'CBPR' if algorithm == 'okr' else algorithm
-    plt.plot(episodes, mean_rewards, color=a2c[algorithm], label=lab, linewidth=2)
-    # plt.plot(episodes, mean_rewards)
-    plt.fill_between(episodes, mean_rewards-ste_rewards, mean_rewards+ste_rewards, alpha=0.2, color=a2c[algorithm])
-    # plt.fill_between(episodes, interval[0], interval[1], alpha=0.2, color=a2c[algorithm])
-
-plt.xlabel('Episodes')
-plt.ylabel('Mean episode reward')
-# plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
-if args.switch_freq == 'inter2':
-    plt.legend(loc='upper left')
-plt.grid(axis='x')
+fig, axs = plt.subplots(1, 4, figsize=(32, 5))
+for i, ax in enumerate(axs.flat):
+    layout = layouts[i]
+    for algorithm in a2c:
+        reward_list = []
+        num_runs = 0
+        for run in group_runs:
+            if num_runs > num_seeds:  #只运行5个seed
+                break
+            if run.state == "finished" and run.group == 'exp1' and run.name.startswith(f'{algorithm}_{args.layout}_{args.switch_freq}'):
+                print(f"{run.id}:{run.name}")
+                num_runs+=1
+                num_ep = run.config['num_episodes']
+                # print(num_ep)
+                history = run.history(samples=num_episodes)[['_step', 'ep_reward']]
+                ep_sparse_r = history['ep_reward'].tolist()
+                reward_list.append(ep_sparse_r)
+        rewards_array = np.array(reward_list)
+        mean_rewards = np.mean(rewards_array, axis=0)
+        ste_rewards = np.std(rewards_array, axis=0)/np.sqrt(num_seeds)
+        # 计算置信区间
+        sem = stats.sem(reward_list)
+        confidence = 0.95
+        interval = stats.t.interval(confidence, len(reward_list) - 1, loc=mean_rewards, scale=sem)
+        episodes = np.arange(1, num_episodes+1)
+        lab = 'CBPR' if algorithm == 'okr' else algorithm
+        ax.plot(episodes, mean_rewards, color=a2c[algorithm], label=lab, linewidth=2)
+        ax.fill_between(episodes, mean_rewards-ste_rewards, mean_rewards+ste_rewards, alpha=0.2, color=a2c[algorithm])
+    ax.grid(axis='x')
+    ax.set_xlabel('Episodes', fontsize=24)
+    ax.set_ylabel('Mean episode reward', fontsize=24)
+    ax.set_title(layout, fontsize=28)
+# 调整子图之间的间距
 plt.tight_layout()
-plt.savefig(f'exp1_{args.layout}_{args.switch_freq}.pdf', bbox_inches='tight')
-plt.show()
+fig.subplots_adjust(bottom=0.25,
+                    wspace=0.1
+                    )
+handles, labels = axs[0].get_legend_handles_labels()
+fig.legend(handles, labels,
+           loc='lower center',
+           bbox_to_anchor=(0.5, 0),
+           fancybox=True,
+           shadow=True,
+           ncol=4)
+# fig.savefig(f'exp1_{args.layout}_{args.switch_freq}.pdf', bbox_inches='tight')
+fig.show()
 
 
 

@@ -6,10 +6,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../PPO-discrete/'
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 import argparse
 # warnings.filterwarnings('ignore', message='Passing (type, 1) or \'1type\' as a synonym of type is deprecated')
-# from rl_plotter.logger import Logger
-from My_utils import seed_everything, LinearAnnealer, init_env
+from My_utils import seed_everything, LinearAnnealer, init_env, Normalization, RewardScaling
 import wandb
-from datetime import datetime
 
 
 def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, seed:int):
@@ -19,11 +17,20 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
     ego_buffer = ReplayBuffer(args.batch_size, args.state_dim)
     alt_buffer = ReplayBuffer(args.batch_size, args.state_dim)
     cur_steps = 0  # Record the total steps during the training
+    if args.use_state_norm:
+        ego_state_norm = Normalization(shape=args.state_dim)
+    if args.use_reward_scaling:
+        reward_scaling = RewardScaling(shape=1, gamma=args.gamma)
     for k in range(1, n_episodes+1):
         agent_env_steps = args.max_episode_steps *  (k-1)
         reward_shaping_factor = annealer.param_value(agent_env_steps)
         obs  = env.reset()
         ego_obs, alt_obs = obs['both_agent_obs']
+        if args.use_state_norm:
+            ego_obs = ego_state_norm(ego_obs)
+
+        if args.use_reward_scaling:
+            reward_scaling.reset()
         episode_steps = 0
         done = False
         episode_reward = 0
@@ -37,6 +44,10 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
             r = sparse_reward + shaped_r * reward_shaping_factor
             ego_obs_, alt_obs_ = obs_['both_agent_obs']
             episode_reward += r
+            if args.use_state_norm:
+                ego_obs_ = ego_state_norm(ego_obs_)
+            if args.use_reward_scaling:
+                r = reward_scaling(r)
             if done:
                 dw = True
             else:
@@ -46,14 +57,17 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
             ego_obs = ego_obs_
             alt_obs = alt_obs_
             if ego_buffer.count == args.batch_size:
-                ego_agent.update(ego_buffer, cur_steps)
-                alt_agent.update(alt_buffer, cur_steps)
+                ego_train_info = ego_agent.update(ego_buffer, cur_steps)
+                alt_train_info = alt_agent.update(alt_buffer, cur_steps)
                 ego_buffer.count = 0
                 alt_buffer.count = 0
+                if args.use_wandb:
+                    log_train(ego_train_info, cur_steps)
+            # env.render(interval=0.08)
         print(f"Ep {k}:", episode_reward)
-        # wandb.log({'episode': k, 'ep_reward': episode_reward})
+        if args.use_wandb:
+            wandb.log({'episode': k, 'ep_reward': episode_reward})
         # logger.update(score=[episode_reward], total_steps=k)
-
         # # save checkpoints of different skill levels
         # if k < 50:
         #     if k % 1 == 0:
@@ -64,41 +78,44 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
         # else:
         #     if (k % 25 == 0 or k == k - 1):
         #         ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
-
+def log_train(train_infos, total_num_steps):
+    for k, v in train_infos.items():
+        wandb.log({k: v}, step=total_num_steps)
 
 def run():
     parser = argparse.ArgumentParser("Hyperparameter Setting for PPO-discrete")
     parser.add_argument("--hidden_dim", type=int, default=128)
-    parser.add_argument("--batch_size", type=int, default=4096)
+    parser.add_argument("--batch_size", type=int, default=8192)
     parser.add_argument("--mini_batch_size", type=int, default=128, help="Minibatch size")
     parser.add_argument("--use_minibatch", type=bool, default=False, help="whether sample Minibatchs during policy updating")
-    parser.add_argument("--lr", type=float, default=9e-4)
+    parser.add_argument("--lr", type=float, default=5e-4)
     parser.add_argument("--gamma", type=float, default=0.99)
-    parser.add_argument("--epsilon", type=float, default=0.1, help="PPO clip parameter")
+    parser.add_argument("--epsilon", type=float, default=0.05, help="PPO clip parameter")
     parser.add_argument("--use_state_norm", type=bool, default=False)
     parser.add_argument("--use_reward_scaling", type=bool, default=True)
-    parser.add_argument("--entropy_coef", type=float, default=0.1)
+    parser.add_argument("--entropy_coef", type=float, default=0.001)
+    parser.add_argument("--vf_coef", type=float, default=0.5)
+    # parser.add_argument("--entropy_coef", type=float, default=0.01)+
     parser.add_argument('--device', type=str, default='cpu')
-    parser.add_argument('--layout', default='counter_circuit')
-    # parser.add_argument('--layout', default='marshmallow_experiment')
+    # parser.add_argument('--layout', default='soup_coordination')
+    parser.add_argument('--layout', default='random3')
     # parser.add_argument('--layout', default='asymmetric_advantages')
-    parser.add_argument('--num_episodes', type=int, default=3000)
+    parser.add_argument('--num_episodes', type=int, default=2000)
     parser.add_argument('--seed', type=int, default=0)
-
+    parser.add_argument("--use_wandb", action='store_false', default=True)
     args = parser.parse_args()
 
     args.max_episode_steps = 600 # Maximum number of steps per episode
     test_env = init_env(layout=args.layout)
     args.state_dim = test_env.observation_space.shape[0]
     args.action_dim = test_env.action_space.n
-    now = datetime.now()
-    formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
-    # wandb.init(project='overcooked_rl',
-    #            group='FCP',
-    #            name=f'sp_ppo_{args.layout}_seed{args.seed}',
-    #            job_type='training',
-    #            config=vars(args),
-    #            reinit=True)
+    if args.use_wandb:
+        wandb.init(project='overcooked_rl',
+                   group='SP_tune',
+                   name=f'sp_ppo_{args.layout}_seed{args.seed}',
+                   job_type='training',
+                   config=vars(args),
+                   reinit=True)
 
     seed_everything(args.seed)
     ego_agent = PPO_discrete(lr=args.lr,
@@ -108,6 +125,7 @@ def run():
                          mini_batch_size=args.mini_batch_size,
                          epsilon=args.epsilon,
                          entropy_coef=args.entropy_coef,
+                         vf_coef=args.vf_coef,
                          state_dim=args.state_dim,
                          action_dim=args.action_dim,
                          num_episodes=args.num_episodes,
@@ -119,16 +137,17 @@ def run():
                          mini_batch_size=args.mini_batch_size,
                          epsilon=args.epsilon,
                          entropy_coef=args.entropy_coef,
-                         state_dim=args.state_dim,
+                         vf_coef=args.vf_coef,
+                        state_dim=args.state_dim,
                          action_dim=args.action_dim,
                          num_episodes=args.num_episodes,
                          device=args.device)
     train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed)
+    if args.use_wandb:
+        wandb.finish()
 
-    # wandb.finish()
 
 if __name__ == '__main__':
-
     run()
 
 

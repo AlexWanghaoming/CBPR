@@ -76,7 +76,7 @@ def merge_two_prob_mtx_dict(mtx1:Dict, mtx2:Dict) -> Dict:
 def parse_opt():
     parser = argparse.ArgumentParser()
     # parser.add_argument('--layout', type=str, default='cramped_room')
-    parser.add_argument('--layout', type=str, default='counter_circuit')
+    parser.add_argument('--layout', type=str, default='random3')
     opt = parser.parse_args()
     return opt
 
@@ -87,7 +87,10 @@ if __name__ == '__main__':
         "layouts": [opt.layout],
         "check_trajectories": False,
         "featurize_states": True,
-        "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room', 'asymmetric_advantages'] else CLEAN_2020_HUMAN_DATA_TRAIN,
+        "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room',
+                                                                   'asymmetric_advantages',
+                                                                   'random0',
+                                                                   'random3'] else CLEAN_2020_HUMAN_DATA_TRAIN,
     }
     game_length = 400
     mdp = OvercookedGridworld.from_layout_name(opt.layout)

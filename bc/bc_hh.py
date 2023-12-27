@@ -120,10 +120,10 @@ def _val_in_one_epoch(val_loader, model, stochastic=True):
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    # parser.add_argument('--layout', type=str, default='cramped_room')
-    parser.add_argument('--layout', type=str, default='counter_circuit')
+    # parser.add_argument('--layout', type=str, default='random3')
+    parser.add_argument('--layout', type=str, default='soup_coordination')
     parser.add_argument('--epochs', type=int, default=120)
-    parser.add_argument('--lr', type=float, default=1e-3)
+    parser.add_argument('--lr', type=float, default=1e-4)
     opt = parser.parse_args()
     return opt
 
@@ -150,7 +150,11 @@ if __name__ == '__main__':
         "layouts": [opt.layout],
         "check_trajectories": False,
         "featurize_states": True,
-        "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room', 'asymmetric_advantages', "coordination_ring"] else CLEAN_2020_HUMAN_DATA_TRAIN,
+        "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if opt.layout in ['cramped_room',
+                                                                   'asymmetric_advantages',
+                                                                   "coordination_ring",
+                                                                   'random0',
+                                                                   'random3'] else CLEAN_2020_HUMAN_DATA_TRAIN,
     }
     processed_trajs = get_human_human_trajectories(**DEFAULT_DATA_PARAMS, silent=False)
     inputs, targets = (processed_trajs["ep_states"], processed_trajs["ep_actions"])

@@ -1,0 +1,1 @@
+{"episode": 2000, "ep_reward": 1008, "_timestamp": 1703466598.855181, "_runtime": 2114.5457248687744, "_step": 1196038, "value_loss": 0.17744667430718739, "policy_loss": -0.01663976504156987, "dist_entropy": 1.2530256589253743, "_wandb": {"runtime": 2048}}

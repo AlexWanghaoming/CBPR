@@ -25,7 +25,7 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--device', type=str, default='cpu')
     # parser.add_argument('--layout', default='cramped_room')
-    parser.add_argument('--layout', default='marshmallow_experiment')
+    parser.add_argument('--layout', default='random3')
     # parser.add_argument('--layout', default='asymmetric_advantages')
     args = parser.parse_args()
     return args
@@ -38,15 +38,14 @@ if __name__ == '__main__':
         "check_trajectories": False,
         "featurize_states": True,
         "data_path": CLEAN_2019_HUMAN_DATA_TRAIN if args.layout in ['cramped_room',
-                                                                   'asymmetric_advantages'] else CLEAN_2020_HUMAN_DATA_TRAIN,
+                                                                   'asymmetric_advantages',
+                                                                    'random3'] else CLEAN_2020_HUMAN_DATA_TRAIN,
     }
     game_length = 400
     mdp = OvercookedGridworld.from_layout_name(args.layout)
     base_env = OvercookedEnv.from_mdp(mdp, horizon=game_length)
     env = gym.make("Overcooked-v0",
-                   base_env=base_env,
-                   ego_featurize_fn=base_env.featurize_state_mdp,
-                   alt_featurize_fn=base_env.featurize_state_mdp)
+                   base_env=base_env)
     layout_mtx = mdp.terrain_mtx
     n_row, n_col = find_empty_space(layout_mtx)
     # 初始化 四阶段 概率分布矩阵
@@ -85,15 +84,15 @@ if __name__ == '__main__':
             ep_reward += sparse_reward
             total_steps += 1
             episode_steps += 1
-            # env.render(interval=0.05)
+            env.render(interval=0.05)
         # plot_heat(ai_prob_mtx, n_row, n_col)  # ai轨迹热图
         print(f'Ep {k+1}:',ep_reward)
 
-    plot_combined_heatmaps(ai_prob_mtx, n_row, n_col)
-    for idx, (q_s, v_s) in enumerate(ai_prob_mtx.items()):
-        for q_e, v_e in list(ai_prob_mtx.items())[idx + 1:]:
-            if q_s != q_e:
-                print(f'{q_s} -> {q_e}:', cal_tvd_js(np.array(v_s), np.array(v_e)))
-                break
+    # plot_combined_heatmaps(ai_prob_mtx, n_row, n_col)
+    # for idx, (q_s, v_s) in enumerate(ai_prob_mtx.items()):
+    #     for q_e, v_e in list(ai_prob_mtx.items())[idx + 1:]:
+    #         if q_s != q_e:
+    #             print(f'{q_s} -> {q_e}:', cal_tvd_js(np.array(v_s), np.array(v_e)))
+    #             break
 
 

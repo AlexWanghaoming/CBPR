@@ -5,6 +5,7 @@ import numpy as np
 from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
 from torch.distributions import Categorical
 import os, sys
+from collections import defaultdict
 
 def layer_init_with_orthogonal(layer, std=1.0, bias_const=1e-6):
     torch.nn.init.orthogonal_(layer.weight, gain=std)
@@ -18,6 +19,7 @@ class MlpActor(nn.Module):
         self.fc2 = nn.Linear(hidden_width, hidden_width)
         self.fc3 = nn.Linear(hidden_width, action_dim)
         self.activate_func = nn.ReLU()
+        self.feature_norm = nn.LayerNorm(state_dim)
         layer_init_with_orthogonal(self.fc1)
         layer_init_with_orthogonal(self.fc2)
         layer_init_with_orthogonal(self.fc3)
@@ -27,7 +29,8 @@ class MlpActor(nn.Module):
         self.running_std = 1
 
     def forward(self, s):
-        s = self.state_norm(s)
+        # s = self.state_norm(s)
+        s = self.feature_norm(s)
         s = self.activate_func(self.fc1(s))
         s = self.activate_func(self.fc2(s))
         a_prob = torch.softmax(self.fc3(s), dim=1)
@@ -45,6 +48,7 @@ class MlpCritic(nn.Module):
         self.fc3 = nn.Linear(hidden_width, 1)
 
         self.activate_func = nn.ReLU() #
+        self.feature_norm = nn.LayerNorm(state_dim)
         layer_init_with_orthogonal(self.fc1)
         layer_init_with_orthogonal(self.fc2)
         layer_init_with_orthogonal(self.fc3)
@@ -61,7 +65,8 @@ class MlpCritic(nn.Module):
         return value * self.value_std + self.value_avg  # todo value_norm
 
     def forward(self, s):
-        s = self.state_norm(s)
+        # s = self.state_norm(s)
+        s = self.feature_norm(s)
         s = self.activate_func(self.fc1(s))
         s = self.activate_func(self.fc2(s))
         v_s = self.fc3(s)
@@ -81,14 +86,15 @@ class PPO_discrete:
                  mini_batch_size:int=128,
                  epsilon:float=0.05,
                  entropy_coef:float=0.02,
-                 grad_clip_norm: float = 0.1,
-                 lamda: float=0.95,
+                 grad_clip_norm: float = 0.5,
+                 lamda: float=0.98,
                  gamma:float=0.99,
                  K_epochs:int=8,
-                 use_lr_decay:bool=True,
+                 use_lr_decay:bool=False,
                  vf_coef:int=1,
                  state_value_tau:float=0.0,
-                 device:str='cpu'):
+                 device:str='cpu',
+                 use_wandb:bool=False):
         self.device = device
         self.batch_size = batch_size
         self.mini_batch_size = mini_batch_size if use_minibatch else batch_size
@@ -113,6 +119,7 @@ class PPO_discrete:
         self.total_steps = 0
         self.state_dim = state_dim
         self.t_max = num_episodes * 600
+        self.use_wandb = use_wandb
 
     def evaluate(self, s):  # When evaluating the policy, we select the action with the highest probability
         s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
@@ -137,6 +144,7 @@ class PPO_discrete:
             'dw=True' means dead or win, there is no next state s'
             'done=True' represents the terminal of an episode(dead or win or reaching the max_episode_steps). When calculating the adv, if done=True, gae=0
         """
+
         s = s.to(self.device)
         a = a.to(self.device)
         a_logprob = a_logprob.to(self.device)
@@ -161,10 +169,19 @@ class PPO_discrete:
                 states=s.reshape((-1, self.state_dim)),
                 returns=reward_sums.reshape((-1,))
             )
+        train_info = defaultdict(float)
+
+        train_info['value_loss'] = 0
+        train_info['policy_loss'] = 0
+        train_info['dist_entropy'] = 0
+        # train_info['actor_grad_norm'] = 0
+        # train_info['critic_grad_norm'] = 0
+        # train_info['ratio'] = 0
         # Optimize policy for K epochs:
         for _ in range(self.K_epochs):
+            BSampler = BatchSampler(SubsetRandomSampler(range(self.batch_size)), self.mini_batch_size, False)
             # Random sampling and no repetition. 'False' indicates that training will continue even if the number of samples in the last time is less than mini_batch_size
-            for index in BatchSampler(SubsetRandomSampler(range(self.batch_size)), self.mini_batch_size, False):
+            for index in BSampler:
                 dist_now = Categorical(probs=self.actor(s[index]))
                 dist_entropy = dist_now.entropy().view(-1, 1)  # shape(mini_batch_size X 1)
                 a_logprob_now = dist_now.log_prob(a[index].squeeze()).view(-1, 1)  # shape(mini_batch_size X 1)
@@ -191,9 +208,17 @@ class PPO_discrete:
                 torch.nn.utils.clip_grad_norm_(self.critic.parameters(), self.grad_clip_norm)
                 # self.optimizer_critic.step()
                 self.optimizer.step()
-
+                train_info['value_loss'] += torch.mean(critic_loss).item()
+                train_info['policy_loss'] += torch.mean(actor_loss).item()
+                train_info['dist_entropy'] += torch.mean(dist_entropy).item()
         if self.use_lr_decay:
             self.lr_decay(cur_steps)
+
+        num_updates = self.K_epochs * len(BSampler)
+
+        for k in train_info.keys():
+            train_info[k] /= num_updates
+        return train_info
 
     def update_avg_std_for_normalization(self, states: torch.Tensor, returns: torch.Tensor):
         tau = self.state_value_tau

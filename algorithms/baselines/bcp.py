@@ -12,6 +12,11 @@ from bc.bc_hh import BehaviorClone
 from My_utils import seed_everything, LinearAnnealer, init_env, ReplayBuffer, Normalization, RewardScaling
 import wandb
 
+add = 'http://127.0.0.1:7890'
+os.environ['http_proxy'] = add
+os.environ['https_proxy'] = add
+WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+
 
 def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, seed:int, logger):
     annealer = LinearAnnealer(horizon=args.num_episodes * args.max_episode_steps * 0.5)
@@ -61,6 +66,7 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
             if ego_buffer.count == args.batch_size:
                 ego_agent.update(ego_buffer, cur_steps)
                 ego_buffer.count = 0
+            # env.render(interval=0.08)
         # wandb.log({'episode': k, 'ep_reward': episode_reward})
         print(f'Ep {k} reward:', episode_reward)
     ego_agent.save_actor(f'../../models/bcp/bcp_{args.layout}-seed{seed}.pth')
@@ -72,14 +78,15 @@ def run():
     parser.add_argument("--batch_size", type=int, default=4096, help="Batch size")
     parser.add_argument("--mini_batch_size", type=int, default=128, help="Minibatch size")
     parser.add_argument("--use_minibatch", type=bool, default=False, help="whether sample Minibatchs during policy updating")
-    parser.add_argument("--lr", type=float, default=9e-4)
+    parser.add_argument("--lr", type=float, default=1.5e3)
     parser.add_argument("--gamma", type=float, default=0.99)
     parser.add_argument("--epsilon", type=float, default=0.05, help="PPO clip parameter")
     parser.add_argument("--use_state_norm", type=bool, default=False)
     parser.add_argument("--use_reward_scaling", type=bool, default=True)
     parser.add_argument("--entropy_coef", type=float, default=0.01)
+    parser.add_argument("--vf_coef", type=float, default=1)
     parser.add_argument('--device', type=str, default='cpu')
-    parser.add_argument('--layout', default='cramped_room')
+    parser.add_argument('--layout', default='soup_coordination')
     # parser.add_argument('--layout', default='marshmallow_experiment')
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes',  type=int, default=2000)
@@ -96,6 +103,7 @@ def run():
     #            name=f'bcp_ppo_{args.layout}_seed{args.seed}',
     #            job_type='training',
     #            config=vars(args),
+    #            dir=os.path.join(WANDB_DIR, 'bcp'),
     #            reinit=True)
 
 
@@ -107,7 +115,8 @@ def run():
                         mini_batch_size=args.mini_batch_size,
                          epsilon=args.epsilon,
                          entropy_coef=args.entropy_coef,
-                         state_dim=args.state_dim,
+                            vf_coef=args.vf_coef,
+                             state_dim=args.state_dim,
                          action_dim=args.action_dim,
                          num_episodes=args.num_episodes,
                          device=args.device)
@@ -115,6 +124,8 @@ def run():
     alt_agent = torch.load(BC_MODELS[args.layout], map_location='cpu')
     train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)  # wanghm
     # wandb.finish()
+
+
 if __name__ == '__main__':
     run()
 

@@ -27,7 +27,7 @@ class CBPR_ai(BPR_online):
                                          description='''Bayesian policy reuse algorithm on overcooked''')
         self.args = parser.parse_args()
         self.args.layout = self.og.layouts[0]
-        self.Q_len = 5
+        self.Q_len = 20
         self.rho = 0.1
         self.device = 'cuda'
 

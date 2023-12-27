@@ -1,0 +1,87 @@
+2023-12-25 07:58:05,827 INFO    StreamThr :2014291 [internal.py:wandb_internal():89] W&B internal server running at pid: 2014291, started at: 2023-12-25 07:58:05.826843
+2023-12-25 07:58:05,828 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: status
+2023-12-25 07:58:05,829 INFO    WriterThread:2014291 [datastore.py:open_for_write():85] open: /alpha/overcooked_rl/algorithms/baselines/wandb/run-20231225_075805-c0au9g2u/run-c0au9g2u.wandb
+2023-12-25 07:58:05,830 DEBUG   SenderThread:2014291 [sender.py:send():380] send: header
+2023-12-25 07:58:05,839 DEBUG   SenderThread:2014291 [sender.py:send():380] send: run
+2023-12-25 07:58:10,839 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:15,840 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:20,841 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:25,842 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:30,843 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:35,843 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:40,844 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:45,845 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:50,846 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:58:55,847 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:59:00,848 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:59:05,849 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:59:10,850 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:59:15,850 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:59:20,851 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:59:25,852 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:59:30,853 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-25 07:59:35,854 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: cancel
+2023-12-25 07:59:35,854 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: cancel
+2023-12-25 07:59:37,456 DEBUG   HandlerThread:2014291 [handler.py:handle_request():146] handle_request: shutdown
+2023-12-25 07:59:37,456 INFO    HandlerThread:2014291 [handler.py:finish():866] shutting down handler
+2023-12-25 07:59:37,854 INFO    WriterThread:2014291 [datastore.py:close():294] close: /alpha/overcooked_rl/algorithms/baselines/wandb/run-20231225_075805-c0au9g2u/run-c0au9g2u.wandb
+2023-12-25 07:59:39,429 INFO    SenderThread:2014291 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fbdb43f9e50>, 'Connection to api.wandb.ai timed out. (connect timeout=20)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/urllib3/util/retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fbdb43f9e50>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 366, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 578, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/wanghm/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fbdb43f9e50>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+2023-12-25 07:59:39,493 DEBUG   SenderThread:2014291 [sender.py:send():389] Record cancelled: run
+2023-12-25 07:59:39,493 INFO    SenderThread:2014291 [sender.py:finish():1534] shutting down sender

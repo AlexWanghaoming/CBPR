@@ -1,12 +1,14 @@
 
 # 定义一个包含所有策略名称的数组
 #declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup')  # cramped_room
-declare -a scripted_policies=('place_onion_in_pot' 'place_tomato_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup' 'place_tomato_and_deliver_soup') # marshmallow_experiment
+#declare -a scripted_policies=('place_onion_in_pot' 'place_tomato_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup' 'place_tomato_and_deliver_soup') # marshmallow_experiment
 #declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'random' 'place_onion_and_deliver_soup')  # asymmetric_advantages
 #declare -a scripted_policies=('place_onion_in_pot' 'place_tomato_in_pot' 'deliver_soup' 'random' 'put_onion_everywhere' 'put_tomato_everywhere')  # counter_circuit
 #declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'place_onion_and_deliver_soup' 'random')  # coordination_ring
+#declare -a scripted_policies=('place_onion_in_pot' 'deliver_soup' 'put_onion_everywhere' 'put_dish_everywhere' 'random')  # random3
+declare -a scripted_policies=('place_tomato_in_pot' 'deliver_soup' 'mixed_order' 'random')  # soup_coordination
 
-layout='marshmallow_experiment'
+layout='soup_coordination'
 
 seed_max=5  # 跑seed_max个种子
 

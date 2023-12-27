@@ -728,7 +728,8 @@ class BPR_overcookedGame(OvercookedGame):
     def __init__(self, layouts=["asymmetric_advantages",
                                 "cramped_room",
                                 "marshmallow_experiment",
-                                "coordination_ring"], **kwargs):
+                                "coordination_ring",
+                                "soup_coordination"], **kwargs):
         super(BPR_overcookedGame, self).__init__(layouts, **kwargs)
 
     def get_policy(self, npc_id, idx=0):
