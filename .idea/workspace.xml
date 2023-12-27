@@ -5,47 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4be4f475-155a-4b0a-9825-15e5576d7ad7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithms/wandb_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/policy_pool_alt_agent/soup_coordination/fcp/s1/sp1_final_actor.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/policy_pool_alt_agent/soup_coordination/fcp/s1/sp1_init_actor.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/policy_pool_alt_agent/soup_coordination/fcp/s1/sp1_mid_actor.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/sp/soup_coordination_sp_periodic_3000.pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/ppo_discrete.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/ppo_discrete.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/bcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/sp_ppo_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo_tune.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/train_bcp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/train_bcp.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/script_agent_playing.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/script_agent_playing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/bc_hh.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc_hh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/bc_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc_scriptedPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/opponent_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/opponent_scriptedPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/replay_human_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/replay_human_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/plot_exp1.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/plot_exp1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/plot_exp1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/plot_exp1.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/bcp_training.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/figures/bcp_training.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/sp_training.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/figures/sp_training.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/wandb_plot_bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/figures/wandb_plot_bcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/wandb_plot_fcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/figures/wandb_plot_fcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/wandb_plot_mtp.py" beforeDir="false" afterPath="$PROJECT_DIR$/figures/wandb_plot_mtp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/wandb_plot_sp.py" beforeDir="false" afterPath="$PROJECT_DIR$/figures/wandb_plot_sp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miscs/plot_BC-hh_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/plot_BC-hh_distribution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miscs/plot_hh_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/miscs/plot_hh_distribution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_counter_circuit-mixed_order-seed0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/counter_circuit/mtp_counter_circuit-mixed_order-seed0.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_counter_circuit-place_onion_in_pot-seed1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/counter_circuit/mtp_counter_circuit-place_onion_in_pot-seed1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_counter_circuit-place_onion_in_pot-seed2.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/counter_circuit/mtp_counter_circuit-place_onion_in_pot-seed2.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_counter_circuit-place_onion_in_pot-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/counter_circuit/mtp_counter_circuit-place_onion_in_pot-seed3.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/human_aware_rl/human/process_dataframes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/human_aware_rl/human/process_dataframes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overcooked_demo/server/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_demo/server/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +284,7 @@
       <workItem from="1703156241060" duration="2289000" />
       <workItem from="1703183063662" duration="24892000" />
       <workItem from="1703481976826" duration="46661000" />
-      <workItem from="1703602716866" duration="6407000" />
+      <workItem from="1703602716866" duration="6802000" />
     </task>
     <servers />
   </component>
@@ -539,7 +499,7 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_mtp.coverage" NAME="wandb_plot_mtp Coverage Results" MODIFIED="1703595052605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_human_distribution.coverage" NAME="plot_human_distribution Coverage Results" MODIFIED="1699688409531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$my_agents.coverage" NAME="my_agents Coverage Results" MODIFIED="1700751206867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$app.coverage" NAME="app Coverage Results" MODIFIED="1703667888924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$app.coverage" NAME="app Coverage Results" MODIFIED="1703668484941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
     <SUITE FILE_PATH="coverage/overcooked_rl$opponent_scriptedPolicy.coverage" NAME="opponent_scriptedPolicy Coverage Results" MODIFIED="1701762366357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
     <SUITE FILE_PATH="coverage/overcooked_rl$mtp_keystate.coverage" NAME="mtp_keystate Coverage Results" MODIFIED="1699444689475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_fcp.coverage" NAME="wandb_plot_fcp Coverage Results" MODIFIED="1701015004367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
