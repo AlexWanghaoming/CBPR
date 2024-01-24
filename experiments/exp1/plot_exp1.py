@@ -14,7 +14,6 @@ os.environ['https_proxy'] = add
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp1'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('--layout', default='cramped_room')
 parser.add_argument('--switch_freq', type=str, default='inter2')
 args = parser.parse_args()
 
@@ -38,10 +37,15 @@ a2c = {
        'FCP': '#9d4edd',
        'SP': '#f6ae2d',
        }
-layouts = ['Cramped Room',
+layout_names = ['Cramped Room',
            'Coordination Ring',
            'Asymmetric Advantages',
            'Soup Coordination']
+
+layouts= ['cramped_room',
+           'coordination_ring',
+           'asymmetric_advantages',
+           'soup_coordination']
 
 api = wandb.Api()
 num_episodes = 50
@@ -52,13 +56,14 @@ group_runs = [run for run in runs if run.group == 'exp1']
 fig, axs = plt.subplots(1, 4, figsize=(32, 5))
 for i, ax in enumerate(axs.flat):
     layout = layouts[i]
+    layout_name = layout_names[i]
     for algorithm in a2c:
         reward_list = []
         num_runs = 0
         for run in group_runs:
             if num_runs > num_seeds:  #只运行5个seed
                 break
-            if run.state == "finished" and run.group == 'exp1' and run.name.startswith(f'{algorithm}_{args.layout}_{args.switch_freq}'):
+            if run.state == "finished" and run.group == 'exp1' and run.name.startswith(f'{algorithm}_{layout}_{args.switch_freq}'):
                 print(f"{run.id}:{run.name}")
                 num_runs+=1
                 num_ep = run.config['num_episodes']
@@ -80,11 +85,11 @@ for i, ax in enumerate(axs.flat):
     ax.grid(axis='x')
     ax.set_xlabel('Episodes', fontsize=24)
     ax.set_ylabel('Mean episode reward', fontsize=24)
-    ax.set_title(layout, fontsize=28)
+    ax.set_title(layout_name, fontsize=28)
 # 调整子图之间的间距
 plt.tight_layout()
-fig.subplots_adjust(bottom=0.25,
-                    wspace=0.1
+fig.subplots_adjust(bottom=0.28,
+                    wspace=0.2
                     )
 handles, labels = axs[0].get_legend_handles_labels()
 fig.legend(handles, labels,
@@ -93,7 +98,7 @@ fig.legend(handles, labels,
            fancybox=True,
            shadow=True,
            ncol=4)
-# fig.savefig(f'exp1_{args.layout}_{args.switch_freq}.pdf', bbox_inches='tight')
+fig.savefig(f'exp1_{args.switch_freq}.pdf', bbox_inches='tight')
 fig.show()
 
 

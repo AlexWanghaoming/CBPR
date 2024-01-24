@@ -78,7 +78,7 @@ for layout_name in l2c:
 plt.legend(loc='best')
 plt.grid(axis='x')
 plt.tight_layout()
-plt.savefig(f'bcp_training.pdf', bbox_inches='tight')
+# plt.savefig(f'bcp_training.pdf', bbox_inches='tight')
 plt.show()
 
 

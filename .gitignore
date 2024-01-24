@@ -1,7 +1,7 @@
 
 state_trans_func/*.pkl
 state_trans_func/*.npz
-
+*.pdf
 my_wandb_log
 algorithms/baselines/wandb
 algorithms/wandb

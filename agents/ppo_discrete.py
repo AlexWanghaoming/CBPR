@@ -30,7 +30,10 @@ class MlpActor(nn.Module):
 
     def forward(self, s):
         # s = self.state_norm(s)
-        s = self.feature_norm(s)
+        try:
+            s = self.feature_norm(s)
+        except AttributeError:
+            pass
         s = self.activate_func(self.fc1(s))
         s = self.activate_func(self.fc2(s))
         a_prob = torch.softmax(self.fc3(s), dim=1)

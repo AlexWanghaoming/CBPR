@@ -68,16 +68,16 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
         if args.use_wandb:
             wandb.log({'episode': k, 'ep_reward': episode_reward})
         # logger.update(score=[episode_reward], total_steps=k)
-        # # save checkpoints of different skill levels
-        # if k < 50:
-        #     if k % 1 == 0:
-        #         ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
-        # elif k < 100:
-        #     if k % 2 == 0:
-        #         ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
-        # else:
-        #     if (k % 25 == 0 or k == k - 1):
-        #         ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
+        # save checkpoints of different skill levels
+        if k < 50:
+            if k % 1 == 0:
+                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
+        elif k < 100:
+            if k % 2 == 0:
+                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
+        else:
+            if (k % 25 == 0 or k == k - 1):
+                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
 def log_train(train_infos, total_num_steps):
     for k, v in train_infos.items():
         wandb.log({k: v}, step=total_num_steps)

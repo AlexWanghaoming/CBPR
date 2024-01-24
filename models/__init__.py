@@ -12,6 +12,7 @@ META_TASKS = {
              'marshmallow_experiment': ['place_onion_in_pot', 'place_tomato_in_pot', 'deliver_soup', 'random'],
 
             'asymmetric_advantages': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
+            # 'asymmetric_advantages': ['place_onion_in_pot', 'deliver_soup', 'random'],
             # 'asymmetric_advantages': ['place_onion_in_pot', 'deliver_soup'],
 
             'coordination_ring': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
@@ -64,6 +65,7 @@ SKILL_MODELS = {
               'coordination_ring': [os.path.join(_curr_directory, 'policy_pool_alt_agent/coordination_ring/fcp/s1/sp1_init_actor.pt'),
                                  os.path.join(_curr_directory, 'policy_pool_alt_agent/coordination_ring/fcp/s1/sp1_mid_actor.pt'),
                                  os.path.join(_curr_directory, 'policy_pool_alt_agent/coordination_ring/fcp/s1/sp1_final_actor.pt')],
+
               'soup_coordination': [os.path.join(_curr_directory, 'policy_pool_alt_agent/soup_coordination/fcp/s1/sp1_init_actor.pt'),
                                  os.path.join(_curr_directory, 'policy_pool_alt_agent/soup_coordination/fcp/s1/sp1_mid_actor.pt'),
                                  os.path.join(_curr_directory, 'policy_pool_alt_agent/soup_coordination/fcp/s1/sp1_final_actor.pt')],
@@ -114,7 +116,7 @@ NN_MODELS = {'cramped_room':
              #  os.path.join(_curr_directory, 'NN/NN_asymmetric_advantages_random_s_prime_r.pth')],
              [os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_place_onion_in_pot_s_prime_r.pth'),
               os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_deliver_soup_s_prime_r.pth'),
-              os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_place_onion_and_deliver_soup_s_prime_r.pth'),
+              # os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_place_onion_and_deliver_soup_s_prime_r.pth'),
               os.path.join(_curr_directory, 'RNN/rnn_asymmetric_advantages_random_s_prime_r.pth')
               ],
 

@@ -9,22 +9,20 @@ from scipy import stats
 import argparse
 
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp2/ablations/wandb'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('--layout', default='asymmetric_advantages')
+parser.add_argument('--layout', default='soup_coordination')
 args = parser.parse_args()
 
 
 # 设置字体和样式
 plt.style.use('seaborn-whitegrid')  # 一个清晰、美观的样式
 mpl.rcParams['font.family'] = 'Arial'  # 设置字体为 Arial
-mpl.rcParams['font.size'] = 14  # 设置基本字体大小为 12 点
-mpl.rcParams['axes.labelsize'] = 18  # 设置坐标轴标签的字体大小
-mpl.rcParams['axes.titlesize'] = 18  # 设置坐标轴标题的字体大小
-mpl.rcParams['xtick.labelsize'] = 18  # 设置x轴刻度标签的字体大小
-mpl.rcParams['ytick.labelsize'] = 14  # 设置y轴刻度标签的字体大小
-mpl.rcParams['legend.fontsize'] = 12  # 设置图例的字体大小
-# mpl.rcParams['image.cmap'] = 'viridis'
+mpl.rcParams['font.size'] = 18  # 设置基本字体大小为 12 点
+mpl.rcParams['axes.labelsize'] = 22  # 设置坐标轴名称的字体大小
+# mpl.rcParams['axes.titlesize'] = 16  # 设置坐标轴标题的字体大小
+mpl.rcParams['xtick.labelsize'] = 22  # 设置x轴刻度标签的字体大小
+mpl.rcParams['ytick.labelsize'] = 22  # 设置y轴刻度标签的字体大小
+mpl.rcParams['legend.fontsize'] = 16  # 设置图例的字体大小
 
 
 groups = ['low', 'medium', 'high']
@@ -34,9 +32,11 @@ a2c = {
     'rho0.5': '#ffaa00',
        'rho0.9': '#ff7b00',
        }
-
 api = wandb.Api()
 num_episodes = 50
+num_seeds = 5
+runs = api.runs(f"wanghm/overcooked_rl")
+group_runs = [run for run in runs if run.group == 'exp2']
 
 plt.figure(figsize=(8, 5))
 group_mean = []
@@ -46,19 +46,10 @@ for level in groups:
     sub_group_mean = []
     sub_group_interval = []
     for ablation in a2c:
-        runs = glob.glob(f"{WANDB_DIR}/run*")
-        run_ids = [x.split('-')[-1] for x in runs]
-        print(runs)
-        print(run_ids)
-        for run_id in run_ids:
-            try:
-                run = api.run(f"wanghm/overcooked_rl/{run_id}")
-            except wandb.errors.CommError:
-                continue
+        for run in group_runs:
             match_name = f'okr_{args.layout}_{level}_seed0_Q20_{ablation}'
-
-            if run.state == "finished" and run.group == 'exp2' and run.name==match_name:
-                print(f"{run_id}:{run.name}")
+            if run.state == "finished" and run.name == match_name:
+                print(f"{run.id}:{run.name}")
                 num_ep = run.config['num_episodes']
                 history = run.history(samples=num_episodes)[['_step', 'ep_reward']]
                 ep_sparse_r = history['ep_reward'].tolist()
@@ -91,7 +82,9 @@ ax.set_ylabel('Mean episode reward')
 ax.set_xticks(index + bar_width)
 ax.set_xticklabels(['Low', 'Medium', 'High'])
 if args.layout == 'cramped_room' or args.layout == 'coordination_ring':
-    ax.legend(loc='upper right', ncol=1, columnspacing=0.1)
+    ax.legend(loc='upper right', ncol=1, columnspacing=0.05)
+    # plt.ylim(0, 350)
+
 plt.grid(axis='x')
 plt.tight_layout()
 # plt.ylim(0, 320)

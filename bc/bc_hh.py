@@ -73,7 +73,7 @@ class BehaviorClone(nn.Module):
             return a_prob.detach().cpu().numpy().flatten()
 
         
-def train(args, train_loader, val_loader, model):
+def train(args, train_loader, val_loader, model, group_name):
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, eps=1e-8)
     # lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 10, gamma=0.1, last_epoch=-1)
     for k in range(1, args.epochs+1):
@@ -93,8 +93,14 @@ def train(args, train_loader, val_loader, model):
         
         val_loss, val_accuracy = _val_in_one_epoch(val_loader, model, stochastic=False)
         print({'epoch':k, 'training_loss':train_loss,'val_loss':val_loss, 'val_accuracy':val_accuracy})
-        
-        
+        if group_name == 'HP':
+            if k%10 == 0:
+                save_path = f'../models/bc/{group_name}_{opt.layout}_{k}_epoch.pth'
+                torch.save(model, save_path) # 保存整个模型
+        else:
+            if k == args.epochs:
+                save_path = f'../models/bc/{group_name}_{opt.layout}.pth'
+                torch.save(model, save_path)  # 保存整个模型
 @torch.no_grad()
 def _val_in_one_epoch(val_loader, model, stochastic=True):
     model.eval()
@@ -170,8 +176,5 @@ if __name__ == '__main__':
         val_loader = DataLoader(TensorDataset(torch.tensor(X_val).float(),
                                               torch.tensor(y_val, dtype=torch.int64)), shuffle=True, batch_size=64)
         model = BehaviorClone(state_dim=96, hidden_dim=64, action_dim=6).to(device)
-        train(opt, train_loader, val_loader, model)
-        save_path = f'../models/bc/{group_name}_{opt.layout}.pth'
-        # torch.save(model.state_dict(), opt.save_path) # 只保存模型的参数
-        torch.save(model, save_path) # 保存整个模型
+        train(opt, train_loader, val_loader, model, group_name)
         id = id + 1

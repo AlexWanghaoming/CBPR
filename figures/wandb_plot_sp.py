@@ -37,7 +37,7 @@ plt.figure(figsize=(8, 5))
 for layout_name in l2c:
     reward_list = []
     num_runs = 0
-    for run in runs:
+    for run in group_runs:
         if num_runs>5:
             break
         if run.state == "finished" and run.name.startswith(f'sp_ppo_{layout_name}_seed'):

@@ -13,8 +13,8 @@ mpl.rcParams['font.size'] = 14  # 设置基本字体大小为 12 点
 mpl.rcParams['axes.labelsize'] = 18  # 设置坐标轴标签的字体大小
 mpl.rcParams['axes.titlesize'] = 18  # 设置坐标轴标题的字体大小
 mpl.rcParams['xtick.labelsize'] = 16  # 设置x轴刻度标签的字体大小
-mpl.rcParams['ytick.labelsize'] = 14  # 设置y轴刻度标签的字体大小
-mpl.rcParams['legend.fontsize'] = 13  # 设置图例的字体大小
+mpl.rcParams['ytick.labelsize'] = 16  # 设置y轴刻度标签的字体大小
+mpl.rcParams['legend.fontsize'] = 16  # 设置图例的字体大小
 # mpl.rcParams['image.cmap'] = 'viridis'
 
 def find_files(directory, filename):
@@ -26,7 +26,7 @@ def find_files(directory, filename):
     return matches
 
 
-groups = ['cramped_room', 'coordination_ring', 'asymmetric_advantages', 'marshmallow_experiment']
+groups = ['cramped_room', 'coordination_ring', 'asymmetric_advantages', 'soup_coordination']
 subgroups = ['CBPR', 'BCP', 'FCP', 'SP']
 a2c = {
       'CBPR': '#d90429',
@@ -62,7 +62,7 @@ ax = sns.boxplot(x='Group',
                  showfliers=False,
                  boxprops=dict(edgecolor='none'))
 
-ax.set_xticklabels(['Cramped\nRoom', 'Coordination\nRing', 'Asymmetric\nAdvantages', 'Marshmallow\nExperiment'])
+ax.set_xticklabels(['Cramped\nRoom', 'Coordination\nRing', 'Asymmetric\nAdvantages', 'Soup\nCoordination'])
 ax.set_xlabel('')
 ax.set_ylabel('Episodic reward')
 

@@ -18,15 +18,15 @@ for layout in "${layouts[@]}"; do
 #    python okr_scriptedPolicy.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 1 --seed ${seed} --Q_len 5 --rho 0.1
 #    python okr_scriptedPolicy.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 2 --seed ${seed} --Q_len 5 --rho 0.1
 
-#    python evaluate_scriptPolicy.py --layout ${layout} --num_episodes 50 --mode intra --switch_human_freq 100 --seed ${seed} --algorithm FCP
-#    python evaluate_scriptPolicy.py --layout ${layout} --num_episodes 50 --mode intra --switch_human_freq 200 --seed ${seed} --algorithm FCP
-#    python evaluate_scriptPolicy.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 1 --seed ${seed} --algorithm FCP
-#    python evaluate_scriptPolicy.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 2 --seed ${seed} --algorithm FCP
+#    python evaluate_alter_skill_levels.py --layout ${layout} --num_episodes 50 --mode intra --switch_human_freq 100 --seed ${seed} --algorithm FCP
+#    python evaluate_alter_skill_levels.py --layout ${layout} --num_episodes 50 --mode intra --switch_human_freq 200 --seed ${seed} --algorithm FCP
+#    python evaluate_alter_skill_levels.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 1 --seed ${seed} --algorithm FCP
+#    python evaluate_alter_skill_levels.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 2 --seed ${seed} --algorithm FCP
 #
-#    python evaluate_scriptPolicy.py --layout ${layout} --num_episodes 50 --mode intra --switch_human_freq 100 --seed ${seed} --algorithm SP
-#    python evaluate_scriptPolicy.py --layout ${layout} --num_episodes 50 --mode intra --switch_human_freq 200 --seed ${seed} --algorithm SP
-#    python evaluate_scriptPolicy.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 1 --seed ${seed} --algorithm SP
-#    python evaluate_scriptPolicy.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 2 --seed ${seed} --algorithm SP
+#    python evaluate_alter_skill_levels.py --layout ${layout} --num_episodes 50 --mode intra --switch_human_freq 100 --seed ${seed} --algorithm SP
+#    python evaluate_alter_skill_levels.py --layout ${layout} --num_episodes 50 --mode intra --switch_human_freq 200 --seed ${seed} --algorithm SP
+#    python evaluate_alter_skill_levels.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 1 --seed ${seed} --algorithm SP
+#    python evaluate_alter_skill_levels.py --layout ${layout} --num_episodes 50 --mode inter --switch_human_freq 2 --seed ${seed} --algorithm SP
     echo "seed${seed} finished !"
   done
 done

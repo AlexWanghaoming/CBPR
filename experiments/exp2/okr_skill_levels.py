@@ -160,7 +160,8 @@ class BPR_online:
             while not done:
                 total_steps += 1
                 episode_steps += 1
-                ai_act = best_agent.evaluate(ai_obs)  # 智能体选动作
+                # ai_act = best_agent.evaluate(ai_obs)  # 智能体选动作
+                ai_act, _ = best_agent.choose_action(ai_obs)  # 智能体选动作
                 h_act = evaluate_actor(skill_model, h_obs, deterministic=False)
                 obs, sparse_reward, done, info = env.step((ai_act, h_act))
                 ep_reward += sparse_reward
@@ -185,9 +186,10 @@ class BPR_online:
                 # if best_agent_id != best_agent_id_prime:
                 #     # print(f'CBPR重用策略 {best_agent_id} 和人合作!')
                 #     best_agent_id_prime = best_agent_id
-            # print(f'Ep {k + 1} rewards: {ep_reward}')
+            print(f'Ep {k + 1} rewards: {ep_reward}')
             r_list.append(ep_reward)
-            wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+            if args.use_wandb:
+                wandb.log({'episode': k+1, 'ep_reward': ep_reward})
             # 更新本轮的belief
             self.belief = deepcopy(self.xi)
             self.belief = self._update_beta(best_agent_id, ep_reward)
@@ -304,14 +306,15 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='''Bayesian policy reuse algorithm on overcooked''')
     parser.add_argument('--device', type=str, default='cpu')
-    # parser.add_argument('--layout', default='cramped_room')
-    parser.add_argument('--layout', default='cramped_room')
+    parser.add_argument('--layout', default='asymmetric_advantages')
+    # parser.add_argument('--layout', default='soup_coordination')
     parser.add_argument('--num_episodes', type=int, default=20)
-    parser.add_argument('--Q_len', type=int, default=5)
+    parser.add_argument('--Q_len', type=int, default=20)
     parser.add_argument('--rho', type=float, default=0.1,
                         help="a hyperparameter which controls the weight of the inter-episode and intra-episode beliefs")
     parser.add_argument('--skill_level', default='low', help='low or medium or high')
     parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--use_wandb', action='store_true', default=False)
     args = parser.parse_args()
     return args
 
@@ -331,14 +334,15 @@ if __name__ == '__main__':
         skill_model = torch.load(skill_model_path, map_location=device)
     else:
         pass
-    wandb.init(project='overcooked_rl',
-               group='exp2',
-               name=f'okr_{args.layout}_{args.skill_level}_seed{args.seed}_Q{args.Q_len}_rho{args.rho}',
-               config=vars(args),
-               job_type='eval',
-               dir=os.path.join(WANDB_DIR, 'exp2', 'ablations'),
-               # dir=os.path.join(WANDB_DIR, 'exp2'),
-               reinit=True)
+    if args.use_wandb:
+        wandb.init(project='overcooked_rl',
+                   group='exp2',
+                   name=f'okr_{args.layout}_{args.skill_level}_seed{args.seed}_Q{args.Q_len}_rho{args.rho}',
+                   config=vars(args),
+                   job_type='eval',
+                   dir=os.path.join(WANDB_DIR, 'exp2', 'ablations'),
+                   # dir=os.path.join(WANDB_DIR, 'exp2_2'),
+                   reinit=True)
 
     seed_everything(args.seed)
     HPL = MetaTaskLibrary()
@@ -358,7 +362,8 @@ if __name__ == '__main__':
                             belief=belief)
 
     bpr_online.play(args, skill_model)
-    wandb.finish()
+    if args.use_wandb:
+        wandb.finish()
 
 
 

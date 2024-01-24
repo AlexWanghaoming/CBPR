@@ -15,12 +15,13 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--device', type=str, default='cpu')
     # parser.add_argument('--layout', default='cramped_room')
-    parser.add_argument('--layout', default='cramped_room')
-    # parser.add_argument('--layout', default='asymmetric_advantages')
+    # parser.add_argument('--layout', default='soup_coordination')
+    parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes', type=int, default=20)
-    parser.add_argument('--seed', type=int, default=0)
-    parser.add_argument('--algorithm', default='FCP', help='BCP or SP or FCP')
-    parser.add_argument('--skill_level', default='low', help='low or medium or high')
+    parser.add_argument('--seed', type=int, default=1)
+    parser.add_argument('--algorithm', default='BCP', help='BCP or SP or FCP')
+    parser.add_argument('--skill_level', default='high', help='low or medium or high')
+    parser.add_argument('--use_wandb', action='store_true', default=False)
     args = parser.parse_args()
     return args
 
@@ -47,14 +48,14 @@ if __name__ == '__main__':
         skill_model = torch.load(skill_model_path, map_location='cpu')
     else:
         pass
-
-    wandb.init(project='overcooked_rl',
-               group='exp2',
-               name=f'{args.algorithm}_{args.layout}_{args.skill_level}_seed{args.seed}',
-               config=vars(args),
-               job_type='eval',
-               dir=os.path.join(WANDB_DIR, 'exp2'),
-               reinit=True)
+    if args.use_wandb:
+        wandb.init(project='overcooked_rl',
+                   group='exp2_2',
+                   name=f'{args.algorithm}_{args.layout}_{args.skill_level}_seed{args.seed}',
+                   config=vars(args),
+                   job_type='eval',
+                   dir=os.path.join(WANDB_DIR, 'exp2_2'),
+                   reinit=True)
 
     seed_everything(args.seed)
     env = init_env(layout=args.layout)
@@ -67,7 +68,7 @@ if __name__ == '__main__':
         episode_steps = 0
         while not done:
             episode_steps += 1
-            ai_act = evaluate_actor(ai_agent, ai_obs, deterministic=True)
+            ai_act = evaluate_actor(ai_agent, ai_obs, deterministic=False)
             h_act = evaluate_actor(skill_model, h_obs, deterministic=False)
             obs, sparse_reward, done, info = env.step((ai_act, h_act))
             ai_obs, h_obs = obs['both_agent_obs']
@@ -75,8 +76,10 @@ if __name__ == '__main__':
             # env.render(interval=0.1)
         print(f'Ep {k+1}:',ep_reward)
         r_list.append(ep_reward)
-        wandb.log({'episode': k+1, 'ep_reward': ep_reward})
-    wandb.finish()
+        if args.use_wandb:
+            wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+    if args.use_wandb:
+        wandb.finish()
     print_mean_interval(r_list)
 
 

@@ -202,8 +202,8 @@ def get_device(device: Union[torch.device, str] = "auto") -> torch.device:
     return device
 
 
-def evaluate_actor(actor, s, deterministic=True):
-    s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
+def evaluate_actor(actor, s, deterministic=True, device='cpu'):
+    s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0).to(device)
     a_prob = actor(s)
     if deterministic:
         a = np.argmax(a_prob.detach().cpu().numpy().flatten())

@@ -28,7 +28,7 @@ l2c = {'cramped_room': '#FF0000',
        'soup_coordination': '#8B4513'}
 
 api = wandb.Api()
-num_episodes = 2000
+num_episodes = 50000
 num_seeds = 5
 runs = api.runs(f"wanghm/overcooked_rl")
 group_runs = [run for run in runs if run.group == 'FCP']
@@ -37,7 +37,7 @@ plt.figure(figsize=(8, 5))
 for layout_name in l2c:
     reward_list = []
     num_runs = 0
-    for run in runs:
+    for run in group_runs:
         if num_runs>5:
             break
         if run.state == "finished" and run.name.startswith(f'fcp_{layout_name}_seed'):
@@ -51,9 +51,9 @@ for layout_name in l2c:
 
     rewards_array = np.array(reward_list)
     mean_rewards = np.mean(rewards_array, axis=0)
-    mean_rewards = gaussian_filter1d(mean_rewards, sigma=5)  # 平滑处理
+    mean_rewards = gaussian_filter1d(mean_rewards, sigma=20)  # 平滑处理
     std_rewards = np.std(rewards_array, axis=0)
-    std_rewards = gaussian_filter1d(std_rewards, sigma=5)
+    std_rewards = gaussian_filter1d(std_rewards, sigma=20)
     episodes = np.arange(1, num_episodes+1) * 600
     plt.plot(episodes, mean_rewards, color=l2c[layout_name], label=layout_name)
     # plt.plot(episodes, mean_rewards)
@@ -64,7 +64,7 @@ for layout_name in l2c:
 plt.legend(loc='best')
 plt.grid(axis='x')
 plt.tight_layout()
-# plt.savefig(f'fcp_training.pdf', bbox_inches='tight')
+plt.savefig(f'fcp_training.pdf', bbox_inches='tight')
 plt.show()
 
 
