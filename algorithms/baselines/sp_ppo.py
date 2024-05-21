@@ -111,7 +111,7 @@ def run():
     args.action_dim = test_env.action_space.n
     if args.use_wandb:
         wandb.init(project='overcooked_rl',
-                   group='SP_tune',
+                   group='SP_tune22',
                    name=f'sp_ppo_{args.layout}_seed{args.seed}',
                    job_type='training',
                    config=vars(args),

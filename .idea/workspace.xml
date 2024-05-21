@@ -5,51 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4be4f475-155a-4b0a-9825-15e5576d7ad7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/experiments/exp4/eval.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/exp4/evaluate_alter_skill_levels.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/exp4/kkkkk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/exp4/okr_alter_skill_levels.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/exp4/plot_exp4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/ppo_discrete.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/ppo_discrete.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231225_083444-v6jl27ii/logs/debug-internal.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/run-20231225_083444-v6jl27ii/logs/debug-internal.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/script_agent_playing.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/script_agent_playing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bc/bc_hh.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/bc_hh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/plot_exp1.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/plot_exp1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp1/plot_exp1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/plot_exp1.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_ablations_rho.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_ablations_rho.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_exp2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_exp2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/coordination_ring_ablations_rho.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/coordination_ring_ablations_rho.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/coordination_ring_exp2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/coordination_ring_exp2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/coordination_ring_exp2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/cramped_room_ablations_Qlen.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/cramped_room_ablations_Qlen.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/cramped_room_ablations_rho.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/cramped_room_ablations_rho.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/cramped_room_exp2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/cramped_room_exp2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/cramped_room_exp2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels_ablations.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels_ablations.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/evaluate_skill_levels.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/evaluate_skill_levels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/okr_skill_levels.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/okr_skill_levels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/plot_ablations_Qlen.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/plot_ablations_Qlen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/plot_ablations_rho.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/plot_ablations_rho.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp2/plot_exp2.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/plot_exp2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp3/human_test_exp3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp3/human_test_exp3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp3/plot_real_human_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp3/plot_real_human_box.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/ZRR/2023-11-29_18-41-46/result.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/ZRR/2023-11-29_18-44-21/result.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/CBPR/sl/2023-11-29_19-29-02/result.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/cramped_room/FCP/sl/2023-11-29_19-38-12/result.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp3/real_human_test/soup_coordination/CBPR/wanghm/2023-12-27_17-13-45/result.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/fcp_training.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/figures/fcp_training.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/sp_training.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/figures/sp_training.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/wandb_plot_bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/figures/wandb_plot_bcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/wandb_plot_fcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/figures/wandb_plot_fcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figures/wandb_plot_sp.py" beforeDir="false" afterPath="$PROJECT_DIR$/figures/wandb_plot_sp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bc/BC_soup_coordination.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/bc/BC_soup_coordination.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/bcp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/sp_ppo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/debug-internal.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/debug-internal.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/baselines/wandb/latest-run" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/wandb/latest-run" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,52 +55,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bc_hh.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bc_scriptedPolicy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bcp.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.evaluate_skill_levels.executor&quot;: &quot;Run&quot;,
-    &quot;Python.kkkkk.executor&quot;: &quot;Run&quot;,
-    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.okr_skill_levels.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_ablations_Qlen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_ablations_rho.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_exp1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_exp2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_exp4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_real_human_box.executor&quot;: &quot;Run&quot;,
-    &quot;Python.replay_human_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.script_agent_playing.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sp_ppo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wandb_plot_bcp.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.wandb_plot_fcp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wandb_plot_mtp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wandb_plot_sp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wandb_test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Shell Script.eval.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.eval_scriptPolicy.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.eval_skill_levels.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.eval_skill_levels_ablations.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.mtp_scriptedPolicy.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.plot_exp1.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.train_bcp.sh.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/alpha/overcooked_rl/experiments/exp4&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.app.executor": "Run",
+    "Python.bc_hh.executor": "Run",
+    "Python.bc_scriptedPolicy.executor": "Run",
+    "Python.bcp.executor": "Run",
+    "Python.evaluate_skill_levels.executor": "Run",
+    "Python.kkkkk.executor": "Run",
+    "Python.manage.executor": "Run",
+    "Python.okr_skill_levels.executor": "Run",
+    "Python.plot_ablations_Qlen.executor": "Run",
+    "Python.plot_ablations_rho.executor": "Run",
+    "Python.plot_exp1.executor": "Run",
+    "Python.plot_exp2.executor": "Run",
+    "Python.plot_exp4.executor": "Run",
+    "Python.plot_real_human_box.executor": "Run",
+    "Python.replay_human_data.executor": "Run",
+    "Python.script_agent_playing.executor": "Run",
+    "Python.sp_ppo.executor": "Run",
+    "Python.wandb_plot_bcp.executor": "Debug",
+    "Python.wandb_plot_fcp.executor": "Run",
+    "Python.wandb_plot_mtp.executor": "Run",
+    "Python.wandb_plot_sp.executor": "Run",
+    "Python.wandb_test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Shell Script.eval.sh.executor": "Run",
+    "Shell Script.eval_scriptPolicy.sh.executor": "Run",
+    "Shell Script.eval_skill_levels.sh.executor": "Run",
+    "Shell Script.eval_skill_levels_ablations.sh.executor": "Run",
+    "Shell Script.mtp_scriptedPolicy.sh.executor": "Run",
+    "Shell Script.plot_exp1.sh.executor": "Run",
+    "Shell Script.train_bcp.sh.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/alpha/jd_robot/reflexion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/experiments/exp4" />
@@ -155,8 +117,8 @@
       <recent name="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.wandb_plot_bcp">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.bcp">
+    <configuration name="bcp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,12 +127,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/overcooked_demo/server" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms/baselines" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/overcooked_demo/server/app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/baselines/bcp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -287,8 +249,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.bcp" />
       <item itemvalue="Python.wandb_plot_bcp" />
-      <item itemvalue="Python.app" />
       <item itemvalue="Python.plot_ablations_Qlen" />
       <item itemvalue="Python.plot_ablations_rho" />
       <item itemvalue="Python.plot_real_human_box" />
@@ -296,18 +258,19 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bcp" />
         <item itemvalue="Python.wandb_plot_bcp" />
         <item itemvalue="Python.plot_ablations_Qlen" />
         <item itemvalue="Python.plot_real_human_box" />
         <item itemvalue="Python.plot_ablations_rho" />
-        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -365,6 +328,12 @@
       <workItem from="1705442869365" duration="636000" />
       <workItem from="1705544586409" duration="598000" />
       <workItem from="1705563074092" duration="1211000" />
+      <workItem from="1706017319774" duration="8471000" />
+      <workItem from="1706286221205" duration="14000" />
+      <workItem from="1706870480399" duration="72000" />
+      <workItem from="1715280006210" duration="2350000" />
+      <workItem from="1715491100739" duration="585000" />
+      <workItem from="1715752274108" duration="2101000" />
     </task>
     <servers />
   </component>
@@ -514,95 +483,95 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/overcooked_rl$script_agent_playing.coverage" NAME="script_agent_playing Coverage Results" MODIFIED="1704559396496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$process_dataframes.coverage" NAME="process_dataframes Coverage Results" MODIFIED="1699598379397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/human_aware_rl/human" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$okr.coverage" NAME="okr Coverage Results" MODIFIED="1695702555776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp.coverage" NAME="evaluate_bcp Coverage Results" MODIFIED="1699723948781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$game.coverage" NAME="game Coverage Results" MODIFIED="1700744710746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$sp.coverage" NAME="sp_ppo Coverage Results" MODIFIED="1698173506003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_scriptPolicy.coverage" NAME="evaluate_scriptPolicy Coverage Results" MODIFIED="1701255483805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$script_period.coverage" NAME="script_period Coverage Results" MODIFIED="1699519982560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script_agent" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$cal_prob_distance.coverage" NAME="cal_prob_distance Coverage Results" MODIFIED="1699694897438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_sp.coverage" NAME="wandb_plot_sp Coverage Results" MODIFIED="1704448431638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$train_overcooked.coverage" NAME="train_overcooked Coverage Results" MODIFIED="1699906811359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/experiments" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_RNN_skill_levels.coverage" NAME="bpr_RNN_skill_levels Coverage Results" MODIFIED="1701349714269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$okr_scriptedPolicy2.coverage" NAME="okr_scriptedPolicy2 Coverage Results" MODIFIED="1701766068093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_skill_levels.coverage" NAME="evaluate_skill_levels Coverage Results" MODIFIED="1704446844968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo_tune.coverage" NAME="sp_ppo_tune Coverage Results" MODIFIED="1703094266405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$okr_online.coverage" NAME="okr_online Coverage Results" MODIFIED="1693387260779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$script_agent.coverage" NAME="script_agent Coverage Results" MODIFIED="1699587962414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script_agent" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN_scriptedPolicy.coverage" NAME="bpr_NN_scriptedPolicy Coverage Results" MODIFIED="1701076786491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_test.coverage" NAME="wandb_test Coverage Results" MODIFIED="1703516947588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$manage.coverage" NAME="manage Coverage Results" MODIFIED="1703530096874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_wandb_log" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task.coverage" NAME="bc_hh_meta_task Coverage Results" MODIFIED="1693240307866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$FCP_stage1.coverage" NAME="FCP_stage1 Coverage Results" MODIFIED="1699809552072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$.coverage" NAME=" Coverage Results" MODIFIED="1701017966622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
     <SUITE FILE_PATH="coverage/overcooked_rl$GP.coverage" NAME="GP Coverage Results" MODIFIED="1693446033828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BCP_hh_distribution.coverage" NAME="plot_BCP-hh_distribution Coverage Results" MODIFIED="1699703693700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BC_distribution.coverage" NAME="plot_BCP-BC_distribution Coverage Results" MODIFIED="1699706995907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$My_utils.coverage" NAME="My_utils Coverage Results" MODIFIED="1701353881028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_switch_exp.coverage" NAME="plot_exp1 Coverage Results" MODIFIED="1701359964753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bcp.coverage" NAME="bcp Coverage Results" MODIFIED="1703667638770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_ablations_rho.coverage" NAME="plot_ablations_rho Coverage Results" MODIFIED="1704618717929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task_key_state.coverage" NAME="bc_hh_meta_task_key_state Coverage Results" MODIFIED="1699598386395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BCP_BC_distribution.coverage" NAME="plot_BCP-BC_distribution Coverage Results" MODIFIED="1701357431290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_mtp.coverage" NAME="wandb_plot_mtp Coverage Results" MODIFIED="1703595052605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_ablations.coverage" NAME="plot_ablations Coverage Results" MODIFIED="1702012674841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$replay_human_data.coverage" NAME="replay_human_data Coverage Results" MODIFIED="1703462685894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$mtp_vae.coverage" NAME="mtp_vae Coverage Results" MODIFIED="1696750679997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$opponent_scriptedPolicy.coverage" NAME="opponent_scriptedPolicy Coverage Results" MODIFIED="1701762366357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$cartPole_rnn.coverage" NAME="cartPole_rnn Coverage Results" MODIFIED="1701018045842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN.coverage" NAME="bpr_NN Coverage Results" MODIFIED="1699433608795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo_tune.coverage" NAME="sp_ppo_tune Coverage Results" MODIFIED="1703094266405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$replay_mtp.coverage" NAME="replay_mtp Coverage Results" MODIFIED="1696763243709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot.coverage" NAME="wandb_plot_mtp Coverage Results" MODIFIED="1700738148201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task_vae.coverage" NAME="bc_hh_meta_task_vae Coverage Results" MODIFIED="1696741282523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_scriptPolicy.coverage" NAME="evaluate_scriptPolicy Coverage Results" MODIFIED="1701255483805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$My_utils.coverage" NAME="My_utils Coverage Results" MODIFIED="1701353881028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_exp2.coverage" NAME="plot_exp2 Coverage Results" MODIFIED="1704447169025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$sp.coverage" NAME="sp_ppo Coverage Results" MODIFIED="1698173506003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_bcp.coverage" NAME="wandb_plot_bcp Coverage Results" MODIFIED="1705321599929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo_elegant.coverage" NAME="sp_ppo_elegant Coverage Results" MODIFIED="1701362849184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_getting_start.coverage" NAME="bpr_getting_start Coverage Results" MODIFIED="1700038102679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$script_agent_playing.coverage" NAME="script_agent_playing Coverage Results" MODIFIED="1704559396496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$sac.coverage" NAME="sac Coverage Results" MODIFIED="1697023314820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/agents" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task.coverage" NAME="bc_hh_meta_task Coverage Results" MODIFIED="1693240307866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$script_period.coverage" NAME="script_period Coverage Results" MODIFIED="1699519982560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script_agent" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$FCP_stage2.coverage" NAME="FCP_stage2 Coverage Results" MODIFIED="1700043233534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_skill_levels.coverage" NAME="evaluate_skill_levels Coverage Results" MODIFIED="1704446844968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$mtp_scriptedPolicy.coverage" NAME="mtp_scriptedPolicy Coverage Results" MODIFIED="1701358178743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_exp4.coverage" NAME="plot_exp4 Coverage Results" MODIFIED="1704164837374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp4" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BCP_hh_distribution.coverage" NAME="plot_BCP-hh_distribution Coverage Results" MODIFIED="1699703693700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$overcooked.coverage" NAME="overcooked Coverage Results" MODIFIED="1699906441030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/envs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo_elegant.coverage" NAME="sp_ppo_elegant Coverage Results" MODIFIED="1701362849184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$okr_skill_levels.coverage" NAME="okr_skill_levels Coverage Results" MODIFIED="1704445253832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$ppo_discrete.coverage" NAME="ppo_discrete Coverage Results" MODIFIED="1698306357024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/agents" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$train_overcooked.coverage" NAME="train_overcooked Coverage Results" MODIFIED="1699906811359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/experiments" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$manage.coverage" NAME="manage Coverage Results" MODIFIED="1703530096874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_wandb_log" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_RNN_scriptedPolicy.coverage" NAME="bpr_RNN_scriptedPolicy Coverage Results" MODIFIED="1701384257714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task_key_state.coverage" NAME="bc_hh_meta_task_key_state Coverage Results" MODIFIED="1699598386395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_gp.coverage" NAME="bpr_gp Coverage Results" MODIFIED="1693938318138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$process_dataframes.coverage" NAME="process_dataframes Coverage Results" MODIFIED="1699598379397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/human_aware_rl/human" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$GP2.coverage" NAME="GP2 Coverage Results" MODIFIED="1693495319930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN_humanProxy.coverage" NAME="bpr_NN_humanProxy Coverage Results" MODIFIED="1699880327533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$overcooked_models.coverage" NAME="overcooked_models Coverage Results" MODIFIED="1700025633477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/models" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$NN_keystate.coverage" NAME="NN_keystate Coverage Results" MODIFIED="1699732301785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$.coverage" NAME=" Coverage Results" MODIFIED="1701017966622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo.coverage" NAME="sp_ppo Coverage Results" MODIFIED="1703476442757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$RNN_scriptedPolicy.coverage" NAME="RNN_scriptedPolicy Coverage Results" MODIFIED="1701191072211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$mtp.coverage" NAME="mtp Coverage Results" MODIFIED="1695830222306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_getting_start.coverage" NAME="bpr_getting_start Coverage Results" MODIFIED="1700038102679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$my_agents.coverage" NAME="my_agents Coverage Results" MODIFIED="1700751206867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_hh_distribution.coverage" NAME="plot_hh_distribution Coverage Results" MODIFIED="1700497027072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp.coverage" NAME="evaluate_bcp Coverage Results" MODIFIED="1699723948781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
     <SUITE FILE_PATH="coverage/overcooked_rl$utils.coverage" NAME="utils Coverage Results" MODIFIED="1700240377854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/overcooked_rl$train_bpd.coverage" NAME="train_bpd Coverage Results" MODIFIED="1700038436140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$FCP_stage2.coverage" NAME="FCP_stage2 Coverage Results" MODIFIED="1700043233534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$ppo_discrete.coverage" NAME="ppo_discrete Coverage Results" MODIFIED="1698306357024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/agents" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$sac.coverage" NAME="sac Coverage Results" MODIFIED="1697023314820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/agents" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo.coverage" NAME="sp_ppo Coverage Results" MODIFIED="1703476442757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_hh_distribution.coverage" NAME="plot_hh_distribution Coverage Results" MODIFIED="1700497027072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_exp2.coverage" NAME="plot_exp2 Coverage Results" MODIFIED="1704447169025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_RNN_skill_levels.coverage" NAME="bpr_RNN_skill_levels Coverage Results" MODIFIED="1701349714269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1695803481670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_real_human_box.coverage" NAME="plot_real_human_box Coverage Results" MODIFIED="1704620187775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp3" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$okr_online.coverage" NAME="okr_online Coverage Results" MODIFIED="1693387260779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bcp.coverage" NAME="bcp Coverage Results" MODIFIED="1715280544727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$xxx.coverage" NAME="xxx Coverage Results" MODIFIED="1700479348422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$script_agent.coverage" NAME="script_agent Coverage Results" MODIFIED="1699587962414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script_agent" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_test.coverage" NAME="wandb_test Coverage Results" MODIFIED="1703516947588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$FCP_stage1.coverage" NAME="FCP_stage1 Coverage Results" MODIFIED="1699809552072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpd_trainer.coverage" NAME="bpd_trainer Coverage Results" MODIFIED="1700025642468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/agents" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$game.coverage" NAME="game Coverage Results" MODIFIED="1700744710746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$run_test_game.coverage" NAME="run_test_game Coverage Results" MODIFIED="1692714414268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh.coverage" NAME="bc_hh Coverage Results" MODIFIED="1703465048830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
     <SUITE FILE_PATH="coverage/overcooked_rl$NN_scriptedPolicy.coverage" NAME="NN_scriptedPolicy Coverage Results" MODIFIED="1701014452288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$NN_keystate.coverage" NAME="NN_keystate Coverage Results" MODIFIED="1699732301785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_ablations.coverage" NAME="plot_ablations Coverage Results" MODIFIED="1702012674841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$overcooked_models.coverage" NAME="overcooked_models Coverage Results" MODIFIED="1700025633477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/models" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$GP2.coverage" NAME="GP2 Coverage Results" MODIFIED="1693495319930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BC_hh_distribution.coverage" NAME="plot_BC-hh_distribution Coverage Results" MODIFIED="1699703446796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_gp.coverage" NAME="bpr_gp Coverage Results" MODIFIED="1693938318138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$RNN_scriptedPolicy.coverage" NAME="RNN_scriptedPolicy Coverage Results" MODIFIED="1701191072211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_exp4.coverage" NAME="plot_exp4 Coverage Results" MODIFIED="1704164837374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp4" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_RNN_scriptedPolicy.coverage" NAME="bpr_RNN_scriptedPolicy Coverage Results" MODIFIED="1701384257714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$kkkkk.coverage" NAME="kkkkk Coverage Results" MODIFIED="1704165535492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp4" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN_humanProxy.coverage" NAME="bpr_NN_humanProxy Coverage Results" MODIFIED="1699880327533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpd_trainer.coverage" NAME="bpd_trainer Coverage Results" MODIFIED="1700025642468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/agents" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bc_scriptedPolicy.coverage" NAME="bc_scriptedPolicy Coverage Results" MODIFIED="1703575688039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$mtp.coverage" NAME="mtp Coverage Results" MODIFIED="1695830222306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$okr_scriptedPolicy.coverage" NAME="okr_scriptedPolicy Coverage Results" MODIFIED="1701783545713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$mtp_vae.coverage" NAME="mtp_vae Coverage Results" MODIFIED="1696750679997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_exp1.coverage" NAME="plot_exp1 Coverage Results" MODIFIED="1703674433330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1695803481670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/overcooked_rl$NN.coverage" NAME="NN Coverage Results" MODIFIED="1694060420962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot.coverage" NAME="wandb_plot_mtp Coverage Results" MODIFIED="1700738148201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$mtp_scriptedPolicy.coverage" NAME="mtp_scriptedPolicy Coverage Results" MODIFIED="1701358178743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$sp_sac.coverage" NAME="sp_sac Coverage Results" MODIFIED="1699462489900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN.coverage" NAME="bpr_NN Coverage Results" MODIFIED="1699433608795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_mtp.coverage" NAME="wandb_plot_mtp Coverage Results" MODIFIED="1703595052605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_human_distribution.coverage" NAME="plot_human_distribution Coverage Results" MODIFIED="1699688409531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$my_agents.coverage" NAME="my_agents Coverage Results" MODIFIED="1700751206867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$app.coverage" NAME="app Coverage Results" MODIFIED="1704563753132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$opponent_scriptedPolicy.coverage" NAME="opponent_scriptedPolicy Coverage Results" MODIFIED="1701762366357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$mtp_keystate.coverage" NAME="mtp_keystate Coverage Results" MODIFIED="1699444689475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_fcp.coverage" NAME="wandb_plot_fcp Coverage Results" MODIFIED="1704557723896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$cartPole_rnn.coverage" NAME="cartPole_rnn Coverage Results" MODIFIED="1701018045842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$functional.coverage" NAME="functional Coverage Results" MODIFIED="1695885294012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/torch/nn" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$replay_human_data.coverage" NAME="replay_human_data Coverage Results" MODIFIED="1703462685894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$run_test_game.coverage" NAME="run_test_game Coverage Results" MODIFIED="1692714414268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$okr_skill_levels.coverage" NAME="okr_skill_levels Coverage Results" MODIFIED="1704445253832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_real_human_box.coverage" NAME="plot_real_human_box Coverage Results" MODIFIED="1704620187775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp3" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$okr_humanProxy.coverage" NAME="okr_humanProxy Coverage Results" MODIFIED="1699880815512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp_scriptPolicy.coverage" NAME="evaluate_bcp_scriptPolicy Coverage Results" MODIFIED="1701083808569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$GP_gpytorch.coverage" NAME="GP_gpytorch Coverage Results" MODIFIED="1693932682650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$GP_GPy.coverage" NAME="GP_GPy Coverage Results" MODIFIED="1694007339901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$bc_hh_meta_task_vae.coverage" NAME="bc_hh_meta_task_vae Coverage Results" MODIFIED="1696741282523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BCP_BC_distribution.coverage" NAME="plot_BCP-BC_distribution Coverage Results" MODIFIED="1701357431290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$xxx.coverage" NAME="xxx Coverage Results" MODIFIED="1700479348422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_ablations_Qlen.coverage" NAME="plot_ablations_Qlen Coverage Results" MODIFIED="1704620461745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_fcp.coverage" NAME="wandb_plot_fcp Coverage Results" MODIFIED="1704557723896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_switch_exp.coverage" NAME="plot_exp1 Coverage Results" MODIFIED="1701359964753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_ablations_rho.coverage" NAME="plot_ablations_rho Coverage Results" MODIFIED="1704618717929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$sp_sac.coverage" NAME="sp_sac Coverage Results" MODIFIED="1699462489900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$functional.coverage" NAME="functional Coverage Results" MODIFIED="1695885294012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/anaconda3/envs/overcooked_ai/lib/python3.7/site-packages/torch/nn" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$mtp_keystate.coverage" NAME="mtp_keystate Coverage Results" MODIFIED="1699444689475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_exp1.coverage" NAME="plot_exp1 Coverage Results" MODIFIED="1703674433330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_human_distribution.coverage" NAME="plot_human_distribution Coverage Results" MODIFIED="1699688409531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN_scriptedPolicy.coverage" NAME="bpr_NN_scriptedPolicy Coverage Results" MODIFIED="1701076786491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$cal_prob_distance.coverage" NAME="cal_prob_distance Coverage Results" MODIFIED="1699694897438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$okr_scriptedPolicy2.coverage" NAME="okr_scriptedPolicy2 Coverage Results" MODIFIED="1701766068093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$bc_scriptedPolicy.coverage" NAME="bc_scriptedPolicy Coverage Results" MODIFIED="1703575688039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$GP_gpytorch.coverage" NAME="GP_gpytorch Coverage Results" MODIFIED="1693932682650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$app.coverage" NAME="app Coverage Results" MODIFIED="1704563753132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/overcooked_demo/server" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$okr_scriptedPolicy.coverage" NAME="okr_scriptedPolicy Coverage Results" MODIFIED="1701783545713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$kkkkk.coverage" NAME="kkkkk Coverage Results" MODIFIED="1704165535492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp4" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$GP_GPy.coverage" NAME="GP_GPy Coverage Results" MODIFIED="1694007339901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$okr.coverage" NAME="okr Coverage Results" MODIFIED="1695702555776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp_scriptPolicy.coverage" NAME="evaluate_bcp_scriptPolicy Coverage Results" MODIFIED="1701083808569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$okr_humanProxy.coverage" NAME="okr_humanProxy Coverage Results" MODIFIED="1699880815512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_sp.coverage" NAME="wandb_plot_sp Coverage Results" MODIFIED="1704448431638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BC_distribution.coverage" NAME="plot_BCP-BC_distribution Coverage Results" MODIFIED="1699706995907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_BC_hh_distribution.coverage" NAME="plot_BC-hh_distribution Coverage Results" MODIFIED="1699703446796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
   </component>
 </project>

@@ -44,6 +44,11 @@ Pair CBPR with agent using _medium_ skill level in _Cramped Room_ layouts.
 ```
 python experiments/exp2/okr_skill_levels.py --layout cramped_room --num_episodes 50 --skill_level medium --Q_len 20 --rho 0.1 --use_wandb
 ```
+## Run human-AI test, display in 127.0.0.1:5001
+``` 
+python src/overcooked_demo/server/app.py
+```
+
 # Citation
 If you find this repository useful, please cite these papers:
 ```
