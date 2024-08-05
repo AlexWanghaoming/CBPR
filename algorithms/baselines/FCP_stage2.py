@@ -28,7 +28,11 @@ def train_one_episode(args, env, reward_shaping_factor, ego_agent:PPO_discrete, 
         episode_steps += 1
         ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)
         alt_a, alt_a_logprob = alt_agent.choose_action(alt_obs)
-        obs_, sparse_reward, done, info = env.step((ego_a, alt_a))
+        if args.alt:
+            obs_, sparse_reward, done, info = env.step((ego_a, alt_a))
+        else:
+            obs_, sparse_reward, done, info = env.step((alt_a, ego_a))
+
         shaped_r = info["shaped_r_by_agent"][0] + info["shaped_r_by_agent"][1]
         r = sparse_reward + shaped_r*reward_shaping_factor
         ego_obs_, alt_obs_ = obs_['both_agent_obs']
@@ -65,21 +69,24 @@ def run():
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes', type=int, default=50000)
     parser.add_argument('--seed', type=int, default=4)
+    parser.add_argument("--use_wandb", action='store_false', default=False)
+    parser.add_argument("--alt", action='store_false', default=False)
+
     args = parser.parse_args()
     args.max_episode_steps = 600 # Maximum number of steps per episode
     test_env = init_env(layout=args.layout)
     args.state_dim = test_env.observation_space.shape[0]
     args.action_dim = test_env.action_space.n
     now = datetime.now()
-    formatted_now = now.strftime("%Y-%m-%d-%H-%M") # 年月日小时分钟
-    wandb.init(project='overcooked_rl',
-               group='FCP',
-               tags="fcp",
-               # id="aa",
-               name=f'fcp_{args.layout}_seed{args.seed}',
-               job_type='training',
-               config=vars(args),
-               reinit=True)
+    if args.use_wandb:
+        wandb.init(project='overcooked_rl',
+                   group='FCP',
+                   tags="fcp",
+                   # id="aa",
+                   name=f'fcp_{args.layout}_seed{args.seed}',
+                   job_type='training',
+                   config=vars(args),
+                   reinit=True)
     seed_everything(args.seed)
     ego_agent = PPO_discrete(lr=args.lr,
                          hidden_dim=args.hidden_dim,
@@ -126,9 +133,11 @@ def run():
                                           ego_buffer=ego_buffer)
         cur_steps += args.max_episode_steps
         print(f"Ep {k}:", episode_reward)
-        wandb.log({'episode': k, 'ep_reward': episode_reward})
-    ego_agent.save_actor(f"../../models/fcp/fcp_{args.layout}_seed{args.seed}.pt")
-    wandb.finish()
+        if args.use_wandb:
+            wandb.log({'episode': k, 'ep_reward': episode_reward})
+    ego_agent.save_actor(f"../../models/fcp/fcp_ego_{args.layout}_seed{args.seed}.pt")
+    if args.use_wandb:
+        wandb.finish()
 
 
 if __name__ == '__main__':

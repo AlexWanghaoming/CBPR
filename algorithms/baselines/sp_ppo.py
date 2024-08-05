@@ -67,17 +67,24 @@ def train(args, ego_agent:PPO_discrete, alt_agent:PPO_discrete, n_episodes:int, 
         print(f"Ep {k}:", episode_reward)
         if args.use_wandb:
             wandb.log({'episode': k, 'ep_reward': episode_reward})
-        # logger.update(score=[episode_reward], total_steps=k)
-        # save checkpoints of different skill levels
-        if k < 50:
-            if k % 1 == 0:
-                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
-        elif k < 100:
-            if k % 2 == 0:
-                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
-        else:
-            if (k % 25 == 0 or k == k - 1):
-                ego_agent.save_actor(str(wandb.run.dir) + f"/sp_periodic_{k}.pt")
+            # save checkpoints of different skill levels
+            if k < 50:
+                if k % 1 == 0:
+                    ego_agent.save_actor(str(wandb.run.dir) + f"/sp_ego_periodic_{k}.pt")
+                    alt_agent.save_actor(str(wandb.run.dir) + f"/sp_alt_periodic_{k}.pt")
+
+            elif k < 100:
+                if k % 2 == 0:
+                    ego_agent.save_actor(str(wandb.run.dir) + f"/sp_ego_periodic_{k}.pt")
+                    alt_agent.save_actor(str(wandb.run.dir) + f"/sp_alt_periodic_{k}.pt")
+            else:
+                """
+                使用最后一个episode的模型作为SP agent
+                """
+                if (k % 25 == 0 or k == k - 1):
+                    ego_agent.save_actor(str(wandb.run.dir) + f"/sp_ego_periodic_{k}.pt")
+                    alt_agent.save_actor(str(wandb.run.dir) + f"/sp_alt_periodic_{k}.pt")
+
 def log_train(train_infos, total_num_steps):
     for k, v in train_infos.items():
         wandb.log({k: v}, step=total_num_steps)
@@ -102,7 +109,7 @@ def run():
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes', type=int, default=2000)
     parser.add_argument('--seed', type=int, default=0)
-    parser.add_argument("--use_wandb", action='store_false', default=True)
+    parser.add_argument("--use_wandb", action='store_false', default=False)
     args = parser.parse_args()
 
     args.max_episode_steps = 600 # Maximum number of steps per episode
@@ -118,30 +125,8 @@ def run():
                    reinit=True)
 
     seed_everything(args.seed)
-    ego_agent = PPO_discrete(lr=args.lr,
-                         hidden_dim=args.hidden_dim,
-                         batch_size=args.batch_size,
-                         use_minibatch=args.use_minibatch,
-                         mini_batch_size=args.mini_batch_size,
-                         epsilon=args.epsilon,
-                         entropy_coef=args.entropy_coef,
-                         vf_coef=args.vf_coef,
-                         state_dim=args.state_dim,
-                         action_dim=args.action_dim,
-                         num_episodes=args.num_episodes,
-                         device=args.device)
-    alt_agent = PPO_discrete(lr=args.lr,
-                         hidden_dim=args.hidden_dim,
-                         batch_size=args.batch_size,
-                         use_minibatch=args.use_minibatch,
-                         mini_batch_size=args.mini_batch_size,
-                         epsilon=args.epsilon,
-                         entropy_coef=args.entropy_coef,
-                         vf_coef=args.vf_coef,
-                        state_dim=args.state_dim,
-                         action_dim=args.action_dim,
-                         num_episodes=args.num_episodes,
-                         device=args.device)
+    ego_agent = PPO_discrete()
+    alt_agent = PPO_discrete()
     train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed)
     if args.use_wandb:
         wandb.finish()

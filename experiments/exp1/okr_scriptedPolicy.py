@@ -21,7 +21,7 @@ import wandb
 from src.overcooked_ai_py.mdp.actions import Action
 
 device = 'cuda'
-
+HORIZON = 3000
 
 class MetaTaskLibrary:
     def __init__(self):
@@ -91,7 +91,7 @@ class BPR_offline:
 
 
     def gen_performance_model(self) -> List[Dict[str, Dict[str, float]]]:
-        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}.pkl'
+        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}_600.pkl'
         if os.path.exists(performance_model_save_path):
             with open(performance_model_save_path, 'rb') as ff:
                 performance_model = pickle.load(ff)
@@ -100,7 +100,8 @@ class BPR_offline:
         performance_model = [{}, {}]
         n_rounds = 50
         for h_ in self.human_policys: # h_: "metatask1"
-            env = init_env(layout=self.args.layout,
+            env = init_env(horizon=HORIZON,
+                            layout=self.args.layout,
                            agent0_policy_name='mtp',
                            agent1_policy_name=f'script:{self.human_policys[h_]}',
                            use_script_policy=True)
@@ -146,7 +147,7 @@ class BPR_online:
         self.eps = 1e-7
 
     def play(self, args):
-        args.max_episode_steps = 600
+        args.max_episode_steps = HORIZON
         total_steps = 0
         # 初始化人类模型和策略
         policy_idx = 2
@@ -342,7 +343,7 @@ if __name__ == '__main__':
     LAYOUT_NAME = args.layout
     wandb.init(project='overcooked_rl',
                group='exp1',
-               name=f'okr_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
+               name=f'okr_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}_horizon{HORIZON}',
                config=vars(args),
                job_type='eval',
                dir=os.path.join(WANDB_DIR, 'exp1', 'okr'),
@@ -355,7 +356,7 @@ if __name__ == '__main__':
         policy_id_list = [val for val in policy_id_list for i in range(args.switch_human_freq)]
     if args.mode == 'intra':
         random.seed(42)
-        N = args.num_episodes * (600 // args.switch_human_freq)
+        N = args.num_episodes * (HORIZON // args.switch_human_freq)
         policy_id_list = [random.randint(1, len(META_TASKS[args.layout])) for _ in range(N)]
 
     seed_everything(args.seed)

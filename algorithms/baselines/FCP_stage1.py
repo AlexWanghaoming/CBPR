@@ -2,7 +2,9 @@ import wandb
 import glob
 import os, sys
 
-LAYOUT = 'cramped_room'
+LAYOUT = sys.argv[1]
+if not LAYOUT:
+    LAYOUT = 'cramper_room'
 
 SOURCE_DIR = '/alpha/overcooked_rl'
 WANDB_PATH = SOURCE_DIR + '/algorithms/baselines/wandb'

@@ -12,17 +12,17 @@ import wandb
 from datetime import datetime
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
-
+HORIZON = 3000
 
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--device', type=str, default='cpu')
-    parser.add_argument('--layout', default='coordination_ring')
-    # parser.add_argument('--layout', default='cramped_room')
+    # parser.add_argument('--layout', default='coordination_ring')
+    parser.add_argument('--layout', default='cramped_room')
     # parser.add_argument('--layout', default='marshmallow_experiment')
     parser.add_argument('--num_episodes', type=int, default=20)
-    parser.add_argument('--mode', default='intra', help='swith policy inter or intra')
-    parser.add_argument("--switch_human_freq", type=int, default=100, help="Frequency of switching human policy")
+    parser.add_argument('--mode', default='inter', help='swith policy inter or intra')
+    parser.add_argument("--switch_human_freq", type=int, default=1, help="Frequency of switching human policy")
     parser.add_argument('--seed', type=int, default=2022)
     parser.add_argument('--algorithm', default='FCP', help='BCP or SP or FCP')
     args = parser.parse_args()
@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     wandb.init(project='overcooked_rl',
                group='exp1',
-               name=f'{args.algorithm}_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}',
+               name=f'{args.algorithm}_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}_horizon{HORIZON}',
                config=vars(args),
                job_type='eval',
                dir=os.path.join(WANDB_DIR, 'exp1', args.algorithm),  # 这个目录需要手动创建
@@ -56,14 +56,15 @@ if __name__ == '__main__':
         policy_id_list = [val for val in policy_id_list for i in range(args.switch_human_freq)]
     if args.mode == 'intra':
         random.seed(42)
-        N = args.num_episodes * (600 // args.switch_human_freq)
+        N = args.num_episodes * (HORIZON // args.switch_human_freq)
         policy_id_list = [random.randint(1, len(META_TASKS[args.layout])) for _ in range(N)]
 
     seed_everything(args.seed)
     # 初始化人类模型和策略
     policy_idx = 2
     # print("初始策略: ", mts[policy_idx - 1])
-    env = init_env(layout=args.layout,
+    env = init_env(horizon=HORIZON,
+                    layout=args.layout,
                    agent0_policy_name=args.algorithm,
                    agent1_policy_name=f'script:{mts[policy_idx-1]}',
                    use_script_policy=True)
@@ -82,6 +83,7 @@ if __name__ == '__main__':
         episode_steps = 0
         while not done:
             episode_steps += 1
+            # print(episode_steps)
             if args.mode == "intra":
                 # 轮内切换人的策略
                 if episode_steps % args.switch_human_freq == 0:
@@ -94,9 +96,10 @@ if __name__ == '__main__':
             ai_obs, h_obs = obs['both_agent_obs']
             ep_reward += sparse_reward
             # env.render(interval=0.1)
-        # print(f'Ep {k+1}:',ep_reward)
+        print(f'Ep {k+1}:',ep_reward)
         r_list.append(ep_reward)
-        wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+        wandb.log({'episode': k+1,
+                   'ep_reward': ep_reward})
     print(f'{args.algorithm}_{args.layout}_{args.mode}_{args.switch_human_freq}')
     # print_mean_interval(r_list)
     wandb.finish()

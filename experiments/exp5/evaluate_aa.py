@@ -1,10 +1,10 @@
-import numpy as np
 import argparse
 import torch
 import os, sys
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
-from models import BCP_MODELS, SP_MODELS, FCP_MODELS, SKILL_MODELS
+from models import BCP_MODELS, SP_MODELS, FCP_MODELS
 from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval
 import wandb
 
@@ -16,7 +16,7 @@ def parse_args():
     parser.add_argument('--device', type=str, default='cpu')
     # parser.add_argument('--layout', default='cramped_room')
     # parser.add_argument('--layout', default='soup_coordination')
-    parser.add_argument('--layout', default='asymmetric_advantages')
+    parser.add_argument('--layout', default='cramped_room')
     parser.add_argument('--num_episodes', type=int, default=20)
     parser.add_argument('--seed', type=int, default=1)
     parser.add_argument('--algorithm', default='SP', help='BCP or SP or FCP')
@@ -28,26 +28,12 @@ def parse_args():
 
 if __name__ == '__main__':
     args = parse_args()
-    if args.algorithm == 'BCP':
-        ai_agent = torch.load(BCP_MODELS[args.layout], map_location='cpu')
-    elif args.algorithm == 'FCP':
-        ai_agent = torch.load(FCP_MODELS[args.layout], map_location='cpu')
-    elif args.algorithm == 'SP':
-        ai_agent = torch.load(SP_MODELS[args.layout], map_location='cpu')
-    else:
-        pass
+    # ai_agent1 = torch.load(FCP_MODELS[args.layout], map_location='cpu')
 
-    if args.skill_level == 'low':
-        skill_model_path = SKILL_MODELS[args.layout][0]
-        skill_model = torch.load(skill_model_path, map_location='cpu')
-    elif args.skill_level == 'medium':
-        skill_model_path = SKILL_MODELS[args.layout][1]
-        skill_model = torch.load(skill_model_path, map_location='cpu')
-    elif args.skill_level == 'high':
-        skill_model_path = SKILL_MODELS[args.layout][2]
-        skill_model = torch.load(skill_model_path, map_location='cpu')
-    else:
-        pass
+    ai_agent1 = torch.load(BCP_MODELS[args.layout], map_location='cpu')
+    ai_agent2 = torch.load(SP_MODELS[args.layout], map_location='cpu')
+
+
     if args.use_wandb:
         wandb.init(project='overcooked_rl',
                    group='exp2_2',
@@ -68,18 +54,18 @@ if __name__ == '__main__':
         episode_steps = 0
         while not done:
             episode_steps += 1
-            ai_act = evaluate_actor(ai_agent, ai_obs, deterministic=True)
-            h_act = evaluate_actor(skill_model, h_obs, deterministic=False)
+            ai_act = evaluate_actor(ai_agent1, ai_obs, deterministic=True)
+            h_act = evaluate_actor(ai_agent2, h_obs, deterministic=True)
             obs, sparse_reward, done, info = env.step((ai_act, h_act))
             # obs, sparse_reward, done, info = env.step((h_act, ai_act))
 
             ai_obs, h_obs = obs['both_agent_obs']
             ep_reward += sparse_reward
-            env.render(interval=0.05)
-        print(f'Ep {k+1}:',ep_reward)
+            # env.render(interval=0.05)
+        print(f'Ep {k + 1}:', ep_reward)
         r_list.append(ep_reward)
         if args.use_wandb:
-            wandb.log({'episode': k+1, 'ep_reward': ep_reward})
+            wandb.log({'episode': k + 1, 'ep_reward': ep_reward})
     if args.use_wandb:
         wandb.finish()
     print_mean_interval(r_list)

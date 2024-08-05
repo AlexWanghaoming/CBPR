@@ -10,7 +10,8 @@ import argparse
 
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('--layout', default='soup_coordination')
+# parser.add_argument('--layout', default='soup_coordination')
+parser.add_argument('--layout', default='cramped_room')
 args = parser.parse_args()
 
 
@@ -47,7 +48,7 @@ for level in groups:
     sub_group_interval = []
     for ablation in a2c:
         for run in group_runs:
-            match_name = f'okr_{args.layout}_{level}_seed0_Q20_{ablation}'
+            match_name = f'okr_{args.layout}_{level}_seed0_Q20_{ablation}_horizon1800'
             if run.state == "finished" and run.name == match_name:
                 print(f"{run.id}:{run.name}")
                 num_ep = run.config['num_episodes']
@@ -88,7 +89,7 @@ if args.layout == 'cramped_room' or args.layout == 'coordination_ring':
 plt.grid(axis='x')
 plt.tight_layout()
 # plt.ylim(0, 320)
-plt.savefig(f'{args.layout}_ablations_rho.pdf', bbox_inches='tight')
+# plt.savefig(f'{args.layout}_ablations_rho.pdf', bbox_inches='tight')
 plt.show()
 
 
