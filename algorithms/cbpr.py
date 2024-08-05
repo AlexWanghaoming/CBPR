@@ -19,7 +19,6 @@ from src.overcooked_ai_py.mdp.actions import Action
 import wandb
 import pickle
 
-
 device = 'cpu'
 
 class MetaTaskLibrary:
@@ -136,16 +135,60 @@ class BPR_offline:
         return ss
 
 
-class BPR_online:
+class CBPR():
     def __init__(self, args):
         bpr_offline = BPR_offline(args)
         self.performance_model = bpr_offline.gen_performance_model()
+        print(self.performance_model)
         self.belief = bpr_offline.gen_belief()
         self.agents = MTPLibrary().gen_policy_library(args)
         self.human_policys = MetaTaskLibrary().gen_policy_library(tasks=META_TASKS[args.layout])
         self.MTs = MTLibrary().gen_policy_library(args)
         self.eps = args.eps
         self.args = args
+        self.total_step = 0
+    def predict(self, ego_obs, alt_obs, info, ep_reward, deterministic=True):
+        """
+        one step forward function of CBPR online stage
+        """
+        # args.max_episode_steps = args.horizon
+        self.total_step +=1
+        ep_step = self.total_step % self.args.horizon
+
+        #  update inter-episodic belief at the first step of an episode
+        if ep_step == 1:
+            # print("qq")
+            self.Q = deque(maxlen=self.args.Q_len)
+            self.xi = deepcopy(self.belief)
+            self.best_agent_id, self.best_agent = self._reuse_optimal_policy(belief=self.belief)  # 选择初始智能体策略
+            if deterministic:
+                ego_act = self.best_agent.evaluate(ego_obs)
+            else:
+                ego_act, _ = self.best_agent.choose_action(ego_obs)
+            return ego_act
+
+        if deterministic:
+            ego_act = self.best_agent.evaluate(ego_obs)
+        else:
+            ego_act, _ = self.best_agent.choose_action(ego_obs)
+
+        h_dire = info['joint_action'][1]
+        h_act = Action.INDEX_TO_ACTION.index(h_dire)
+        alt_act = torch.tensor(np.array([h_act]), dtype=torch.int64).to(device)
+        alt_obs = torch.tensor(alt_obs, dtype=torch.float32).to(device)
+        self.Q.append((alt_obs, alt_act))
+        self.xi = self._update_xi(self.Q)  # 更新intra-episode belief $\xi$ 原文公式8,9
+        self.zeta = self._update_zeta(t=ep_step, rho=self.args.rho)  # 更新integrated belief $\zeta$ 原文公式10
+
+        self.best_agent_id, self.best_agent = self._reuse_optimal_policy(belief=self.zeta)  # 轮内重用最优策略
+        self.xi = deepcopy(self.zeta)  # 每一步更新 \xi
+
+        #  update inter-episodic belief at the last step of an episode
+        if ep_step == 0:
+            # print('ssssssss')
+            self.belief = deepcopy(self.xi)
+            self.belief = self._update_beta(self.best_agent_id, ep_reward)
+        return ego_act
 
     def play(self, partner_policy):
         """
@@ -177,9 +220,8 @@ class BPR_online:
                 ai_obs, h_obs = obs['both_agent_obs']
                 h_dire = info['joint_action'][1]
                 h_act = Action.INDEX_TO_ACTION.index(h_dire)
-
-                h_obs = torch.tensor(h_obs, dtype=torch.float32).to(device)
                 h_act = torch.tensor(np.array([h_act]), dtype=torch.int64).to(device)
+                h_obs = torch.tensor(h_obs, dtype=torch.float32).to(device)
                 Q.append((h_obs, h_act))
 
                 # if episode_steps % 1 == 0:
@@ -194,12 +236,6 @@ class BPR_online:
                 best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.zeta)  # 轮内重用最优策略
                 self.xi = deepcopy(self.zeta)  # 每一步更新 \xi
 
-                ### debug: 直接选对应的策略作为最优策略
-                # best_agent_id = list(self.agents.keys())[policy_idx-1]
-                # best_agent = self.agents[best_agent_id]
-                # if best_agent_id != best_agent_id_prime:
-                #     # print(f'CBPR重用策略 {best_agent_id} 和人合作!')
-                #     best_agent_id_prime = best_agent_id
             print(f'Ep {k + 1} rewards: {ep_reward}')
             r_list.append(ep_reward)
             if self.args.use_wandb:
@@ -340,7 +376,6 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-
 if __name__ == '__main__':
     WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
     args = parse_args()
@@ -354,7 +389,7 @@ if __name__ == '__main__':
                    # dir=os.path.join(WANDB_DIR, 'exp2_2'),
                    reinit=True)
     seed_everything(args.seed)
-    bpr_online = BPR_online(args)
+    bpr_online = CBPR(args)
     ai_agent = torch.load(SP_MODELS[args.layout], map_location='cpu')
     bpr_online.play(partner_policy=ai_agent)
     if args.use_wandb:

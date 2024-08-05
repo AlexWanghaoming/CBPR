@@ -34,16 +34,25 @@ SP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'sp/cramped_room_sp_p
               'asymmetric_advantages': os.path.join(_curr_directory, 'sp/asymmetric_advantages_sp_periodic_3000.pt'),
               'coordination_ring': os.path.join(_curr_directory, 'sp/coordination_ring_sp_periodic_3000.pt'),
               'soup_coordination': os.path.join(_curr_directory, 'sp/soup_coordination_sp_periodic_3000.pt'),
-
               }
-
+SP_ALT_MODELS = {'cramped_room': os.path.join(_curr_directory, 'policy_pool_alt_agent/cramped_room/fcp/s1/sp1_final_actor.pt'),
+             # 'marshmallow_experiment': os.path.join(_curr_directory, 'policy_pool_alt_agent/marshmallow_experiment_sp_periodic_3000.pt'),
+              'asymmetric_advantages': os.path.join(_curr_directory, 'policy_pool_alt_agent/asymmetric_advantages/fcp/s1/sp1_final_actor.pt'),
+              'coordination_ring': os.path.join(_curr_directory, 'policy_pool_alt_agent/coordination_ring/fcp/s1/sp1_final_actor.pt'),
+              'soup_coordination': os.path.join(_curr_directory, 'policy_pool_alt_agent/soup_coordination/fcp/s1/sp1_final_actor.pt'),
+              }
 BCP_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bcp/bcp_cramped_room-seed1.pth'),
-             'marshmallow_experiment': os.path.join(_curr_directory, 'bcp/bcp_marshmallow_experiment-seed1.pth'),
+             # 'marshmallow_experiment': os.path.join(_curr_directory, 'bcp/bcp_marshmallow_experiment-seed1.pth'),
               'asymmetric_advantages': os.path.join(_curr_directory, 'bcp/bcp_asymmetric_advantages-seed1.pth'),
               'coordination_ring': os.path.join(_curr_directory, 'bcp/bcp_coordination_ring-seed1.pth'),
               'soup_coordination': os.path.join(_curr_directory, 'bcp/bcp_soup_coordination-seed1.pth')
               }
-
+BCP_ALT_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bcp/bcp_cramped_room_alt-seed1.pth'),
+             # 'marshmallow_experiment': os.path.join(_curr_directory, 'bcp/bcp_marshmallow_experiment-seed1.pth'),
+              'asymmetric_advantages': os.path.join(_curr_directory, 'bcp/bcp_asymmetric_advantages_alt-seed1.pth'),
+              'coordination_ring': os.path.join(_curr_directory, 'bcp/bcp_coordination_ring_alt-seed1.pth'),
+              'soup_coordination': os.path.join(_curr_directory, 'bcp/bcp_soup_coordination_alt-seed1.pth')
+              }
 BC_MODELS = {'cramped_room': os.path.join(_curr_directory, 'bc/BC_cramped_room.pth'),
              'marshmallow_experiment': os.path.join(_curr_directory, 'bc/BC_marshmallow_experiment.pth'),
              'asymmetric_advantages': os.path.join(_curr_directory, 'bc/BC_asymmetric_advantages.pth'),

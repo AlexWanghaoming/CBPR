@@ -25,8 +25,8 @@ SCRIPT_AGENTS = {
 layout = 'soup_coordination'
 num_episodes = 50
 env = init_env(layout=layout,
-               agent0_policy_name='script:place_tomato_and_deliver_soup',
-               agent1_policy_name='script:random',
+               agent0_policy_name='script:pickup_ingredient_and_place_mix',
+               agent1_policy_name='script:place_onion_and_deliver_soup',
                use_script_policy=True)
 
 for k in range(1, num_episodes + 1):

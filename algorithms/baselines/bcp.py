@@ -12,16 +12,16 @@ from bc.bc_hh import BehaviorClone
 from My_utils import seed_everything, LinearAnnealer, init_env, ReplayBuffer, Normalization, RewardScaling
 import wandb
 
-add = 'http://127.0.0.1:7890'
-os.environ['http_proxy'] = add
-os.environ['https_proxy'] = add
+# add = 'http://127.0.0.1:7890'
+# os.environ['http_proxy'] = add
+# os.environ['https_proxy'] = add
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
 
 
-def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, seed:int, logger):
+def train(args, ego_agent, alt_agent, n_episodes:int, seed:int, logger):
     annealer = LinearAnnealer(horizon=args.num_episodes * args.max_episode_steps * 0.5)
     env = init_env(layout=args.layout)
-    ego_buffer = ReplayBuffer(args.batch_size, args.state_dim)
+    replay_buffer = ReplayBuffer(args.batch_size, args.state_dim)
     cur_steps = 0  # Record the total steps during the training
     if args.use_state_norm:
         ego_state_norm = Normalization(shape=args.state_dim)
@@ -31,8 +31,11 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
     for k in range(1, n_episodes+1):
         agent_env_steps = args.max_episode_steps *  (k-1)
         reward_shaping_factor = annealer.param_value(agent_env_steps)
-        obs  = env.reset()
+        obs = env.reset()
         ego_obs, alt_obs = obs['both_agent_obs']
+        # if args.alt:
+        #     alt_obs, ego_obs = obs['both_agent_obs']
+
         if args.use_state_norm:
             ego_obs = ego_state_norm(ego_obs)
         
@@ -45,8 +48,12 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
         while not done:
             cur_steps += 1
             episode_steps += 1
-            ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)
-            alt_a = alt_agent.choose_action(alt_obs, deterministic=True)
+            if args.alt:
+                alt_a, alt_a_logprob = alt_agent.choose_action(alt_obs)
+                ego_a = ego_agent.choose_action(ego_obs, deterministic=True)
+            else:
+                ego_a, ego_a_logprob = ego_agent.choose_action(ego_obs)
+                alt_a = alt_agent.choose_action(alt_obs, deterministic=True)
             obs_, sparse_reward, done, info = env.step((ego_a, alt_a))
             shaped_r = info["shaped_r_by_agent"][0] + info["shaped_r_by_agent"][1]
             r = sparse_reward + shaped_r*reward_shaping_factor
@@ -60,16 +67,26 @@ def train(args, ego_agent:PPO_discrete, alt_agent:nn.Module, n_episodes:int, see
                 dw = True
             else:
                 dw = False
-            ego_buffer.store(ego_obs, ego_a, ego_a_logprob, r, ego_obs_, dw, done)
+            if args.alt:
+                replay_buffer.store(alt_obs, alt_a, alt_a_logprob, r, alt_obs_, dw, done)
+            else:
+                replay_buffer.store(ego_obs, ego_a, ego_a_logprob, r, ego_obs_, dw, done)
             ego_obs = ego_obs_
             alt_obs = alt_obs_
-            if ego_buffer.count == args.batch_size:
-                ego_agent.update(ego_buffer, cur_steps)
-                ego_buffer.count = 0
+            if replay_buffer.count == args.batch_size:
+                if args.alt:
+                    alt_agent.update(replay_buffer, cur_steps)
+                else:
+                    ego_agent.update(replay_buffer, cur_steps)
+                replay_buffer.count = 0
             # env.render(interval=0.08)
-        # wandb.log({'episode': k, 'ep_reward': episode_reward})
+        if args.use_wandb:
+            wandb.log({'episode': k, 'ep_reward': episode_reward})
         print(f'Ep {k} reward:', episode_reward)
-    ego_agent.save_actor(f'../../models/bcp/bcp_{args.layout}-seed{seed}.pth')
+    if args.alt:
+        alt_agent.save_actor(f'../../models/bcp/bcp_{args.layout}_alt-seed{seed}.pth')
+    else:
+        ego_agent.save_actor(f'../../models/bcp/bcp_{args.layout}-seed{seed}.pth')
 
 
 def run():
@@ -91,39 +108,37 @@ def run():
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes',  type=int, default=2000)
     parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--use_wandb', action='store_true', default=True)
+    parser.add_argument('--alt', action='store_true', default=True)
+
     args = parser.parse_args()
     
     args.max_episode_steps = 600 # Maximum number of steps per episode
     args.t_max = args.num_episodes * args.max_episode_steps
     args.state_dim = 96
     args.action_dim = 6
-
-    # wandb.init(project='overcooked_rl',
-    #            group='BCP',
-    #            name=f'bcp_ppo_{args.layout}_seed{args.seed}',
-    #            job_type='training',
-    #            config=vars(args),
-    #            dir=os.path.join(WANDB_DIR, 'bcp'),
-    #            reinit=True)
+    name = f'bcp_ppo_{args.layout}_seed{args.seed}'
+    if args.alt:
+        name = f'bcp_ppo_{args.layout}_seed{args.seed}_alt'
+    wandb.init(project='overcooked_rl',
+               group='BCP',
+               name=name,
+               job_type='training',
+               config=vars(args),
+               dir=os.path.join(WANDB_DIR, 'bcp'),
+               reinit=True)
 
 
     seed_everything(seed=args.seed)
-    ego_agent = PPO_discrete(lr=args.lr,
-                         hidden_dim=args.hidden_dim,
-                         batch_size=args.batch_size,
-                        use_minibatch=args.use_minibatch,
-                        mini_batch_size=args.mini_batch_size,
-                         epsilon=args.epsilon,
-                         entropy_coef=args.entropy_coef,
-                            vf_coef=args.vf_coef,
-                             state_dim=args.state_dim,
-                         action_dim=args.action_dim,
-                         num_episodes=args.num_episodes,
-                         device=args.device)
-
+    ego_agent = PPO_discrete()
     alt_agent = torch.load(BC_MODELS[args.layout], map_location='cpu')
-    train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)  # wanghm
-    # wandb.finish()
+    if args.alt:
+        train(args, ego_agent=alt_agent, alt_agent=ego_agent, n_episodes=args.num_episodes, seed=args.seed,
+              logger=None)  # wanghm
+    else:
+        train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)  # wanghm
+    if args.use_wandb:
+        wandb.finish()
 
 
 if __name__ == '__main__':

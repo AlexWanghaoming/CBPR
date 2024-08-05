@@ -6,9 +6,9 @@ from agents.ppo_discrete import PPO_discrete
 from My_utils import seed_everything, LinearAnnealer, init_env, ReplayBuffer, RewardScaling
 import wandb
 
-add = 'http://127.0.0.1:7890'
-os.environ['http_proxy'] = add
-os.environ['https_proxy'] = add
+# add = 'http://127.0.0.1:7890'
+# os.environ['http_proxy'] = add
+# os.environ['https_proxy'] = add
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
 
 
@@ -76,7 +76,7 @@ def run():
     parser.add_argument("--entropy_coef", type=float, default=0.1)
     parser.add_argument('--device', type=str, default='cpu')
     # parser.add_argument('--layout', default='coordination_ring')
-    parser.add_argument('--layout', default='marshmallow_experiment')
+    parser.add_argument('--layout', default='soup_coordination')
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes',  type=int, default=2000)
     parser.add_argument('--scripted_policy_name', type=str, default='random')
