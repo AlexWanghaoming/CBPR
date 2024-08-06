@@ -91,10 +91,12 @@ class BPR_offline:
     """
     def __init__(self, args):
         self.human_policys = MetaTaskLibrary().gen_policy_library(tasks=META_TASKS[args.layout])
+        self.n = len(META_TASKS[args.layout])
+        print(f'number of meta-task: {self.n}')
         self.ai_policys = MTPLibrary().gen_policy_library(args)
         self.args = args
     def gen_performance_model(self) -> List[Dict[str, Dict[str, float]]]:
-        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}.pkl'
+        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}_{self.n}metatask.pkl'
         if os.path.exists(performance_model_save_path):
             with open(performance_model_save_path, 'rb') as ff:
                 performance_model = pickle.load(ff)
@@ -212,9 +214,7 @@ class CBPR():
                 episode_steps += 1
                 # ai_act = best_agent.evaluate(ai_obs)
                 ai_act, _ = best_agent.choose_action(ai_obs)
-
                 h_act = evaluate_actor(partner_policy, h_obs, deterministic=False)
-
                 obs, sparse_reward, done, info = env.step((ai_act, h_act))
                 ep_reward += sparse_reward
                 ai_obs, h_obs = obs['both_agent_obs']
@@ -232,11 +232,10 @@ class CBPR():
                         wandb.log({f'intra-episode belief of {mt}': self.xi[mt],
                                    f'integrated belief of {mt}': self.zeta[mt]
                                    })
-
                 best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.zeta)  # 轮内重用最优策略
                 self.xi = deepcopy(self.zeta)  # 每一步更新 \xi
 
-            print(f'Ep {k + 1} rewards: {ep_reward}')
+            # print(f'Ep {k + 1} rewards: {ep_reward}')
             r_list.append(ep_reward)
             if self.args.use_wandb:
                 wandb.log({'episode':k+1,

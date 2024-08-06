@@ -5,17 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4be4f475-155a-4b0a-9825-15e5576d7ad7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/experiments/exp1/plot_rebuttal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/exp3/fig/plot_real_human_box.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/bcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/bcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/baselines/train_bcp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/baselines/train_bcp.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/cbpr.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/cbpr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/mtp_scriptedPolicy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms/script_agent_playing.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/script_agent_playing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp5/evaluate_aa.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp5/evaluate_aa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/exp5/evaluate_cbpr_aa.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp5/evaluate_cbpr_aa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bc/opponent_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/bc/opponent_scriptedPolicy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_inter1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_inter2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_intra100.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_asymmetric_advantages_intra200.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_inter1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_inter2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_intra100.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_coordination_ring_intra200.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_inter1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_inter2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_intra100.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_cramped_room_intra200.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_inter1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_inter2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_intra100.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/exp1_marshmallow_experiment_intra200.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp1/okr_scriptedPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp1/okr_scriptedPolicy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_ablations_Qlen.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_ablations_rho.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/asymmetric_advantages_exp2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/coordination_ring_ablations_Qlen.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/coordination_ring_ablations_rho.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/coordination_ring_exp2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/cramped_room_ablations_Qlen.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/cramped_room_ablations_rho.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/cramped_room_exp2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels_ablations.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/eval_skill_levels_ablations.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/evaluate_skill_levels.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/evaluate_skill_levels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/marshmallow_experiment_ablations_Qlen.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/marshmallow_experiment_ablations_rho.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/marshmallow_experiment_exp2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp2/okr_skill_levels.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/exp2/okr_skill_levels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/human_test_exp3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/exp3/plot_real_human_box.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_soup_coordination-random-seed3.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/soup_coordination/mtp_soup_coordination-random-seed3.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_soup_coordination-random-seed4.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/soup_coordination/mtp_soup_coordination-random-seed4.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/mtp/mtp_soup_coordination-random-seed5.pth" beforeDir="false" afterPath="$PROJECT_DIR$/models/mtp/soup_coordination/mtp_soup_coordination-random-seed5.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_mdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/overcooked_ai_py/mdp/overcooked_mdp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,57 +96,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.FCP_stage2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bc_hh.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bc_scriptedPolicy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bcp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cbpr.executor&quot;: &quot;Run&quot;,
-    &quot;Python.evaluate_aa.executor&quot;: &quot;Run&quot;,
-    &quot;Python.evaluate_cbpr_aa.executor&quot;: &quot;Run&quot;,
-    &quot;Python.evaluate_scriptPolicy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.evaluate_skill_levels.executor&quot;: &quot;Run&quot;,
-    &quot;Python.kkkkk.executor&quot;: &quot;Run&quot;,
-    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.okr_skill_levels.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_ablations_Qlen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_ablations_rho.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_exp1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_exp2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_exp4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.plot_real_human_box.executor&quot;: &quot;Run&quot;,
-    &quot;Python.replay_human_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.script_agent_playing.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sp_ppo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wandb_plot_bcp.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.wandb_plot_fcp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wandb_plot_mtp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wandb_plot_sp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wandb_test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Shell Script.eval.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.eval_scriptPolicy.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.eval_skill_levels.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.eval_skill_levels_ablations.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.mtp_scriptedPolicy.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.plot_exp1.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.train_bcp.sh.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/alpha/overcooked_rl/algorithms/baselines&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.FCP_stage2.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.bc_hh.executor": "Run",
+    "Python.bc_scriptedPolicy.executor": "Run",
+    "Python.bcp.executor": "Run",
+    "Python.cbpr.executor": "Run",
+    "Python.evaluate_aa.executor": "Run",
+    "Python.evaluate_cbpr_aa.executor": "Run",
+    "Python.evaluate_scriptPolicy.executor": "Run",
+    "Python.evaluate_skill_levels.executor": "Run",
+    "Python.kkkkk.executor": "Run",
+    "Python.manage.executor": "Run",
+    "Python.okr_skill_levels.executor": "Run",
+    "Python.opponent_scriptedPolicy.executor": "Run",
+    "Python.plot_ablations_Qlen.executor": "Run",
+    "Python.plot_ablations_rho.executor": "Run",
+    "Python.plot_exp1.executor": "Run",
+    "Python.plot_exp2.executor": "Run",
+    "Python.plot_exp4.executor": "Run",
+    "Python.plot_real_human_box.executor": "Run",
+    "Python.plot_rebuttal.executor": "Run",
+    "Python.replay_human_data.executor": "Run",
+    "Python.script_agent_playing.executor": "Run",
+    "Python.sp_ppo.executor": "Run",
+    "Python.wandb_plot_bcp.executor": "Debug",
+    "Python.wandb_plot_fcp.executor": "Run",
+    "Python.wandb_plot_mtp.executor": "Run",
+    "Python.wandb_plot_sp.executor": "Run",
+    "Python.wandb_test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Shell Script.eval.sh.executor": "Run",
+    "Shell Script.eval_scriptPolicy.sh.executor": "Run",
+    "Shell Script.eval_skill_levels.sh.executor": "Run",
+    "Shell Script.eval_skill_levels_ablations.sh.executor": "Run",
+    "Shell Script.mtp_scriptedPolicy.sh.executor": "Run",
+    "Shell Script.plot_exp1.sh.executor": "Run",
+    "Shell Script.train_bcp.sh.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/alpha/overcooked_rl/algorithms/baselines",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/algorithms/baselines" />
@@ -119,15 +158,15 @@
       <recent name="$PROJECT_DIR$/experiments/exp2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models/mtp/counter_circuit" />
       <recent name="$PROJECT_DIR$/models/mtp/soup_coordination" />
-      <recent name="$PROJECT_DIR$/models/mtp/random3" />
-      <recent name="$PROJECT_DIR$/miscs" />
-      <recent name="$PROJECT_DIR$/experiments/exp3/real_human_test/marshmallow_experiment" />
+      <recent name="$PROJECT_DIR$/experiments/exp3/fig" />
+      <recent name="$PROJECT_DIR$/experiments/exp2/fig" />
+      <recent name="$PROJECT_DIR$/experiments/exp1/fig" />
+      <recent name="$PROJECT_DIR$/models/mtp/counter_circuit" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.script_agent_playing">
-    <configuration name="cbpr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Shell Script.eval_skill_levels_ablations.sh">
+    <configuration name="okr_skill_levels" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,12 +175,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/cbpr.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/exp2/okr_skill_levels.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,7 +189,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="evaluate_aa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="opponent_scriptedPolicy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,12 +198,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bc" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/exp5/evaluate_aa.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bc/opponent_scriptedPolicy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -173,7 +212,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="evaluate_cbpr_aa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="plot_rebuttal" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="overcooked_rl" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,12 +221,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp1" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/exp5/evaluate_cbpr_aa.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/exp1/plot_rebuttal.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,27 +235,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="script_agent_playing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="overcooked_rl" />
-      <option name="ENV_FILES" value="" />
+    <configuration name="eval_scriptPolicy.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/experiments/exp1/eval_scriptPolicy.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp1" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/zsh" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithms/script_agent_playing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="eval_skill_levels_ablations.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/experiments/exp2/eval_skill_levels_ablations.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/exp2" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="mtp_scriptedPolicy.sh" type="ShConfigurationType">
@@ -234,36 +280,21 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="train_bcp.sh" type="ShConfigurationType" temporary="true">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/algorithms/baselines/train_bcp.sh" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithms/baselines" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.script_agent_playing" />
-      <item itemvalue="Python.cbpr" />
-      <item itemvalue="Python.evaluate_aa" />
-      <item itemvalue="Python.evaluate_cbpr_aa" />
+      <item itemvalue="Python.okr_skill_levels" />
+      <item itemvalue="Python.opponent_scriptedPolicy" />
+      <item itemvalue="Python.plot_rebuttal" />
       <item itemvalue="Shell Script.mtp_scriptedPolicy.sh" />
-      <item itemvalue="Shell Script.train_bcp.sh" />
+      <item itemvalue="Shell Script.eval_scriptPolicy.sh" />
+      <item itemvalue="Shell Script.eval_skill_levels_ablations.sh" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.script_agent_playing" />
-        <item itemvalue="Shell Script.train_bcp.sh" />
-        <item itemvalue="Python.evaluate_aa" />
-        <item itemvalue="Python.evaluate_cbpr_aa" />
-        <item itemvalue="Python.cbpr" />
+        <item itemvalue="Shell Script.eval_skill_levels_ablations.sh" />
+        <item itemvalue="Python.okr_skill_levels" />
+        <item itemvalue="Shell Script.eval_scriptPolicy.sh" />
+        <item itemvalue="Python.plot_rebuttal" />
+        <item itemvalue="Python.opponent_scriptedPolicy" />
       </list>
     </recent_temporary>
   </component>
@@ -338,7 +369,7 @@
       <workItem from="1722497909477" duration="1637000" />
       <workItem from="1722499701392" duration="891000" />
       <workItem from="1722500605184" duration="140000" />
-      <workItem from="1722500754012" duration="59366000" />
+      <workItem from="1722500754012" duration="91620000" />
     </task>
     <servers />
   </component>
@@ -445,11 +476,6 @@
           <option name="timeStamp" value="283" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/bc/opponent_scriptedPolicy.py</url>
-          <line>111</line>
-          <option name="timeStamp" value="286" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algorithms/baselines/bcp.py</url>
           <line>22</line>
           <option name="timeStamp" value="296" />
@@ -489,7 +515,7 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_ablations.coverage" NAME="plot_ablations Coverage Results" MODIFIED="1702012674841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
     <SUITE FILE_PATH="coverage/overcooked_rl$replay_human_data.coverage" NAME="replay_human_data Coverage Results" MODIFIED="1703462685894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
     <SUITE FILE_PATH="coverage/overcooked_rl$mtp_vae.coverage" NAME="mtp_vae Coverage Results" MODIFIED="1696750679997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$opponent_scriptedPolicy.coverage" NAME="opponent_scriptedPolicy Coverage Results" MODIFIED="1701762366357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$opponent_scriptedPolicy.coverage" NAME="opponent_scriptedPolicy Coverage Results" MODIFIED="1722924567255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bc" />
     <SUITE FILE_PATH="coverage/overcooked_rl$cartPole_rnn.coverage" NAME="cartPole_rnn Coverage Results" MODIFIED="1701018045842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/state_trans_func" />
     <SUITE FILE_PATH="coverage/overcooked_rl$bpr_NN.coverage" NAME="bpr_NN Coverage Results" MODIFIED="1699433608795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo_tune.coverage" NAME="sp_ppo_tune Coverage Results" MODIFIED="1703094266405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
@@ -512,7 +538,7 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_BCP_hh_distribution.coverage" NAME="plot_BCP-hh_distribution Coverage Results" MODIFIED="1699703693700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$overcooked.coverage" NAME="overcooked Coverage Results" MODIFIED="1699906441030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/envs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$sp_ppo_elegant.coverage" NAME="sp_ppo_elegant Coverage Results" MODIFIED="1701362849184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines" />
-    <SUITE FILE_PATH="coverage/overcooked_rl$okr_skill_levels.coverage" NAME="okr_skill_levels Coverage Results" MODIFIED="1704445253832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$okr_skill_levels.coverage" NAME="okr_skill_levels Coverage Results" MODIFIED="1722938533211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp2" />
     <SUITE FILE_PATH="coverage/overcooked_rl$ppo_discrete.coverage" NAME="ppo_discrete Coverage Results" MODIFIED="1698306357024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/agents" />
     <SUITE FILE_PATH="coverage/overcooked_rl$train_overcooked.coverage" NAME="train_overcooked Coverage Results" MODIFIED="1699906811359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms/baselines/bpd/experiments" />
     <SUITE FILE_PATH="coverage/overcooked_rl$manage.coverage" NAME="manage Coverage Results" MODIFIED="1703530096874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_wandb_log" />
@@ -573,6 +599,7 @@
     <SUITE FILE_PATH="coverage/overcooked_rl$okr.coverage" NAME="okr Coverage Results" MODIFIED="1695702555776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
     <SUITE FILE_PATH="coverage/overcooked_rl$evaluate_bcp_scriptPolicy.coverage" NAME="evaluate_bcp_scriptPolicy Coverage Results" MODIFIED="1701083808569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
     <SUITE FILE_PATH="coverage/overcooked_rl$okr_humanProxy.coverage" NAME="okr_humanProxy Coverage Results" MODIFIED="1699880815512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithms" />
+    <SUITE FILE_PATH="coverage/overcooked_rl$plot_rebuttal.coverage" NAME="plot_rebuttal Coverage Results" MODIFIED="1722927168642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments/exp1" />
     <SUITE FILE_PATH="coverage/overcooked_rl$wandb_plot_sp.coverage" NAME="wandb_plot_sp Coverage Results" MODIFIED="1704448431638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/figures" />
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_BC_distribution.coverage" NAME="plot_BCP-BC_distribution Coverage Results" MODIFIED="1699706995907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
     <SUITE FILE_PATH="coverage/overcooked_rl$plot_BC_hh_distribution.coverage" NAME="plot_BC-hh_distribution Coverage Results" MODIFIED="1699703446796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />

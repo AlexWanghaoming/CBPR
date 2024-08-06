@@ -18,7 +18,14 @@ META_TASKS = {
             'coordination_ring': ['place_onion_in_pot', 'deliver_soup', 'place_onion_and_deliver_soup', 'random'],
             # 'coordination_ring': ['place_onion_in_pot', 'deliver_soup'],
 
-            'soup_coordination': ['place_tomato_in_pot', 'deliver_soup', 'mixed_order', 'random'],
+            # 'soup_coordination': ['place_tomato_in_pot', 'deliver_soup', 'mixed_order', 'random'],
+            'soup_coordination': ['place_tomato_in_pot', 'deliver_soup', 'mixed_order', 'random',
+                                  'place_onion_in_pot',
+                                  'place_onion_and_deliver_soup',
+                                  'place_tomato_and_deliver_soup',
+                                  'pickup_tomato_and_place_mix',
+                                  'pickup_ingredient_and_place_mix'
+                                  ],
 
 }
 
@@ -196,6 +203,16 @@ MTP_MODELS = {'cramped_room':
                                         'mtp/soup_coordination/mtp_soup_coordination-mixed_order-seed1.pth'),
                            os.path.join(_curr_directory,
                                         'mtp/soup_coordination/mtp_soup_coordination-random-seed1.pth'),
+                           os.path.join(_curr_directory,
+                                        'mtp/soup_coordination/mtp_soup_coordination-place_onion_in_pot-seed1.pth'),
+                             os.path.join(_curr_directory,
+                                          'mtp/soup_coordination/mtp_soup_coordination-place_onion_and_deliver_soup-seed1.pth'),
+                             os.path.join(_curr_directory,
+                                          'mtp/soup_coordination/mtp_soup_coordination-place_tomato_and_deliver_soup-seed1.pth'),
+                             os.path.join(_curr_directory,
+                                          'mtp/soup_coordination/mtp_soup_coordination-pickup_tomato_and_place_mix-seed1.pth'),
+                             os.path.join(_curr_directory,
+                                          'mtp/soup_coordination/mtp_soup_coordination-pickup_ingredient_and_place_mix-seed1.pth'),
                            ]
                   }
 
@@ -250,9 +267,16 @@ METATASK_MODELS = {'cramped_room':
                                      'opponent/opponent_soup_coordination_mixed_order.pth'),
                         os.path.join(_curr_directory,
                                      'opponent/opponent_soup_coordination_random.pth'),
+                        os.path.join(_curr_directory,
+                                     'opponent/opponent_soup_coordination_place_onion_in_pot.pth'),
+                        os.path.join(_curr_directory,
+                                     'opponent/opponent_soup_coordination_place_onion_and_deliver_soup.pth'),
+                        os.path.join(_curr_directory,
+                                     'opponent/opponent_soup_coordination_place_tomato_and_deliver_soup.pth'),
+                        os.path.join(_curr_directory,
+                                     'opponent/opponent_soup_coordination_pickup_tomato_and_place_mix.pth'),
+                        os.path.join(_curr_directory,
+                                     'opponent/opponent_soup_coordination_pickup_ingredient_and_place_mix.pth'),
                         ],
                   }
-
-
-
 

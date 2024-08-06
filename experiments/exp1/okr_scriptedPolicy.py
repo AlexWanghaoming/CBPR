@@ -91,7 +91,7 @@ class BPR_offline:
 
 
     def gen_performance_model(self) -> List[Dict[str, Dict[str, float]]]:
-        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}_600.pkl'
+        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}_{HORIZON}.pkl'
         if os.path.exists(performance_model_save_path):
             with open(performance_model_save_path, 'rb') as ff:
                 performance_model = pickle.load(ff)
@@ -101,7 +101,7 @@ class BPR_offline:
         n_rounds = 50
         for h_ in self.human_policys: # h_: "metatask1"
             env = init_env(horizon=HORIZON,
-                            layout=self.args.layout,
+                           layout=self.args.layout,
                            agent0_policy_name='mtp',
                            agent1_policy_name=f'script:{self.human_policys[h_]}',
                            use_script_policy=True)
@@ -152,7 +152,8 @@ class BPR_online:
         # 初始化人类模型和策略
         policy_idx = 2
         print(f"初始策略 metatask_{policy_idx}: ", META_TASKS[args.layout][policy_idx - 1])
-        env = init_env(layout=args.layout,
+        env = init_env(horizon=HORIZON,
+                       layout=args.layout,
                        agent0_policy_name='mtp',
                        agent1_policy_name=f'script:{META_TASKS[args.layout][policy_idx - 1]}',
                        use_script_policy=True)
@@ -181,7 +182,8 @@ class BPR_online:
                         # print(f"人类改变至策略 metatask_{policy_idx}: ", META_TASKS[args.layout][policy_idx - 1])  # log
                         env.switch_script_agent(agent0_policy_name='mtp',
                                                 agent1_policy_name=f'script:{META_TASKS[args.layout][policy_idx - 1]}')
-                ai_act = best_agent.evaluate(ai_obs)
+                # ai_act = best_agent.evaluate(ai_obs)
+                ai_act, _ = best_agent.choose_action(ai_obs)
                 # h_act = bc_model.choose_action(h_obs)
                 obs_, sparse_reward, done, info = env.step((ai_act, 1))
                 ep_reward += sparse_reward

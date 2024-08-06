@@ -14,7 +14,7 @@ from src.overcooked_ai_py.mdp.actions import Action
 
 
 device = 'cuda'
-LAYOUT_NAME = 'marshmallow_experiment'
+LAYOUT_NAME = 'soup_coordination'
 # LAYOUT_NAME = 'asymmetric_advantages'
 
 
@@ -88,6 +88,8 @@ if __name__ == '__main__':
                        agent1_policy_name=f'script:{meta_task}',
                        use_script_policy=True)
         save_path = f'../models/opponent/opponent_{LAYOUT_NAME}_{meta_task}.pth'
+        if os.path.exists(save_path):
+            continue
         model = Opponent(state_dim=96, hidden_dim=128, action_dim=6).to(device)
         model.train()
         optimizer = torch.optim.Adam(model.parameters(), lr=initial_lr)
@@ -110,7 +112,7 @@ if __name__ == '__main__':
                 alt_dire = info['joint_action'][1]
                 alt_a = Action.INDEX_TO_ACTION.index(alt_dire)
                 ep_reward += sparse_reward
-                env.render(interval=0.08)
+                # env.render(interval=0.08)
                 episodic_train_x.append(alt_obs)
                 episodic_train_y.append(alt_a)
             print(f'Ep {i+1}:', ep_reward)
@@ -121,6 +123,7 @@ if __name__ == '__main__':
                 val_loss = log_prob_loss(model, input_tensor, out_tensor).item()
                 print(f'Meta-task: {meta_task}, iter %d/%d - Test loss: %.3f' % (i + 1, num_epochs, val_loss))
                 if val_loss < best_loss:
+                    print(f'saving opponent model {save_path}')
                     torch.save(model.state_dict(), save_path)
                     best_loss = val_loss
             else:

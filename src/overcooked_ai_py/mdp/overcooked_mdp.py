@@ -1549,7 +1549,7 @@ class OvercookedGridworld(object):
                         old_soup = soup.deepcopy()
                         obj = player.remove_object()
                         if len(soup.ingredients) != 0 and obj.name not in soup.ingredients:  # 当玩家放入锅中的材料和锅中已有材料不符时给予惩罚
-                            print('MIX_PUNISHMENT')
+                            # print('MIX_PUNISHMENT')
                             shaped_reward[player_idx] -= self.reward_shaping_params["MIX_PUNISHMENT"]
                         else:
                             shaped_reward[player_idx] += self.reward_shaping_params["PLACEMENT_IN_POT_REW"]

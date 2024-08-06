@@ -10,13 +10,12 @@ import wandb
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
 
-
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--device', type=str, default='cpu')
     # parser.add_argument('--layout', default='cramped_room')
-    # parser.add_argument('--layout', default='soup_coordination')
-    parser.add_argument('--layout', default='asymmetric_advantages')
+    parser.add_argument('--layout', default='soup_coordination')
+    # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes', type=int, default=20)
     parser.add_argument('--seed', type=int, default=1)
     parser.add_argument('--algorithm', default='SP', help='BCP or SP or FCP')
