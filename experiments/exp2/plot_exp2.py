@@ -11,7 +11,7 @@ import argparse
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp2_2'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('--layout', default='asymmetric_advantages')
+parser.add_argument('--layout', default='soup_coordination')
 # parser.add_argument('--layout', default='marshmallow_experiment')
 args = parser.parse_args()
 
@@ -53,7 +53,10 @@ for level in groups:
     for algorithm in a2c:
         for run in group_runs:
             if algorithm == 'okr':
-                match_name = f'okr_{args.layout}_{level}_seed1_Q20_rho0.1'
+                match_name = f'okr_{args.layout}_{level}_seed0_Q20_rho0.1'
+                if level == 'high':
+                    match_name = f'okr_{args.layout}_{level}_seed0_Q20_rho0.9'
+
             else:
                 match_name = f'{algorithm}_{args.layout}_{level}_seed'
             if run.state == "finished" and match_name in run.name:
@@ -100,7 +103,7 @@ if args.layout == 'cramped_room':
               ncol=2)
 plt.grid(axis='x')
 plt.tight_layout()
-plt.savefig(f'{args.layout}_exp2_2.pdf', bbox_inches='tight')
+# plt.savefig(f'{args.layout}_exp2_2.pdf', bbox_inches='tight')
 plt.show()
 
 

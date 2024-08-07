@@ -19,7 +19,7 @@ def parse_args():
                                      description='''Bayesian policy reuse algorithm on overcooked''')
     parser.add_argument('--device', type=str, default='cpu')
     # parser.add_argument('--layout', default='asymmetric_advantages')
-    parser.add_argument('--layout', default='soup_coordination')
+    parser.add_argument('--layout', default='cramped_room')
     parser.add_argument('--num_episodes', type=int, default=20)
     parser.add_argument('--skill_level', default='low', help='low or medium or high')
     parser.add_argument('--seed', type=int, default=0)
@@ -51,12 +51,13 @@ if __name__ == '__main__':
     n = len(META_TASKS[args.layout])
     if args.use_wandb:
         wandb.init(project='overcooked_rl',
-                   group='exp2',
-                   name=f'okr_{args.layout}_{args.skill_level}_seed{args.seed}_Q{args.Q_len}_rho{args.rho}_horizon{args.horizon}_{n}metatask',
+                   group='exp2_3',
+                   name=f'okr_{args.layout}_{args.skill_level}_seed{args.seed}_Q{args.Q_len}_rho{args.rho}',
+                   # name=f'okr_{args.layout}_{args.skill_level}_seed{args.seed}_Q{args.Q_len}_rho{args.rho}_horizon{args.horizon}_{n}metatask',
                    config=vars(args),
                    job_type='eval',
-                   dir=os.path.join(WANDB_DIR, 'exp2', 'ablations'),
-                   # dir=os.path.join(WANDB_DIR, 'exp2_2'),
+                   # dir=os.path.join(WANDB_DIR, 'exp2', 'ablations'),
+                   dir=os.path.join(WANDB_DIR, 'exp2_3'),
                    reinit=True)
 
     seed_everything(args.seed)

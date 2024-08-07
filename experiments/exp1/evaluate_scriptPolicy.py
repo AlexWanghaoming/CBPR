@@ -24,7 +24,9 @@ def parse_args():
     parser.add_argument('--mode', default='inter', help='swith policy inter or intra')
     parser.add_argument("--switch_human_freq", type=int, default=1, help="Frequency of switching human policy")
     parser.add_argument('--seed', type=int, default=2022)
-    parser.add_argument('--algorithm', default='FCP', help='BCP or SP or FCP')
+    parser.add_argument('--algorithm', default='BCP', help='BCP or SP or FCP')
+    parser.add_argument('--use_wandb', action='store_true', default=False)
+
     args = parser.parse_args()
     return args
 
@@ -40,14 +42,14 @@ if __name__ == '__main__':
         ai_agent = torch.load(SP_MODELS[args.layout], map_location='cpu')
     else:
         pass
-
-    wandb.init(project='overcooked_rl',
-               group='exp1',
-               name=f'{args.algorithm}_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}_horizon{HORIZON}',
-               config=vars(args),
-               job_type='eval',
-               dir=os.path.join(WANDB_DIR, 'exp1', args.algorithm),  # 这个目录需要手动创建
-               reinit=True)
+    if args.use_wandb:
+        wandb.init(project='overcooked_rl',
+                   group='exp1',
+                   name=f'{args.algorithm}_{args.layout}_{args.mode}{args.switch_human_freq}_seed{args.seed}_horizon{HORIZON}',
+                   config=vars(args),
+                   job_type='eval',
+                   dir=os.path.join(WANDB_DIR, 'exp1', args.algorithm),  # 这个目录需要手动创建
+                   reinit=True)
 
     if args.mode == 'inter':
         random.seed(42) # 固定测试的策略顺序
@@ -98,10 +100,12 @@ if __name__ == '__main__':
             # env.render(interval=0.1)
         print(f'Ep {k+1}:',ep_reward)
         r_list.append(ep_reward)
-        wandb.log({'episode': k+1,
-                   'ep_reward': ep_reward})
+        if args.use_wandb:
+            wandb.log({'episode': k+1,
+                       'ep_reward': ep_reward})
     print(f'{args.algorithm}_{args.layout}_{args.mode}_{args.switch_human_freq}')
     # print_mean_interval(r_list)
-    wandb.finish()
+    if args.use_wandb:
+        wandb.finish()
 
 

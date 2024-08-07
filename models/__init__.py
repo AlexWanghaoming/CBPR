@@ -19,12 +19,13 @@ META_TASKS = {
             # 'coordination_ring': ['place_onion_in_pot', 'deliver_soup'],
 
             # 'soup_coordination': ['place_tomato_in_pot', 'deliver_soup', 'mixed_order', 'random'],
-            'soup_coordination': ['place_tomato_in_pot', 'deliver_soup', 'mixed_order', 'random',
-                                  'place_onion_in_pot',
-                                  'place_onion_and_deliver_soup',
-                                  'place_tomato_and_deliver_soup',
-                                  'pickup_tomato_and_place_mix',
-                                  'pickup_ingredient_and_place_mix'
+            'soup_coordination': ['place_tomato_in_pot', 'deliver_soup', 'mixed_order',
+                                  # 'random',
+                                  # 'place_onion_in_pot',
+                                  # 'place_onion_and_deliver_soup',
+                                  # 'place_tomato_and_deliver_soup',
+                                  # 'pickup_tomato_and_place_mix',
+                                  # 'pickup_ingredient_and_place_mix'
                                   ],
 
 }

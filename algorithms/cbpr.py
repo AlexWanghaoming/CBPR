@@ -42,7 +42,7 @@ class MTPLibrary:
         self.policy_lib = {}
 
     def gen_policy_library(self, args) -> Dict[str, PPO_discrete]:
-        for idx, mtp_path in enumerate(MTP_MODELS[args.layout]):
+        for idx, mtp_path in enumerate(MTP_MODELS[args.layout][:args.n]):
             agent_id = f'mtp_{idx+1}'
             agent = PPO_discrete()
             agent.load_actor(mtp_path)
@@ -58,7 +58,7 @@ class MTLibrary:
     def __init__(self):
         self.policy_lib = {}
     def gen_policy_library(self, args) -> Dict[str, nn.Module]:
-        for idx, mt_model in enumerate(METATASK_MODELS[args.layout]):
+        for idx, mt_model in enumerate(METATASK_MODELS[args.layout][:args.n]):
             state_dict = torch.load(mt_model)
             # model = Opponent(state_dim=96, hidden_dim=256, action_dim=6)
             model = BehaviorClone(state_dim=96, hidden_dim=128, action_dim=6)
@@ -91,12 +91,12 @@ class BPR_offline:
     """
     def __init__(self, args):
         self.human_policys = MetaTaskLibrary().gen_policy_library(tasks=META_TASKS[args.layout])
-        self.n = len(META_TASKS[args.layout])
-        print(f'number of meta-task: {self.n}')
+        print(f'number of meta-task: {args.n}')
         self.ai_policys = MTPLibrary().gen_policy_library(args)
         self.args = args
     def gen_performance_model(self) -> List[Dict[str, Dict[str, float]]]:
-        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}_{self.n}metatask.pkl'
+        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}_{self.args.n}metatask.pkl'
+        # performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}.pkl'
         if os.path.exists(performance_model_save_path):
             with open(performance_model_save_path, 'rb') as ff:
                 performance_model = pickle.load(ff)
@@ -139,6 +139,7 @@ class BPR_offline:
 
 class CBPR():
     def __init__(self, args):
+        args.n = len(META_TASKS[args.layout])
         bpr_offline = BPR_offline(args)
         self.performance_model = bpr_offline.gen_performance_model()
         print(self.performance_model)

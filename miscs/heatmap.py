@@ -30,5 +30,5 @@ def plot_combined_heatmaps(matrix_dict, nrow, ncol, save_path):
 
     # 显示图像
     plt.tight_layout()  # 自动调整子图参数，使之填充整个图像区域
-    plt.savefig(save_path, bbox_inches='tight', format='pdf')
-    # plt.show()
+    # plt.savefig(save_path, bbox_inches='tight', format='pdf')
+    plt.show()

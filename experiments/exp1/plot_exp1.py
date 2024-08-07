@@ -1,20 +1,20 @@
 import math
 from scipy import stats
 import wandb
-import glob
+import re
 import os, sys
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 from scipy.ndimage import gaussian_filter1d
 import argparse
-add = 'http://127.0.0.1:7890'
-os.environ['http_proxy'] = add
-os.environ['https_proxy'] = add
+# add = 'http://127.0.0.1:7890'
+# os.environ['http_proxy'] = add
+# os.environ['https_proxy'] = add
 
 WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp1'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('--switch_freq', type=str, default='inter2')
+parser.add_argument('--switch_freq', type=str, default='inter1')
 args = parser.parse_args()
 
 # 设置字体和样式
@@ -63,7 +63,8 @@ for i, ax in enumerate(axs.flat):
         for run in group_runs:
             if num_runs > num_seeds:  #只运行5个seed
                 break
-            if run.state == "finished" and run.group == 'exp1' and run.name.startswith(f'{algorithm}_{layout}_{args.switch_freq}'):
+            if run.state == "finished" and \
+                    re.match(f'{algorithm}_{layout}_{args.switch_freq}_seed\d+$', run.name):
                 print(f"{run.id}:{run.name}")
                 num_runs+=1
                 num_ep = run.config['num_episodes']
@@ -73,6 +74,7 @@ for i, ax in enumerate(axs.flat):
                 reward_list.append(ep_sparse_r)
         rewards_array = np.array(reward_list)
         mean_rewards = np.mean(rewards_array, axis=0)
+        std_rewards = np.std(rewards_array, axis=0)
         ste_rewards = np.std(rewards_array, axis=0)/np.sqrt(num_seeds)
         # 计算置信区间
         sem = stats.sem(reward_list)
@@ -81,7 +83,7 @@ for i, ax in enumerate(axs.flat):
         episodes = np.arange(1, num_episodes+1)
         lab = 'CBPR' if algorithm == 'okr' else algorithm
         ax.plot(episodes, mean_rewards, color=a2c[algorithm], label=lab, linewidth=2)
-        ax.fill_between(episodes, mean_rewards-ste_rewards, mean_rewards+ste_rewards, alpha=0.2, color=a2c[algorithm])
+        ax.fill_between(episodes, mean_rewards-std_rewards, mean_rewards+std_rewards, alpha=0.2, color=a2c[algorithm])
     ax.grid(axis='x')
     ax.set_xlabel('Episodes', fontsize=24)
     ax.set_ylabel('Mean episode reward', fontsize=24)
@@ -98,7 +100,7 @@ fig.legend(handles, labels,
            fancybox=True,
            shadow=True,
            ncol=4)
-fig.savefig(f'exp1_{args.switch_freq}.pdf', bbox_inches='tight')
+fig.savefig(f'exp1_{args.switch_freq}_sd.pdf', bbox_inches='tight')
 fig.show()
 
 

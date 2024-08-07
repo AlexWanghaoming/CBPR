@@ -7,7 +7,7 @@ import matplotlib as mpl
 from scipy.ndimage import gaussian_filter1d
 from scipy import stats
 import argparse
-
+import math
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
 # parser.add_argument('--layout', default='soup_coordination')
@@ -27,17 +27,18 @@ mpl.rcParams['legend.fontsize'] = 16  # 设置图例的字体大小
 
 
 groups = ['low', 'medium', 'high']
-subgroups = ['rho0.1', 'rho0.5', 'rho0.9']
+subgroups = ['rho0.9', 'rho0.95', 'rho0.99']
+
 a2c = {
-    'rho0.1': '#ffea00',
-    'rho0.5': '#ffaa00',
-       'rho0.9': '#ff7b00',
+    'rho0.9': '#ffea00',
+    'rho0.95': '#ffaa00',
+       'rho0.99': '#ff7b00',
        }
 api = wandb.Api()
 num_episodes = 50
 num_seeds = 5
 runs = api.runs(f"wanghm/overcooked_rl")
-group_runs = [run for run in runs if run.group == 'exp2']
+group_runs = [run for run in runs if run.group == 'exp2_3']
 
 plt.figure(figsize=(8, 5))
 group_mean = []
@@ -48,12 +49,13 @@ for level in groups:
     sub_group_interval = []
     for ablation in a2c:
         for run in group_runs:
-            match_name = f'okr_{args.layout}_{level}_seed0_Q20_{ablation}_horizon1800'
+            match_name = f'okr_{args.layout}_{level}_seed0_Q20_{ablation}'
             if run.state == "finished" and run.name == match_name:
                 print(f"{run.id}:{run.name}")
                 num_ep = run.config['num_episodes']
-                history = run.history(samples=num_episodes)[['_step', 'ep_reward']]
+                history = run.history(500000)[['_step', 'ep_reward']] # 获取wandb中记录的50000条数据
                 ep_sparse_r = history['ep_reward'].tolist()
+                ep_sparse_r = [x for x in ep_sparse_r if not math.isnan(x)]
                 mean_r = np.mean(ep_sparse_r)
                 # 计算置信区间
                 sem = stats.sem(ep_sparse_r)
@@ -82,14 +84,14 @@ for i in range(n_subgroups):
 ax.set_ylabel('Mean episode reward')
 ax.set_xticks(index + bar_width)
 ax.set_xticklabels(['Low', 'Medium', 'High'])
-if args.layout == 'cramped_room' or args.layout == 'coordination_ring':
-    ax.legend(loc='upper right', ncol=1, columnspacing=0.05)
+if args.layout == 'cramped_room':
+    ax.legend(loc='upper left', ncol=1, columnspacing=0.05)
     # plt.ylim(0, 350)
 
 plt.grid(axis='x')
 plt.tight_layout()
-# plt.ylim(0, 320)
-# plt.savefig(f'{args.layout}_ablations_rho.pdf', bbox_inches='tight')
+plt.ylim(0, 320)
+plt.savefig(f'{args.layout}_ablations_rho_rebuttal.pdf', bbox_inches='tight')
 plt.show()
 
 
