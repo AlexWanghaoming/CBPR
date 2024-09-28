@@ -1,5 +1,5 @@
-# CBPR 
-Collaborative Bayesian Policy Reuse (CBPR) algorithm implemented based on *Overcooked_ai*  🥘 environment.
+# 🥘 CBPR 
+Official code for NeurIPS 2024 paper: *Beyond Single Stationary Policies: Meta-Task Players as Naturally Superior Collaborators*
 # Installation
 ```
 conda create -n cbpr python=3.7
