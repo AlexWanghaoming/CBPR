@@ -40,19 +40,16 @@ for group in groups:
     for subgroup in subgroups:
         print(f"{group}-{subgroup}:")
         num = 0
-        # 这里我们使用随机数据作为示例
         for path in find_files(os.path.join('real_human_test', group, subgroup), 'result.pkl'):
             print(path)
             num+=1
             with open(path, 'rb') as f:
-                # 加载pickle文件
                 data = pickle.load(f)
                 print(data['final_reward'])
             all_data.append([group, subgroup, data['final_reward']])
         print(num)
 df = pd.DataFrame(all_data, columns=['Group', 'Subgroup', 'Value'])
 
-# 绘制分组的boxplot
 plt.figure(figsize=(8, 5))
 ax = sns.boxplot(x='Group',
                  y='Value',

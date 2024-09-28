@@ -17,7 +17,6 @@ import torch.optim as optim
 device = torch.device("cpu")
 from sklearn.cluster import KMeans
 
-# 定义VAE模型
 class VAE(nn.Module):
     def __init__(self, input_dim, hidden_dim, latent_dim):
         super(VAE, self).__init__()
@@ -106,9 +105,7 @@ def parse_opt():
 
 def slide_window(array:np.ndarray, window_size=20, step_size=5):
     overlap = window_size - step_size
-    # 计算滑动窗口的数量
     num_windows = (array.shape[0] - overlap) // step_size
-    # 初始化一个列表来存储滑动窗口
     windows = []
     for i in range(num_windows):
         start_idx = i * step_size
@@ -116,29 +113,25 @@ def slide_window(array:np.ndarray, window_size=20, step_size=5):
         window = array[start_idx:end_idx, :]
         windows.append(window)
 
-    # 将 windows 列表转换为 numpy 数组
     windows_array = np.array(windows)
     return windows_array
 
 def _scale(data:np.ndarray):
-    # 计算第三维度（特征维度）上的最小值和最大值
     min_val = np.min(data, axis=0, keepdims=True)
     max_val = np.max(data, axis=0, keepdims=True)
 
-    # 避免除以0的情况
     range_val = max_val - min_val
     range_val[range_val == 0] = 1
 
-    # 进行归一化处理
+    # scale
     data_normalized = (data - min_val) / range_val
     return data_normalized, min_val, max_val
 
 def _norm(data:np.ndarray):
     mean = np.mean(data, axis=0, keepdims=True)
     std = np.std(data, axis=0, keepdims=True)
-    # 避免除以0的情况
     std[std == 0] = 1
-    # 进行标准化处理
+    # normalization
     data_normalized = (data - mean) / std
     return data_normalized, mean, std
 
@@ -153,14 +146,11 @@ if __name__ == '__main__':
     }
     processed_trajs = get_human_human_trajectories(**DEFAULT_DATA_PARAMS, silent=False)
     inputs, targets = (processed_trajs["ep_states"], processed_trajs["ep_actions"])
-    # 将每一局的轨迹合并
     all_X = np.vstack(inputs) # (n_episode*episode_len, state_dim)
     all_y = np.vstack(targets)
 
-    # 对数据作标准化
     # all_X, mu, sigma = _norm(all_X)
 
-    # 对数据作归一化
     all_X, min_val, max_val = _scale(all_X)
 
 

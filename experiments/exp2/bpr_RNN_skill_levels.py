@@ -63,9 +63,7 @@ class NNLibrary:
 
 
 class BPR_offline:
-    """
-    BPR离线部分，performance model初始化，belief初始化
-    """
+
     def __init__(self, args):
         HPL = MetaTaskLibrary()
         self.human_policys = HPL.gen_policy_library(tasks=META_TASKS[args.layout])
@@ -160,12 +158,6 @@ class BPR_online:
 
 
     def _reuse_optimal_policy(self) -> Tuple[str, PPO_discrete]:
-        """
-        calculate expectation of utility
-        用BPR-EI求最优策略
-
-        return: 最优策略id，最优策略
-        """
         target_task = max(self.belief, key=self.belief.get) # "metatask_1"
         idx = target_task.split('_')[-1]
         best_agent_name = 'mtp_' + idx # "mtp_1"

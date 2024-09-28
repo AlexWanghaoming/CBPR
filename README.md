@@ -1,6 +1,6 @@
 # 🥘 CBPR 
 Official code for NeurIPS 2024 paper: *Beyond Single Stationary Policies: Meta-Task Players as Naturally Superior Collaborators*
-# Installation
+# Setup
 ```
 conda create -n cbpr python=3.7
 conda activate cbpr
@@ -36,7 +36,7 @@ Pair BCP agent with agent using _high_ skill level in _Cramped Room_ layouts.
 ```
 python experiments/exp2/evaluate_skill_levels.py --layout cramped_room --num_episodes 50 --skill_level high --algorithm BCP --use_wandb
 ```
-Pair FCP agent with agent using high _low_ level in _Cramped Room_ layouts.
+Pair FCP agent with agent using _low_ skill level in _Cramped Room_ layouts.
 ```
 python experiments/exp2/evaluate_skill_levels.py --layout cramped_room --num_episodes 50 --skill_level low --algorithm FCP --use_wandb
 ```
@@ -44,10 +44,12 @@ Pair CBPR with agent using _medium_ skill level in _Cramped Room_ layouts.
 ```
 python experiments/exp2/okr_skill_levels.py --layout cramped_room --num_episodes 50 --skill_level medium --Q_len 20 --rho 0.1 --use_wandb
 ```
-## Run human-AI test, display in 127.0.0.1:5001
+## To evsaluate human-AI performance
 ``` 
 python src/overcooked_demo/server/app.py
 ```
+The Overcooked game interface can be accessed at 127.0.0.1:5001.
+
 
 # Citation
 If you find this repository useful, please cite these papers:

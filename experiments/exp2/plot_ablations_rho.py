@@ -61,7 +61,6 @@ for level in groups:
                 sem = stats.sem(ep_sparse_r)
                 confidence = 0.95
                 interval = stats.t.interval(confidence, len(ep_sparse_r) - 1, loc=mean_r, scale=sem)
-                # mean_r = mean_r-300
                 sub_group_mean.append(mean_r)
                 sub_group_interval.append(interval[1] - mean_r)
                 break

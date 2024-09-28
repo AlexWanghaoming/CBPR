@@ -87,7 +87,7 @@ def eval_rollouts(env, ai_agent: PPO_discrete):
 
 class BPR_offline:
     """
-    BPR离线部分，performance model初始化，belief初始化
+    offline stage of CBPR
     """
     def __init__(self, args):
         self.human_policys = MetaTaskLibrary().gen_policy_library(tasks=META_TASKS[args.layout])
@@ -163,7 +163,7 @@ class CBPR():
             # print("qq")
             self.Q = deque(maxlen=self.args.Q_len)
             self.xi = deepcopy(self.belief)
-            self.best_agent_id, self.best_agent = self._reuse_optimal_policy(belief=self.belief)  # 选择初始智能体策略
+            self.best_agent_id, self.best_agent = self._reuse_optimal_policy(belief=self.belief)  
             if deterministic:
                 ego_act = self.best_agent.evaluate(ego_obs)
             else:
@@ -180,10 +180,10 @@ class CBPR():
         alt_act = torch.tensor(np.array([h_act]), dtype=torch.int64).to(device)
         alt_obs = torch.tensor(alt_obs, dtype=torch.float32).to(device)
         self.Q.append((alt_obs, alt_act))
-        self.xi = self._update_xi(self.Q)  # 更新intra-episode belief $\xi$ 原文公式8,9
-        self.zeta = self._update_zeta(t=ep_step, rho=self.args.rho)  # 更新integrated belief $\zeta$ 原文公式10
+        self.xi = self._update_xi(self.Q)  
+        self.zeta = self._update_zeta(t=ep_step, rho=self.args.rho) 
 
-        self.best_agent_id, self.best_agent = self._reuse_optimal_policy(belief=self.zeta)  # 轮内重用最优策略
+        self.best_agent_id, self.best_agent = self._reuse_optimal_policy(belief=self.zeta) 
         self.xi = deepcopy(self.zeta)  # 每一步更新 \xi
 
         #  update inter-episodic belief at the last step of an episode
@@ -205,7 +205,7 @@ class CBPR():
             Q = deque(maxlen=self.args.Q_len)
             episode_steps = 0
             self.xi = deepcopy(self.belief)
-            best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.belief)  # 选择初始智能体策略
+            best_agent_id, best_agent = self._reuse_optimal_policy(belief=self.belief) 
             obs = env.reset()
             ai_obs, h_obs = obs['both_agent_obs']
             ep_reward = 0
@@ -277,7 +277,7 @@ class CBPR():
 
     def _update_xi(self, Q) -> Dict[str, float]:
         """
-        每 step 利用Bayesian公式更新回合内belif
+        undate belief using Bayesian equation every step
         xi: dict
         """
         def gen_Q_prob(Q):
@@ -312,8 +312,8 @@ class CBPR():
     def _reuse_optimal_policy(self, belief) -> Tuple[str, PPO_discrete]:
         """
         calculate expectation of utility
-        用BPR-EI求最优策略
-        return: 最优策略id，最优策略
+        calculate optimal policy using BPR-EI
+        return: best agent id, best policy
         """
         u_mean_x_list = []
         for ai in self.agents:
