@@ -7,15 +7,31 @@ conda activate cbpr
 pip install -r requirements.txt
 ```
 # Training
-Training of all baseline algorithm and offline stage of CBPR. The trained models are in `models`
-## Self-play
-Run `./algorithms/baselines/train_sp.sh` to train SP agent in _Cramped Room_ layout.
+Training of baseline algorithms and MTP agents. Note that ALL agents are implemented based on PPO.
+## Self-play (SP)
+Train SP agent in _Cramped Room_ layout:
+```
+cd algorithms/baselines
+sh train_sp.sh
+```
 ## FCP
-FCP agent was introduced in [Collaborating with Humans without Human Data](https://arxiv.org/abs/2110.08176). To build policy pool, run `python FCP_stage1.py`. To train FCP agent, please run `python FCP_stage2.py`.
+FCP algorithm was firstly introduced in [Collaborating with Humans without Human Data](https://arxiv.org/abs/2110.08176). Train FCP agent in _Cramped Room_ layout:
+```
+cd algorithms/baselines
+sh train_fcp.sh
+```
 ## BCP
-BCP agent was introduced in [On the Utility of Learning about Humans for Human-AI Coordination](https://arxiv.org/abs/1910.05789). To train BCP agent, we firstly train behavioral cloning model using `./bc/bc.sh`. Next, train BCP agent using `./algorithms/baselines/train_bcp.sh`.
+BCP agent was firstly introduced in [On the Utility of Learning about Humans for Human-AI Coordination](https://arxiv.org/abs/1910.05789). To train BCP agent, please firstly train behavioral cloning model using `./bc/bc.sh`. Next, train BCP agent using:
+ ```
+ cd algorithms/baselines
+ sh train_bcp.sh
+ ```
 ## MTP
-During the offline stage of CBPR, we train MTP agents by pairing them with rule-based agents using `./algorithm/mtp_scriptedPolicy.sh`.
+To train MTP agents by pairing them with rule-based agents, run:
+ ```
+ cd algorithms
+ sh mtp_scriptedPolicy.sh
+ ```
 
 # Evaluation
 ## Collaborating with agents that switch policies
@@ -44,11 +60,11 @@ Pair CBPR with agent using _medium_ skill level in _Cramped Room_ layouts.
 ```
 python experiments/exp2/okr_skill_levels.py --layout cramped_room --num_episodes 50 --skill_level medium --Q_len 20 --rho 0.1 --use_wandb
 ```
-## To evsaluate human-AI performance
+## To evaluate human-AI performance
 ``` 
 python src/overcooked_demo/server/app.py
 ```
-The Overcooked game interface can be accessed at 127.0.0.1:5001.
+The *Overcooked* game interface can be accessed at 127.0.0.1:5001.
 
 
 # Citation
