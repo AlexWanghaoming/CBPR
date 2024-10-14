@@ -30,7 +30,7 @@ def val(model, x_val,  y_val):
 if __name__ == '__main__':
     # LAYOUT_NAME = 'marshmallow_experiment'
     LAYOUT_NAME = 'cramped_room'
-    f_read = open(f'/alpha/overcooked_rl/state_trans_func/gp_trajs_{LAYOUT_NAME}.pkl', 'rb')
+    f_read = open(f'state_trans_func/gp_trajs_{LAYOUT_NAME}.pkl', 'rb')
     meta_task_trajs = pickle.load(f_read)
     f_read.close()
     epochs = 500

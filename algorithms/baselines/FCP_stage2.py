@@ -12,7 +12,7 @@ from My_utils import seed_everything, LinearAnnealer, init_env
 import wandb
 from datetime import datetime
 
-SOURCE_DIR = '/alpha/overcooked_rl'
+SOURCE_DIR = 'path/to/CBPR'
 WANDB_PATH = SOURCE_DIR + '/algorithms/baselines/wandb'
 POLICY_POOL_PATH = SOURCE_DIR + "/models/policy_pool"
 

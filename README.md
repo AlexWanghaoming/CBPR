@@ -2,7 +2,7 @@
 Official code for NeurIPS 2024 paper: *Beyond Single Stationary Policies: Meta-Task Players as Naturally Superior Collaborators*
 # Setup
 ```
-conda create -n cbpr python=3.7
+conda create -n cbpr python=3.8
 conda activate cbpr
 pip install -r requirements.txt
 ```
@@ -21,7 +21,7 @@ cd algorithms/baselines
 sh train_fcp.sh
 ```
 ## BCP
-BCP agent was firstly introduced in [On the Utility of Learning about Humans for Human-AI Coordination](https://arxiv.org/abs/1910.05789). To train BCP agent, please firstly train behavioral cloning model using `./bc/bc.sh`. Next, train BCP agent using:
+BCP agent was firstly introduced in [On the Utility of Learning about Humans for Human-AI Coordination](https://arxiv.org/abs/1910.05789). To train BCP agent, please firstly train behavioral cloning model using `./algorithms/bc/bc.sh`. Next, train BCP agent using:
  ```
  cd algorithms/baselines
  sh train_bcp.sh
@@ -45,7 +45,7 @@ python experiments/exp1/evaluate_scriptPolicy.py --layout cramped_room --num_epi
 ```
 Pair CBPR with agent that switches policies every 200 timesteps in _Cramped Room_ layout. 
 ```
-python experiments/exp1/okr_scriptedPolicy.py --layout cramped_room --num_episodes 50 --mode intra --switch_human_freq 200 --seed 1 --Q_len 20 --rho 0.1
+python experiments/exp1/okr_scriptedPolicy.py --layout cramped_room --num_episodes 50 --mode intra --switch_human_freq 200 --seed 1 --Q_len 20 --rho 0.9
 ```
 ## Collaborating with agents using various skill levels
 Pair BCP agent with agent using _high_ skill level in _Cramped Room_ layouts.
@@ -58,7 +58,7 @@ python experiments/exp2/evaluate_skill_levels.py --layout cramped_room --num_epi
 ```
 Pair CBPR with agent using _medium_ skill level in _Cramped Room_ layouts.
 ```
-python experiments/exp2/okr_skill_levels.py --layout cramped_room --num_episodes 50 --skill_level medium --Q_len 20 --rho 0.1 --use_wandb
+python experiments/exp2/okr_skill_levels.py --layout cramped_room --num_episodes 50 --skill_level medium --Q_len 20 --rho 0.9 --use_wandb
 ```
 ## To evaluate human-AI performance
 ``` 

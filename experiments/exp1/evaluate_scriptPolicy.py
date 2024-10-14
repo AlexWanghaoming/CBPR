@@ -5,14 +5,14 @@ import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../agents/')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import META_TASKS, BCP_MODELS, SP_MODELS, FCP_MODELS
-from bc.bc_hh import BehaviorClone
+from algorithms.bc.bc_hh import BehaviorClone
 from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval
 import random
 import wandb
 from datetime import datetime
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
-HORIZON = 3000
+WANDB_DIR = 'my_wandb_log'
+HORIZON = 600
 
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)

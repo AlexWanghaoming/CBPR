@@ -5,5 +5,5 @@ state_trans_func/*.npz
 my_wandb_log
 algorithms/baselines/wandb
 algorithms/wandb
-models
+models/*/
 __pycache__/

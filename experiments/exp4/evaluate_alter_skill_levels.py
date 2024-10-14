@@ -11,7 +11,7 @@ import random
 import wandb
 from datetime import datetime
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+WANDB_DIR = 'my_wandb_log'
 device = 'cpu'
 
 def parse_args():

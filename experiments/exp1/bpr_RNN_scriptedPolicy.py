@@ -210,7 +210,7 @@ def parse_args():
 
 
 if __name__ == '__main__':
-    WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+    WANDB_DIR = 'my_wandb_log'
     args = parse_args()
     LAYOUT_NAME = args.layout
     wandb.init(project='overcooked_rl',

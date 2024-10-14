@@ -8,7 +8,7 @@ from My_utils import seed_everything, init_env, evaluate_actor, print_mean_inter
 import wandb
 from algorithms.cbpr import CBPR
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+WANDB_DIR = 'my_wandb_log'
 def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--device', type=str, default='cpu')

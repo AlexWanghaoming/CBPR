@@ -248,13 +248,13 @@ class PPO_discrete:
     def save_actor(self, path='ppo_actor.pth'):
         directory = os.path.dirname(path)
         if not os.path.exists(directory):
-            os.makedirs(directory, exist_ok=True)  # 创建目录，如果目录已经存在，则不会引发异常
+            os.makedirs(directory, exist_ok=True)  # creat dir
         torch.save(self.actor, path)
 
     def save_critic(self, path='ppo_critic.pth'):
         directory = os.path.dirname(path)
         if not os.path.exists(directory):
-            os.makedirs(directory, exist_ok=True)  # 创建目录，如果目录已经存在，则不会引发异常
+            os.makedirs(directory, exist_ok=True)  
         torch.save(self.actor, path)
 
     def load_actor(self, model_path):

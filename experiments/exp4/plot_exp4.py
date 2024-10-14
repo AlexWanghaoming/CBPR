@@ -12,7 +12,7 @@ add = 'http://127.0.0.1:7890'
 os.environ['http_proxy'] = add
 os.environ['https_proxy'] = add
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp4'
+WANDB_DIR = 'my_wandb_log/exp4'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument('--switch_freq', type=str, default='inter2')
 args = parser.parse_args()

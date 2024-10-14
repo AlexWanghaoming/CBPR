@@ -2,9 +2,7 @@ import argparse
 import torch
 from datetime import datetime
 import sys, os
-# print("当前系统路径", sys.path)
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
-# print("当前系统路径", sys.path)
 from agents.ppo_discrete import PPO_discrete
 from models import BC_MODELS
 import torch.nn as nn
@@ -15,9 +13,9 @@ import wandb
 # add = 'http://127.0.0.1:7890'
 # os.environ['http_proxy'] = add
 # os.environ['https_proxy'] = add
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+WANDB_DIR = 'my_wandb_log'
 
-
+exit()
 def train(args, ego_agent, alt_agent, n_episodes:int, seed:int, logger):
     annealer = LinearAnnealer(horizon=args.num_episodes * args.max_episode_steps * 0.5)
     env = init_env(layout=args.layout)
@@ -108,7 +106,7 @@ def run():
     # parser.add_argument('--layout', default='asymmetric_advantages')
     parser.add_argument('--num_episodes',  type=int, default=2000)
     parser.add_argument('--seed', type=int, default=0)
-    parser.add_argument('--use_wandb', action='store_true', default=True)
+    parser.add_argument('--use_wandb', action='store_true', default=False)
     parser.add_argument('--alt', action='store_true', default=True)
 
     args = parser.parse_args()
@@ -134,9 +132,9 @@ def run():
     alt_agent = torch.load(BC_MODELS[args.layout], map_location='cpu')
     if args.alt:
         train(args, ego_agent=alt_agent, alt_agent=ego_agent, n_episodes=args.num_episodes, seed=args.seed,
-              logger=None)  # wanghm
+              logger=None)  
     else:
-        train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)  # wanghm
+        train(args, ego_agent=ego_agent, alt_agent=alt_agent, n_episodes=args.num_episodes, seed=args.seed, logger=None)  
     if args.use_wandb:
         wandb.finish()
 

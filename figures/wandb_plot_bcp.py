@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 from scipy.ndimage import gaussian_filter1d
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/bcp'
+WANDB_DIR = 'my_wandb_log/bcp'
 GROUP = 'BCP'
 
 # 设置字体和样式

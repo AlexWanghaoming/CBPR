@@ -9,7 +9,7 @@ import wandb
 # add = 'http://127.0.0.1:7890'
 # os.environ['http_proxy'] = add
 # os.environ['https_proxy'] = add
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+WANDB_DIR = 'my_wandb_log'
 
 
 def train(args, ego_agent:PPO_discrete, n_episodes:int, seed:int, logger):

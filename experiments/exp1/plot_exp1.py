@@ -12,7 +12,7 @@ import argparse
 # os.environ['http_proxy'] = add
 # os.environ['https_proxy'] = add
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp1'
+WANDB_DIR = 'my_wandb_log/exp1'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument('--switch_freq', type=str, default='inter1')
 args = parser.parse_args()
@@ -88,7 +88,8 @@ for i, ax in enumerate(axs.flat):
     ax.set_xlabel('Episodes', fontsize=24)
     ax.set_ylabel('Mean episode reward', fontsize=24)
     ax.set_title(layout_name, fontsize=28)
-# 调整子图之间的间距
+
+# adjust the interspace between subfigures
 plt.tight_layout()
 fig.subplots_adjust(bottom=0.28,
                     wspace=0.2

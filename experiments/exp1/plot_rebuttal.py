@@ -14,7 +14,7 @@ import argparse
 # os.environ['http_proxy'] = add
 # os.environ['https_proxy'] = add
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp1'
+WANDB_DIR = 'my_wandb_log/exp1'
 
 # 设置字体和样式
 plt.style.use('seaborn-whitegrid')  # 一个清晰、美观的样式

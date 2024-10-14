@@ -11,7 +11,7 @@ import math
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
 # parser.add_argument('--layout', default='soup_coordination')
-parser.add_argument('--layout', default='cramped_room')
+parser.add_argument('--layout', default='coordination_ring')
 args = parser.parse_args()
 
 
@@ -37,7 +37,7 @@ a2c = {
 api = wandb.Api()
 num_episodes = 50
 num_seeds = 5
-runs = api.runs(f"wanghm/overcooked_rl")
+runs = api.runs(f"wanghm/overcooked_rl") # the name of wandb project
 group_runs = [run for run in runs if run.group == 'exp2_3']
 
 plt.figure(figsize=(8, 5))
@@ -83,13 +83,13 @@ for i in range(n_subgroups):
 ax.set_ylabel('Mean episode reward')
 ax.set_xticks(index + bar_width)
 ax.set_xticklabels(['Low', 'Medium', 'High'])
-if args.layout == 'cramped_room':
+if args.layout == 'cramped_room' or args.layout == 'coordination_ring':
     ax.legend(loc='upper left', ncol=1, columnspacing=0.05)
     # plt.ylim(0, 350)
 
 plt.grid(axis='x')
 plt.tight_layout()
-plt.ylim(0, 320)
+plt.ylim(0, 170)
 plt.savefig(f'{args.layout}_ablations_rho_rebuttal.pdf', bbox_inches='tight')
 plt.show()
 

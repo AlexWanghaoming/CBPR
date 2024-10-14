@@ -1,5 +1,5 @@
 import os, sys
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../src/')
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../src/')
 from human_aware_rl.human.process_dataframes import get_human_human_trajectories
 from human_aware_rl.static import CLEAN_2019_HUMAN_DATA_TRAIN, CLEAN_2020_HUMAN_DATA_TRAIN
 import numpy as np

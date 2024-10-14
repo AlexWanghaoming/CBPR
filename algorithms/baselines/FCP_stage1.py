@@ -6,7 +6,7 @@ LAYOUT = sys.argv[1]
 if not LAYOUT:
     LAYOUT = 'cramper_room'
 
-SOURCE_DIR = '/alpha/overcooked_rl'
+SOURCE_DIR = 'path/to/CBPR'
 WANDB_PATH = SOURCE_DIR + '/algorithms/baselines/wandb'
 POLICY_POOL_PATH = SOURCE_DIR + "/models/policy_pool"
 

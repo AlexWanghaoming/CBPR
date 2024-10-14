@@ -11,8 +11,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
 from models import MTP_MODELS, METATASK_MODELS, META_TASKS, SKILL_MODELS, SP_MODELS
 from agents.ppo_discrete import PPO_discrete
-from bc.opponent_scriptedPolicy import Opponent
-from bc.bc_hh import BehaviorClone
+from algorithms.bc.opponent_scriptedPolicy import Opponent
+from algorithms.bc.bc_hh import BehaviorClone
 from My_utils import seed_everything, init_env, evaluate_actor, print_mean_interval, limit_value
 import math
 from src.overcooked_ai_py.mdp.actions import Action
@@ -20,6 +20,7 @@ import wandb
 import pickle
 
 device = 'cpu'
+HORIZON = 600
 
 class MetaTaskLibrary:
     """
@@ -59,7 +60,7 @@ class MTLibrary:
         self.policy_lib = {}
     def gen_policy_library(self, args) -> Dict[str, nn.Module]:
         for idx, mt_model in enumerate(METATASK_MODELS[args.layout][:args.n]):
-            state_dict = torch.load(mt_model)
+            state_dict = torch.load(mt_model, map_location='cpu')
             # model = Opponent(state_dim=96, hidden_dim=256, action_dim=6)
             model = BehaviorClone(state_dim=96, hidden_dim=128, action_dim=6)
             model.load_state_dict(state_dict)
@@ -95,35 +96,37 @@ class BPR_offline:
         self.ai_policys = MTPLibrary().gen_policy_library(args)
         self.args = args
     def gen_performance_model(self) -> List[Dict[str, Dict[str, float]]]:
-        performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}_{self.args.n}metatask.pkl'
-        # performance_model_save_path = f'/alpha/overcooked_rl/models/performance/init_performance_{self.args.layout}.pkl'
+        # performance_model_save_path = f'models/performance/init_performance_{self.args.layout}_{self.args.n}metatask.pkl'
+        performance_model_save_path = f'models/performance/init_performance_{self.args.layout}_{HORIZON}.pkl'
         if os.path.exists(performance_model_save_path):
             with open(performance_model_save_path, 'rb') as ff:
                 performance_model = pickle.load(ff)
             return performance_model
+        else:
+            print('generating performance model, please wait ... ')
 
-        performance_model = [{}, {}]
-        n_rounds = 50
-        for h_ in self.human_policys: # h_: "metatask1"
-            env = init_env(layout=self.args.layout,
-                           agent0_policy_name='mtp',
-                           agent1_policy_name=f'script:{self.human_policys[h_]}',
-                           use_script_policy=True)
-            temp_mean = {}
-            temp_std = {}
-            for ai_ in self.ai_policys:
-                ai_policy = self.ai_policys[ai_]
-                u_list = []
-                for _ in range(n_rounds):
-                    episodic_reward = eval_rollouts(env, ai_policy)
-                    u_list.append(episodic_reward)
-                temp_mean[ai_] = np.mean(u_list)
-                temp_std[ai_] = np.std(u_list)
-            performance_model[0][h_] = temp_mean
-            performance_model[1][h_] = temp_std
-        with open(performance_model_save_path, 'wb') as f:
-            pickle.dump(performance_model, f)
-        return performance_model
+            performance_model = [{}, {}]
+            n_rounds = 50
+            for h_ in self.human_policys: # h_: "metatask1"
+                env = init_env(layout=self.args.layout,
+                            agent0_policy_name='mtp',
+                            agent1_policy_name=f'script:{self.human_policys[h_]}',
+                            use_script_policy=True)
+                temp_mean = {}
+                temp_std = {}
+                for ai_ in self.ai_policys:
+                    ai_policy = self.ai_policys[ai_]
+                    u_list = []
+                    for _ in range(n_rounds):
+                        episodic_reward = eval_rollouts(env, ai_policy)
+                        u_list.append(episodic_reward)
+                    temp_mean[ai_] = np.mean(u_list)
+                    temp_std[ai_] = np.std(u_list)
+                performance_model[0][h_] = temp_mean
+                performance_model[1][h_] = temp_std
+            with open(performance_model_save_path, 'wb') as f:
+                pickle.dump(performance_model, f)
+            return performance_model
 
     def gen_belief(self) -> Dict[str, float]:
         lens = len(self.human_policys)
@@ -150,6 +153,7 @@ class CBPR():
         self.eps = args.eps
         self.args = args
         self.total_step = 0
+
     def predict(self, ego_obs, alt_obs, info, ep_reward, deterministic=True):
         """
         one step forward function of CBPR online stage
@@ -241,7 +245,7 @@ class CBPR():
             if self.args.use_wandb:
                 wandb.log({'episode':k+1,
                            'ep_reward': ep_reward})
-            # 更新本轮的belief
+            # update belief
             self.belief = deepcopy(self.xi)
             self.belief = self._update_beta(best_agent_id, ep_reward)
             if self.args.use_wandb:
@@ -260,7 +264,7 @@ class CBPR():
 
     def _update_beta(self, agent_id: str, u: float) -> Dict[str, float]:
         """
-        每 episode 利用Bayesian公式更新回合间belif
+        每 episode 利用Bayesian公式更新 inter-episodic belif
         belief: dict
         """
         p_temp = {}
@@ -377,7 +381,7 @@ def parse_args():
     return args
 
 if __name__ == '__main__':
-    WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log'
+    WANDB_DIR = 'my_wandb_log'
     args = parse_args()
     if args.use_wandb:
         wandb.init(project='overcooked_rl',

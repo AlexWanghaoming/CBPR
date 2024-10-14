@@ -9,7 +9,7 @@ from scipy import stats
 import argparse
 
 
-WANDB_DIR = '/alpha/overcooked_rl/my_wandb_log/exp2_2'
+WANDB_DIR = 'my_wandb_log/exp2_2'
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument('--layout', default='soup_coordination')
 # parser.add_argument('--layout', default='marshmallow_experiment')
