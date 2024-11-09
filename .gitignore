@@ -6,4 +6,6 @@ my_wandb_log
 algorithms/baselines/wandb
 algorithms/wandb
 models/*/
+CBPR_latex
+CBPR_cr.pdf
 __pycache__/
