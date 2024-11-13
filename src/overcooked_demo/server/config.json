@@ -1,0 +1,42 @@
+{
+    "logfile" : "app.log",
+    "layouts" : ["cramped_room",
+        "asymmetric_advantages",
+        "coordination_ring",
+        "marshmallow_experiment",
+        "soup_coordination"],
+
+    "MAX_GAMES" : 10,
+    "MAX_GAME_LENGTH" : 120,
+    "AGENT_DIR" : "./static/assets/agents",
+    "MAX_FPS" : 30,
+    "predefined" : {
+        "experimentParams" : {
+            "layouts" : ["cramped_room", "asymmetric_advantages", "coordination_ring", "marshmallow_experiment", "soup_coordination"],
+            "gameTime" : 5,
+            "playerZero" : "human",
+            "playerOne" : "human",
+            "randomized" : true,
+            "dataCollection": "on"
+        },
+        "lobbyWaitTime" : 300000
+    },
+    "tutorial" : {
+        "tutorialParams" : {
+            "layouts" : ["tutorial_3", "tutorial_2", "tutorial_1", "tutorial_0"],
+            "playerZero" : "human",
+            "playerOne" : "TutorialAI",
+            "phaseTwoScore" : 34
+        },
+        "tomato_value" : 13,
+        "onion_value" : 21
+    },
+    "layout_globals" : {
+        "onion_value" : 21,
+        "tomato_value" : 13,
+        "onion_time" : 15,
+        "tomato_time" : 7,
+        "order_bonus" : 2,
+        "max_num_ingredients" : 3
+    }
+}
