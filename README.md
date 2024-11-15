@@ -71,7 +71,8 @@ The *Overcooked* game interface can be accessed at 127.0.0.1:5001.
 Our code is built upon some prior works.
 
 * The settings of *Overcooked* environment are  adapted from https://github.com/HumanCompatibleAI/overcooked_ai.
-* The implementation of FCP agent and rule-based policies are apapted from https://github.com/samjia2000/HSP.
+* The implementation of PPO is adapted from https://github.com/Lizhi-sjtu/DRL-code-pytorch.
+* The implementation of FCP agent and rule-based policies are adapted from https://github.com/samjia2000/HSP.
 
 
 # Publication
