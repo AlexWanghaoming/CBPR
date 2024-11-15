@@ -15,20 +15,20 @@ Train SP agent in _Cramped Room_ layout:
 cd algorithms/baselines
 sh train_sp.sh
 ```
-## FCP
-FCP algorithm was firstly introduced in [Collaborating with Humans without Human Data](https://arxiv.org/abs/2110.08176). Train FCP agent in _Cramped Room_ layout:
+## Fictitious Co-Play (FCP)
+FCP is introduced in [Collaborating with Humans without Human Data](https://arxiv.org/abs/2110.08176). Train FCP agent in _Cramped Room_ layout:
 ```
 cd algorithms/baselines
 sh train_fcp.sh
 ```
-## BCP
-BCP agent was firstly introduced in [On the Utility of Learning about Humans for Human-AI Coordination](https://arxiv.org/abs/1910.05789). To train BCP agent, please firstly train behavioral cloning model using `./algorithms/bc/bc.sh`. Next, train BCP agent using:
+## Behavioral Cloning Play (BCP)
+BCP is introduced in [On the Utility of Learning about Humans for Human-AI Coordination](https://arxiv.org/abs/1910.05789). To train BCP agent, please firstly train behavioral cloning model using `./algorithms/bc/bc.sh`. Next, train BCP agent using:
  ```
  cd algorithms/baselines
  sh train_bcp.sh
  ```
-## MTP
-To train MTP agents by pairing them with rule-based agents, run:
+## Meta-Task Playing (MTP)
+CBPR is built upon MTP. To train MTP agents by pairing them with rule-based agents, run:
  ```
  cd algorithms
  sh mtp_scriptedPolicy.sh
