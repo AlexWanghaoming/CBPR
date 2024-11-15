@@ -6,9 +6,7 @@ algorithms/wandb
 models/*/
 experiments/exp3/real_human_test
 CBPR_latex
-CBPR_cr.pdf
-rebuttal.pdf
-CBPR_video.mp4
-NeurIPS24_whm-20241112.pptx
-cbpr.pptx
+*.pdf
+*.mp4
+*.pptx
 __pycache__/

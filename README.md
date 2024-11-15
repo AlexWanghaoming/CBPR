@@ -1,5 +1,6 @@
 # 🥘 CBPR 
-Official code for NeurIPS 2024 paper: *Beyond Single Stationary Policies: Meta-Task Players as Naturally Superior Collaborators*
+Official code for NeurIPS 2024 paper: [Beyond Single Stationary Policies: Meta-Task Players as Naturally Superior Collaborators](https://openreview.net/pdf?id=HpN4xeDJQF). 
+![Figure](assets/algorithm_framework.png)
 # Installation
 ```
 conda create -n cbpr python=3.8
